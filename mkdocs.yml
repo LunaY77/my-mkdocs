@@ -213,8 +213,8 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
   #     permalink: "\ue157"
 
 extra_javascript:
-  - javascripts/extra.js #自定义javascript
-  # - https://cdn.jsdelivr.net/gh/Pale-illusions/Pale-illusions.github.io@main/docs/javascripts/extra.js  # extra的cdn
+  # - javascripts/extra.js #自定义javascript
+  - https://cdn.jsdelivr.net/gh/Pale-illusions/Pale-illusions.github.io@main/docs/javascripts/extra.js  # extra的cdn
   - javascripts/mathjax.js #Latex支持
   - https://polyfill.io/v3/polyfill.min.js?features=es6 #Latex支持
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js #Latex支持
