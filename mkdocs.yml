@@ -87,11 +87,11 @@ extra:
       # https://wcowin-work.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=zh-CN&_x_tr_pto=wapp
       lang: zh   
     - name: English
-      link: /Mkdocs-Wcowin/en/
+      link: /Pale-illusions/en/
       # https://wcowin-work.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=zh-CN&_x_tr_pto=wapp
       lang: en
     - name: China(TW)
-      link: /Mkdocs-Wcowin/ZH-TW/
+      link: /Pale-illusions/ZH-TW/
       # https://wcowin-work.translate.goog/?_x_tr_sl=zh-CN&_x_tr_tl=zh-TW&_x_tr_hl=zh-CN&_x_tr_pto=wapp
       lang: zh-TW
   generator: true #是否删除页脚显示“使用 MkDocs 材料制造”
