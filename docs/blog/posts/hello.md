@@ -1,7 +1,8 @@
 ---
 title: 博客文章测试
 authors: [cangjingyue]
-tags: HelloWorld
+tags: 
+    - HelloWorld
 date: 2024-11-11
 description: >
   Our new blog is built with the brand new built-in blog plugin. You can build
