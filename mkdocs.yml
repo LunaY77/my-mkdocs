@@ -12,7 +12,7 @@ theme:
     code: Roboto Mono  #代码字体
   # logo: assets/favicon.png #左上角logo，可插入图片链接
 
-  favicon: https://s2.loli.net/2024/04/26/PmRdM9iGnvOJHgu.png # 网页icon
+  favicon: https://s2.loli.net/2024/11/12/LtWEUPmOTFpw4rs.png # 网页icon
 
   palette:
     - media: "(prefers-color-scheme)"
