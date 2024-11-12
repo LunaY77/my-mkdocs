@@ -97,6 +97,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#minio" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -952,6 +957,70 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建挂载目录
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yml" class="md-nav__link">
+    <span class="md-ellipsis">
+      创建yml文件
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      填入配置
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      启动容器
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#90009001" class="md-nav__link">
+    <span class="md-ellipsis">
+      ！！安全组添加端口 9000，9001 ！！
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      配置桶
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1029,7 +1098,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 1 分钟阅读时间
+                              需要 2 分钟阅读时间
                             
                           </span>
                         </div>
@@ -1078,9 +1147,83 @@
   
 
 
-  <h1>Minio 部署</h1>
-
-
+<h1 id="minio">Minio 部署<a class="headerlink" href="#minio" title="Permanent link">&para;</a></h1>
+<h2 id="_1">创建挂载目录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#创建挂载目录</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/data/minio
+</code></pre></div></td></tr></table></div>
+<p><br/></p>
+<h2 id="yml">创建yml文件<a class="headerlink" href="#yml" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>vim<span class="w"> </span>/data/minio/docker-compose.yml
+</code></pre></div></td></tr></table></div>
+<p><br/></p>
+<h2 id="_2">填入配置<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span>
+<span class="normal"><a href="#__codelineno-2-18">18</a></span>
+<span class="normal"><a href="#__codelineno-2-19">19</a></span>
+<span class="normal"><a href="#__codelineno-2-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>version:<span class="w"> </span><span class="s1">&#39;3.9&#39;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>services:
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">  </span>minio:
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">    </span>image:<span class="w"> </span><span class="s2">&quot;quay.io/minio/minio:RELEASE.2022-08-02T23-59-16Z&quot;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span>container_name:<span class="w"> </span>minio
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span>ports:
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w">      </span>-<span class="w"> </span><span class="s2">&quot;9000:9000&quot;</span><span class="w"> </span><span class="c1"># api 端口</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w">      </span>-<span class="w"> </span><span class="s2">&quot;9001:9001&quot;</span><span class="w"> </span><span class="c1"># 控制台端口</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w">    </span>environment:
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w">      </span>TZ:<span class="w"> </span>Asia/Shanghai<span class="w"> </span><span class="c1"># 时区上海</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w">      </span>MINIO_ROOT_USER:<span class="w"> </span>admin<span class="w"> </span><span class="c1"># 管理后台用户名</span>
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w">      </span>MINIO_ROOT_PASSWORD:<span class="w"> </span><span class="m">12345678</span><span class="w"> </span><span class="c1"># 管理后台密码，最小8个字符</span>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w">      </span>MINIO_COMPRESS:<span class="w"> </span><span class="s2">&quot;off&quot;</span><span class="w"> </span><span class="c1"># 开启压缩 on 开启 off 关闭</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w">      </span>MINIO_COMPRESS_EXTENSIONS:<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="c1"># 扩展名 .pdf,.doc 为空 所有类型均压缩</span>
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w">      </span>MINIO_COMPRESS_MIME_TYPES:<span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"> </span><span class="c1"># mime 类型 application/pdf 为空 所有类型均压缩</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w">    </span>volumes:
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w">      </span>-<span class="w"> </span>/data/minio/data:/data/<span class="w"> </span><span class="c1"># 映射当前目录下的data目录至容器内/data目录      </span>
+<a id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w">      </span>-<span class="w"> </span>/data/minio/config:/root/.minio/<span class="w"> </span><span class="c1"># 映射配置目录</span>
+<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="w">    </span>command:<span class="w"> </span>server<span class="w"> </span>--address<span class="w"> </span><span class="s1">&#39;:9000&#39;</span><span class="w"> </span>--console-address<span class="w"> </span><span class="s1">&#39;:9001&#39;</span><span class="w"> </span>/data<span class="w">  </span><span class="c1"># 指定容器中的目录 /data</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w">    </span>privileged:<span class="w"> </span><span class="nb">true</span>
+</code></pre></div></td></tr></table></div>
+<p><br/></p>
+<h2 id="_3">启动容器<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nb">cd</span><span class="w"> </span>/data/minio
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="c1">#如果需要强制重新构建</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>--force-recreate<span class="w"> </span>-d
+</code></pre></div></td></tr></table></div>
+<p><br/></p>
+<h2 id="90009001">！！安全组添加端口 9000，9001 ！！<a class="headerlink" href="#90009001" title="Permanent link">&para;</a></h2>
+<p><br/>
+<br/></p>
+<h2 id="_4">配置桶<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<p>创建桶
+<img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/12/17314171812095.jpg" />
+设置桶为公开
+<img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/12/17314171999358.jpg" /></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/12/17314172139345.jpg" /></p>
+<p>创建一个权限用户，获取密钥</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/12/17314172311411.jpg" /></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/12/17314172366136.jpg" /></p>
+<p>点击create按钮后，会随机生成accessKey secretKey。
+会将这两个key进行展示，此时可以复制粘贴到一个文本文件上，后续使用代码上传文件时需要用到这两个key</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
