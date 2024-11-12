@@ -13,7 +13,7 @@
         <link rel="canonical" href="https://pale-illusions.github.io/my-mkdocs/blog/archive/2024/">
       
       
-        <link rel="prev" href="../../category/docker/">
+        <link rel="prev" href="../../category/linux/">
       
       
         <link rel="next" href="../../../about/link/">
@@ -646,6 +646,8 @@
       
         
       
+        
+      
     
     
       
@@ -744,6 +746,29 @@
   
   <span class="md-ellipsis">
     docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../category/linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    linux
   </span>
   
 
@@ -1147,6 +1172,123 @@
           <li class="md-meta__item">
             分类于
             
+              <a href="../../category/algorithm/" class="md-meta__link">Algorithm</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分钟阅读时间
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="_1"><a class="toclink" href="../../2024/11/12/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%A8%A1%E7%89%88/">滑动窗口模版</a></h2>
+<p>统一模版
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span>
+<span class="normal"><a href="#__codelineno-3-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="c1">//外层循环扩展右边界，内层循环扩展左边界</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">        </span><span class="c1">//当前考虑的元素</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">check</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="c1">//区间[left,right]不符合题意</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">        </span><span class="c1">//扩展左边界</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="c1">//区间[left,right]符合题意，统计相关信息</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div></p>
+<p><br/>
+<br/></p>
+<p>模版题：<a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/?envType=study-plan-v2&amp;envId=top-100-liked">3. 无重复字符的子串</a></p>
+<p>Java题解
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span>
+<span class="normal"><a href="#__codelineno-4-16">16</a></span>
+<span class="normal"><a href="#__codelineno-4-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">lengthOfLongestSubstring</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">        </span><span class="kt">char</span><span class="o">[]</span><span class="w"> </span><span class="n">ss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">();</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">        </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="n">right</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">            </span><span class="kt">char</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ss</span><span class="o">[</span><span class="n">right</span><span class="o">]</span><span class="p">;</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">set</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">                </span><span class="n">set</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">ss</span><span class="o">[</span><span class="n">left</span><span class="o">]</span><span class="p">);</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">                </span><span class="n">left</span><span class="o">++</span><span class="p">;</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">            </span><span class="p">}</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">            </span><span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">ss</span><span class="o">[</span><span class="n">right</span><span class="o">]</span><span class="p">);</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">            </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
+<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div></p>
+<p>python题解
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">class</span> <span class="nc">Solution</span><span class="p">:</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>    <span class="k">def</span> <span class="nf">lengthOfLongestSubstring</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>        <span class="n">x</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>        <span class="n">res</span><span class="p">,</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>        <span class="k">for</span> <span class="n">right</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a>            <span class="k">while</span> <span class="n">s</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>                <span class="n">x</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">left</span><span class="p">])</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>                <span class="n">left</span> <span class="o">+=</span> <span class="mi">1</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a>            <span class="n">x</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">right</span><span class="p">])</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>            <span class="n">res</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">right</span> <span class="o">-</span> <span class="n">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a>        <span class="k">return</span> <span class="n">res</span>
+</code></pre></div></td></tr></table></div></p>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png" alt="苍镜月">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-11-12 00:00:00">2024年11月12日星期二</time></li>
+        
+          <li class="md-meta__item">
+            分类于
+            
               <a href="../../category/docker/" class="md-meta__link">docker</a></li>
         
         
@@ -1162,8 +1304,615 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="docker"><a class="toclink" href="../../2024/11/12/docker/">docker</a></h2>
+    <h2 id="minio"><a class="toclink" href="../../2024/11/12/minio-%E9%83%A8%E7%BD%B2/">Minio 部署</a></h2>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png" alt="苍镜月">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-11-12 00:00:00">2024年11月12日星期二</time></li>
+        
+          <li class="md-meta__item">
+            分类于
+            
+              <a href="../../category/docker/" class="md-meta__link">docker</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分钟阅读时间
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="mysql"><a class="toclink" href="../../2024/11/12/mysql-%E9%83%A8%E7%BD%B2/">Mysql 部署</a></h2>
+<h3 id="_1"><a class="toclink" href="../../2024/11/12/mysql-%E9%83%A8%E7%BD%B2/#_1">创建挂载目录</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1">#创建挂载目录</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/data/mysql/data<span class="p">;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/data/mysql/conf<span class="p">;</span>
+</code></pre></div></td></tr></table></div>
+<p><br/></p>
+<h3 id="yml"><a class="toclink" href="../../2024/11/12/mysql-%E9%83%A8%E7%BD%B2/#yml">创建yml文件</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>vim<span class="w"> </span>/data/mysql/docker-compose.yml
+</code></pre></div></td></tr></table></div>
+<p><br/></p>
+<h3 id="_2"><a class="toclink" href="../../2024/11/12/mysql-%E9%83%A8%E7%BD%B2/#_2">填入配置</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>version:<span class="w"> </span><span class="s1">&#39;3.8&#39;</span><span class="w"> </span><span class="c1"># 选择合适版本</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>services:
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">  </span>mysql:
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span>image:<span class="w"> </span>mysql:8.0.30<span class="w"> </span><span class="c1">#mysql版本</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span>container_name:<span class="w"> </span>mysql
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span>volumes:
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">      </span>-<span class="w"> </span>/data/mysql/data:/var/lib/mysql
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">      </span>-<span class="w"> </span>/data/mysql/conf/my.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span>restart:<span class="w"> </span>always
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">    </span>ports:
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">      </span>-<span class="w"> </span><span class="m">3306</span>:3306
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">    </span>environment:
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">      </span>MYSQL_ROOT_PASSWORD:<span class="w"> </span><span class="m">123456</span><span class="w"> </span><span class="c1">#root用户密码</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">      </span>TZ:<span class="w"> </span>Asia/Shanghai
+<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">    </span>command:<span class="w"> </span>--character-set-server<span class="o">=</span>utf8mb4<span class="w"> </span>--collation-server<span class="o">=</span>utf8mb4_unicode_ci
+</code></pre></div></td></tr></table></div>
+<p><br/></p>
+<h3 id="_3"><a class="toclink" href="../../2024/11/12/mysql-%E9%83%A8%E7%BD%B2/#_3">创建配置文件</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>vim<span class="w"> </span>/data/mysql/conf/my.cnf
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span>
+<span class="normal"><a href="#__codelineno-10-13">13</a></span>
+<span class="normal"><a href="#__codelineno-10-14">14</a></span>
+<span class="normal"><a href="#__codelineno-10-15">15</a></span>
+<span class="normal"><a href="#__codelineno-10-16">16</a></span>
+<span class="normal"><a href="#__codelineno-10-17">17</a></span>
+<span class="normal"><a href="#__codelineno-10-18">18</a></span>
+<span class="normal"><a href="#__codelineno-10-19">19</a></span>
+<span class="normal"><a href="#__codelineno-10-20">20</a></span>
+<span class="normal"><a href="#__codelineno-10-21">21</a></span>
+<span class="normal"><a href="#__codelineno-10-22">22</a></span>
+<span class="normal"><a href="#__codelineno-10-23">23</a></span>
+<span class="normal"><a href="#__codelineno-10-24">24</a></span>
+<span class="normal"><a href="#__codelineno-10-25">25</a></span>
+<span class="normal"><a href="#__codelineno-10-26">26</a></span>
+<span class="normal"><a href="#__codelineno-10-27">27</a></span>
+<span class="normal"><a href="#__codelineno-10-28">28</a></span>
+<span class="normal"><a href="#__codelineno-10-29">29</a></span>
+<span class="normal"><a href="#__codelineno-10-30">30</a></span>
+<span class="normal"><a href="#__codelineno-10-31">31</a></span>
+<span class="normal"><a href="#__codelineno-10-32">32</a></span>
+<span class="normal"><a href="#__codelineno-10-33">33</a></span>
+<span class="normal"><a href="#__codelineno-10-34">34</a></span>
+<span class="normal"><a href="#__codelineno-10-35">35</a></span>
+<span class="normal"><a href="#__codelineno-10-36">36</a></span>
+<span class="normal"><a href="#__codelineno-10-37">37</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="o">[</span>mysqld<span class="o">]</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>default-storage-engine<span class="o">=</span>INNODB<span class="w">  </span><span class="c1"># 创建新表时将使用的默认存储引擎</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>character-set-server<span class="o">=</span>utf8mb4<span class="w">      </span><span class="c1"># 设置mysql服务端默认字符集</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>pid-file<span class="w">        </span><span class="o">=</span><span class="w"> </span>/var/run/mysqld/mysqld.pid<span class="w">  </span><span class="c1"># pid文件所在目录</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="nv">socket</span><span class="w">          </span><span class="o">=</span><span class="w"> </span>/var/run/mysqld/mysqld.sock<span class="w"> </span><span class="c1"># 用于本地连接的socket套接字</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="nv">datadir</span><span class="w">         </span><span class="o">=</span><span class="w"> </span>/var/lib/mysql<span class="w">              </span><span class="c1"># 数据文件存放的目录</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a>symbolic-links<span class="o">=</span><span class="m">0</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="nv">sql_mode</span><span class="o">=</span>STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION<span class="w"> </span><span class="c1"># 定义mysql应该支持的sql语法，数据校验等!</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a>
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="c1"># 允许最大连接数</span>
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="nv">max_connections</span><span class="o">=</span><span class="m">200</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a>
+<a id="__codelineno-10-13" name="__codelineno-10-13"></a>
+<a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="c1"># 同一局域网内注意要唯一</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15"></a>server-id<span class="o">=</span><span class="m">3306</span>
+<a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="c1"># 开启二进制日志功能 &amp; 日志位置存放位置`/var/lib/mysql`</span>
+<a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="c1">#log-bin=mysql-bin</span>
+<a id="__codelineno-10-18" name="__codelineno-10-18"></a>log-bin<span class="o">=</span>/var/lib/mysql/mysql-bin
+<a id="__codelineno-10-19" name="__codelineno-10-19"></a><span class="c1"># binlog格式</span>
+<a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="c1"># 1. STATEMENT：基于SQL语句的模式，binlog 数据量小，但是某些语句和函数在复制过程可能导致数据不一致甚至出错；</span>
+<a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="c1"># 2. MIXED：混合模式，根据语句来选用是 STATEMENT 还是 ROW 模式；</span>
+<a id="__codelineno-10-22" name="__codelineno-10-22"></a><span class="c1"># 3. ROW：基于行的模式，记录的是行的完整变化。安全，但 binlog 会比其他两种模式大很多；</span>
+<a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="nv">binlog_format</span><span class="o">=</span>ROW
+<a id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="c1"># FULL：binlog记录每一行的完整变更 MINIMAL：只记录影响后的行</span>
+<a id="__codelineno-10-25" name="__codelineno-10-25"></a><span class="nv">binlog_row_image</span><span class="o">=</span>FULL
+<a id="__codelineno-10-26" name="__codelineno-10-26"></a><span class="c1"># 日志文件大小</span>
+<a id="__codelineno-10-27" name="__codelineno-10-27"></a><span class="nv">max_binlog_size</span><span class="o">=</span>100M
+<a id="__codelineno-10-28" name="__codelineno-10-28"></a><span class="c1"># 定义清除过期日志的时间(这里设置为7天)</span>
+<a id="__codelineno-10-29" name="__codelineno-10-29"></a><span class="nv">expire_logs_days</span><span class="o">=</span><span class="m">7</span>
+<a id="__codelineno-10-30" name="__codelineno-10-30"></a>
+<a id="__codelineno-10-31" name="__codelineno-10-31"></a><span class="c1"># ================= ↑↑↑ mysql主从同步配置end ↑↑↑ =================</span>
+<a id="__codelineno-10-32" name="__codelineno-10-32"></a>
+<a id="__codelineno-10-33" name="__codelineno-10-33"></a><span class="o">[</span>mysql<span class="o">]</span>
+<a id="__codelineno-10-34" name="__codelineno-10-34"></a>default-character-set<span class="o">=</span>utf8mb4
+<a id="__codelineno-10-35" name="__codelineno-10-35"></a>
+<a id="__codelineno-10-36" name="__codelineno-10-36"></a><span class="o">[</span>client<span class="o">]</span>
+<a id="__codelineno-10-37" name="__codelineno-10-37"></a>default-character-set<span class="o">=</span>utf8mb4<span class="w">  </span><span class="c1"># 设置mysql客户端默认字符集</span>
+</code></pre></div></td></tr></table></div>
+<p><br/></p>
+<h3 id="_4"><a class="toclink" href="../../2024/11/12/mysql-%E9%83%A8%E7%BD%B2/#_4">启动容器</a></h3>
+<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nb">cd</span><span class="w"> </span>/data/mysql
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div></td></tr></table></div>
+<br/></p>
+<h3 id="3306"><a class="toclink" href="../../2024/11/12/mysql-%E9%83%A8%E7%BD%B2/#3306"><strong>!!! 安全组添加 3306 !!!</strong></a></h3>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png" alt="苍镜月">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-11-12 00:00:00">2024年11月12日星期二</time></li>
+        
+          <li class="md-meta__item">
+            分类于
+            
+              <a href="../../category/docker/" class="md-meta__link">docker</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分钟阅读时间
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="postgresql"><a class="toclink" href="../../2024/11/12/postgresql-%E9%83%A8%E7%BD%B2/">PostgreSQL 部署</a></h2>
+<h3 id="_1"><a class="toclink" href="../../2024/11/12/postgresql-%E9%83%A8%E7%BD%B2/#_1">创建挂载目录</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/data/postgresql/data
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/data/postgresql/log
+</code></pre></div></td></tr></table></div>
+<h3 id="yml"><a class="toclink" href="../../2024/11/12/postgresql-%E9%83%A8%E7%BD%B2/#yml">创建yml文件</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>vim<span class="w"> </span>/data/postgresql/docker-compose.yml
+</code></pre></div></td></tr></table></div>
+<h3 id="_2"><a class="toclink" href="../../2024/11/12/postgresql-%E9%83%A8%E7%BD%B2/#_2">填入配置</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span>
+<span class="normal"><a href="#__codelineno-6-15">15</a></span>
+<span class="normal"><a href="#__codelineno-6-16">16</a></span>
+<span class="normal"><a href="#__codelineno-6-17">17</a></span>
+<span class="normal"><a href="#__codelineno-6-18">18</a></span>
+<span class="normal"><a href="#__codelineno-6-19">19</a></span>
+<span class="normal"><a href="#__codelineno-6-20">20</a></span>
+<span class="normal"><a href="#__codelineno-6-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>services:
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">  </span>postgres_db:<span class="w"> </span><span class="c1"># 服务名称</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span>image:<span class="w"> </span>postgres:15.7<span class="w"> </span><span class="c1"># 指定镜像及其版本</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span>container_name:<span class="w"> </span>docker_postgres<span class="w"> </span><span class="c1"># 指定容器的名称</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="w">    </span>environment:
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="w">      </span>POSTGRES_PASSWORD:<span class="w"> </span><span class="m">123456</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="w">    </span>ports:<span class="w"> </span><span class="c1"># 端口映射</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="w">      </span>-<span class="w"> </span><span class="s2">&quot;5432:5432&quot;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="w">    </span>volumes:<span class="w"> </span><span class="c1"># 数据持久化的配置</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="w">      </span>-<span class="w"> </span>/data/postgresql/data:/var/lib/postgresql/data
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="w">      </span>-<span class="w"> </span>/data/postgresql/log:/var/log/postgresql
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="w">    </span>logging:
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="w">      </span>options:
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="w">        </span>max-size:<span class="w"> </span><span class="s2">&quot;10m&quot;</span>
+<a id="__codelineno-6-15" name="__codelineno-6-15"></a><span class="w">        </span>max-file:<span class="w"> </span><span class="s2">&quot;3&quot;</span>
+<a id="__codelineno-6-16" name="__codelineno-6-16"></a><span class="w">    </span>networks:<span class="w">  </span><span class="c1"># 网络配置</span>
+<a id="__codelineno-6-17" name="__codelineno-6-17"></a><span class="w">      </span>-<span class="w"> </span>pub-network<span class="w">  </span><span class="c1"># 加入到 pub-network 网络</span>
+<a id="__codelineno-6-18" name="__codelineno-6-18"></a>
+<a id="__codelineno-6-19" name="__codelineno-6-19"></a>networks:<span class="w">  </span><span class="c1"># 网络</span>
+<a id="__codelineno-6-20" name="__codelineno-6-20"></a><span class="w">  </span>pub-network:
+<a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="w">      </span>driver:<span class="w"> </span>bridge
+</code></pre></div></td></tr></table></div>
+<h3 id="_3"><a class="toclink" href="../../2024/11/12/postgresql-%E9%83%A8%E7%BD%B2/#_3">启动容器</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nb">cd</span><span class="w"> </span>/data/postgresql
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
+</code></pre></div></td></tr></table></div>
+<h3 id="5432"><a class="toclink" href="../../2024/11/12/postgresql-%E9%83%A8%E7%BD%B2/#5432"><strong>!!! 安全组添加 5432 !!!</strong></a></h3>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png" alt="苍镜月">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-11-12 00:00:00">2024年11月12日星期二</time></li>
+        
+          <li class="md-meta__item">
+            分类于
+            
+              <a href="../../category/docker/" class="md-meta__link">docker</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分钟阅读时间
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="redis"><a class="toclink" href="../../2024/11/12/redis-%E9%83%A8%E7%BD%B2/">Redis 部署</a></h2>
+<h3 id="_1"><a class="toclink" href="../../2024/11/12/redis-%E9%83%A8%E7%BD%B2/#_1">创建挂载目录</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1">#创建挂载目录</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/data/redis
+</code></pre></div></td></tr></table></div>
+<h3 id="yml"><a class="toclink" href="../../2024/11/12/redis-%E9%83%A8%E7%BD%B2/#yml">创建yml文件</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>vim<span class="w"> </span>/data/redis/docker-compose.yml
+</code></pre></div></td></tr></table></div>
+<p><br/></p>
+<h3 id="_2"><a class="toclink" href="../../2024/11/12/redis-%E9%83%A8%E7%BD%B2/#_2">填入配置</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>version:<span class="w"> </span><span class="s1">&#39;3.8&#39;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>services:
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">  </span>redis:
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span>image:<span class="w"> </span>redis:7.0.11
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span>container_name:<span class="w"> </span>redis
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span>restart:<span class="w"> </span>always
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span>ports:
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">      </span>-<span class="w"> </span><span class="m">6379</span>:6379
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span>volumes:
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">      </span>-<span class="w"> </span>/data/redis/redis.conf:/etc/redis/redis.conf
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">      </span>-<span class="w"> </span>/data/redis/data:/data
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">      </span>-<span class="w"> </span>/data/redis/logs:/logs
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">    </span>command:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;redis-server&quot;</span>,<span class="s2">&quot;/etc/redis/redis.conf&quot;</span><span class="o">]</span>
+</code></pre></div></td></tr></table></div>
+<p><br/></p>
+<h3 id="_3"><a class="toclink" href="../../2024/11/12/redis-%E9%83%A8%E7%BD%B2/#_3">创建挂载配置文件</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>vim<span class="w"> </span>/data/redis/redis.conf
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-10-10">10</a></span>
+<span class="normal"><a href="#__codelineno-10-11">11</a></span>
+<span class="normal"><a href="#__codelineno-10-12">12</a></span>
+<span class="normal"><a href="#__codelineno-10-13">13</a></span>
+<span class="normal"><a href="#__codelineno-10-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>protected-mode<span class="w"> </span>no
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>port<span class="w"> </span><span class="m">6379</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>timeout<span class="w"> </span><span class="m">0</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="c1">#rdb配置</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>save<span class="w"> </span><span class="m">900</span><span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>save<span class="w"> </span><span class="m">300</span><span class="w"> </span><span class="m">10</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a>save<span class="w"> </span><span class="m">60</span><span class="w"> </span><span class="m">10000</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a>rdbcompression<span class="w"> </span>yes
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a>dbfilename<span class="w"> </span>dump.rdb
+<a id="__codelineno-10-10" name="__codelineno-10-10"></a>dir<span class="w"> </span>/data
+<a id="__codelineno-10-11" name="__codelineno-10-11"></a>appendonly<span class="w"> </span>yes
+<a id="__codelineno-10-12" name="__codelineno-10-12"></a>appendfsync<span class="w"> </span>everysec
+<a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="c1">#设置你的redis密码</span>
+<a id="__codelineno-10-14" name="__codelineno-10-14"></a>requirepass<span class="w"> </span><span class="m">123456</span>
+</code></pre></div></td></tr></table></div>
+<p><br/></p>
+<h3 id="_4"><a class="toclink" href="../../2024/11/12/redis-%E9%83%A8%E7%BD%B2/#_4">启动容器</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="nb">cd</span><span class="w"> </span>/data/redis
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="c1">#如果需要强制重新构建</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>--force-recreate<span class="w"> </span>-d
+</code></pre></div></td></tr></table></div>
+<p><br/></p>
+<h3 id="6379"><a class="toclink" href="../../2024/11/12/redis-%E9%83%A8%E7%BD%B2/#6379"><strong>!!! 安全组添加 6379 !!!</strong></a></h3>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png" alt="苍镜月">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-11-12 00:00:00">2024年11月12日星期二</time></li>
+        
+          <li class="md-meta__item">
+            分类于
+            
+              <a href="../../category/docker/" class="md-meta__link">docker</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 1 分钟阅读时间
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="docker"><a class="toclink" href="../../2024/11/12/docker/">Docker</a></h2>
 <p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/12/17314039427461.jpg" /></p>
+<h3 id="docker_1"><a class="toclink" href="../../2024/11/12/docker/#docker_1">docker 常用命令</a></h3>
+<ol>
+<li>拉取docker镜像
+<code>docker pull image_name</code></li>
+<li>查看宿主机上的镜像，Docker镜像保存在/var/lib/docker目录下:
+<code>docker images</code></li>
+<li>删除镜像
+<code>docker rmi docker.io/tomcat:7.0.77-jre7 或者 docker rmi b39c68b7af30</code></li>
+<li>查看当前有哪些容器正在运行
+<code>docker ps</code></li>
+<li>查看所有容器
+<code>docker ps -a</code></li>
+<li>启动、停止、重启容器命令：
+<code>docker start container_name/container_id</code>
+<code>docker stop container_name/container_id</code>
+<code>docker restart container_name/container_id</code></li>
+<li>后台启动一个容器后，如果想进入到这个容器，可以使用attach命令：
+<code>docker attach container_name/container_id</code></li>
+<li>删除容器的命令：
+<code>docker rm container_name/container_id</code></li>
+<li>删除所有停止的容器：
+<code>docker rm $(docker ps -a -q)</code></li>
+<li>查看当前系统Docker信息
+<code>docker info</code></li>
+<li>从Docker hub上下载某个镜像:
+<code>docker pull centos:latest docker pull centos:latest</code></li>
+<li>查找Docker Hub上的nginx镜像
+<code>docker search nginx</code></li>
+<li>执行<code>docker pull centos</code>会将Centos这个仓库下面的所有镜像下载到本地repository。</li>
+</ol>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png" alt="苍镜月">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-11-12 00:00:00">2024年11月12日星期二</time></li>
+        
+          <li class="md-meta__item">
+            分类于
+            
+              <a href="../../category/linux/" class="md-meta__link">linux</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 2 分钟阅读时间
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="linux"><a class="toclink" href="../../2024/11/12/linux%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/">linux环境部署</a></h2>
+<h3 id="ssh"><a class="toclink" href="../../2024/11/12/linux%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/#ssh">SSH连接</a></h3>
+<p>我使用的是<em>macos</em>，选择软件 <strong>Termius</strong> 进行SSH远程连接
+<br/>
+<img alt="Termius" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/12/17314109093176.jpg" />
+<br/></p>
+<h3 id="linux_1"><a class="toclink" href="../../2024/11/12/linux%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/#linux_1">linux 系统环境</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-6-10">10</a></span>
+<span class="normal"><a href="#__codelineno-6-11">11</a></span>
+<span class="normal"><a href="#__codelineno-6-12">12</a></span>
+<span class="normal"><a href="#__codelineno-6-13">13</a></span>
+<span class="normal"><a href="#__codelineno-6-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="o">[</span>root@iZbp12idmwavjjcx2k19kjZ<span class="w"> </span>~<span class="o">]</span><span class="c1"># cat /etc/os-release </span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="nv">NAME</span><span class="o">=</span><span class="s2">&quot;Alibaba Cloud Linux&quot;</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="nv">VERSION</span><span class="o">=</span><span class="s2">&quot;3 (OpenAnolis Edition)&quot;</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="nv">ID</span><span class="o">=</span><span class="s2">&quot;alinux&quot;</span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="nv">ID_LIKE</span><span class="o">=</span><span class="s2">&quot;rhel fedora centos anolis&quot;</span>
+<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="nv">VERSION_ID</span><span class="o">=</span><span class="s2">&quot;3&quot;</span>
+<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="nv">VARIANT</span><span class="o">=</span><span class="s2">&quot;OpenAnolis Edition&quot;</span>
+<a id="__codelineno-6-8" name="__codelineno-6-8"></a><span class="nv">VARIANT_ID</span><span class="o">=</span><span class="s2">&quot;openanolis&quot;</span>
+<a id="__codelineno-6-9" name="__codelineno-6-9"></a><span class="nv">ALINUX_MINOR_ID</span><span class="o">=</span><span class="s2">&quot;2104&quot;</span>
+<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="nv">ALINUX_UPDATE_ID</span><span class="o">=</span><span class="s2">&quot;10&quot;</span>
+<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="nv">PLATFORM_ID</span><span class="o">=</span><span class="s2">&quot;platform:al8&quot;</span>
+<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="nv">PRETTY_NAME</span><span class="o">=</span><span class="s2">&quot;Alibaba Cloud Linux 3.2104 U10 (OpenAnolis Edition)&quot;</span>
+<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="nv">ANSI_COLOR</span><span class="o">=</span><span class="s2">&quot;0;31&quot;</span>
+<a id="__codelineno-6-14" name="__codelineno-6-14"></a><span class="nv">HOME_URL</span><span class="o">=</span><span class="s2">&quot;https://www.aliyun.com/&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p><br/></p>
+<h3 id="docker"><a class="toclink" href="../../2024/11/12/linux%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/#docker">安装docker</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span>
+<span class="normal"><a href="#__codelineno-7-12">12</a></span>
+<span class="normal"><a href="#__codelineno-7-13">13</a></span>
+<span class="normal"><a href="#__codelineno-7-14">14</a></span>
+<span class="normal"><a href="#__codelineno-7-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># 更新yum</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>yum<span class="w"> </span>upgrade
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="c1"># 设置镜像仓库 (阿里云镜像)</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>yum-config-manager<span class="w"> </span>--add-repo<span class="w"> </span>http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="c1"># 安装docker</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a>yum<span class="w"> </span>install<span class="w"> </span>docker-ce
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="c1"># 启动docker</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>start<span class="w"> </span>docker
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>docker
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="c1"># 查看docker 版本</span>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a>docker<span class="w"> </span>--version
+</code></pre></div></td></tr></table></div>
+<p><br/></p>
+<h3 id="docker-compose"><a class="toclink" href="../../2024/11/12/linux%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/#docker-compose">安装 docker-compose</a></h3>
+<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span>
+<span class="normal"><a href="#__codelineno-8-5">5</a></span>
+<span class="normal"><a href="#__codelineno-8-6">6</a></span>
+<span class="normal"><a href="#__codelineno-8-7">7</a></span>
+<span class="normal"><a href="#__codelineno-8-8">8</a></span>
+<span class="normal"><a href="#__codelineno-8-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="c1"># 先执行这两行命令，直接pip会报错</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>sudo<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>pip
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a>sudo<span class="w"> </span>python3<span class="w"> </span>-m<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>-U<span class="w"> </span>setuptools
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="c1"># 安装docker-compose</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>pip<span class="w"> </span>install<span class="w"> </span>docker-compose
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="c1"># 查看 docker-compose 版本</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a>docker-compose<span class="w"> </span>--version
+</code></pre></div></td></tr></table></div>
+<br/></p>
+<h3 id="docker_1"><a class="toclink" href="../../2024/11/12/linux%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/#docker_1">docker 配置国内镜像源</a></h3>
+<p>配置国内镜像源
+<a href="https://blog.csdn.net/llc580231/article/details/139979603#:~:text=Docker镜像">镜像源地址大全</a></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>vim<span class="w">  </span>/etc/docker/daemon.json
+</code></pre></div></td></tr></table></div>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>{&quot;registry-mirrors&quot;: [
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>&quot;https://docker.1panel.dev&quot;,
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a>&quot;https://docker.fxxk.dedyn.io&quot;,
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a>&quot;https://docker.xn--6oq72ry9d5zx.cn&quot;,
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>&quot;https://docker.m.daocloud.io&quot;,
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a>&quot;https://a.ussh.net&quot;,
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a>&quot;https://docker.zhai.cm&quot;]}
+</code></pre></div></td></tr></table></div>
+<p>上述镜像源 2024/10/10 可用</p>
+<p>重启docker服务</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span>
+<span class="normal"><a href="#__codelineno-11-3">3</a></span>
+<span class="normal"><a href="#__codelineno-11-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1"># 重新加载配置文件</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>sudo<span class="w"> </span>systemctl<span class="w"> </span>daemon-reload
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="c1"># 重新启动docker服务</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>sudo<span class="w"> </span>service<span class="w"> </span>docker<span class="w"> </span>restart
+</code></pre></div></td></tr></table></div>
     
   </div>
 </article>
@@ -1253,9 +2002,9 @@
         
           
           <a
-            href="../../category/docker/"
+            href="../../category/linux/"
             class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: docker"
+            aria-label="上一页: linux"
           >
             <div class="md-footer__button md-icon">
               
@@ -1266,7 +2015,7 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                docker
+                linux
               </div>
             </div>
             

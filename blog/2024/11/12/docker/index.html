@@ -13,10 +13,10 @@
         <link rel="canonical" href="https://pale-illusions.github.io/my-mkdocs/blog/2024/11/12/docker/">
       
       
-        <link rel="prev" href="../../11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95/">
+        <link rel="prev" href="../linux%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/">
       
       
-        <link rel="next" href="../dijkstra%E7%AE%97%E6%B3%95/">
+        <link rel="next" href="../redis-%E9%83%A8%E7%BD%B2/">
       
       
       <link rel="icon" href="https://s2.loli.net/2024/11/12/LtWEUPmOTFpw4rs.png">
@@ -96,6 +96,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#docker" class="md-skip">
+          跳转至
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -631,6 +636,8 @@
       
         
       
+        
+      
     
     
       
@@ -729,6 +736,29 @@
   
   <span class="md-ellipsis">
     docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../category/linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    linux
   </span>
   
 
@@ -927,6 +957,25 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#docker_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      docker 常用命令
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1053,9 +1102,38 @@
   
 
 
-  <h1>docker</h1>
-
+<h1 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h1>
 <p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/12/17314039427461.jpg" /></p>
+<h2 id="docker_1">docker 常用命令<a class="headerlink" href="#docker_1" title="Permanent link">&para;</a></h2>
+<ol>
+<li>拉取docker镜像
+<code>docker pull image_name</code></li>
+<li>查看宿主机上的镜像，Docker镜像保存在/var/lib/docker目录下:
+<code>docker images</code></li>
+<li>删除镜像
+<code>docker rmi docker.io/tomcat:7.0.77-jre7 或者 docker rmi b39c68b7af30</code></li>
+<li>查看当前有哪些容器正在运行
+<code>docker ps</code></li>
+<li>查看所有容器
+<code>docker ps -a</code></li>
+<li>启动、停止、重启容器命令：
+<code>docker start container_name/container_id</code>
+<code>docker stop container_name/container_id</code>
+<code>docker restart container_name/container_id</code></li>
+<li>后台启动一个容器后，如果想进入到这个容器，可以使用attach命令：
+<code>docker attach container_name/container_id</code></li>
+<li>删除容器的命令：
+<code>docker rm container_name/container_id</code></li>
+<li>删除所有停止的容器：
+<code>docker rm $(docker ps -a -q)</code></li>
+<li>查看当前系统Docker信息
+<code>docker info</code></li>
+<li>从Docker hub上下载某个镜像:
+<code>docker pull centos:latest docker pull centos:latest</code></li>
+<li>查找Docker Hub上的nginx镜像
+<code>docker search nginx</code></li>
+<li>执行<code>docker pull centos</code>会将Centos这个仓库下面的所有镜像下载到本地repository。</li>
+</ol>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -1331,9 +1409,9 @@
         
           
           <a
-            href="../../11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95/"
+            href="../linux%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/"
             class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: 博客文章测试"
+            aria-label="上一页: linux环境部署"
           >
             <div class="md-footer__button md-icon">
               
@@ -1344,7 +1422,7 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                博客文章测试
+                linux环境部署
               </div>
             </div>
             
@@ -1355,16 +1433,16 @@
         
           
           <a
-            href="../dijkstra%E7%AE%97%E6%B3%95/"
+            href="../redis-%E9%83%A8%E7%BD%B2/"
             class="md-footer__link md-footer__link--next"
-            aria-label="下一页: Dijkstra算法"
+            aria-label="下一页: Redis 部署"
           >
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Dijkstra算法
+                Redis 部署
               </div>
             </div>
             <div class="md-footer__button md-icon">
