@@ -1,35 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>http://www.cangjingyue.cn/</loc>
+         <loc>http://cangjingyue.cn/my-mkdocs/</loc>
          <lastmod>2024-11-12</lastmod>
     </url>
     <url>
-         <loc>http://www.cangjingyue.cn/about/link/</loc>
+         <loc>http://cangjingyue.cn/my-mkdocs/about/link/</loc>
          <lastmod>2024-11-12</lastmod>
     </url>
     <url>
-         <loc>http://www.cangjingyue.cn/about/me/</loc>
+         <loc>http://cangjingyue.cn/my-mkdocs/about/me/</loc>
          <lastmod>2024-11-12</lastmod>
     </url>
     <url>
-         <loc>http://www.cangjingyue.cn/blog/</loc>
+         <loc>http://cangjingyue.cn/my-mkdocs/blog/</loc>
          <lastmod>2024-11-12</lastmod>
     </url>
     <url>
-         <loc>http://www.cangjingyue.cn/blog/2024/11/11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95/</loc>
+         <loc>http://cangjingyue.cn/my-mkdocs/blog/2024/11/11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95/</loc>
          <lastmod>2024-11-12</lastmod>
     </url>
     <url>
-         <loc>http://www.cangjingyue.cn/blog/archive/2024/</loc>
+         <loc>http://cangjingyue.cn/my-mkdocs/blog/archive/2024/</loc>
          <lastmod>2024-11-12</lastmod>
     </url>
     <url>
-         <loc>http://www.cangjingyue.cn/blog/category/hello-world/</loc>
+         <loc>http://cangjingyue.cn/my-mkdocs/blog/category/hello-world/</loc>
          <lastmod>2024-11-12</lastmod>
     </url>
     <url>
-         <loc>http://www.cangjingyue.cn/tag/</loc>
+         <loc>http://cangjingyue.cn/my-mkdocs/tag/</loc>
          <lastmod>2024-11-12</lastmod>
     </url>
 </urlset>
