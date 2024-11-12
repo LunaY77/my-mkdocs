@@ -10,9 +10,9 @@ theme:
   font: #谷歌字体，自行搜索
     text: Bitter  #文本字体
     code: Roboto Mono  #代码字体
-  # logo: assets/favicon.png #左上角logo，可插入图片链接
+  logo: https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png #左上角logo，可插入图片链接
 
-  favicon: https://s2.loli.net/2024/11/12/LtWEUPmOTFpw4rs.png # 网页icon
+  favicon: https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png # 网页icon
 
   palette:
     - media: "(prefers-color-scheme)"
@@ -41,6 +41,7 @@ theme:
     - announce.dismiss #呈现可标记为由用户读取的临时公告，可以包含一个用于取消当前公告的按钮
     # - navigation.instant
     #- header.autohide  #自动隐藏
+    - content.code.annotate # 单行选中
     - navigation.tracking #地址栏中的 URL 将自动更新为在目录中突出显示的活动锚点
     - navigation.tabs #顶级部分将呈现在上面视口标题下方的菜单层中，但在移动设备上保持原样
     # - navigation.tabs.sticky  #启用粘性选项卡后，导航选项卡将锁定在标题下方，并在向下滚动时始终保持可见
@@ -95,7 +96,7 @@ extra:
     #   link: https://space.bilibili.com/
   analytics:
     provider: google #谷歌分析
-    property:
+    property: G-JWTTRFDCWY
 
     # 网页底部反馈
     feedback:
