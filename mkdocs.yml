@@ -1,6 +1,6 @@
 #[Info]
 site_name: 苍镜月's docs #your site name 显示在左上角
-site_url: http://www.cangjingyue.cn
+site_url: http://cangjingyue.cn/my-mkdocs
 site_author: 苍镜月 # your name
 #[UI]
 theme:
@@ -214,7 +214,7 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
 
 extra_javascript:
   # - javascripts/extra.js #自定义javascript
-  - https://cdn.jsdelivr.net/gh/Pale-illusions/Pale-illusions.github.io@main/docs/javascripts/extra.js  # extra的cdn
+  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js  # extra的cdn
   - javascripts/mathjax.js #Latex支持
   - https://polyfill.io/v3/polyfill.min.js?features=es6 #Latex支持
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js #Latex支持
