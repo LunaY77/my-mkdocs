@@ -237,7 +237,16 @@ nav:
   - 主页: index.md
   - 标签: tag.md
   - Blogger:
-      - index: blog/index.md
+    - index: blog/index.md
+  - 后端:
+    - Spring:
+      - simple-spring:
+        - 实现一个简单的Bean容器: blog/backend/spring/simple-spring/simple-spring1.md
+      - spring: blog/backend/spring/spring.md
+  - 前端:
+    - JavaScript:
+      - JavaScript Code Runner: blog/frontend/JavaScript/testJs.md
+      - JS基本语法: blog/frontend/JavaScript/QuickDive/BasicGrammar.md
   - 友链:
       - 友链: about/link.md
   - 关于:

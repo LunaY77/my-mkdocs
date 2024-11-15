@@ -8,6 +8,7 @@ categories:
   - docker
 ---
 
+
 # Minio 部署
 
 ## 创建挂载目录
