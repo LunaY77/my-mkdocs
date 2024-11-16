@@ -53,7 +53,7 @@ jobs:
           echo "message=$(git log -1 --pretty=format:'%s')" >> $GITHUB_ENV
           echo "sha=$(git log -1 --pretty=format:'%H')" >> $GITHUB_ENV
 
-      # Step 7: 邮件通知
+      # Step 7: 邮件通知 https://github.com/dawidd6/action-send-mail
       - name: Send Email Notification
         uses: dawidd6/action-send-mail@v3
         with:
@@ -62,8 +62,9 @@ jobs:
           password: ${{ secrets.SMTP_PASSWORD }} # SMTP 密码，存储在 GitHub Secrets 中
           subject: "🎉 Deployment Successful - Commit by ${{ env.author }}"
           to: |
-            2307984361@qq.com             
-          from: "13758276343@163.com"            # 替换为发件人邮箱
+            2307984361@qq.com    
+            1304412077@qq.com         
+          from: "苍镜月"            # 替换为发件人邮箱
           body: |
             <!DOCTYPE html>
             <html>
@@ -145,7 +146,7 @@ jobs:
                   <p>You can view the deployment <a href="https://pale-illusions.github.io/my-mkdocs/">here</a>.</p>
                 </div>
                 <div class="footer">
-                  <p>Best regards,<br>GitHub Actions</p>
+                  <p>Best regards,<br>苍镜月</p>
                 </div>
               </div>
             </body>
