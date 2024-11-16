@@ -3,6 +3,29 @@
   --base-border-radius: 0.5rem;
 }
 
+/* 行内代码样式 */
+:not(pre) > code {
+  display: inline;                       /* 行内显示 */
+  background-color: #2d2d2d;             /* 深灰色背景，适合黑夜模式 */
+  color: #f8f8f2;                        /* 浅灰白色字体，增强对比 */
+  font-family: "Fira Code", Consolas, monospace; /* 时尚等宽字体 */
+  font-size: 0.95em;                     /* 字体稍微缩小，便于阅读 */
+  padding: 0.2em 0.5em;                  /* 内边距，给代码块留出足够空间 */
+  border-radius: 5px;                    /* 圆角，使代码块外观更现代 */
+  border: 1px solid #444;                /* 深灰色边框，与背景自然融合 */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* 微妙的阴影提升层次感 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* 动画效果 */
+}
+
+/* 鼠标悬停时的样式 */
+:not(pre) > code:hover {
+  transform: scale(1.05);                /* 悬停时轻微放大 */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* 增强阴影效果 */
+  background-color: #3e3e3e;             /* 稍微变亮的背景 */
+  color: #f1fa8c;                        /* 悬停时字体变亮，增加高亮感 */
+  border-color: #666;                    /* 边框变亮，突出显示 */
+}
+
 /* Change font family of filename present on top of code block. */
 /* .highlight span.filename {
   border-bottom: none;
@@ -67,9 +90,23 @@
   border-bottom-left-radius: var(--base-border-radius);
 }
 
-/* Blog - index.md */
-/* div.md-content header {
-  display: none;
+/* 隐藏文章内容中的所有内容，除了一级标题 */
+.md-post--excerpt .md-post__content > * {
+  display: none; /* 隐藏所有直接子元素 */
+}
+
+/* 保留并显示2级标题 */
+.md-post--excerpt .md-post__content > h2 {
+  display: flex; /* 确保一级标题显示 */
+}
+
+/* 设置2级标题的样式 */
+.md-post--excerpt .md-post__content > h2 {
+  font-size: 2.0em; /* 设置字体大小 */
+  font-weight: bold; /* 加粗字体 */
+  text-align: center; /* 居中对齐 */
+  margin-top: 1em; /* 添加一些上间距 */
+  margin-bottom: 1em; /* 添加一些下间距 */
 }
 
 .md-post--excerpt {
@@ -77,6 +114,13 @@
   box-shadow: 0 0 0 1rem var(--md-accent-fg-color--transparent);
   border-radius: var(--base-border-radius);
 }
+
+/* Blog - index.md */
+/* div.md-content header {
+  display: none;
+}
+
+
 
 .md-post--excerpt .md-post__header {
   justify-content: center;
