@@ -65,7 +65,7 @@ jobs:
             2307984361@qq.com             
           from: "13758276343@163.com"            # 替换为发件人邮箱
           body: |
-             <!DOCTYPE html>
+            <!DOCTYPE html>
             <html>
             <head>
               <style>
