@@ -1727,7 +1727,7 @@
 <p>这一次我们把 Bean 的创建交给容器，而不是我们在调用时候传递一个实例化好的 Bean 对象，另外还需要考虑单例对象，在对象的二次获取时是可以从内存中获取对象的。此外不仅要实现功能还需要完善基础容器框架的类结构体，否则将来就很难扩容进去其他的功能了。</p>
 <h2 id="_2">二. 设计<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
 <p>鉴于本章节的案例目标，我们需要将 <code>Spring Bean</code> 容器完善起来，首先非常重要的一点是在 <code>Bean</code> 注册的时候只注册一个类信息，而不会直接把实例化信息注册到 <code>Spring</code> 容器中。那么就需要修改 <code>BeanDefinition</code> 中的属性 <code>Object</code> 为 <code>Class</code>，接下来在需要做的就是在获取 <code>Bean</code> 对象时需要处理 <code>Bean</code> 对象的实例化操作以及判断当前单例对象在容器中是否已经缓存起来了.
-<img alt="" src="../media/17317284627675.jpg" />
+<img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/16/17317284627675.jpg" />
 * 首先我们需要定义 <code>BeanFactory</code> 这样一个 <code>Bean</code> 工厂，提供 <code>Bean</code> 的获取方法 <code>getBean(String name)</code>，之后这个 <code>Bean</code> 工厂接口由抽象类 <code>AbstractBeanFactory</code> 实现。这样使用模板模式的设计方式，可以统一收口通用核心方法的调用逻辑和标准定义，也就很好的控制了后续的实现者不用关心调用逻辑，按照统一方式执行。那么类的继承者只需要关心具体方法的逻辑实现即可。
 * 那么在继承抽象类 <code>AbstractBeanFactory</code> 后的 <code>AbstractAutowireCapableBeanFactory</code> 就可以实现相应的抽象方法了，因为 <code>AbstractAutowireCapableBeanFactory</code> 本身也是一个抽象类，所以它只会实现属于自己的抽象方法，其他抽象方法由继承 <code>AbstractAutowireCapableBeanFactory</code> 的类实现。这里就体现了类实现过程中的各司其职，你只需要关心属于你的内容，不是你的内容，不要参与.
 * 另外这里还有块非常重要的知识点，就是关于单例 <code>SingletonBeanRegistry</code> 的接口定义实现，而 <code>DefaultSingletonBeanRegistry</code> 对接口实现后，会被抽象类 <code>AbstractBeanFactory</code> 继承。现在 <code>AbstractBeanFactory</code> 就是一个非常完整且强大的抽象类了，也能非常好的体现出它对模板模式的抽象定义。接下来我们就带着这些设计层面的思考，去看代码的具体实现结果</p>
@@ -1781,7 +1781,7 @@
 <a id="__codelineno-0-23" name="__codelineno-0-23"></a>            └── bean
 <a id="__codelineno-0-24" name="__codelineno-0-24"></a>                └── UserService.java
 </code></pre></div></td></tr></table></div>
-<p><img src="media/17317463426946.jpg" style="height:500px; display: block; margin: auto;"></p>
+<p><img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/16/17317463426946.jpg" style="height:500px; display: block; margin: auto;"></p>
 <p><br/></p>
 <ul>
 <li><code>BeanFactory</code> 的定义由 <code>AbstractBeanFactory</code> 抽象类实现接口的 <code>getBean</code> 方法</li>
