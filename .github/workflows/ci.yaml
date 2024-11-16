@@ -1,37 +1,80 @@
-name: ci 
+name: ci
+
 on:
   push:
     branches:
-      - master 
+      - master
       - main
+
 permissions:
   contents: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
+      # Step 1: 检出代码
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+
+      # Step 2: 设置 Python 环境
       - uses: actions/setup-python@v4
         with:
           python-version: 3.x
+
+      # Step 3: 缓存配置
       - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV 
       - uses: actions/cache@v3
         with:
-          key: mkdocs-material-${ env.cache_id }
+          key: mkdocs-material-${{ env.cache_id }}
           path: .cache
           restore-keys: |
             mkdocs-material-
+
+      # Step 4: 安装依赖
       - run: pip install mkdocs-git-revision-date-localized-plugin
       - run: pip install mkdocs-git-authors-plugin
       - run: pip install mkdocs-git-committers-plugin-2
       - run: pip install mkdocs-rss-plugin
       - run: pip install jieba
       - run: pip install mkdocs-markdownextradata-plugin
-      # - run: pip install "mkdocs-material[imaging]"
-      # - run: pip install mkdocs-statistics-plugin 
-      # - run: pip install mkdocs-rss-plugin           
-      - run: pip install mkdocs-material 
+      - run: pip install mkdocs-material
       - run: pip install --upgrade --force-reinstall mkdocs-material
+
+      # Step 5: 执行部署
       - run: mkdocs gh-deploy --force
+
+      # Step 6: 获取提交信息
+      - name: Get Commit Information
+        id: commit_info
+        run: |
+          echo "author=$(git log -1 --pretty=format:'%an')" >> $GITHUB_ENV
+          echo "message=$(git log -1 --pretty=format:'%s')" >> $GITHUB_ENV
+          echo "sha=$(git log -1 --pretty=format:'%H')" >> $GITHUB_ENV
+
+      # Step 7: 邮件通知
+      - name: Send Email Notification
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.163.com      # 替换为你的 SMTP 服务器地址
+          username: ${{ secrets.SMTP_USERNAME }} # SMTP 用户名，存储在 GitHub Secrets 中
+          password: ${{ secrets.SMTP_PASSWORD }} # SMTP 密码，存储在 GitHub Secrets 中
+          subject: "Deployment Completed - Commit by ${{ env.author }}"
+          to: |
+            2307984361@qq.com             
+          from: "13758276343@163.com"            # 替换为发件人邮箱
+          body: |
+            Hello,
+            
+            The deployment of the project has been completed successfully.
+
+            **Latest Commit Information**
+            - Author: ${{ env.author }}
+            - Message: ${{ env.message }}
+            - SHA: ${{ env.sha }}
+
+            You can view the deployment [here](https://pale-illusions.github.io/my-mkdocs/).
+
+            Best regards,
+            GitHub Actions
