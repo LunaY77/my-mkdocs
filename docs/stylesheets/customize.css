@@ -3,6 +3,10 @@
   --base-border-radius: 0.5rem;
 }
 
+strong {
+  color: #ADD8E6;
+}
+
 /* 行内代码样式 */
 :not(pre) > code {
   display: inline;                       /* 行内显示 */

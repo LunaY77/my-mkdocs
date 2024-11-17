@@ -122,6 +122,10 @@ extra:
 
 plugins:
   - search #搜索配置
+  - statistics
+  - include_dir_to_nav:
+      sort_file: true
+      sort_directory: true
   - git-committers:
       enabled: !ENV [CI, false]
       repository: Pale-illusions/my-mkdocs
@@ -238,16 +242,20 @@ nav:
   - 标签: tag.md
   - Blogger:
     - index: blog/index.md
-  - 后端:
-    - Spring:
-      - Simple-Spring:
-        - 实现一个简单的Bean容器: blog/backend/spring/simple-spring/simple-spring-01.md
-        - 实现Bean的定义、注册、获取: blog/backend/spring/simple-spring/simple-spring-02.md
-      - Spring: blog/backend/spring/spring.md
-  - 前端:
-    - JavaScript:
-      - JavaScript Code Runner: blog/frontend/JavaScript/testJs.md
-      - JS基本语法: blog/frontend/JavaScript/QuickDive/BasicGrammar.md
+  - 后端: blog/backend
+    # - Java:
+    #   - Frequency-Control-Starter: blog/backend/Java/FrequencyControl.md
+    # - Spring:
+    #   - Simple-Spring:
+    #     - 实现一个简单的Bean容器: blog/backend/spring/simple-spring/simple-spring-01.md
+    #     - 实现Bean的定义、注册、获取: blog/backend/spring/simple-spring/simple-spring-02.md
+    #     - 基于Cglib实现含构造函数的类实例化策略: blog/backend/spring/simple-spring/simple-spring-03.md
+    #   - Spring: blog/backend/spring/spring.md
+  - 前端: blog/frontend
+    # - JavaScript:
+    #   - JavaScript Code Runner: blog/frontend/JavaScript/testJs.md
+    #   - JS基本语法: blog/frontend/JavaScript/QuickDive/BasicGrammar.md
+  - 周结: blog/WeeklySummary
   - 友链:
       - 友链: about/link.md
   - 关于:
