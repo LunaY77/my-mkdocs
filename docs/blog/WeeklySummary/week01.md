@@ -1,7 +1,6 @@
 ---
 title: Week01(2024/11/11 - 2024/11/17)
 authors: [cangjingyue]
-date: 2024-11-14
 comments: true
 ---
 

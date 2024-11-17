@@ -3,7 +3,6 @@ title: 2. 实现Bean的定义、注册、获取
 authors: [cangjingyue]
 tags: 
     - spring
-date: 2024-11-14
 categories:
   - 手写spring
 ---

@@ -3,7 +3,7 @@ title: Dijkstra算法
 authors: [cangjingyue]
 tags: 
     - Algorithm
-date: 2024-11-12
+date: 2024-11-12 00:00:00
 categories:
   - Algorithm
 ---

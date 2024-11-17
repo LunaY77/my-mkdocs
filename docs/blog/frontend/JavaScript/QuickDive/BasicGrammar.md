@@ -3,7 +3,6 @@ title: 基本语法
 authors: [cangjingyue]
 tags: 
     - javascript
-date: 2024-11-13
 categories:
   - javascript
       - QuickDive

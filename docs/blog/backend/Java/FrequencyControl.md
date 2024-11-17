@@ -3,7 +3,6 @@ title: Frequency-Control-Starter
 authors: [cangjingyue]
 tags: 
     - java
-date: 2024-11-17
 categories:
   - java
 ---

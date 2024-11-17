@@ -3,7 +3,7 @@ title: linux环境部署
 authors: [cangjingyue]
 tags: 
     - linux
-date: 2024-11-12
+date: 2024-11-12 00:00:00
 categories:
   - linux
 ---
