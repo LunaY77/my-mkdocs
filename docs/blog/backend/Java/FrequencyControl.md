@@ -184,6 +184,8 @@ private void executeWithFrequencyControlMap(Map<String, K> frequencyControlMap) 
 ```
 功能：**执行限流策略，通过指定的频控配置判断是否达到限流阈值，并在未达到限流阈值时增加频控统计计数**
 
+---
+
 #### 2. **#reachRateLimit**
 
 ``` java
@@ -200,6 +202,7 @@ protected abstract boolean reachRateLimit(Map<String, K> frequencyControlMap);
 
 功能：**判断是否达到限流阈值，交给子类实现**
 
+---
 
 #### 3. **#addFrequencyControlStatisticsCount**
 
@@ -216,6 +219,7 @@ protected abstract void addFrequencyControlStatisticsCount(Map<String, K> freque
 
 功能：**增加限流统计次数，交给子类实现**
 
+---
 
 ### 5.2 固定窗口
 
@@ -266,6 +270,7 @@ protected void addFrequencyControlStatisticsCount(Map<String, FixedWindowDTO> fr
     frequencyControlMap.forEach((k, v) -> RedisUtil.inc(k, v.getTime(), v.getUnit()));
 }
 ```
+---
 
 - `#reachRateLimit`
 
@@ -284,6 +289,7 @@ protected void addFrequencyControlStatisticsCount(Map<String, FixedWindowDTO> fr
     1. **计数递增**：遍历 `frequencyControlMap`，对每个限流键调用 `RedisUtil.inc` 方法，增加计数并设置过期时间。
     2. **设置过期时间**：`RedisUtil.inc` 接收一个时间和单位参数，用于设置 `Redis` 键的过期时间，以确保计数在窗口结束后重置。
 
+---
 
 `RedisUtil.inc` 方法底层调用 `lua` 脚本保证原子性，`lua`代码如下：
 
@@ -297,6 +303,8 @@ else
     return tonumber(redis.call('INCR', key))
 end
 ```
+
+---
 
 ### 5.3 滑动窗口
 
@@ -375,6 +383,8 @@ protected void addFrequencyControlStatisticsCount(Map<String, SlidingWindowDTO> 
 }
 ```
 
+---
+
 具体实现方面：我选择`Redis`的 `Zset` 数据结构 **实现** 滑动窗口，可以根据时间范围精确地做范围筛选
 
 - `#reachRateLimit`
@@ -390,6 +400,7 @@ protected void addFrequencyControlStatisticsCount(Map<String, SlidingWindowDTO> 
     
     功能：**增加每个限流键的计数，并设置键的过期时间。**
  
+---
  
 滑动窗口相关实现相对复杂，首先来看`滑动窗口实体类(SlidingWindowDTO)`是如何定义的   
     
@@ -436,6 +447,8 @@ public class FrequencyControlDTO {
   * `windowSize` 表示 **滑动窗口总大小(数据范围)** ，同时也代表着Redis存储的**过期时间**
   * `period` 表示**窗口最小周期**，代表**时间粒度大小**
 
+---
+
 重点关注方法中的滑动窗口计算逻辑：
 
 ```java
@@ -451,6 +464,8 @@ RedisUtil.zAddAndExpire(key, start, length, current);
 ```
 
 **核心思想**是：每次请求都添加一个当前时间戳到 Redis 的有序集合中，同时删除窗口范围之外的旧数据，以保持计数数据只反映当前滑动窗口内的请求数。
+
+---
 
 再来看Redis中是如何实现的：
 
@@ -470,6 +485,8 @@ public static void zAddAndExpire(String key, long startTime, long expireTime, lo
 1. **添加当前时间戳**：记录当前请求的时间。
 2. **删除旧数据**：只保留当前滑动窗口内的时间戳数据，保证限流判断的准确性。
 3. **设置过期时间**：控制集合的生存时间，以便在没有新请求时自动清除数据，节省 Redis 内存。
+
+---
 
 ### 5.4 漏桶算法
 
@@ -499,6 +516,7 @@ public static void zAddAndExpire(String key, long startTime, long expireTime, lo
 
 **故不对漏桶算法做代码实现**
 
+---
 
 ### 5.5 令牌桶
 
@@ -563,6 +581,8 @@ protected void addFrequencyControlStatisticsCount(Map<String, TokenBucketDTO> fr
     }
 }
 ```
+
+---
 
 - `#reachRateLimit`
 

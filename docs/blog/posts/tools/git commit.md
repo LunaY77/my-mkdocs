@@ -52,7 +52,7 @@ Header部分只有一行，包括三个字段：**type**（必需）、**scope**
 
 **scope**用于说明 commit 影响的**范围**，比如数据层、控制层、视图层等等，视项目不同而不同。
 
-例如在**Angular**，可以是 **$location**, **$browser**, **$compile**, **$rootScope**, **ngHref**, **ngClick**, **ngView**等。
+例如在**Angular**，可以是 **\$location**, **\$browser**, **\$compile**, **\$rootScope**, **ngHref**, **ngClick**, **ngView**等。
 
 如果你的修改影响了不止一个**scope**，你可以使用 **\*** 代替。
 
