@@ -237,7 +237,7 @@ public void test_BeanFactory() {
 * 此外与上一章节测试过程中不同的是，我们把 `UserService.class` 传递给了 `BeanDefinition` 而不是像上一章节那样直接 `new UserService()` 操作。
 
 
-启动时需要添加VM参数 (貌似是因为Cglib与高版本java不兼容)
+启动时需要添加VM参数 (貌似是因为Cglib与高版本java不兼容) 或者选择低版本java
 ``` bash
 --add-opens java.base/java.lang=ALL-UNNAMED
 ```
