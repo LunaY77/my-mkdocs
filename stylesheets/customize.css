@@ -99,6 +99,12 @@ strong {
   display: none; /* 隐藏所有直接子元素 */
 }
 
+/* 隐藏无序列表和有序列表 */
+.md-post--excerpt .md-post__content > ul,
+.md-post--excerpt .md-post__content > ol {
+  display: none; /* 隐藏列表元素 */
+}
+
 /* 保留并显示2级标题 */
 .md-post--excerpt .md-post__content > h2 {
   display: flex; /* 确保一级标题显示 */

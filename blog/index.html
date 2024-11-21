@@ -20,7 +20,7 @@
       
       
       <link rel="icon" href="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.45">
     
     
       
@@ -704,6 +704,8 @@
       
         
       
+        
+      
     
     
       
@@ -825,6 +827,29 @@
   
   <span class="md-ellipsis">
     linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+  
+  
+    <li class="md-nav__item">
+      <a href="category/tools/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    tools
   </span>
   
 
@@ -1058,6 +1083,10 @@
       
         
       
+        
+      
+        
+      
     
     
       
@@ -1168,6 +1197,48 @@
   
   <span class="md-ellipsis">
     4. 为Bean对象注入属性和依赖Bean的功能实现
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="backend/spring/simple-spring/simple-spring-05/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5. 设计与实现资源加载器，从Spring.xml解析和注册Bean对象
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="backend/spring/simple-spring/simple-spring-06/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    6. 实现应用上下文，自动识别、资源加载、扩展机制
   </span>
   
 
@@ -1680,6 +1751,171 @@
 <p><br/>
 <br/></p>
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png" alt="苍镜月">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-11-21 00:00:00">2024年11月21日星期四</time></li>
+        
+          <li class="md-meta__item">
+            分类于
+            
+              <a href="category/tools/" class="md-meta__link">tools</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 2 分钟阅读时间
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="git-commit"><a class="toclink" href="2024/11/21/git-commit-%E8%A7%84%E8%8C%83/">git commit 规范</a></h2>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 679 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 33 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 3 分钟</p>
+</div>
+<h3 id="commit-message"><a class="toclink" href="2024/11/21/git-commit-%E8%A7%84%E8%8C%83/#commit-message">Commit message 格式</a></h3>
+<p>每次提交，<strong>Commit message</strong> 都包括三个部分：<strong>header</strong>，<strong>body</strong> 和 <strong>footer</strong>。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">git commit</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>&lt;BLANK LINE&gt;
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>&lt;body&gt;
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a>&lt;BLANK LINE&gt;
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a>&lt;footer&gt;
+</code></pre></div></td></tr></table></div>
+<p>其中，<strong>header 是必需的，body 和 footer 可以省略</strong>。
+不管是哪一个部分，任何一行都<strong>不得超过72个字符</strong>（或100个字符）。这是为了避免自动换行影响美观。</p>
+<h4 id="header"><a class="toclink" href="2024/11/21/git-commit-%E8%A7%84%E8%8C%83/#header">Header</a></h4>
+<p>Header部分只有一行，包括三个字段：<strong>type</strong>（必需）、<strong>scope</strong>（可选）和<strong>subject</strong>（必需）。</p>
+<hr />
+<h5 id="1-type"><a class="toclink" href="2024/11/21/git-commit-%E8%A7%84%E8%8C%83/#1-type">1. <strong>type</strong></a></h5>
+<p>用于说明 <strong>commit</strong> 的类别，只允许使用下面<strong>7</strong>个标识。</p>
+<ul>
+<li><strong>feat</strong>：新功能（feature）</li>
+<li><strong>fix</strong>：修补bug</li>
+<li><strong>docs</strong>：文档（documentation）</li>
+<li><strong>style</strong>： 格式（不影响代码运行的变动）</li>
+<li><strong>refactor</strong>：重构（即不是新增功能，也不是修改bug的代码变动）</li>
+<li><strong>test</strong>：增加测试</li>
+<li><strong>chore</strong>：构建过程或辅助工具的变动</li>
+</ul>
+<p>如果type为<strong>feat</strong>和<strong>fix</strong>，则该 commit 将肯定出现在 Change log 之中。其他情况（<strong>docs</strong>、<strong>chore</strong>、<strong>style</strong>、<strong>refactor</strong>、<strong>test</strong>）由你决定，要不要放入 Change log，建议是不要。</p>
+<hr />
+<h5 id="2-scope"><a class="toclink" href="2024/11/21/git-commit-%E8%A7%84%E8%8C%83/#2-scope">2. <strong>scope</strong></a></h5>
+<p><strong>scope</strong>用于说明 commit 影响的<strong>范围</strong>，比如数据层、控制层、视图层等等，视项目不同而不同。</p>
+<p>例如在<strong>Angular</strong>，可以是 <strong><span class="arithmatex">\(location**, **\)</span>browser</strong>, <strong><span class="arithmatex">\(compile**, **\)</span>rootScope</strong>, <strong>ngHref</strong>, <strong>ngClick</strong>, <strong>ngView</strong>等。</p>
+<p>如果你的修改影响了不止一个<strong>scope</strong>，你可以使用 <strong>*</strong> 代替。</p>
+<hr />
+<h5 id="3-subject"><a class="toclink" href="2024/11/21/git-commit-%E8%A7%84%E8%8C%83/#3-subject">3. <strong>subject</strong></a></h5>
+<p><strong>subject</strong>是 commit 目的的简短描述，不超过50个字符。</p>
+<p>其他注意事项：</p>
+<ul>
+<li>以<strong>动词</strong>开头，使用<strong>第一人称现在时</strong>，比如<strong>change</strong>，而不是changed或changes</li>
+<li><strong>第一个字母小写</strong></li>
+<li><strong>结尾不加句号（.）</strong></li>
+</ul>
+<h4 id="body"><a class="toclink" href="2024/11/21/git-commit-%E8%A7%84%E8%8C%83/#body">Body</a></h4>
+<p><strong>Body</strong> 部分是对本次 commit 的<strong>详细描述</strong>，可以分成多行。下面是一个范例。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">git commit</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span>
+<span class="normal"><a href="#__codelineno-1-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>More detailed explanatory text, if necessary.  Wrap it to 
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>about 72 characters or so. 
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>Further paragraphs come after blank lines.
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>- Bullet points are okay, too
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a>- Use a hanging indent
+</code></pre></div></td></tr></table></div>
+<p>有3个注意点:</p>
+<ul>
+<li>使用<strong>第一人称现在时</strong>，比如使用change而不是changed或changes。</li>
+<li>永远别忘了<strong>第2行是空行</strong></li>
+<li>应该说明<strong>代码变动的动机</strong>，以及<strong>与以前行为的对比</strong>。</li>
+</ul>
+<h4 id="footer"><a class="toclink" href="2024/11/21/git-commit-%E8%A7%84%E8%8C%83/#footer">Footer</a></h4>
+<p>Footer 部分只用于以下两种情况：</p>
+<ol>
+<li><strong>不兼容变动</strong></li>
+</ol>
+<p>如果当前代码与上一个版本不兼容，则 Footer 部分以BREAKING CHANGE开头，后面是对变动的描述、以及变动理由和迁移方法。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">git commit</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span>
+<span class="normal"><a href="#__codelineno-2-16">16</a></span>
+<span class="normal"><a href="#__codelineno-2-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>BREAKING CHANGE: isolate scope bindings definition has changed.
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    To migrate the code follow the example below:
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    Before:
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    scope: {
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>      myAttr: &#39;attribute&#39;,
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>    }
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>    After:
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>    scope: {
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>      myAttr: &#39;@&#39;,
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>    }
+<a id="__codelineno-2-16" name="__codelineno-2-16"></a>
+<a id="__codelineno-2-17" name="__codelineno-2-17"></a>    The removed `inject` wasn&#39;t generaly useful for directives so there should be no code using it.
+</code></pre></div></td></tr></table></div>
+<ol>
+<li><strong>关闭issue</strong></li>
+</ol>
+<p>如果当前 commit 针对某个issue，那么可以在 Footer 部分关闭这个 issue 。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">git commit</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>Closes #234
+</code></pre></div></td></tr></table></div>
+<h4 id="revert"><a class="toclink" href="2024/11/21/git-commit-%E8%A7%84%E8%8C%83/#revert">Revert</a></h4>
+<p>还有一种特殊情况，如果当前 commit 用于撤销以前的 commit，则必须以revert:开头，后面跟着被撤销 Commit 的 Header。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">git commit</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>revert: feat(pencil): add &#39;graphiteWidth&#39; option
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a>This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
+</code></pre></div></td></tr></table></div>
+<p>Body部分的格式是固定的，必须写成<code>This reverts commit &amp;lt;hash&gt;.</code>，其中的hash是被撤销 commit 的 SHA 标识符。</p>
+<p>如果当前 commit 与被撤销的 commit，在同一个发布（release）里面，那么它们都不会出现在 Change log 里面。如果两者在不同的发布，那么当前 commit，会出现在 Change log 的Reverts小标题下面。</p>
+<h3 id="_1"><a class="toclink" href="2024/11/21/git-commit-%E8%A7%84%E8%8C%83/#_1">参考资料</a></h3>
+<p><a href="https://segmentfault.com/a/1190000009048911">git commit 规范指南</a></p>
+    
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
@@ -3228,49 +3464,6 @@
   </div>
 </article>
       
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png" alt="苍镜月">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-11-11 00:00:00">2024年11月11日星期一</time></li>
-        
-          <li class="md-meta__item">
-            分类于
-            
-              <a href="category/hello-world/" class="md-meta__link">Hello World</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              需要 1 分钟阅读时间
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="_1"><a class="toclink" href="2024/11/11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95/">博客文章测试</a></h2>
-<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 0 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 1 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间不到 1 分钟</p>
-</div>
-<p><img alt="png" src="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png" /></p>
-    
-  </div>
-</article>
-      
       
         
           
@@ -3278,7 +3471,7 @@
 
 
 <nav class="md-pagination">
-  
+  <span class="md-pagination__current">1</span> <a class="md-pagination__link" href="page/2/">2</a>
 </nav>
         
       
