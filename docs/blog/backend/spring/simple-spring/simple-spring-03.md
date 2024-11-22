@@ -249,3 +249,7 @@ public void test_BeanFactory() {
 
 Process finished with exit code 0
 ```
+
+## 参考资料
+
+[https://mp.weixin.qq.com/s/olrwapkSTQMyIGpR10ZDzA](https://mp.weixin.qq.com/s/olrwapkSTQMyIGpR10ZDzA)

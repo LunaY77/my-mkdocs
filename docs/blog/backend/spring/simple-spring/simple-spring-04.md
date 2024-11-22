@@ -282,3 +282,6 @@ public void test_BeanFactory() {
 查询用户信息：苍镜月
 ```
 
+## 参考资料
+
+[https://mp.weixin.qq.com/s/EKoMDpa4q8TMikRM2wBIzw](https://mp.weixin.qq.com/s/EKoMDpa4q8TMikRM2wBIzw)

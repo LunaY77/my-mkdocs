@@ -139,7 +139,7 @@ simple-spring-06
 
 **Spring 应用上下文和对Bean对象扩展机制的类关系:**
 
-![](media/17321959693708.jpg)
+![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/22/17321959693708.jpg)
 
 
 * 在整个类图中主要体现出来的是关于 **Spring 应用上下文**以及**对 Bean 对象扩展机制**的实现。
@@ -766,3 +766,355 @@ public void test_xml() {
 ``` title="result"
 测试结果：苍镜月,改为：字节跳动,改为：北京
 ```
+
+
+
+## 5. 全流程梳理
+
+
+### 1. 初始化 ClassPathXmlApplicationContext
+
+```java
+ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:springPostProcessor.xml");
+```
+在初始化方法中，调用refresh方法，刷新上下文：
+
+代码位置：`com.iflove.simplespring.context.support.ClassPathXmlApplicationContext#ClassPathXmlApplicationContext(java.lang.String[])`
+
+```java
+/**
+ * 从xml中加载 BeanDefinition，并刷新上下文
+ *
+ * @param configLocations 配置地址
+ */
+public ClassPathXmlApplicationContext(String[] configLocations) {
+    this.configLocations = configLocations;
+    refresh();
+}
+```
+
+
+---
+
+### 2. refresh
+
+刷新上下文，主要操作有：
+
+1. 创建 BeanFactory，并加载 BeanDefinition
+2. 获取 beanFactory
+3. 在 Bean 实例化之前，执行 BeanFactoryPostProcessor
+4. BeanPostProcessor 需要提前于其他 Bean 对象实例化之前执行注册操作
+5. 提前实例化单例Bean对象
+
+代码位置：
+`com.iflove.simplespring.context.support.AbstractApplicationContext#refresh`
+
+```java
+@Override
+public void refresh() throws BeansException {
+    // 1. 创建 BeanFactory，并加载 BeanDefinition
+    refreshBeanFactory();
+
+    // 2. 获取 beanFactory
+    ConfigurableListableBeanFactory beanFactory = getBeanFactory();
+
+    // 3.  在 Bean 实例化之前，执行 BeanFactoryPostProcessor (Invoke factory processors registered as beans in the context.)
+    invokeBeanFactoryPostProcessors(beanFactory);
+
+    // 4. BeanPostProcessor 需要提前于其他 Bean 对象实例化之前执行注册操作
+    registerBeanPostProcessors(beanFactory);
+
+    // 5. 提前实例化单例Bean对象
+    beanFactory.preInstantiateSingletons();
+}
+```
+
+---
+
+### 3. refreshBeanFactory
+
+创建 BeanFactory，并加载 BeanDefinition
+
+代码位置：
+`com.iflove.simplespring.context.support.AbstractRefreshableApplicationContext#refreshBeanFactory`
+
+```java
+@Override
+protected void refreshBeanFactory() throws BeansException {
+    DefaultListableBeanFactory beanFactory = createBeanFactory();
+    loadBeanDefinitions(beanFactory);
+    this.beanFactory = beanFactory;
+}
+```
+
+在这个抽象类中实现了 `DefaultListableBeanFactory` 的获取，并将 `loadBeanDefinitions` 方法抽象，交给下一个类实现
+
+---
+
+### 4. loadBeanDefinitions
+
+加载 BeanDefinition，这里的 BeanDefinition 包括 **基本 Bean 定义**，同时也包括 **BeanPostProcessor** 和 **BeanFactoryPostProcessor** 的定义。
+
+代码位置：
+`com.iflove.simplespring.context.support.AbstractXmlApplicationContext#loadBeanDefinitions`
+
+``` java
+ @Override
+protected void loadBeanDefinitions(DefaultListableBeanFactory beanFactory) {
+    XmlBeanDefinitionReader beanDefinitionReader = new XmlBeanDefinitionReader(beanFactory, this);
+    String[] configLocations = getConfigLocations();
+    if (Objects.nonNull(configLocations)) {
+        beanDefinitionReader.loadBeanDefinitions(configLocations);
+    }
+}
+```
+
+抽象 `getConfigLocations` 方法，交给下一个实现类实现
+
+---
+
+### 5. getConfigLocations
+
+代码位置：
+`com.iflove.simplespring.context.support.ClassPathXmlApplicationContext#getConfigLocations`
+
+```java
+@Override
+protected String[] getConfigLocations() {
+    return this.configLocations;
+}
+```
+
+获取在 `ClassPathXmlApplicationContext` 初始化传入的 **configLocations** 文件路径。
+
+---
+
+### 6. getBeanFactory
+
+获取 BeanFactory
+
+
+代码位置：
+`com.iflove.simplespring.context.support.AbstractRefreshableApplicationContext#getBeanFactory`
+
+```java
+@Override
+public DefaultListableBeanFactory getBeanFactory() {
+    return beanFactory;
+}
+```
+
+---
+
+### 7. invokeBeanFactoryPostProcessors
+
+**在 Bean 实例化之前，执行 BeanFactoryPostProcessor (Invoke factory processors registered as beans in the context.)**
+
+
+`com.iflove.simplespring.context.support.AbstractApplicationContext#invokeBeanFactoryPostProcessors`
+
+```java
+private void invokeBeanFactoryPostProcessors(ConfigurableListableBeanFactory beanFactory) {
+    Map<String, BeanFactoryPostProcessor> beanFactoryPostProcessorMap = beanFactory.getBeansOfType(BeanFactoryPostProcessor.class);
+    for (BeanFactoryPostProcessor processor : beanFactoryPostProcessorMap.values()) {
+        processor.postProcessBeanFactory(beanFactory);
+    }
+}
+```
+
+调用 **BeanFactoryPostProcessor** 定义的 **postProcessBeanFactory** 方法
+
+
+---
+
+### 8. registerBeanPostProcessors
+
+BeanPostProcessor 需要提前于其他 Bean 对象实例化之前执行注册操作
+
+代码位置：
+`com.iflove.simplespring.context.support.AbstractApplicationContext#registerBeanPostProcessors`
+
+```java
+private void registerBeanPostProcessors(ConfigurableListableBeanFactory beanFactory) {
+    Map<String, BeanPostProcessor> beanPostProcessorMap = beanFactory.getBeansOfType(BeanPostProcessor.class);
+    for (BeanPostProcessor processor : beanPostProcessorMap.values()) {
+        beanFactory.addBeanPostProcessor(processor);
+    }
+}
+```
+
+
+---
+
+### 9. preInstantiateSingletons
+
+提前实例化单例Bean对象
+
+代码位置：
+`com.iflove.simplespring.beans.factory.support.DefaultListableBeanFactory#preInstantiateSingletons`
+
+```java
+@Override
+public void preInstantiateSingletons() throws BeansException {
+    beanDefinitionMap.keySet().forEach(this::getBean);
+}
+```
+
+调用 **getBean** 方法，自动实例化单例Bean对象
+
+---
+
+### 10. getBean
+
+在 `AbstractBeanFactory` 重载的 `getBean` 方法中，最终都会进入 `doGetBean` 方法，而因为是第一次实例化，`getSingleton` 方法一定是无法获取到对象，故最终继续调用 `createBean` 方法
+
+代码位置：
+`com.iflove.simplespring.beans.factory.support.AbstractBeanFactory#doGetBean`
+
+```java
+/**
+ * 获取bean对象
+ * @param name  bean名称
+ * @param args  实例化参数
+ * @return      bean对象
+ * @param <T>   bean对象类型
+ */
+protected <T> T doGetBean(final String name, final Object[] args) {
+    // 获取单例对象
+    Object bean = getSingleton(name);
+    // 单例对象不存在，说明未初始化
+    if (Objects.nonNull(bean)) {
+        return (T) bean;
+    }
+
+    // 初始化bean对象
+    BeanDefinition beanDefinition = getBeanDefinition(name);
+    return (T) createBean(name, beanDefinition, args);
+}
+```
+
+---
+
+### 11. createBean
+    
+在 `AbstractAutowireCapableBeanFactory` 类中的 `createBean` 方法中，主要做了以下 4 件事：
+
+1. 创建bean实例对象
+2. 注入bean属性依赖
+3. 执行 Bean 的初始化方法和 BeanPostProcessor 的前置和后置处理方法
+4. 添加单例对象
+    
+代码位置：
+`com.iflove.simplespring.beans.factory.support.AbstractAutowireCapableBeanFactory#createBean`
+
+```java
+/**
+ * 初始化bean对象
+ * @param beanName          bean名称
+ * @param beanDefinition    bean定义
+ * @param args              实例化参数
+ * @return bean对象
+ */
+@Override
+protected Object createBean(String beanName, BeanDefinition beanDefinition, Object[] args) throws BeansException {
+    Object bean;
+    try {
+        // 创建bean实例对象
+        bean = createBeanInstance(beanDefinition, beanName, args);
+        // 注入bean属性依赖
+        applyPropertyValues(beanDefinition, bean, beanName);
+        // 执行 Bean 的初始化方法和 BeanPostProcessor 的前置和后置处理方法
+        bean = initializeBean(beanName, bean, beanDefinition);
+    } catch (Exception e) {
+        throw new BeansException("Instantiation of bean failed", e);
+    }
+    // 添加单例对象
+    addSingleton(beanName, bean);
+    return bean;
+}
+```
+
+重点关注 `initializeBean` 方法
+
+
+---
+
+### 12. initializeBean
+
+在 `initializeBean` 方法中主要做了以下3件事：
+
+1. 执行 BeanPostProcessor Before 处理
+2. 调用自定义初始化方法
+3. 执行 BeanPostProcessor After 处理
+
+代码位置：
+`com.iflove.simplespring.beans.factory.support.AbstractAutowireCapableBeanFactory#initializeBean`
+
+```java
+private Object initializeBean(String beanName, Object bean, BeanDefinition beanDefinition) {
+    // 1. 执行 BeanPostProcessor Before 处理
+    Object wrappedBean = applyBeanPostProcessorsBeforeInitialization(bean, beanName);
+
+    // TODO: 待完成
+    invokeInitMethods(beanName, wrappedBean, beanDefinition);
+
+    // 2. 执行 BeanPostProcessor After 处理
+    wrappedBean = applyBeanPostProcessorsAfterInitialization(bean, beanName);
+    return wrappedBean;
+}
+```
+
+---
+
+### 13. 执行BeanPostProcessor
+
+在这两个方法中，通过 BeanPostProcessor 实现在 **Bean实例化时** 修改 Bean 的相关属性
+
+代码位置：
+`com.iflove.simplespring.beans.factory.support.AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsBeforeInitialization`
+
+
+```java
+/**
+ * 执行 BeanPostProcessors 接口实现类的 postProcessBeforeInitialization 方法
+ *
+ * @param existingBean
+ * @param beanName
+ * @return
+ * @throws BeansException
+ */
+@Override
+public Object applyBeanPostProcessorsBeforeInitialization(Object existingBean, String beanName) throws BeansException {
+    Object result = existingBean;
+    for (BeanPostProcessor processor : getBeanPostProcessors()) {
+        Object current = processor.postProcessBeforeInitialization(result, beanName);
+        if (Objects.isNull(current)) return result;
+        result = current;
+    }
+    return result;
+}
+
+/**
+ * 执行 BeanPostProcessors 接口实现类的 postProcessorsAfterInitialization 方法
+ *
+ * @param existingBean
+ * @param beanName
+ * @return
+ * @throws BeansException
+ */
+@Override
+public Object applyBeanPostProcessorsAfterInitialization(Object existingBean, String beanName) throws BeansException {
+    Object result = existingBean;
+    for (BeanPostProcessor processor : getBeanPostProcessors()) {
+        Object current = processor.postProcessAfterInitialization(result, beanName);
+        if (Objects.isNull(current)) return result;
+        result = current;
+    }
+    return result;
+}
+```
+
+
+## 参考资料
+
+[https://mp.weixin.qq.com/s/sv0H1NAuO3s90HC6QpjP5g](https://mp.weixin.qq.com/s/sv0H1NAuO3s90HC6QpjP5g)

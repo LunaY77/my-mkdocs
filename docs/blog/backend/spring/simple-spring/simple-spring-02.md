@@ -220,3 +220,8 @@ public class ApiTest {
 
 * 在此次的单元测试中除了包括；Bean 工厂、注册 Bean、获取 Bean，三个步骤，还额外增加了一次对象的获取和调用。这里主要测试验证单例对象的是否正确的存放到了缓存中。
 * 此外与上一章节测试过程中不同的是，我们把 UserService.class 传递给了 BeanDefinition 而不是像上一章节那样直接 new UserService() 操作。
+
+
+## 参考资料
+
+[https://mp.weixin.qq.com/s/CgvQzm8B-CvQvXdxONC-lA](https://mp.weixin.qq.com/s/CgvQzm8B-CvQvXdxONC-lA)
