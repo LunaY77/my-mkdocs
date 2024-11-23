@@ -63,7 +63,7 @@ jobs:
           username: ${{ secrets.SMTP_USERNAME }} # SMTP 用户名，存储在 GitHub Secrets 中
           password: ${{ secrets.SMTP_PASSWORD }} # SMTP 密码，存储在 GitHub Secrets 中
           subject: "🎉 Deployment Successful - Commit by ${{ env.author }}"
-          to: 2307984361@qq.com #,1304412077@qq.com         
+          to: 2307984361@qq.com,1304412077@qq.com         
           from: "苍镜月"            # 替换为发件人邮箱
           body: |
             <!DOCTYPE html>
