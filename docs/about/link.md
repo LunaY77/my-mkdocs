@@ -39,6 +39,20 @@ hide:
         </div> 
       </div>
 
+      <div class="card"> 
+        <img class="ava" src="https://www.klxiaoniu.top/icon.jpg" /> 
+        <div class="card-header"> 
+          <div> 
+          <a href="https://www.klxiaoniu.top " target="_blank">快乐小牛的博客站</a> 
+          </div> 
+          <div class="info">
+            快乐小牛
+          </div> 
+        </div> 
+      </div>
+
+
+
     </div>
   </div>
   <HR style="FILTER: progid:DXImageTransform.Microsoft.Shadow(color:#608DBD,direction:145,strength:15)" width="100%" color=#608DBD SIZE=1>
