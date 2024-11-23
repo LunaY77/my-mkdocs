@@ -58,7 +58,7 @@ hide:
           <a href="www.adrianpierre.cn" target="_blank">Adrian‘s World</a> 
           </div> 
           <div class="info">
-            嵌入式，AI
+            分裂的彗星在黄昏过后引渡生命和爱
           </div> 
         </div> 
       </div>
