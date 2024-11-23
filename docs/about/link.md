@@ -51,7 +51,18 @@ hide:
         </div> 
       </div>
 
-
+      <div class="card"> 
+        <img class="ava" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/23/dcd4dffa5241b459d0d2d40bc59480ab720.png" /> 
+        <div class="card-header"> 
+          <div> 
+          <a href="www.adrianpierre.cn" target="_blank">Adrian‘s World</a> 
+          </div> 
+          <div class="info">
+            嵌入式，AI
+          </div> 
+        </div> 
+      </div>
+      
 
     </div>
   </div>
