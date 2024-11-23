@@ -143,7 +143,7 @@ jobs:
                     <li><b>Message:</b> ${{ env.message }}</li>
                     <li><b>SHA:</b> ${{ env.sha }}</li>
                   </ul>
-                  <p>You can view the deployment <a href="https://pale-illusions.github.io/my-mkdocs/">here</a>.</p>
+                  <p>You can view the deployment <a href="https://cangjingyue.top">here</a>.</p>
                 </div>
                 <div class="footer">
                   <p>Best regards,<br>苍镜月</p>
