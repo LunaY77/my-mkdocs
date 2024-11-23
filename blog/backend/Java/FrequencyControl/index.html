@@ -1438,6 +1438,8 @@
       
         
       
+        
+      
     
     
       
@@ -1590,6 +1592,27 @@
   
   <span class="md-ellipsis">
     6. 实现应用上下文，自动识别、资源加载、扩展机制
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../spring/simple-spring/simple-spring-07/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7. 向虚拟机注册钩子，实现Bean对象的初始化和销毁方法
   </span>
   
 
@@ -2674,6 +2697,7 @@
 <a id="__codelineno-3-15" name="__codelineno-3-15"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
 功能：<strong>执行限流策略，通过指定的频控配置判断是否达到限流阈值，并在未达到限流阈值时增加频控统计计数</strong></p>
+<hr />
 <h4 id="2-reachratelimit">2. <strong>#reachRateLimit</strong><a class="headerlink" href="#2-reachratelimit" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
@@ -2694,6 +2718,7 @@
 <a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="kd">protected</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">reachRateLimit</span><span class="p">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">K</span><span class="o">&gt;</span><span class="w"> </span><span class="n">frequencyControlMap</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p>功能：<strong>判断是否达到限流阈值，交给子类实现</strong></p>
+<hr />
 <h4 id="3-addfrequencycontrolstatisticscount">3. <strong>#addFrequencyControlStatisticsCount</strong><a class="headerlink" href="#3-addfrequencycontrolstatisticscount" title="Permanent link">&para;</a></h4>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
 <span class="normal"><a href="#__codelineno-5-2">2</a></span>
@@ -2712,6 +2737,7 @@
 <a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="kd">protected</span><span class="w"> </span><span class="kd">abstract</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">addFrequencyControlStatisticsCount</span><span class="p">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="p">,</span><span class="w"> </span><span class="n">K</span><span class="o">&gt;</span><span class="w"> </span><span class="n">frequencyControlMap</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p>功能：<strong>增加限流统计次数，交给子类实现</strong></p>
+<hr />
 <h3 id="52">5.2 固定窗口<a class="headerlink" href="#52" title="Permanent link">&para;</a></h3>
 <h4 id="1_1">1. 基本介绍<a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
 <p>固定时间窗口（Fixed Window Rate Limiting Algorithm）（也叫计数器）是最常见的限流算法之一。它划分了多块固定的时间窗口，并且限制了每块窗口的最大请求数量。</p>
@@ -2776,6 +2802,7 @@
 <a id="__codelineno-6-21" name="__codelineno-6-21"></a><span class="w">    </span><span class="n">frequencyControlMap</span><span class="p">.</span><span class="na">forEach</span><span class="p">((</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">)</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">RedisUtil</span><span class="p">.</span><span class="na">inc</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="na">getTime</span><span class="p">(),</span><span class="w"> </span><span class="n">v</span><span class="p">.</span><span class="na">getUnit</span><span class="p">()));</span>
 <a id="__codelineno-6-22" name="__codelineno-6-22"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div></p>
+<hr />
 <ul>
 <li>
 <p><code>#reachRateLimit</code></p>
@@ -2796,6 +2823,7 @@
 </ol>
 </li>
 </ul>
+<hr />
 <p><code>RedisUtil.inc</code> 方法底层调用 <code>lua</code> 脚本保证原子性，<code>lua</code>代码如下：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Lua</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
 <span class="normal"><a href="#__codelineno-7-2">2</a></span>
@@ -2813,6 +2841,7 @@
 <a id="__codelineno-7-7" name="__codelineno-7-7"></a>    <span class="kr">return</span> <span class="nb">tonumber</span><span class="p">(</span><span class="n">redis</span><span class="p">.</span><span class="n">call</span><span class="p">(</span><span class="s1">&#39;INCR&#39;</span><span class="p">,</span> <span class="n">key</span><span class="p">))</span>
 <a id="__codelineno-7-8" name="__codelineno-7-8"></a><span class="kr">end</span>
 </code></pre></div></td></tr></table></div>
+<hr />
 <h3 id="53">5.3 滑动窗口<a class="headerlink" href="#53" title="Permanent link">&para;</a></h3>
 <h4 id="1_2">1. 基本介绍<a class="headerlink" href="#1_2" title="Permanent link">&para;</a></h4>
 <p>为了解决固定窗口更换窗口时的<strong>临界点</strong>问题。因此出现了<strong>滑动窗口</strong>，这样一直都只用一个滑动窗口，只不过这个窗口会不断向前滑动。</p>
@@ -2913,6 +2942,7 @@
 <a id="__codelineno-8-31" name="__codelineno-8-31"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-8-32" name="__codelineno-8-32"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+<hr />
 <p>具体实现方面：我选择<code>Redis</code>的 <code>Zset</code> 数据结构 <strong>实现</strong> 滑动窗口，可以根据时间范围精确地做范围筛选</p>
 <ul>
 <li>
@@ -2930,6 +2960,7 @@
 <p>功能：<strong>增加每个限流键的计数，并设置键的过期时间。</strong></p>
 </li>
 </ul>
+<hr />
 <p>滑动窗口相关实现相对复杂，首先来看<code>滑动窗口实体类(SlidingWindowDTO)</code>是如何定义的   </p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
@@ -2997,6 +3028,7 @@
 <li><code>windowSize</code> 表示 <strong>滑动窗口总大小(数据范围)</strong> ，同时也代表着Redis存储的<strong>过期时间</strong></li>
 <li><code>period</code> 表示<strong>窗口最小周期</strong>，代表<strong>时间粒度大小</strong></li>
 </ul>
+<hr />
 <p>重点关注方法中的滑动窗口计算逻辑：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
 <span class="normal"><a href="#__codelineno-11-2">2</a></span>
@@ -3017,6 +3049,7 @@
 <a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="n">RedisUtil</span><span class="p">.</span><span class="na">zAddAndExpire</span><span class="p">(</span><span class="n">key</span><span class="p">,</span><span class="w"> </span><span class="n">start</span><span class="p">,</span><span class="w"> </span><span class="n">length</span><span class="p">,</span><span class="w"> </span><span class="n">current</span><span class="p">);</span>
 </code></pre></div></td></tr></table></div>
 <p><strong>核心思想</strong>是：每次请求都添加一个当前时间戳到 Redis 的有序集合中，同时删除窗口范围之外的旧数据，以保持计数数据只反映当前滑动窗口内的请求数。</p>
+<hr />
 <p>再来看Redis中是如何实现的：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
 <span class="normal"><a href="#__codelineno-12-2">2</a></span>
@@ -3040,6 +3073,7 @@
 <li><strong>删除旧数据</strong>：只保留当前滑动窗口内的时间戳数据，保证限流判断的准确性。</li>
 <li><strong>设置过期时间</strong>：控制集合的生存时间，以便在没有新请求时自动清除数据，节省 Redis 内存。</li>
 </ol>
+<hr />
 <h3 id="54">5.4 漏桶算法<a class="headerlink" href="#54" title="Permanent link">&para;</a></h3>
 <h4 id="1_3">1. 基本介绍<a class="headerlink" href="#1_3" title="Permanent link">&para;</a></h4>
 <p>漏桶算法正如其名，可以想象就是一个底部破了洞的桶，无论你以什么样的<strong>不确定频率</strong>去添加水。水都会从底部以<strong>固定的频率</strong>流出，其余的水蓄在漏桶中，直到漏桶满了被丢弃。</p>
@@ -3067,6 +3101,7 @@
 <h4 id="2_3">2. 不适合场景<a class="headerlink" href="#2_3" title="Permanent link">&para;</a></h4>
 <p>漏桶算法不太适合C端接口的限流。因为对于都到了限流的场景了。并发已经比较高了。我们希望的是超过限制的请求，立马就给他快速失败返回了，而不是停在桶里休眠等待响应。这样整体的响应时间会很高，同时还占用的请求连接池。</p>
 <p><strong>故不对漏桶算法做代码实现</strong></p>
+<hr />
 <h3 id="55">5.5 令牌桶<a class="headerlink" href="#55" title="Permanent link">&para;</a></h3>
 <h4 id="1_4">1. 基本介绍<a class="headerlink" href="#1_4" title="Permanent link">&para;</a></h4>
 <p>令牌桶算法维护一个<strong>固定容量</strong>的令牌桶，每秒钟会向令牌桶中<strong>放入一定数量的令牌</strong>。每一个请求都需要<strong>消耗一个令牌</strong>才能放行。你会发现他和漏桶算法很像，都有个容量固定的桶。
@@ -3146,6 +3181,7 @@
 <a id="__codelineno-13-22" name="__codelineno-13-22"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-13-23" name="__codelineno-13-23"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
+<hr />
 <ul>
 <li>
 <p><code>#reachRateLimit</code></p>
@@ -3241,7 +3277,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-11-17</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-11-21</span>
   </span>
 
     
@@ -3512,9 +3548,9 @@
       <div class="footer-visit-count" style="display: flex; justify-content: center; align-items: center;">
     本站访问量：<script async src="//finicounter.eu.org/finicounter.js"></script>
     <span id="finicount_views"></span>    &nbsp;|&nbsp;
-    <!-- <footer>
-      <a href="https://icp.gov.moe/?keyword=20230640" target="_blank">萌ICP备20230640号</a>
-    </footer> -->
+    <footer>
+      <a href="http://beian.miit.gov.cn/" target="_blank">浙ICP备2024135861号-1</a>
+    </footer>
   
   </div>
       </font>

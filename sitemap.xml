@@ -2,142 +2,146 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/about/link/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/about/me/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/WeeklySummary/week01/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/backend/Java/FrequencyControl/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/backend/spring/spring/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/backend/spring/simple-spring/simple-spring-01/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/backend/spring/simple-spring/simple-spring-02/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/backend/spring/simple-spring/simple-spring-03/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/backend/spring/simple-spring/simple-spring-04/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/backend/spring/simple-spring/simple-spring-05/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/backend/spring/simple-spring/simple-spring-06/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
+    </url>
+    <url>
+         <loc>https://pale-illusions.github.io/my-mkdocs/blog/backend/spring/simple-spring/simple-spring-07/</loc>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/frontend/JavaScript/testJs/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/frontend/JavaScript/QuickDive/BasicGrammar/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/2024/11/11/%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E6%B5%8B%E8%AF%95/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/2024/11/12/dijkstra%E7%AE%97%E6%B3%95/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/2024/11/12/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%A8%A1%E7%89%88/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/2024/11/12/minio-%E9%83%A8%E7%BD%B2/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/2024/11/12/mysql-%E9%83%A8%E7%BD%B2/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/2024/11/12/postgresql-%E9%83%A8%E7%BD%B2/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/2024/11/12/redis-%E9%83%A8%E7%BD%B2/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/2024/11/12/rocketmq-%E9%83%A8%E7%BD%B2/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/2024/11/12/docker/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/2024/11/12/linux%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/2024/11/21/git-commit-%E8%A7%84%E8%8C%83/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/archive/2024/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/category/tools/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/category/algorithm/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/category/docker/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/category/linux/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/category/hello-world/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/page/2/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/blog/archive/2024/page/2/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
     <url>
          <loc>https://pale-illusions.github.io/my-mkdocs/tag/</loc>
-         <lastmod>2024-11-21</lastmod>
+         <lastmod>2024-11-23</lastmod>
     </url>
 </urlset>
