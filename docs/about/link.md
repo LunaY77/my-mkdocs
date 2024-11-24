@@ -28,7 +28,7 @@ hide:
       </div>
 
       <div class="card"> 
-        <img class="ava" src="http://magic-knowledge.top/img/20241123151102.png" /> 
+        <img class="ava" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/23/17323639636062.png" /> 
         <div class="card-header"> 
           <div> 
           <a href="http://www.magic-knowledge.top/ " target="_blank">Knowledge is magic</a> 

@@ -114,7 +114,7 @@ simple-spring-07
 
 Spring 应用上下文和对Bean对象扩展机制的类关系
 
-![](media/17323568391551.jpg)
+![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/23/17323568391551.jpg)
 
 * 以上整个类图结构描述出来的就是本次新增 `Bean` 实例化过程中的**初始化**方法和**销毁**方法。
 * 因为我们一共实现了**两种方式的初始化和销毁方法，xml配置和定义接口**，所以这里既有 `InitializingBean`、`DisposableBean` 也有需要 `XmlBeanDefinitionReader` 加载 `spring.xml` 配置信息到 `BeanDefinition` 中。
