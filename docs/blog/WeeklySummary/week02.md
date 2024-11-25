@@ -9,7 +9,7 @@ comments: true
 
 ## 总结
 
-<img src="media/Screenshot_20241124_220130_me.liujia95.solitude.jpg" style="height:500px; display: block; margin: auto;">
+<img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/25/screenshot20241124220130meliujia95solitude.jpg" style="height:500px; display: block; margin: auto;">
 
 ---
 
