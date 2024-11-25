@@ -24,7 +24,7 @@ categories:
 
 在关于 Bean 对象实例化阶段我们操作过一些额外定义、属性、初始化和销毁的操作，其实我们如果像获取 Spring 一些如 `BeanFactory`、`ApplicationContext` 时，也可以通过此类方式进行实现。那么我们需要定义一个**标记性的接口**，这个接口不需要有方法，它只起到**标记作用**就可以，而具体的功能**由继承此接口的其他功能性接口定义具体方法**，最终这个接口就可以通过 `instanceof` 进行判断和调用了。整体设计结构如下图：
 
-![](media/17324259346907.jpg)
+![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/25/17324259346907.jpg)
 
 * **定义接口 Aware**，在 Spring 框架中它是一种**感知标记性接口**，具体的子类定义和实现能感知容器中的相关对象。也就是通过这个桥梁，向具体的实现类中提供容器服务
 * 继承 Aware 的接口包括：`BeanFactoryAware`、`BeanClassLoaderAware`、`BeanNameAware`和`ApplicationContextAware`，当然在 Spring 源码中还有一些其他关于注解的，不过目前我们还是用不到。
@@ -119,7 +119,7 @@ simple-spring-08
 
 Spring 感知接口的设计和实现类关系：
 
-![](media/17324261674008.jpg)
+![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/25/17324261674008.jpg)
 
 
 * 以上整个类关系就是关于 `Aware` 感知的定义和对容器感知的实现。
