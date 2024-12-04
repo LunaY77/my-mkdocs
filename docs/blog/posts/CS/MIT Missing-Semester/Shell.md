@@ -3,6 +3,7 @@ title: The Shell
 authors: [cangjingyue]
 tags: 
     - CS
+    - Missing
 date: 2024-12-1 00:00:00
 categories:
   - CS
@@ -244,7 +245,7 @@ Since the `tee` program is the one to open the `/sys` file for writing, and it i
 ## 6. exercises
 
 !!!warning
-    I will write my own solution to the problems, If you want to solve those by yourself, please stop.
+    I will write my own solution to the problem, If you want to solve those by yourself, please stop.
     
     
 
