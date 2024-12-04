@@ -10,13 +10,11 @@
         <meta name="author" content="苍镜月">
       
       
-        <link rel="canonical" href="https://cangjingyue.top/blog/2024/11/12/rocketmq-%E9%83%A8%E7%BD%B2/">
+        <link rel="canonical" href="https://cangjingyue.top/blog/2024/12/01/shell-tools-and-scripting/">
       
       
-        <link rel="prev" href="../docker/">
+        <link rel="prev" href="../the-shell/">
       
-      
-        <link rel="next" href="../redis-%E9%83%A8%E7%BD%B2/">
       
       
       <link rel="icon" href="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png">
@@ -24,7 +22,7 @@
     
     
       
-        <title>RocketMQ 部署 - 苍镜月's docs</title>
+        <title>Shell Tools and Scripting - 苍镜月's docs</title>
       
     
     
@@ -100,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rocketmq" class="md-skip">
+        <a href="#shell-tools-and-scripting" class="md-skip">
           跳转至
         </a>
       
@@ -133,7 +131,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              RocketMQ 部署
+              Shell Tools and Scripting
             
           </span>
         </div>
@@ -1945,63 +1943,147 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#shell-scripting" class="md-nav__link">
     <span class="md-ellipsis">
-      创建挂载目录
+      Shell Scripting
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shell Scripting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-assign-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Assign Variables
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Functions
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-function-arguments" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Function arguments
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-substitution" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Substitution
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-globbing" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Globbing
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-shebang" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. shebang
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shell-tools" class="md-nav__link">
+    <span class="md-ellipsis">
+      Shell Tools
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Shell Tools">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-finding-how-to-use-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Finding how to use commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-finding-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. Finding files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-finding-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. Finding code
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-finding-shell-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Finding shell commands
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-directory-navigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. Directory Navigation
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercises" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercises
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
+  <a href="#summary" class="md-nav__link">
     <span class="md-ellipsis">
-      创建挂载的配置文件
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#acl" class="md-nav__link">
-    <span class="md-ellipsis">
-      创建acl文件，用于开启用户名密码
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#console" class="md-nav__link">
-    <span class="md-ellipsis">
-      设置console的账号密码
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#yml" class="md-nav__link">
-    <span class="md-ellipsis">
-      创建yml文件
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9876109118180" class="md-nav__link">
-    <span class="md-ellipsis">
-      ！！安全组添加端口 9876，10911，8180 ！！
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
-    <span class="md-ellipsis">
-      启动控制台
+      Summary
     </span>
   </a>
   
@@ -2063,7 +2145,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2024-11-12 00:00:00+00:00" class="md-ellipsis">2024年11月12日星期二</time>
+                        <time datetime="2024-12-01 00:00:00+00:00" class="md-ellipsis">2024年12月1日星期日</time>
                       </div>
                     </li>
                     
@@ -2074,7 +2156,7 @@
                           <span class="md-ellipsis">
                             分类于
                             
-                              <a href="../../../../category/docker/">docker</a></span>
+                              <a href="../../../../category/cs/">CS</a></span>
                         </div>
                       </li>
                     
@@ -2085,7 +2167,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 4 分钟阅读时间
+                              需要 12 分钟阅读时间
                             
                           </span>
                         </div>
@@ -2111,14 +2193,20 @@
     
     
     
-      <a href="../../../../../tag/#docker" class="md-tag">docker</a>
+      <a href="../../../../../tag/#cs" class="md-tag">CS</a>
+    
+  
+    
+    
+    
+      <a href="../../../../../tag/#missing" class="md-tag">Missing</a>
     
   
 </nav>
 
 
   
-    <a href="https://github.com/Pale-illusions/my-mkdocs.git/edit/main/docs/blog/posts/docker/RocketMQ.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/Pale-illusions/my-mkdocs.git/edit/main/docs/blog/posts/CS/MIT Missing-Semester/Shell Tools and Scripting.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2127,204 +2215,132 @@
     
       
     
-    <a href="https://github.com/Pale-illusions/my-mkdocs.git/raw/main/docs/blog/posts/docker/RocketMQ.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/Pale-illusions/my-mkdocs.git/raw/main/docs/blog/posts/CS/MIT Missing-Semester/Shell Tools and Scripting.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="rocketmq">RocketMQ 部署<a class="headerlink" href="#rocketmq" title="Permanent link">&para;</a></h1>
+<h1 id="shell-tools-and-scripting">Shell Tools and Scripting<a class="headerlink" href="#shell-tools-and-scripting" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 236 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 225 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 4 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2038 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 149 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
 </div>
-<h2 id="_1">创建挂载目录<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="admonition attachment">
+<p class="admonition-title">Attachment</p>
+<p>course link: <a href="https://missing.csail.mit.edu/2020/shell-tools/">Shell Tools and Scripting</a></p>
+</div>
+<h2 id="shell-scripting">Shell Scripting<a class="headerlink" href="#shell-scripting" title="Permanent link">&para;</a></h2>
+<h3 id="1-assign-variables">1. Assign Variables<a class="headerlink" href="#1-assign-variables" title="Permanent link">&para;</a></h3>
+<p>To assign variables in bash, use the syntax <code>foo=bar</code> and access the value of the variable with <code>$foo</code>. Note that <code>foo = bar</code> will not work since it is interpreted as calling the <code>foo</code> program with <strong>arguments <code>=</code> and <code>bar</code></strong>. In general, in shell scripts the space character will perform argument splitting. This behavior can be confusing to use at first, so always check for that.</p>
+<p>Strings in bash can be defined with <code>'</code> and <code>"</code> delimiters.</p>
+<p>Strings delimited with <code>'</code> are <strong>literal</strong> strings and <strong>will not</strong> substitute variable values.</p>
+<p>Strings delimited with <code>"</code> <strong>will</strong> substitute variable values.</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">#创建挂载目录</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/data/rocketmq/namesrv<span class="p">;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/data/rocketmq/broker/conf<span class="p">;</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/data/rocketmq/broker/lib<span class="p">;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>mkdir<span class="w"> </span>-p<span class="w"> </span>/data/rocketmq/console/data<span class="p">;</span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nv">foo</span><span class="o">=</span>bar
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$foo</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1"># prints bar</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;$foo&#39;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1"># prints $foo</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="_2">创建挂载的配置文件<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
-<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>vi<span class="w"> </span>/data/rocketmq/broker/conf/broker.conf
+<hr />
+<h3 id="2-functions">2. Functions<a class="headerlink" href="#2-functions" title="Permanent link">&para;</a></h3>
+<p>As with most programming languages, bash supports control flow techniques including <code>if</code>, <code>case</code>, <code>while</code> and <code>for</code>. Similarly, bash has <strong>functions</strong> that take arguments and can operate with them. </p>
+<p>Here is an example of a function that <strong>creates a directory and cds into it</strong>.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>mcd<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span>
-<span class="normal"><a href="#__codelineno-2-18">18</a></span>
-<span class="normal"><a href="#__codelineno-2-19">19</a></span>
-<span class="normal"><a href="#__codelineno-2-20">20</a></span>
-<span class="normal"><a href="#__codelineno-2-21">21</a></span>
-<span class="normal"><a href="#__codelineno-2-22">22</a></span>
-<span class="normal"><a href="#__codelineno-2-23">23</a></span>
-<span class="normal"><a href="#__codelineno-2-24">24</a></span>
-<span class="normal"><a href="#__codelineno-2-25">25</a></span>
-<span class="normal"><a href="#__codelineno-2-26">26</a></span>
-<span class="normal"><a href="#__codelineno-2-27">27</a></span>
-<span class="normal"><a href="#__codelineno-2-28">28</a></span>
-<span class="normal"><a href="#__codelineno-2-29">29</a></span>
-<span class="normal"><a href="#__codelineno-2-30">30</a></span>
-<span class="normal"><a href="#__codelineno-2-31">31</a></span>
-<span class="normal"><a href="#__codelineno-2-32">32</a></span>
-<span class="normal"><a href="#__codelineno-2-33">33</a></span>
-<span class="normal"><a href="#__codelineno-2-34">34</a></span>
-<span class="normal"><a href="#__codelineno-2-35">35</a></span>
-<span class="normal"><a href="#__codelineno-2-36">36</a></span>
-<span class="normal"><a href="#__codelineno-2-37">37</a></span>
-<span class="normal"><a href="#__codelineno-2-38">38</a></span>
-<span class="normal"><a href="#__codelineno-2-39">39</a></span>
-<span class="normal"><a href="#__codelineno-2-40">40</a></span>
-<span class="normal"><a href="#__codelineno-2-41">41</a></span>
-<span class="normal"><a href="#__codelineno-2-42">42</a></span>
-<span class="normal"><a href="#__codelineno-2-43">43</a></span>
-<span class="normal"><a href="#__codelineno-2-44">44</a></span>
-<span class="normal"><a href="#__codelineno-2-45">45</a></span>
-<span class="normal"><a href="#__codelineno-2-46">46</a></span>
-<span class="normal"><a href="#__codelineno-2-47">47</a></span>
-<span class="normal"><a href="#__codelineno-2-48">48</a></span>
-<span class="normal"><a href="#__codelineno-2-49">49</a></span>
-<span class="normal"><a href="#__codelineno-2-50">50</a></span>
-<span class="normal"><a href="#__codelineno-2-51">51</a></span>
-<span class="normal"><a href="#__codelineno-2-52">52</a></span>
-<span class="normal"><a href="#__codelineno-2-53">53</a></span>
-<span class="normal"><a href="#__codelineno-2-54">54</a></span>
-<span class="normal"><a href="#__codelineno-2-55">55</a></span>
-<span class="normal"><a href="#__codelineno-2-56">56</a></span>
-<span class="normal"><a href="#__codelineno-2-57">57</a></span>
-<span class="normal"><a href="#__codelineno-2-58">58</a></span>
-<span class="normal"><a href="#__codelineno-2-59">59</a></span>
-<span class="normal"><a href="#__codelineno-2-60">60</a></span>
-<span class="normal"><a href="#__codelineno-2-61">61</a></span>
-<span class="normal"><a href="#__codelineno-2-62">62</a></span>
-<span class="normal"><a href="#__codelineno-2-63">63</a></span>
-<span class="normal"><a href="#__codelineno-2-64">64</a></span>
-<span class="normal"><a href="#__codelineno-2-65">65</a></span>
-<span class="normal"><a href="#__codelineno-2-66">66</a></span>
-<span class="normal"><a href="#__codelineno-2-67">67</a></span>
-<span class="normal"><a href="#__codelineno-2-68">68</a></span>
-<span class="normal"><a href="#__codelineno-2-69">69</a></span>
-<span class="normal"><a href="#__codelineno-2-70">70</a></span>
-<span class="normal"><a href="#__codelineno-2-71">71</a></span>
-<span class="normal"><a href="#__codelineno-2-72">72</a></span>
-<span class="normal"><a href="#__codelineno-2-73">73</a></span>
-<span class="normal"><a href="#__codelineno-2-74">74</a></span>
-<span class="normal"><a href="#__codelineno-2-75">75</a></span>
-<span class="normal"><a href="#__codelineno-2-76">76</a></span>
-<span class="normal"><a href="#__codelineno-2-77">77</a></span>
-<span class="normal"><a href="#__codelineno-2-78">78</a></span>
-<span class="normal"><a href="#__codelineno-2-79">79</a></span>
-<span class="normal"><a href="#__codelineno-2-80">80</a></span>
-<span class="normal"><a href="#__codelineno-2-81">81</a></span>
-<span class="normal"><a href="#__codelineno-2-82">82</a></span>
-<span class="normal"><a href="#__codelineno-2-83">83</a></span>
-<span class="normal"><a href="#__codelineno-2-84">84</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="c1">#所属集群名字</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="nv">brokerClusterName</span><span class="o">=</span>DefaultCluster
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="c1">#broker名字，注意此处不同的配置文件填写的不一样，如果在broker-a.properties使用:broker-a,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="c1">#在broker-b.properties使用:broker-b</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="nv">brokerName</span><span class="o">=</span>broker-a
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="c1">#0 表示Master，&gt;0 表示Slave</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="nv">brokerId</span><span class="o">=</span><span class="m">0</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="c1">#nameServer地址，分号分割</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="c1">#namesrvAddr=rocketmq-nameserver1:9876;rocketmq-nameserver2:9876</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="nv">namesrvAddr</span><span class="o">=</span>rocketmq-namesrv:9876
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a>
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="c1">#启动IP,如果 docker 报 com.alibaba.rocketmq.remoting.exception.RemotingConnectException: connect to &lt;192.168.0.120:10909&gt; failed</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="c1"># 解决方式1 加上一句producer.setVipChannelEnabled(false);，解决方式2 brokerIP1 设置宿主机IP，不要使用docker 内部IP</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="nv">brokerIP1</span><span class="o">=</span><span class="m">120</span>.26.2.151
-<a id="__codelineno-2-18" name="__codelineno-2-18"></a>
-<a id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="c1">#在发送消息时，自动创建服务器不存在的topic，默认创建的队列数</span>
-<a id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="nv">defaultTopicQueueNums</span><span class="o">=</span><span class="m">4</span>
-<a id="__codelineno-2-21" name="__codelineno-2-21"></a>
-<a id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="c1">#是否允许 Broker 自动创建Topic，建议线下开启，线上关闭 ！！！这里仔细看是false，false，false</span>
-<a id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="nv">autoCreateTopicEnable</span><span class="o">=</span><span class="nb">true</span>
-<a id="__codelineno-2-24" name="__codelineno-2-24"></a>
-<a id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="c1">#是否允许 Broker 自动创建订阅组，建议线下开启，线上关闭</span>
-<a id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="nv">autoCreateSubscriptionGroup</span><span class="o">=</span><span class="nb">true</span>
-<a id="__codelineno-2-27" name="__codelineno-2-27"></a>
-<a id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="c1">#Broker 对外服务的监听端口</span>
-<a id="__codelineno-2-29" name="__codelineno-2-29"></a><span class="nv">listenPort</span><span class="o">=</span><span class="m">10911</span>
-<a id="__codelineno-2-30" name="__codelineno-2-30"></a>
-<a id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="c1">#此参数控制是否开启密码,不开启可设置false</span>
-<a id="__codelineno-2-32" name="__codelineno-2-32"></a><span class="nv">aclEnable</span><span class="o">=</span><span class="nb">true</span>
-<a id="__codelineno-2-33" name="__codelineno-2-33"></a>
-<a id="__codelineno-2-34" name="__codelineno-2-34"></a><span class="c1">#删除文件时间点，默认凌晨4点</span>
-<a id="__codelineno-2-35" name="__codelineno-2-35"></a><span class="nv">deleteWhen</span><span class="o">=</span><span class="m">04</span>
-<a id="__codelineno-2-36" name="__codelineno-2-36"></a>
-<a id="__codelineno-2-37" name="__codelineno-2-37"></a><span class="c1">#文件保留时间，默认48小时</span>
-<a id="__codelineno-2-38" name="__codelineno-2-38"></a><span class="nv">fileReservedTime</span><span class="o">=</span><span class="m">120</span>
-<a id="__codelineno-2-39" name="__codelineno-2-39"></a>
-<a id="__codelineno-2-40" name="__codelineno-2-40"></a><span class="c1">#commitLog每个文件的大小默认1G</span>
-<a id="__codelineno-2-41" name="__codelineno-2-41"></a><span class="nv">mapedFileSizeCommitLog</span><span class="o">=</span><span class="m">1073741824</span>
-<a id="__codelineno-2-42" name="__codelineno-2-42"></a>
-<a id="__codelineno-2-43" name="__codelineno-2-43"></a><span class="c1">#ConsumeQueue每个文件默认存30W条，根据业务情况调整</span>
-<a id="__codelineno-2-44" name="__codelineno-2-44"></a><span class="nv">mapedFileSizeConsumeQueue</span><span class="o">=</span><span class="m">300000</span>
-<a id="__codelineno-2-45" name="__codelineno-2-45"></a>
-<a id="__codelineno-2-46" name="__codelineno-2-46"></a><span class="c1">#destroyMapedFileIntervalForcibly=120000</span>
-<a id="__codelineno-2-47" name="__codelineno-2-47"></a><span class="c1">#redeleteHangedFileInterval=120000</span>
-<a id="__codelineno-2-48" name="__codelineno-2-48"></a><span class="c1">#检测物理文件磁盘空间</span>
-<a id="__codelineno-2-49" name="__codelineno-2-49"></a><span class="nv">diskMaxUsedSpaceRatio</span><span class="o">=</span><span class="m">88</span>
-<a id="__codelineno-2-50" name="__codelineno-2-50"></a><span class="c1">#存储路径</span>
-<a id="__codelineno-2-51" name="__codelineno-2-51"></a><span class="c1">#storePathRootDir=/home/ztztdata/rocketmq-all-4.1.0-incubating/store</span>
-<a id="__codelineno-2-52" name="__codelineno-2-52"></a><span class="c1">#commitLog 存储路径</span>
-<a id="__codelineno-2-53" name="__codelineno-2-53"></a><span class="c1">#storePathCommitLog=/home/ztztdata/rocketmq-all-4.1.0-incubating/store/commitlog</span>
-<a id="__codelineno-2-54" name="__codelineno-2-54"></a><span class="c1">#消费队列存储</span>
-<a id="__codelineno-2-55" name="__codelineno-2-55"></a><span class="c1">#storePathConsumeQueue=/home/ztztdata/rocketmq-all-4.1.0-incubating/store/consumequeue</span>
-<a id="__codelineno-2-56" name="__codelineno-2-56"></a><span class="c1">#消息索引存储路径</span>
-<a id="__codelineno-2-57" name="__codelineno-2-57"></a><span class="c1">#storePathIndex=/home/ztztdata/rocketmq-all-4.1.0-incubating/store/index</span>
-<a id="__codelineno-2-58" name="__codelineno-2-58"></a><span class="c1">#checkpoint 文件存储路径</span>
-<a id="__codelineno-2-59" name="__codelineno-2-59"></a><span class="c1">#storeCheckpoint=/home/ztztdata/rocketmq-all-4.1.0-incubating/store/checkpoint</span>
-<a id="__codelineno-2-60" name="__codelineno-2-60"></a><span class="c1">#abort 文件存储路径</span>
-<a id="__codelineno-2-61" name="__codelineno-2-61"></a><span class="c1">#abortFile=/home/ztztdata/rocketmq-all-4.1.0-incubating/store/abort</span>
-<a id="__codelineno-2-62" name="__codelineno-2-62"></a><span class="c1">#限制的消息大小</span>
-<a id="__codelineno-2-63" name="__codelineno-2-63"></a><span class="nv">maxMessageSize</span><span class="o">=</span><span class="m">65536</span>
-<a id="__codelineno-2-64" name="__codelineno-2-64"></a>
-<a id="__codelineno-2-65" name="__codelineno-2-65"></a><span class="c1">#flushCommitLogLeastPages=4</span>
-<a id="__codelineno-2-66" name="__codelineno-2-66"></a><span class="c1">#flushConsumeQueueLeastPages=2</span>
-<a id="__codelineno-2-67" name="__codelineno-2-67"></a><span class="c1">#flushCommitLogThoroughInterval=10000</span>
-<a id="__codelineno-2-68" name="__codelineno-2-68"></a><span class="c1">#flushConsumeQueueThoroughInterval=60000</span>
-<a id="__codelineno-2-69" name="__codelineno-2-69"></a>
-<a id="__codelineno-2-70" name="__codelineno-2-70"></a><span class="c1">#Broker 的角色</span>
-<a id="__codelineno-2-71" name="__codelineno-2-71"></a><span class="c1">#- ASYNC_MASTER 异步复制Master</span>
-<a id="__codelineno-2-72" name="__codelineno-2-72"></a><span class="c1">#- SYNC_MASTER 同步双写Master</span>
-<a id="__codelineno-2-73" name="__codelineno-2-73"></a><span class="c1">#- SLAVE</span>
-<a id="__codelineno-2-74" name="__codelineno-2-74"></a><span class="nv">brokerRole</span><span class="o">=</span>ASYNC_MASTER
-<a id="__codelineno-2-75" name="__codelineno-2-75"></a>
-<a id="__codelineno-2-76" name="__codelineno-2-76"></a><span class="c1">#刷盘方式</span>
-<a id="__codelineno-2-77" name="__codelineno-2-77"></a><span class="c1">#- ASYNC_FLUSH 异步刷盘</span>
-<a id="__codelineno-2-78" name="__codelineno-2-78"></a><span class="c1">#- SYNC_FLUSH 同步刷盘</span>
-<a id="__codelineno-2-79" name="__codelineno-2-79"></a><span class="nv">flushDiskType</span><span class="o">=</span>ASYNC_FLUSH
-<a id="__codelineno-2-80" name="__codelineno-2-80"></a>
-<a id="__codelineno-2-81" name="__codelineno-2-81"></a><span class="c1">#发消息线程池数量</span>
-<a id="__codelineno-2-82" name="__codelineno-2-82"></a><span class="c1">#sendMessageThreadPoolNums=128</span>
-<a id="__codelineno-2-83" name="__codelineno-2-83"></a><span class="c1">#拉消息线程池数量</span>
-<a id="__codelineno-2-84" name="__codelineno-2-84"></a><span class="c1">#pullMessageThreadPoolNums=128</span>
-</code></pre></div></td></tr></table></div></p>
-<p><code>brokerIP1=47.99.73.85</code>填上自己<strong>服务器公网ip</strong>，客户端发送消息要联这个</p>
-<p><strong>如果有设置密码的需求，broker.conf开启acl密码配置 true</strong></p>
-<h2 id="acl">创建acl文件，用于开启用户名密码<a class="headerlink" href="#acl" title="Permanent link">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>vi<span class="w"> </span>/data/rocketmq/broker/conf/plain_acl.yml
+<p>Here is how to test <code>mcd</code> function</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>vim<span class="w"> </span>mcd.sh
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1"># paste the code into it...</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nb">source</span><span class="w"> </span>mcd.sh
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>mcd<span class="w"> </span><span class="nb">test</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="c1"># And you will find that you are in the test directory, which is a </span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="c1"># child dir in which you run the mcd program</span>
 </code></pre></div></td></tr></table></div>
+<hr />
+<h3 id="3-function-arguments">3. Function arguments<a class="headerlink" href="#3-function-arguments" title="Permanent link">&para;</a></h3>
+<p>Unlike other scripting languages, bash uses a variety of special variables to refer to <strong>arguments, error codes, and other relevant variables</strong>. Below is a list of some of them. A more comprehensive list can be found <a href="https://tldp.org/LDP/abs/html/special-chars.html">here</a>.</p>
+<ul>
+<li><code>$0</code> - <strong>Name</strong> of the script</li>
+<li><code>$1</code> to <code>$9</code> - Arguments to the script. <code>$1</code> is the first argument and so on.</li>
+<li><code>$@</code> - <strong>All</strong> the arguments</li>
+<li><code>$#</code> - <strong>Number</strong> of arguments</li>
+<li><code>$?</code> - Return code of the <strong>previous</strong> command</li>
+<li><code>$$</code> - Process identification number <strong>(PID)</strong> for the current script</li>
+<li><code>!!</code> - <strong>Entire last command</strong>, including arguments. A common pattern is to execute a command only for it to fail due to missing permissions; you can quickly re-execute the command with sudo by doing <code>sudo !!</code></li>
+<li><code>$_</code> - <strong>Last argument</strong> from the <strong>last command</strong>. If you are in an interactive shell, you can also quickly get this value by typing <code>Esc</code> followed by <code>.</code> or <code>Alt+</code>.</li>
+</ul>
+<p>Commands will often return <strong>output</strong> using <code>STDOUT</code>, <strong>errors</strong> through <code>STDERR</code>, and a <strong>Return Code</strong> to report errors in a more script-friendly manner. </p>
+<p>The <strong>return code</strong> or <strong>exit status</strong> is the way scripts/commands have to communicate how execution went. </p>
+<ul>
+<li>A value of <code>0</code> usually means everything went <strong>OK</strong></li>
+<li>anything <strong>different</strong> from <code>0</code> means an <strong>error</strong> occurred.</li>
+</ul>
+<p>Exit codes can be used to conditionally execute commands using <code>&amp;&amp;</code> (and operator) and <code>||</code> (or operator), both of which are short-circuiting operators. </p>
+<p>Commands can also be separated within the same line using a semicolon <code>;</code>. </p>
+<ul>
+<li>The <code>true</code> program will always have a <code>0</code> return code</li>
+<li>the <code>false</code> command will always have a <code>1</code> return code. </li>
+</ul>
+<p>Let’s see some examples</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nb">false</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Oops, fail&quot;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1"># Oops, fail</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="nb">true</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Will not be printed&quot;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="c1">#</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="nb">true</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Things went well&quot;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="c1"># Things went well</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="nb">false</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Will not be printed&quot;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="c1">#</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="nb">true</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This will always run&quot;</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="c1"># This will always run</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="nb">false</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This will always run&quot;</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="c1"># This will always run</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h3 id="4-substitution">4. Substitution<a class="headerlink" href="#4-substitution" title="Permanent link">&para;</a></h3>
+<p>Another common pattern is wanting to get the output of a command as a variable. </p>
+<p>This can be done with <code>command substitution</code>. Whenever you place <code>$( CMD )</code> it will execute <code>CMD</code>, get the output of the command and substitute it in place. </p>
+<p>For example, if you do <code>for file in $(ls)</code>, the shell will first call ls and then iterate over those values. </p>
+<p>A lesser known similar feature is <code>process substitution</code>, <code>&lt;( CMD )</code> will execute <code>CMD</code> and place the output in a <strong>temporary file</strong> and <strong>substitute</strong> the <code>&lt;()</code> with that <strong>file’s name</strong>.</p>
+<p>This is useful when commands expect values to be passed by <strong>file</strong> instead of by <code>STDIN</code>. For example, <code>diff &lt;(ls foo) &lt;(ls bar)</code> will show differences between files in dirs <code>foo</code> and <code>bar</code>.</p>
+<p><br/></p>
+<p>let’s see an <strong>example</strong> that showcases some of these features. </p>
+<p><strong><em>It will iterate through the arguments we provide, grep for the string foobar, and append it to the file as a comment if it’s not found.</em></strong></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -2339,274 +2355,368 @@
 <span class="normal"><a href="#__codelineno-4-12">12</a></span>
 <span class="normal"><a href="#__codelineno-4-13">13</a></span>
 <span class="normal"><a href="#__codelineno-4-14">14</a></span>
-<span class="normal"><a href="#__codelineno-4-15">15</a></span>
-<span class="normal"><a href="#__codelineno-4-16">16</a></span>
-<span class="normal"><a href="#__codelineno-4-17">17</a></span>
-<span class="normal"><a href="#__codelineno-4-18">18</a></span>
-<span class="normal"><a href="#__codelineno-4-19">19</a></span>
-<span class="normal"><a href="#__codelineno-4-20">20</a></span>
-<span class="normal"><a href="#__codelineno-4-21">21</a></span>
-<span class="normal"><a href="#__codelineno-4-22">22</a></span>
-<span class="normal"><a href="#__codelineno-4-23">23</a></span>
-<span class="normal"><a href="#__codelineno-4-24">24</a></span>
-<span class="normal"><a href="#__codelineno-4-25">25</a></span>
-<span class="normal"><a href="#__codelineno-4-26">26</a></span>
-<span class="normal"><a href="#__codelineno-4-27">27</a></span>
-<span class="normal"><a href="#__codelineno-4-28">28</a></span>
-<span class="normal"><a href="#__codelineno-4-29">29</a></span>
-<span class="normal"><a href="#__codelineno-4-30">30</a></span>
-<span class="normal"><a href="#__codelineno-4-31">31</a></span>
-<span class="normal"><a href="#__codelineno-4-32">32</a></span>
-<span class="normal"><a href="#__codelineno-4-33">33</a></span>
-<span class="normal"><a href="#__codelineno-4-34">34</a></span>
-<span class="normal"><a href="#__codelineno-4-35">35</a></span>
-<span class="normal"><a href="#__codelineno-4-36">36</a></span>
-<span class="normal"><a href="#__codelineno-4-37">37</a></span>
-<span class="normal"><a href="#__codelineno-4-38">38</a></span>
-<span class="normal"><a href="#__codelineno-4-39">39</a></span>
-<span class="normal"><a href="#__codelineno-4-40">40</a></span>
-<span class="normal"><a href="#__codelineno-4-41">41</a></span>
-<span class="normal"><a href="#__codelineno-4-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1"># Licensed to the Apache Software Foundation (ASF) under one or more</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="c1"># contributor license agreements.  See the NOTICE file distributed with</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1"># this work for additional information regarding copyright ownership.</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c1"># The ASF licenses this file to You under the Apache License, Version 2.0</span>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="c1"># (the &quot;License&quot;); you may not use this file except in compliance with</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1"># the License.  You may obtain a copy of the License at</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="c1">#</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="c1">#     http://www.apache.org/licenses/LICENSE-2.0</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="c1">#</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="c1">#  Unless required by applicable law or agreed to in writing, software</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="c1">#  distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="c1">#  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="c1">#  See the License for the specific language governing permissions and</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="c1">#  limitations under the License.</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15"></a>globalWhiteRemoteAddresses:
-<a id="__codelineno-4-16" name="__codelineno-4-16"></a><span class="c1">#  - 47.100.93.*</span>
-<a id="__codelineno-4-17" name="__codelineno-4-17"></a><span class="c1">#  - 156.254.120.*</span>
-<a id="__codelineno-4-18" name="__codelineno-4-18"></a>
-<a id="__codelineno-4-19" name="__codelineno-4-19"></a>accounts:
-<a id="__codelineno-4-20" name="__codelineno-4-20"></a><span class="w">    </span><span class="c1"># 非管理员</span>
-<a id="__codelineno-4-21" name="__codelineno-4-21"></a><span class="w">  </span>-<span class="w"> </span>accessKey:<span class="w"> </span>RocketMQ
-<a id="__codelineno-4-22" name="__codelineno-4-22"></a><span class="w">    </span>secretKey:<span class="w"> </span>Cjy050119
-<a id="__codelineno-4-23" name="__codelineno-4-23"></a><span class="w">    </span>whiteRemoteAddress:
-<a id="__codelineno-4-24" name="__codelineno-4-24"></a><span class="w">    </span>admin:<span class="w"> </span><span class="nb">false</span>
-<a id="__codelineno-4-25" name="__codelineno-4-25"></a><span class="w">    </span>defaultTopicPerm:<span class="w"> </span>DENY
-<a id="__codelineno-4-26" name="__codelineno-4-26"></a><span class="w">    </span>defaultGroupPerm:<span class="w"> </span>SUB
-<a id="__codelineno-4-27" name="__codelineno-4-27"></a><span class="w">    </span>topicPerms:
-<a id="__codelineno-4-28" name="__codelineno-4-28"></a><span class="w">      </span>-<span class="w"> </span><span class="nv">topicA</span><span class="o">=</span>DENY
-<a id="__codelineno-4-29" name="__codelineno-4-29"></a><span class="w">      </span>-<span class="w"> </span><span class="nv">topicB</span><span class="o">=</span>PUB<span class="p">|</span>SUB
-<a id="__codelineno-4-30" name="__codelineno-4-30"></a><span class="w">      </span>-<span class="w"> </span><span class="nv">topicC</span><span class="o">=</span>SUB
-<a id="__codelineno-4-31" name="__codelineno-4-31"></a><span class="w">    </span>groupPerms:
-<a id="__codelineno-4-32" name="__codelineno-4-32"></a><span class="w">      </span><span class="c1"># the group should convert to retry topic</span>
-<a id="__codelineno-4-33" name="__codelineno-4-33"></a><span class="w">      </span>-<span class="w"> </span><span class="nv">groupA</span><span class="o">=</span>DENY
-<a id="__codelineno-4-34" name="__codelineno-4-34"></a><span class="w">      </span>-<span class="w"> </span><span class="nv">groupB</span><span class="o">=</span>PUB<span class="p">|</span>SUB
-<a id="__codelineno-4-35" name="__codelineno-4-35"></a><span class="w">      </span>-<span class="w"> </span><span class="nv">groupC</span><span class="o">=</span>SUB
-<a id="__codelineno-4-36" name="__codelineno-4-36"></a>
-<a id="__codelineno-4-37" name="__codelineno-4-37"></a><span class="w">    </span><span class="c1"># 管理员</span>
-<a id="__codelineno-4-38" name="__codelineno-4-38"></a><span class="w">  </span>-<span class="w"> </span>accessKey:<span class="w"> </span>admin123456
-<a id="__codelineno-4-39" name="__codelineno-4-39"></a><span class="w">    </span>secretKey:<span class="w"> </span>Cjy123456
-<a id="__codelineno-4-40" name="__codelineno-4-40"></a><span class="w">    </span>whiteRemoteAddress:<span class="w"> </span>
-<a id="__codelineno-4-41" name="__codelineno-4-41"></a><span class="w">    </span><span class="c1"># if it is admin, it could access all resources</span>
-<a id="__codelineno-4-42" name="__codelineno-4-42"></a><span class="w">    </span>admin:<span class="w"> </span><span class="nb">true</span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Starting program at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="c1"># Date will be substituted</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Running program </span><span class="nv">$0</span><span class="s2"> with </span><span class="nv">$#</span><span class="s2"> arguments with pid </span><span class="nv">$$</span><span class="s2">&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span>grep<span class="w"> </span>foobar<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">    </span><span class="c1"># When pattern is not found, grep has exit status 1</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">    </span><span class="c1"># We redirect STDOUT and STDERR to a null register since we do not care about them</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;File </span><span class="nv">$file</span><span class="s2"> does not have any foobar, adding one&quot;</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# foobar&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="k">fi</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="k">done</span>
 </code></pre></div></td></tr></table></div>
-<p><strong>密码</strong>不能小于<strong>6位数</strong>
-<strong>名称</strong>也不能小于<strong>6位</strong>
-权限的描述可参考<a href="https://github.com/apache/rocketmq/blob/master/docs/cn/acl/user_guide.md">链接</a></p>
-<h2 id="console">设置console的账号密码<a class="headerlink" href="#console" title="Permanent link">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>vi<span class="w">  </span>/data/rocketmq/console/data/users.properties
+<p>In the comparison we tested whether <strong><code>$?</code> was not equal to <code>0</code></strong>. Bash implements many comparisons of this sort - you can find a detailed list in the manpage for <a href="https://www.man7.org/linux/man-pages/man1/test.1.html">test</a>. </p>
+<p>When performing comparisons in bash, try to use double brackets <code>[[ ]]</code> in favor of simple brackets <code>[ ]</code>. Chances of making mistakes are lower although it won’t be portable to <code>sh</code>. A more detailed explanation can be found <a href="https://mywiki.wooledge.org/BashFAQ/031">here</a>.</p>
+<hr />
+<h3 id="5-globbing">5. Globbing<a class="headerlink" href="#5-globbing" title="Permanent link">&para;</a></h3>
+<p>When launching scripts, you will often want to provide arguments that are <strong>similar</strong>. Bash has ways of making this easier, expanding expressions by carrying out filename expansion. These techniques are often referred to as <strong><em>shell globbing</em></strong>.</p>
+<ul>
+<li><strong>Wildcards</strong><ul>
+<li><code>?</code> match <strong>one</strong> character.</li>
+<li><code>*</code> match <strong>any</strong> amount of characters. </li>
+<li>For instance, given files <code>foo, foo1, foo2, foo10 and bar</code>, the command <code>rm foo?</code> will <strong>delete foo1 and foo2 whereas <code>rm foo*</code> will delete all but bar</strong>.</li>
+</ul>
+</li>
+<li><strong>Curly braces</strong> <code>{}</code> - Whenever you have a <strong>common substring</strong> in a <strong>series of commands</strong>, you can use curly braces for bash to <strong>expand</strong> this automatically. This comes in very handy when moving or converting files.</li>
+</ul>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#__codelineno-5-19">19</a></span>
+<span class="normal"><a href="#__codelineno-5-20">20</a></span>
+<span class="normal"><a href="#__codelineno-5-21">21</a></span>
+<span class="normal"><a href="#__codelineno-5-22">22</a></span>
+<span class="normal"><a href="#__codelineno-5-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>convert<span class="w"> </span>image.<span class="o">{</span>png,jpg<span class="o">}</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="c1"># Will expand to</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>convert<span class="w"> </span>image.png<span class="w"> </span>image.jpg
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>cp<span class="w"> </span>/path/to/project/<span class="o">{</span>foo,bar,baz<span class="o">}</span>.sh<span class="w"> </span>/newpath
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="c1"># Will expand to</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>cp<span class="w"> </span>/path/to/project/foo.sh<span class="w"> </span>/path/to/project/bar.sh<span class="w"> </span>/path/to/project/baz.sh<span class="w"> </span>/newpath
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="c1"># Globbing techniques can also be combined</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>mv<span class="w"> </span>*<span class="o">{</span>.py,.sh<span class="o">}</span><span class="w"> </span>folder
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="c1"># Will move all *.py and *.sh files</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a>mkdir<span class="w"> </span>foo<span class="w"> </span>bar
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="c1"># This creates files foo/a, foo/b, ... foo/h, bar/a, bar/b, ... bar/h</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>touch<span class="w"> </span><span class="o">{</span>foo,bar<span class="o">}</span>/<span class="o">{</span>a..h<span class="o">}</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a>touch<span class="w"> </span>foo/x<span class="w"> </span>bar/y
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="c1"># Show differences between files in foo and bar</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a>diff<span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>foo<span class="o">)</span><span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>bar<span class="o">)</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="c1"># Outputs</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="c1"># &lt; x</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="c1"># ---</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="c1"># &gt; y</span>
 </code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-6-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-6-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-6-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-6-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-6-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-6-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-6-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-6-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-6-10">10</a></span>
-<span class="normal"><a href="#__codelineno-6-11">11</a></span>
-<span class="normal"><a href="#__codelineno-6-12">12</a></span>
-<span class="normal"><a href="#__codelineno-6-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1"># This file supports hot change, any change will be auto-reloaded without Console restarting.</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="c1"># Format: a user per line, username=password[,N] #N is optional, 0 (Normal User); 1 (Admin)</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="c1"># Define Admin</span>
-<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="c1"># =============用户名和密码规则「用户名=密码,权限」，这里的权限为1表示管理员&gt;，为0表示普通用户=============</span>
-<a id="__codelineno-6-6" name="__codelineno-6-6"></a><span class="c1"># 例如：admin=admin123,1</span>
-<a id="__codelineno-6-7" name="__codelineno-6-7"></a><span class="nv">admin</span><span class="o">=</span><span class="m">123456</span>,1
-<a id="__codelineno-6-8" name="__codelineno-6-8"></a>
-<a id="__codelineno-6-9" name="__codelineno-6-9"></a>
-<a id="__codelineno-6-10" name="__codelineno-6-10"></a><span class="c1"># Define Users</span>
-<a id="__codelineno-6-11" name="__codelineno-6-11"></a><span class="c1"># =============屏蔽下边两个账户=============</span>
-<a id="__codelineno-6-12" name="__codelineno-6-12"></a><span class="c1">#user1=user1</span>
-<a id="__codelineno-6-13" name="__codelineno-6-13"></a><span class="c1">#user2=user2</span>
+<hr />
+<h3 id="6-shebang">6. shebang<a class="headerlink" href="#6-shebang" title="Permanent link">&para;</a></h3>
+<p>Note that <strong>scripts</strong> need not necessarily be written in bash to be called from the terminal. For instance, here’s a simple Python script that outputs its arguments in reversed order:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="ch">#!/usr/local/bin/python</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="kn">import</span> <span class="nn">sys</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="yml">创建yml文件<a class="headerlink" href="#yml" title="Permanent link">&para;</a></h2>
-<p><div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>vi<span class="w"> </span>/data/rocketmq/docker-compose.yml
+<p>The kernel knows to execute this script with a <strong>python interpreter</strong> <strong>instead of</strong> <strong>a</strong> <strong>shell command</strong> because we included a <strong>shebang</strong> line at the top of the script. </p>
+<p>It is good practice to write <strong>shebang</strong> lines using the <code>env</code> command that will resolve to wherever the command lives in the system, increasing the portability of your scripts.</p>
+<p>btw, if you really want to figure out where your program is, type this: <code>which python</code>, namely <code>which ***</code>, and add the output to the <strong>shebang</strong> line </p>
+<p>To resolve the location, <code>env</code> will make use of the <code>PATH</code> environment variable we introduced in the first lecture. For this example the <strong>shebang</strong> line would look like <code>#!/usr/bin/env python</code>.</p>
+<p>Some differences between shell functions and scripts that you should keep in mind are:</p>
+<ul>
+<li><strong>Functions</strong> have to be in the <strong>same</strong> language as the <strong>shell</strong>, while <strong>scripts</strong> can be written in <strong>any language</strong>. This is why including a <strong>shebang</strong> for scripts is important.</li>
+<li><strong>Functions</strong> are <strong>loaded once</strong> when their definition is read. <strong>Scripts</strong> are <strong>loaded every time</strong> they are executed. This makes functions slightly <strong>faster</strong> to load, but whenever you change them you will have to <strong>reload</strong> their definition.</li>
+<li><strong>Functions</strong> are executed in the <strong>current shell environment</strong> whereas <strong>scripts</strong> execute in their <strong>own process</strong>. Thus, <strong>functions can modify environment variables</strong>, e.g. change your current directory, whereas scripts can’t. Scripts will be passed by value environment variables that have been exported using export</li>
+<li>As with any programming language, functions are a powerful construct to achieve modularity, code reuse, and clarity of shell code. Often shell scripts will include their own function definitions.</li>
+</ul>
+<h2 id="shell-tools">Shell Tools<a class="headerlink" href="#shell-tools" title="Permanent link">&para;</a></h2>
+<h3 id="1-finding-how-to-use-commands">1. Finding how to use commands<a class="headerlink" href="#1-finding-how-to-use-commands" title="Permanent link">&para;</a></h3>
+<ul>
+<li>the first-order approach is to call said command with the <code>-h</code> or <code>--help</code> flags. </li>
+<li>A more detailed approach is to use the <code>man</code> command. Short for manual, man provides a manual page (called manpage) for a command you specify.</li>
+<li>For interactive tools such as the ones based on ncurses, help for the commands can often be accessed within the program using the <code>:help</code> command or typing <code>?</code>.</li>
+</ul>
+<p>Sometimes <strong>manpages</strong> can provide <strong>overly detailed</strong> descriptions of the commands, making it hard to decipher what flags/syntax to use for common use cases. </p>
+<p><a href="https://tldr.sh/">TLDR pages</a> are a nifty complementary solution that focuses on giving example use cases of a command so you can quickly figure out which options to use. </p>
+<p>To use <code>tldr</code>, just type: <code>tldr ***</code> (<strong><del>just remind, you need to install it first</del></strong>)</p>
+<hr />
+<h3 id="2-finding-files">2. Finding files<a class="headerlink" href="#2-finding-files" title="Permanent link">&para;</a></h3>
+<p><code>find</code> will recursively search for files matching some criteria. </p>
+<p>Some examples:</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span>
+<span class="normal"><a href="#__codelineno-7-7">7</a></span>
+<span class="normal"><a href="#__codelineno-7-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># Find all directories named src</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span>src<span class="w"> </span>-type<span class="w"> </span>d
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="c1"># Find all python files that have a folder named test in their path</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>find<span class="w"> </span>.<span class="w"> </span>-path<span class="w"> </span><span class="s1">&#39;*/test/*.py&#39;</span><span class="w"> </span>-type<span class="w"> </span>f
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="c1"># Find all files modified in the last day</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>find<span class="w"> </span>.<span class="w"> </span>-mtime<span class="w"> </span>-1
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="c1"># Find all zip files with size in range 500k to 10M</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a>find<span class="w"> </span>.<span class="w"> </span>-size<span class="w"> </span>+500k<span class="w"> </span>-size<span class="w"> </span>-10M<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.tar.gz&#39;</span>
 </code></pre></div></td></tr></table></div>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-8-10">10</a></span>
-<span class="normal"><a href="#__codelineno-8-11">11</a></span>
-<span class="normal"><a href="#__codelineno-8-12">12</a></span>
-<span class="normal"><a href="#__codelineno-8-13">13</a></span>
-<span class="normal"><a href="#__codelineno-8-14">14</a></span>
-<span class="normal"><a href="#__codelineno-8-15">15</a></span>
-<span class="normal"><a href="#__codelineno-8-16">16</a></span>
-<span class="normal"><a href="#__codelineno-8-17">17</a></span>
-<span class="normal"><a href="#__codelineno-8-18">18</a></span>
-<span class="normal"><a href="#__codelineno-8-19">19</a></span>
-<span class="normal"><a href="#__codelineno-8-20">20</a></span>
-<span class="normal"><a href="#__codelineno-8-21">21</a></span>
-<span class="normal"><a href="#__codelineno-8-22">22</a></span>
-<span class="normal"><a href="#__codelineno-8-23">23</a></span>
-<span class="normal"><a href="#__codelineno-8-24">24</a></span>
-<span class="normal"><a href="#__codelineno-8-25">25</a></span>
-<span class="normal"><a href="#__codelineno-8-26">26</a></span>
-<span class="normal"><a href="#__codelineno-8-27">27</a></span>
-<span class="normal"><a href="#__codelineno-8-28">28</a></span>
-<span class="normal"><a href="#__codelineno-8-29">29</a></span>
-<span class="normal"><a href="#__codelineno-8-30">30</a></span>
-<span class="normal"><a href="#__codelineno-8-31">31</a></span>
-<span class="normal"><a href="#__codelineno-8-32">32</a></span>
-<span class="normal"><a href="#__codelineno-8-33">33</a></span>
-<span class="normal"><a href="#__codelineno-8-34">34</a></span>
-<span class="normal"><a href="#__codelineno-8-35">35</a></span>
-<span class="normal"><a href="#__codelineno-8-36">36</a></span>
-<span class="normal"><a href="#__codelineno-8-37">37</a></span>
-<span class="normal"><a href="#__codelineno-8-38">38</a></span>
-<span class="normal"><a href="#__codelineno-8-39">39</a></span>
-<span class="normal"><a href="#__codelineno-8-40">40</a></span>
-<span class="normal"><a href="#__codelineno-8-41">41</a></span>
-<span class="normal"><a href="#__codelineno-8-42">42</a></span>
-<span class="normal"><a href="#__codelineno-8-43">43</a></span>
-<span class="normal"><a href="#__codelineno-8-44">44</a></span>
-<span class="normal"><a href="#__codelineno-8-45">45</a></span>
-<span class="normal"><a href="#__codelineno-8-46">46</a></span>
-<span class="normal"><a href="#__codelineno-8-47">47</a></span>
-<span class="normal"><a href="#__codelineno-8-48">48</a></span>
-<span class="normal"><a href="#__codelineno-8-49">49</a></span>
-<span class="normal"><a href="#__codelineno-8-50">50</a></span>
-<span class="normal"><a href="#__codelineno-8-51">51</a></span>
-<span class="normal"><a href="#__codelineno-8-52">52</a></span>
-<span class="normal"><a href="#__codelineno-8-53">53</a></span>
-<span class="normal"><a href="#__codelineno-8-54">54</a></span>
-<span class="normal"><a href="#__codelineno-8-55">55</a></span>
-<span class="normal"><a href="#__codelineno-8-56">56</a></span>
-<span class="normal"><a href="#__codelineno-8-57">57</a></span>
-<span class="normal"><a href="#__codelineno-8-58">58</a></span>
-<span class="normal"><a href="#__codelineno-8-59">59</a></span>
-<span class="normal"><a href="#__codelineno-8-60">60</a></span>
-<span class="normal"><a href="#__codelineno-8-61">61</a></span>
-<span class="normal"><a href="#__codelineno-8-62">62</a></span>
-<span class="normal"><a href="#__codelineno-8-63">63</a></span>
-<span class="normal"><a href="#__codelineno-8-64">64</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>version:<span class="w"> </span><span class="s1">&#39;3.8&#39;</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a>services:
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">  </span>rocketmq-namesrv:
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">    </span>image:<span class="w"> </span>foxiswho/rocketmq:4.8.0
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span>container_name:<span class="w"> </span>rocketmq-namesrv
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="w">    </span>restart:<span class="w"> </span>always
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span>ports:
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">      </span>-<span class="w"> </span><span class="m">9876</span>:9876
-<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span>volumes:
-<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">      </span>-<span class="w"> </span>./namesrv/logs:/home/rocketmq/logs
-<a id="__codelineno-8-11" name="__codelineno-8-11"></a><span class="w">      </span>-<span class="w"> </span>./namesrv/store:/home/rocketmq/store
-<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">    </span>environment:
-<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">      </span>JAVA_OPT_EXT:<span class="w"> </span><span class="s2">&quot;-Duser.home=/home/rocketmq -Xms128M -Xmx128M -Xmn128m&quot;</span>
-<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">    </span>command:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;sh&quot;</span>,<span class="s2">&quot;mqnamesrv&quot;</span><span class="o">]</span>
-<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">    </span>networks:
-<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">      </span>rocketmq_net:
-<a id="__codelineno-8-17" name="__codelineno-8-17"></a><span class="w">        </span>aliases:
-<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="w">          </span>-<span class="w"> </span>rocketmq-namesrv
-<a id="__codelineno-8-19" name="__codelineno-8-19"></a>
-<a id="__codelineno-8-20" name="__codelineno-8-20"></a>
-<a id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="w">  </span>rocketmq-broker:
-<a id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="w">    </span>image:<span class="w"> </span>foxiswho/rocketmq:4.8.0
-<a id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="w">    </span>container_name:<span class="w"> </span>rocketmq-broker
-<a id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="w">    </span>restart:<span class="w"> </span>always
-<a id="__codelineno-8-25" name="__codelineno-8-25"></a><span class="w">    </span>ports:
-<a id="__codelineno-8-26" name="__codelineno-8-26"></a><span class="w">      </span>-<span class="w"> </span><span class="m">10909</span>:10909
-<a id="__codelineno-8-27" name="__codelineno-8-27"></a><span class="w">      </span>-<span class="w"> </span><span class="m">10911</span>:10911
-<a id="__codelineno-8-28" name="__codelineno-8-28"></a><span class="w">    </span>volumes:
-<a id="__codelineno-8-29" name="__codelineno-8-29"></a><span class="w">      </span>-<span class="w"> </span>./broker/logs:/home/rocketmq/logs
-<a id="__codelineno-8-30" name="__codelineno-8-30"></a><span class="w">      </span>-<span class="w"> </span>./broker/store:/home/rocketmq/store
-<a id="__codelineno-8-31" name="__codelineno-8-31"></a><span class="w">      </span>-<span class="w"> </span>./broker/conf/plain_acl.yml:/home/rocketmq/rocketmq-4.8.0/conf/plain_acl.yml
-<a id="__codelineno-8-32" name="__codelineno-8-32"></a><span class="w">      </span>-<span class="w"> </span>./broker/conf/broker.conf:/etc/rocketmq/broker.conf
-<a id="__codelineno-8-33" name="__codelineno-8-33"></a><span class="w">    </span>environment:
-<a id="__codelineno-8-34" name="__codelineno-8-34"></a><span class="w">      </span>JAVA_OPT_EXT:<span class="w"> </span><span class="s2">&quot;-Duser.home=/home/rocketmq -Xms128m -Xmx128m -Xmn128m&quot;</span>
-<a id="__codelineno-8-35" name="__codelineno-8-35"></a><span class="w">    </span>command:<span class="w"> </span><span class="o">[</span><span class="s2">&quot;sh&quot;</span>,<span class="s2">&quot;mqbroker&quot;</span>,<span class="s2">&quot;-c&quot;</span>,<span class="s2">&quot;/etc/rocketmq/broker.conf&quot;</span><span class="o">]</span>
-<a id="__codelineno-8-36" name="__codelineno-8-36"></a><span class="w">    </span>depends_on:
-<a id="__codelineno-8-37" name="__codelineno-8-37"></a><span class="w">      </span>-<span class="w"> </span>rocketmq-namesrv
-<a id="__codelineno-8-38" name="__codelineno-8-38"></a><span class="w">    </span>networks:
-<a id="__codelineno-8-39" name="__codelineno-8-39"></a><span class="w">      </span>rocketmq_net:
-<a id="__codelineno-8-40" name="__codelineno-8-40"></a><span class="w">        </span>aliases:
-<a id="__codelineno-8-41" name="__codelineno-8-41"></a><span class="w">          </span>-<span class="w"> </span>rocketmq-broker
-<a id="__codelineno-8-42" name="__codelineno-8-42"></a>
-<a id="__codelineno-8-43" name="__codelineno-8-43"></a>
-<a id="__codelineno-8-44" name="__codelineno-8-44"></a><span class="w">  </span>rocketmq-console:
-<a id="__codelineno-8-45" name="__codelineno-8-45"></a><span class="w">    </span>image:<span class="w"> </span>iamverygood/rocketmq-console:4.7.1
-<a id="__codelineno-8-46" name="__codelineno-8-46"></a><span class="w">    </span>container_name:<span class="w"> </span>rocketmq-console
-<a id="__codelineno-8-47" name="__codelineno-8-47"></a><span class="w">    </span>restart:<span class="w"> </span>always
-<a id="__codelineno-8-48" name="__codelineno-8-48"></a><span class="w">    </span>ports:
-<a id="__codelineno-8-49" name="__codelineno-8-49"></a><span class="w">      </span>-<span class="w"> </span><span class="m">8180</span>:8080
-<a id="__codelineno-8-50" name="__codelineno-8-50"></a><span class="w">    </span>volumes:
-<a id="__codelineno-8-51" name="__codelineno-8-51"></a><span class="w">      </span>-<span class="w"> </span>./console/data:/tmp/rocketmq-console/data
-<a id="__codelineno-8-52" name="__codelineno-8-52"></a><span class="w">    </span>environment:
-<a id="__codelineno-8-53" name="__codelineno-8-53"></a><span class="w">      </span>JAVA_OPTS:<span class="w"> </span><span class="s2">&quot;-Drocketmq.namesrv.addr=rocketmq-namesrv:9876 -Dcom.rocketmq.sendMessageWithVIPChannel=false -Drocketmq.config.loginRequired=true -Drocketmq.config.aclEnabled=true -Drocketmq.config.accessKey=admin123456 -Drocketmq.config.secretKey=Cjy123456&quot;</span>
-<a id="__codelineno-8-54" name="__codelineno-8-54"></a><span class="w">    </span>depends_on:
-<a id="__codelineno-8-55" name="__codelineno-8-55"></a><span class="w">      </span>-<span class="w"> </span>rocketmq-namesrv
-<a id="__codelineno-8-56" name="__codelineno-8-56"></a><span class="w">    </span>networks:
-<a id="__codelineno-8-57" name="__codelineno-8-57"></a><span class="w">      </span>rocketmq_net:
-<a id="__codelineno-8-58" name="__codelineno-8-58"></a><span class="w">        </span>aliases:
-<a id="__codelineno-8-59" name="__codelineno-8-59"></a><span class="w">          </span>-<span class="w"> </span>rocketmq-console
-<a id="__codelineno-8-60" name="__codelineno-8-60"></a>
-<a id="__codelineno-8-61" name="__codelineno-8-61"></a>networks:
-<a id="__codelineno-8-62" name="__codelineno-8-62"></a><span class="w">  </span>rocketmq_net:
-<a id="__codelineno-8-63" name="__codelineno-8-63"></a><span class="w">    </span>name:<span class="w"> </span>rocketmq_net
-<a id="__codelineno-8-64" name="__codelineno-8-64"></a><span class="w">    </span>driver:<span class="w"> </span>bridge
-</code></pre></div></td></tr></table></div></p>
-<p>如果acl密码改了，记得把yml的console帐号密码也一同更改
-<code>-Drocketmq.config.accessKey=admin123456</code>
-<code>-Drocketmq.config.secretKey=Cjy123456</code>
-授予目录权限</p>
+<p>Beyond listing files, find can also perform actions over files that match your query. This property can be incredibly helpful to simplify what could be fairly monotonous tasks.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="c1"># Delete all files with .tmp extension</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.tmp&#39;</span><span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="c1"># Find all PNG files and convert them to JPG</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.png&#39;</span><span class="w"> </span>-exec<span class="w"> </span>convert<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="o">{}</span>.jpg<span class="w"> </span><span class="se">\;</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<h3 id="3-finding-code">3. Finding code<a class="headerlink" href="#3-finding-code" title="Permanent link">&para;</a></h3>
+<p><code>grep</code>, a generic tool for matching patterns from the input text. </p>
+<p>For now, know that <code>grep</code> has many flags that make it a very versatile tool. Some I frequently use are <code>-C</code> for getting Context around the matching line and <code>-v</code> for inverting the match, i.e. print all lines that do not match the pattern. </p>
+<p>For example, <code>grep -C 5</code> will print 5 lines before and after the match. When it comes to quickly searching through many files, you want to use <code>-R</code> since it will Recursively go into directories and look for files for the matching string.</p>
+<p>But <code>grep -R</code> can be improved in many ways, such as ignoring <code>.git</code> folders, using multi CPU support, &amp;c. </p>
+<p>Many grep alternatives have been developed, including <a href="https://github.com/beyondgrep/ack3">ack</a>, <a href="https://github.com/ggreer/the_silver_searcher">ag</a> and <a href="https://github.com/BurntSushi/ripgrep">rg</a>. All of them are fantastic and pretty much provide the same functionality. For now I am sticking with <strong>ripgrep (rg)</strong>, given how fast and intuitive it is. Some examples:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
 <span class="normal"><a href="#__codelineno-9-2">2</a></span>
 <span class="normal"><a href="#__codelineno-9-3">3</a></span>
-<span class="normal"><a href="#__codelineno-9-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1">#目录权限：</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span><span class="w"> </span>/data/rocketmq/namesrv/<span class="p">;</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span><span class="w"> </span>/data/rocketmq/broker/<span class="p">;</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span><span class="w"> </span>/data/rocketmq/console/<span class="p">;</span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span>
+<span class="normal"><a href="#__codelineno-9-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># Find all python files where I used the requests library</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>rg<span class="w"> </span>-t<span class="w"> </span>py<span class="w"> </span><span class="s1">&#39;import requests&#39;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="c1"># Find all files (including hidden files) without a shebang line</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>rg<span class="w"> </span>-u<span class="w"> </span>--files-without-match<span class="w"> </span><span class="s2">&quot;^#\!&quot;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="c1"># Find all matches of foo and print the following 5 lines</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>rg<span class="w"> </span>foo<span class="w"> </span>-A<span class="w"> </span><span class="m">5</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="c1"># Print statistics of matches (# of matched lines and files )</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>rg<span class="w"> </span>--stats<span class="w"> </span>PATTERN
 </code></pre></div></td></tr></table></div>
-<h2 id="9876109118180">！！安全组添加端口 9876，10911，8180 ！！<a class="headerlink" href="#9876109118180" title="Permanent link">&para;</a></h2>
+<hr />
+<h3 id="4-finding-shell-commands">4. Finding shell commands<a class="headerlink" href="#4-finding-shell-commands" title="Permanent link">&para;</a></h3>
+<p>The <code>history</code> command will let you access your shell history programmatically. </p>
+<p>It will print your <strong>shell history</strong> to the standard output. If we want to search there we can pipe that output to <strong>grep</strong> and <strong>search</strong> for patterns. <code>history | grep find</code> will print commands that contain the substring <code>“find”</code>.</p>
+<p>In most shells, you can make use of <code>Ctrl+R</code> to perform backwards search through your history. After pressing <code>Ctrl+R</code>, you can type a substring you want to match for commands in your history. As you keep pressing it, you will <strong>cycle</strong> through the matches in your history. </p>
+<hr />
+<h3 id="5-directory-navigation">5. Directory Navigation<a class="headerlink" href="#5-directory-navigation" title="Permanent link">&para;</a></h3>
+<p>uh...just look up the lecture notes</p>
+<h2 id="exercises">Exercises<a class="headerlink" href="#exercises" title="Permanent link">&para;</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>I will write my own solution to the problem, If you want to solve those by yourself, please stop.</p>
+</div>
+<hr />
+<p><strong>Problem1</strong></p>
+<p>Read <code>man ls</code> and write an <code>ls</code> command that lists files in the following manner</p>
+<ul>
+<li>Includes all files, including hidden files</li>
+<li>Sizes are listed in human readable format (e.g. 454M instead of 454279954)</li>
+<li>Files are ordered by recency</li>
+<li>Output is colorized</li>
+</ul>
+<p>A sample output would look like this</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
-<span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nb">cd</span><span class="w"> </span>/data/rocketmq
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>docker-compose<span class="w"> </span>up<span class="w"> </span>-d
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="w"> </span>-rw-r--r--<span class="w">   </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span><span class="m">1</span>.1M<span class="w"> </span>Jan<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">09</span>:53<span class="w"> </span>baz
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w"> </span>drwxr-xr-x<span class="w">   </span><span class="m">5</span><span class="w"> </span>user<span class="w"> </span>group<span class="w">  </span><span class="m">160</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">09</span>:53<span class="w"> </span>.
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w"> </span>-rw-r--r--<span class="w">   </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w">  </span><span class="m">514</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">06</span>:42<span class="w"> </span>bar
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w"> </span>-rw-r--r--<span class="w">   </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span>106M<span class="w"> </span>Jan<span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">12</span>:12<span class="w"> </span>foo
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w"> </span>drwx------+<span class="w"> </span><span class="m">47</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span><span class="m">1</span>.5K<span class="w"> </span>Jan<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">18</span>:08<span class="w"> </span>..
 </code></pre></div></td></tr></table></div>
 <p><br/></p>
-<p><strong>注意，第一次会启动不成功，因为broker需要创建一堆文件，没有权限。再执行一遍权限命令</strong>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
-<span class="normal"><a href="#__codelineno-11-2">2</a></span>
-<span class="normal"><a href="#__codelineno-11-3">3</a></span>
-<span class="normal"><a href="#__codelineno-11-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1">#目录权限：</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span><span class="w"> </span>/data/rocketmq/namesrv/<span class="p">;</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span><span class="w"> </span>/data/rocketmq/broker/<span class="p">;</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4"></a>chmod<span class="w"> </span>-R<span class="w"> </span><span class="m">777</span><span class="w"> </span>/data/rocketmq/console/<span class="p">;</span>
+<p><strong>Solution</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="o">[</span>root@iZbp12idmwavjjcx2k19kjZ<span class="w"> </span>course2<span class="o">]</span><span class="c1"># ls -a -l -h -t --color=auto</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>total<span class="w"> </span>88K
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>-rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span>54K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">21</span>:46<span class="w"> </span>install_lts.sh
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>drwxr-xr-x<span class="w">  </span><span class="m">5</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">21</span>:46<span class="w"> </span>.
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a>-rwxrwxrwx<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">   </span><span class="m">83</span><span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">20</span>:04<span class="w"> </span>script.py
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a>drwxr-xr-x<span class="w"> </span><span class="m">11</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">20</span>:02<span class="w"> </span>bar
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a>drwxr-xr-x<span class="w"> </span><span class="m">11</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">20</span>:02<span class="w"> </span>foo
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a>-rwxrwxrwx<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">   </span><span class="m">50</span><span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">19</span>:21<span class="w"> </span>mcd.sh
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a>-rwxrwxrwx<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">485</span><span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">19</span>:21<span class="w"> </span>f.sh
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a>drwxr-xr-x<span class="w">  </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">19</span>:17<span class="w"> </span><span class="nb">test</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a>drwxr-xr-x<span class="w"> </span><span class="m">14</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">19</span>:12<span class="w"> </span>..
 </code></pre></div></td></tr></table></div>
-<strong>把启动的mq相关镜像stop后，rm
-再重新启动就可以使用了</strong></p>
-<h2 id="_3">启动控制台<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
-<p>启动后可以登录控制台
-<code>http://ip:8180/</code>
-输入账号密码
-<code>admin</code>
-<code>123456</code></p>
+<ul>
+<li><code>-a</code> : includes all files</li>
+<li><code>-l</code> : use a long listing format</li>
+<li><code>-h</code> : print sizes like 1K 234M 2G etc.</li>
+<li><code>-t</code> : sort by recency</li>
+<li><code>--color=auto</code> : colorize output</li>
+</ul>
+<hr />
+<p><strong>Problem2</strong></p>
+<p>Write bash functions <code>marco</code> and <code>polo</code> that do the following. Whenever you execute <code>marco</code> the current working directory should be saved in some manner, then when you execute <code>polo</code>, no matter what directory you are in, <code>polo</code> should <code>cd</code> you back to the directory where you executed <code>marco</code>. For ease of debugging you can write the code in a file <code>marco.sh</code> and (re)load the definitions to your shell by executing <code>source marco.sh</code>.</p>
+<p><br/></p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span>
+<span class="normal"><a href="#__codelineno-12-6">6</a></span>
+<span class="normal"><a href="#__codelineno-12-7">7</a></span>
+<span class="normal"><a href="#__codelineno-12-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>marco<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$HOME</span>/marco_history.log
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;save pwd - </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="o">}</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a>polo<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="w">        </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/marco_history.log&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="o">}</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Problem3</strong></p>
+<p>Say you have a command that fails rarely. In order to debug it you need to capture its output but it can be time consuming to get a failure run. Write a bash script that runs the following script until it fails and captures its standard output and error streams to files and prints everything at the end. Bonus points if you can also report how many runs it took for the script to fail.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="w"> </span><span class="c1">#!/usr/bin/env bash</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w"> </span><span class="nv">n</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span><span class="nv">RANDOM</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="k">))</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>n<span class="w"> </span>-eq<span class="w"> </span><span class="m">42</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Something went wrong&quot;</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="w">    </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;The error was using magic numbers&quot;</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w"> </span><span class="k">fi</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Everything went according to plan&quot;</span>
+</code></pre></div></td></tr></table></div>
+<p><br/></p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="ch">#!/usr/bin/env bash</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="nv">count</span><span class="o">=</span><span class="m">0</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="nb">echo</span><span class="w"> </span>&gt;<span class="w"> </span>out.log
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="k">while</span><span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="k">do</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">        </span>./task3.sh<span class="w"> </span><span class="p">&amp;</span>&gt;&gt;<span class="w"> </span>out.log
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="w">                </span>cat<span class="w"> </span>out.log
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;failed after </span><span class="nv">$count</span><span class="s2"> times&quot;</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="w">                </span><span class="k">break</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="w">        </span><span class="k">fi</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="w">        </span><span class="o">((</span>count++<span class="o">))</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="k">done</span>
+</code></pre></div></td></tr></table></div>
+<hr />
+<p><strong>Problem4</strong></p>
+<p>As we covered in the lecture <code>find</code>’s <code>-exec</code> can be very powerful for performing operations over the files we are searching for. However, what if we want to do something with all the files, like creating a zip file? As you have seen so far commands will take input from both arguments and STDIN. When piping commands, we are connecting STDOUT to STDIN, but some commands like <code>tar</code> take inputs from arguments. To bridge this disconnect there’s the xargs command which will execute a command using STDIN as arguments. For example <code>ls | xargs rm</code> will delete the files in the current directory.</p>
+<p>Your task is to write a command that recursively finds all HTML files in the folder and makes a zip with them. Note that your command should work even if the files have spaces (hint: check <code>-d</code> flag for <code>xargs</code>).</p>
+<p><br/></p>
+<p><strong>Solution</strong></p>
+<p>prerequisite</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>mkdir<span class="w"> </span>html_root
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="nb">cd</span><span class="w"> </span>html_root
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a>mkdir<span class="w"> </span>html_<span class="o">{</span>a..h<span class="o">}</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a>touch<span class="w"> </span>html_<span class="o">{</span>a..h<span class="o">}</span>/<span class="o">{</span>a..h<span class="o">}</span>.html
+</code></pre></div></td></tr></table></div>
+<p>code</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.html&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span>tar<span class="w"> </span>-cvzf<span class="w"> </span>html.zip
+</code></pre></div></td></tr></table></div>
+<ol>
+<li>
+<p><code>find . -type f -name "*.html"</code></p>
+<ul>
+<li><code>find</code> searches for files and directories.</li>
+<li><code>.</code> specifies the current directory as the starting point.</li>
+<li><code>-type f</code> filters the results to include only files (not directories or other types).</li>
+<li><code>-name "*.html"</code> matches files with the .html extension.</li>
+<li>Output: A list of <code>.html</code> file paths.</li>
+</ul>
+</li>
+<li>
+<p><code>|</code> (Pipe symbol)</p>
+<ul>
+<li>Passes the output of find (list of .html files) as input to the next command, xargs.</li>
+</ul>
+</li>
+<li>
+<p><code>xargs -d '\n'</code></p>
+<ul>
+<li><code>xargs</code> converts the input (list of file paths) into arguments for the tar command.</li>
+<li><code>-d '\n'</code> specifies that each line of input is treated as a separate file. This ensures paths with spaces or special characters are handled correctly.</li>
+</ul>
+</li>
+<li>
+<p><code>tar -cvzf html.zip</code></p>
+<ul>
+<li><code>tar</code> creates compressed archives.</li>
+<li><code>-c</code> : Creates a new archive.</li>
+<li><code>-v</code> : Displays a list of files being added to the archive (verbose mode).</li>
+<li><code>-z</code> : Compresses the archive using gzip.</li>
+<li><code>-f</code> html.zip: Names the output file <code>html.zip</code>.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<p><strong>Problem5</strong></p>
+<p>(Advanced) Write a command or script to recursively find the most recently modified file in a directory. More generally, can you list all files by recency?</p>
+<p><br/></p>
+<p><strong>Solution</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-print0<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-0<span class="w"> </span>ls<span class="w"> </span>-lt<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-1
+</code></pre></div></td></tr></table></div>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<p>uh... I find that I'm still quite uncomfortable with the grammar of bash script. The next step I think, before next lecture, maybe is to pursue a deeper and better understanding of bash script.</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -2674,7 +2784,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-11-17</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-12-04</span>
   </span>
 
     
@@ -2882,9 +2992,9 @@
         
           
           <a
-            href="../docker/"
+            href="../the-shell/"
             class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: docker"
+            aria-label="上一页: The Shell"
           >
             <div class="md-footer__button md-icon">
               
@@ -2895,7 +3005,7 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                docker
+                The Shell
               </div>
             </div>
             
@@ -2903,26 +3013,6 @@
         
 
         <!-- Link to next page -->
-        
-          
-          <a
-            href="../redis-%E9%83%A8%E7%BD%B2/"
-            class="md-footer__link md-footer__link--next"
-            aria-label="下一页: Redis 部署"
-          >
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                下一页
-              </span>
-              <div class="md-ellipsis">
-                Redis 部署
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
