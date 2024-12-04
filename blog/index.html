@@ -1975,7 +1975,7 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
-          <time datetime="2024-12-01 00:00:00+00:00">2024年12月1日星期日</time></li>
+          <time datetime="2024-12-04 00:00:00+00:00">2024年12月4日星期三</time></li>
         
           <li class="md-meta__item">
             分类于
@@ -1995,7 +1995,7 @@
     </div>
   </header>
   <div class="md-post__content md-typeset">
-    <h2 id="shell-tools-and-scripting"><a class="toclink" href="2024/12/01/shell-tools-and-scripting/">Shell Tools and Scripting</a></h2>
+    <h2 id="shell-tools-and-scripting"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/">Shell Tools and Scripting</a></h2>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
 <p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2038 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 149 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
 </div>
@@ -2003,8 +2003,8 @@
 <p class="admonition-title">Attachment</p>
 <p>course link: <a href="https://missing.csail.mit.edu/2020/shell-tools/">Shell Tools and Scripting</a></p>
 </div>
-<h3 id="shell-scripting"><a class="toclink" href="2024/12/01/shell-tools-and-scripting/#shell-scripting">Shell Scripting</a></h3>
-<h4 id="1-assign-variables"><a class="toclink" href="2024/12/01/shell-tools-and-scripting/#1-assign-variables">1. Assign Variables</a></h4>
+<h3 id="shell-scripting"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#shell-scripting">Shell Scripting</a></h3>
+<h4 id="1-assign-variables"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#1-assign-variables">1. Assign Variables</a></h4>
 <p>To assign variables in bash, use the syntax <code>foo=bar</code> and access the value of the variable with <code>$foo</code>. Note that <code>foo = bar</code> will not work since it is interpreted as calling the <code>foo</code> program with <strong>arguments <code>=</code> and <code>bar</code></strong>. In general, in shell scripts the space character will perform argument splitting. This behavior can be confusing to use at first, so always check for that.</p>
 <p>Strings in bash can be defined with <code>'</code> and <code>"</code> delimiters.</p>
 <p>Strings delimited with <code>'</code> are <strong>literal</strong> strings and <strong>will not</strong> substitute variable values.</p>
@@ -2020,7 +2020,7 @@
 <a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1"># prints $foo</span>
 </code></pre></div></td></tr></table></div>
 <hr />
-<h4 id="2-functions"><a class="toclink" href="2024/12/01/shell-tools-and-scripting/#2-functions">2. Functions</a></h4>
+<h4 id="2-functions"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#2-functions">2. Functions</a></h4>
 <p>As with most programming languages, bash supports control flow techniques including <code>if</code>, <code>case</code>, <code>while</code> and <code>for</code>. Similarly, bash has <strong>functions</strong> that take arguments and can operate with them. </p>
 <p>Here is an example of a function that <strong>creates a directory and cds into it</strong>.</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
@@ -2045,7 +2045,7 @@
 <a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="c1"># child dir in which you run the mcd program</span>
 </code></pre></div></td></tr></table></div>
 <hr />
-<h4 id="3-function-arguments"><a class="toclink" href="2024/12/01/shell-tools-and-scripting/#3-function-arguments">3. Function arguments</a></h4>
+<h4 id="3-function-arguments"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#3-function-arguments">3. Function arguments</a></h4>
 <p>Unlike other scripting languages, bash uses a variety of special variables to refer to <strong>arguments, error codes, and other relevant variables</strong>. Below is a list of some of them. A more comprehensive list can be found <a href="https://tldp.org/LDP/abs/html/special-chars.html">here</a>.</p>
 <ul>
 <li><code>$0</code> - <strong>Name</strong> of the script</li>
@@ -2105,7 +2105,7 @@
 <a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="c1"># This will always run</span>
 </code></pre></div></td></tr></table></div>
 <hr />
-<h4 id="4-substitution"><a class="toclink" href="2024/12/01/shell-tools-and-scripting/#4-substitution">4. Substitution</a></h4>
+<h4 id="4-substitution"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#4-substitution">4. Substitution</a></h4>
 <p>Another common pattern is wanting to get the output of a command as a variable. </p>
 <p>This can be done with <code>command substitution</code>. Whenever you place <code>$( CMD )</code> it will execute <code>CMD</code>, get the output of the command and substitute it in place. </p>
 <p>For example, if you do <code>for file in $(ls)</code>, the shell will first call ls and then iterate over those values. </p>
@@ -2147,7 +2147,7 @@
 <p>In the comparison we tested whether <strong><code>$?</code> was not equal to <code>0</code></strong>. Bash implements many comparisons of this sort - you can find a detailed list in the manpage for <a href="https://www.man7.org/linux/man-pages/man1/test.1.html">test</a>. </p>
 <p>When performing comparisons in bash, try to use double brackets <code>[[ ]]</code> in favor of simple brackets <code>[ ]</code>. Chances of making mistakes are lower although it won’t be portable to <code>sh</code>. A more detailed explanation can be found <a href="https://mywiki.wooledge.org/BashFAQ/031">here</a>.</p>
 <hr />
-<h4 id="5-globbing"><a class="toclink" href="2024/12/01/shell-tools-and-scripting/#5-globbing">5. Globbing</a></h4>
+<h4 id="5-globbing"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#5-globbing">5. Globbing</a></h4>
 <p>When launching scripts, you will often want to provide arguments that are <strong>similar</strong>. Bash has ways of making this easier, expanding expressions by carrying out filename expansion. These techniques are often referred to as <strong><em>shell globbing</em></strong>.</p>
 <ul>
 <li><strong>Wildcards</strong><ul>
@@ -2205,7 +2205,7 @@
 <a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="c1"># &gt; y</span>
 </code></pre></div></td></tr></table></div>
 <hr />
-<h4 id="6-shebang"><a class="toclink" href="2024/12/01/shell-tools-and-scripting/#6-shebang">6. shebang</a></h4>
+<h4 id="6-shebang"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#6-shebang">6. shebang</a></h4>
 <p>Note that <strong>scripts</strong> need not necessarily be written in bash to be called from the terminal. For instance, here’s a simple Python script that outputs its arguments in reversed order:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
@@ -2226,8 +2226,8 @@
 <li><strong>Functions</strong> are executed in the <strong>current shell environment</strong> whereas <strong>scripts</strong> execute in their <strong>own process</strong>. Thus, <strong>functions can modify environment variables</strong>, e.g. change your current directory, whereas scripts can’t. Scripts will be passed by value environment variables that have been exported using export</li>
 <li>As with any programming language, functions are a powerful construct to achieve modularity, code reuse, and clarity of shell code. Often shell scripts will include their own function definitions.</li>
 </ul>
-<h3 id="shell-tools"><a class="toclink" href="2024/12/01/shell-tools-and-scripting/#shell-tools">Shell Tools</a></h3>
-<h4 id="1-finding-how-to-use-commands"><a class="toclink" href="2024/12/01/shell-tools-and-scripting/#1-finding-how-to-use-commands">1. Finding how to use commands</a></h4>
+<h3 id="shell-tools"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#shell-tools">Shell Tools</a></h3>
+<h4 id="1-finding-how-to-use-commands"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#1-finding-how-to-use-commands">1. Finding how to use commands</a></h4>
 <ul>
 <li>the first-order approach is to call said command with the <code>-h</code> or <code>--help</code> flags. </li>
 <li>A more detailed approach is to use the <code>man</code> command. Short for manual, man provides a manual page (called manpage) for a command you specify.</li>
@@ -2237,7 +2237,7 @@
 <p><a href="https://tldr.sh/">TLDR pages</a> are a nifty complementary solution that focuses on giving example use cases of a command so you can quickly figure out which options to use. </p>
 <p>To use <code>tldr</code>, just type: <code>tldr ***</code> (<strong><del>just remind, you need to install it first</del></strong>)</p>
 <hr />
-<h4 id="2-finding-files"><a class="toclink" href="2024/12/01/shell-tools-and-scripting/#2-finding-files">2. Finding files</a></h4>
+<h4 id="2-finding-files"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#2-finding-files">2. Finding files</a></h4>
 <p><code>find</code> will recursively search for files matching some criteria. </p>
 <p>Some examples:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
@@ -2266,7 +2266,7 @@
 <a id="__codelineno-8-4" name="__codelineno-8-4"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.png&#39;</span><span class="w"> </span>-exec<span class="w"> </span>convert<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="o">{}</span>.jpg<span class="w"> </span><span class="se">\;</span>
 </code></pre></div></td></tr></table></div>
 <hr />
-<h4 id="3-finding-code"><a class="toclink" href="2024/12/01/shell-tools-and-scripting/#3-finding-code">3. Finding code</a></h4>
+<h4 id="3-finding-code"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#3-finding-code">3. Finding code</a></h4>
 <p><code>grep</code>, a generic tool for matching patterns from the input text. </p>
 <p>For now, know that <code>grep</code> has many flags that make it a very versatile tool. Some I frequently use are <code>-C</code> for getting Context around the matching line and <code>-v</code> for inverting the match, i.e. print all lines that do not match the pattern. </p>
 <p>For example, <code>grep -C 5</code> will print 5 lines before and after the match. When it comes to quickly searching through many files, you want to use <code>-R</code> since it will Recursively go into directories and look for files for the matching string.</p>
@@ -2289,14 +2289,14 @@
 <a id="__codelineno-9-8" name="__codelineno-9-8"></a>rg<span class="w"> </span>--stats<span class="w"> </span>PATTERN
 </code></pre></div></td></tr></table></div>
 <hr />
-<h4 id="4-finding-shell-commands"><a class="toclink" href="2024/12/01/shell-tools-and-scripting/#4-finding-shell-commands">4. Finding shell commands</a></h4>
+<h4 id="4-finding-shell-commands"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#4-finding-shell-commands">4. Finding shell commands</a></h4>
 <p>The <code>history</code> command will let you access your shell history programmatically. </p>
 <p>It will print your <strong>shell history</strong> to the standard output. If we want to search there we can pipe that output to <strong>grep</strong> and <strong>search</strong> for patterns. <code>history | grep find</code> will print commands that contain the substring <code>“find”</code>.</p>
 <p>In most shells, you can make use of <code>Ctrl+R</code> to perform backwards search through your history. After pressing <code>Ctrl+R</code>, you can type a substring you want to match for commands in your history. As you keep pressing it, you will <strong>cycle</strong> through the matches in your history. </p>
 <hr />
-<h4 id="5-directory-navigation"><a class="toclink" href="2024/12/01/shell-tools-and-scripting/#5-directory-navigation">5. Directory Navigation</a></h4>
+<h4 id="5-directory-navigation"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#5-directory-navigation">5. Directory Navigation</a></h4>
 <p>uh...just look up the lecture notes</p>
-<h3 id="exercises"><a class="toclink" href="2024/12/01/shell-tools-and-scripting/#exercises">Exercises</a></h3>
+<h3 id="exercises"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#exercises">Exercises</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>I will write my own solution to the problem, If you want to solve those by yourself, please stop.</p>
@@ -2488,7 +2488,7 @@
 <p><strong>Solution</strong></p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-print0<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-0<span class="w"> </span>ls<span class="w"> </span>-lt<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-1
 </code></pre></div></td></tr></table></div>
-<h3 id="summary"><a class="toclink" href="2024/12/01/shell-tools-and-scripting/#summary">Summary</a></h3>
+<h3 id="summary"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#summary">Summary</a></h3>
 <p>uh... I find that I'm still quite uncomfortable with the grammar of bash script. The next step I think, before next lecture, maybe is to pursue a deeper and better understanding of bash script.</p>
     
   </div>
