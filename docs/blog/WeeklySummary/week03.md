@@ -9,7 +9,7 @@ comments: true
 
 ## 总结
 
-<img src="media/176f54e0b6448508feb4b95d0236879a_720.jpg" style="height:500px; display: block; margin: auto;">
+<img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/04/176f54e0b6448508feb4b95d0236879a720.jpg" style="height:500px; display: block; margin: auto;">
 
 ----
 
