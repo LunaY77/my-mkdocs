@@ -14,6 +14,13 @@ categories:
 
 **Oh My Zsh** 是基于 **zsh** 命令行的一个扩展工具集，提供了丰富的扩展功能。
 
+![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/06/17334678151323.jpg)
+
+
+
+
+
+
 
 ## 1. 安装 oh-my-zsh
 
