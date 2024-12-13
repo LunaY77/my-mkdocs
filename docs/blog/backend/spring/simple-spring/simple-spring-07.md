@@ -9,6 +9,10 @@ categories:
 
 # 向虚拟机注册钩子，实现Bean对象的初始化和销毁方法
 
+!!!tips
+    原文链接：[(https://mp.weixin.qq.com/s/eQIg3Fd2oUeRLdSrRSGVPw)](https://mp.weixin.qq.com/s/eQIg3Fd2oUeRLdSrRSGVPw)
+
+
 ## 1. 目标
 
 当我们的类创建的 Bean 对象，交给 Spring 容器管理以后，这个类对象就可以被赋予更多的使用能力。就像我们在上一章节已经给类对象添加了修改注册Bean定义未实例化前的属性信息修改和实例化过程中的前置和后置处理，这些额外能力的实现，都可以让我们对现有工程中的类对象做相应的扩展处理。

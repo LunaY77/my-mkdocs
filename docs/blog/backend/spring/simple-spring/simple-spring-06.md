@@ -9,6 +9,9 @@ categories:
 
 # 实现应用上下文，自动识别、资源加载、扩展机制
 
+!!!tips
+    原文链接：[https://mp.weixin.qq.com/s/sv0H1NAuO3s90HC6QpjP5g](https://mp.weixin.qq.com/s/sv0H1NAuO3s90HC6QpjP5g)
+
 ## 1. 目标
 
 如果你在自己的实际工作中开发过基于 `Spring` 的技术组件，或者学习过关于 `SpringBoot` 中间件设计和开发 等内容。那么你一定会**继承或者实现**了 `Spring` 对外**暴露的类或接口**，在接口的实现中获取了 `BeanFactory` 以及 `Bean` 对象的获取等内容，并对这些内容做一些操作，例如：修改 Bean 的信息，添加日志打印、处理数据库路由对数据源的切换、给 RPC 服务连接注册中心等。

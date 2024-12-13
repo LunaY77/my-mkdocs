@@ -9,6 +9,9 @@ categories:
 
 # 为Bean对象注入属性和依赖Bean的功能实现
 
+!!!tips
+    原文链接：[https://mp.weixin.qq.com/s/EKoMDpa4q8TMikRM2wBIzw](https://mp.weixin.qq.com/s/EKoMDpa4q8TMikRM2wBIzw)
+    
 ## 1. 目标
 
 首先我们回顾下这几章节都完成了什么，包括：实现一个容器、定义和注册Bean、实例化Bean，按照是否包含构造函数实现不同的实例化策略，那么在创建对象实例化这我们还缺少什么？其实还缺少一个关于类中是否有属性的问题，如果有类中包含属性那么在实例化的时候就需要把属性信息填充上，这样才是一个完整的对象创建。

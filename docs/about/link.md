@@ -62,7 +62,18 @@ hide:
           </div> 
         </div> 
       </div>
-      
+
+       <div class="card"> 
+        <img class="ava" src="https://pic.cnblogs.com/avatar/3300592/20231020115343.png" /> 
+        <div class="card-header"> 
+          <div> 
+          <a href="https://www.cnblogs.com/kdlyh" target="_blank">Kdlyh</a> 
+          </div> 
+          <div class="info">
+            趋舍有时
+          </div> 
+        </div> 
+      </div>
 
     </div>
   </div>

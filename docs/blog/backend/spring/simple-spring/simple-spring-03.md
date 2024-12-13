@@ -9,6 +9,9 @@ categories:
 
 # 基于Cglib实现含构造函数的类实例化策略
 
+!!!tips
+    原文链接：[https://mp.weixin.qq.com/s/olrwapkSTQMyIGpR10ZDzA](https://mp.weixin.qq.com/s/olrwapkSTQMyIGpR10ZDzA)
+    
 ## 1. 目标
 
 在上一章节我们扩充了 `Bean` 容器的功能，把实例化对象交给容器来统一处理，但在我们实例化对象的代码里并没有考虑对象类是否含构造函数，也就是说如果我们去实例化一个含有构造函数的对象那么就要抛**异常**了。

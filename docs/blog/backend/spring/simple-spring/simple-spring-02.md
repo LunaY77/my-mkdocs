@@ -9,6 +9,9 @@ categories:
 
 # 实现Bean的定义、注册、获取
 
+!!!tips
+    原文链接：[https://mp.weixin.qq.com/s/CgvQzm8B-CvQvXdxONC-lA](https://mp.weixin.qq.com/s/CgvQzm8B-CvQvXdxONC-lA)
+    
 ## 一. 目标
 
 

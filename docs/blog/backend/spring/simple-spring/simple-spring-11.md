@@ -9,6 +9,8 @@ categories:
 
 # 基于JDK和Cglib动态代理，实现AOP核心功能
 
+!!!tips
+    原文链接：[https://mp.weixin.qq.com/s/lDL14DMzaY_WzvmizDG-zw](https://mp.weixin.qq.com/s/lDL14DMzaY_WzvmizDG-zw)
 
 ## 1. 目标
 

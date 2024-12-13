@@ -9,6 +9,8 @@ categories:
 
 # 关于Bean对象作用域以及FactoryBean的实现和使用
 
+!!!tips
+    原文链接：[https://mp.weixin.qq.com/s/npVKYqHVTDgYWa2Jq8PB-A](https://mp.weixin.qq.com/s/npVKYqHVTDgYWa2Jq8PB-A)
 
 ## 1. 目标
 

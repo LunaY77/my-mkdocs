@@ -10,6 +10,9 @@ categories:
 
 # 设计与实现资源加载器，从Spring.xml解析和注册Bean对象 
 
+!!!tips
+    原文链接：[https://mp.weixin.qq.com/s/GMcHUL7-oB7T0GWKjNC5Ng](https://mp.weixin.qq.com/s/GMcHUL7-oB7T0GWKjNC5Ng)
+    
 ## 1. 目标
 
 在完成 Spring 的框架雏形后，现在我们可以通过单元测试进行手动操作 Bean 对象的定义、注册和属性填充，以及最终获取对象调用方法。但这里会有一个问题，就是如果实际使用这个 Spring 框架，是不太可能让用户通过手动方式创建的，而是最好能通过配置文件的方式简化创建过程。

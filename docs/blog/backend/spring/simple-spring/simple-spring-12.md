@@ -9,6 +9,8 @@ categories:
 
 # 把AOP动态代理，融入到Bean的生命周期
 
+!!!tips
+    原文链接：[AOP Aspect Implementation](https://bugstack.cn/md/spring/develop-spring/2021-07-22-%E7%AC%AC13%E7%AB%A0%EF%BC%9A%E8%A1%8C%E4%BA%91%E6%B5%81%E6%B0%B4%EF%BC%8C%E6%8A%8AAOP%E5%8A%A8%E6%80%81%E4%BB%A3%E7%90%86%EF%BC%8C%E8%9E%8D%E5%85%A5%E5%88%B0Bean%E7%9A%84%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.html#%E5%9B%9B%E3%80%81%E5%AE%9E%E7%8E%B0)
 
 ## 1. 目标
 

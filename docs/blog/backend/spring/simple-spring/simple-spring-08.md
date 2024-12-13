@@ -9,6 +9,9 @@ categories:
 
 # 定义标记类型Aware接口，实现感知容器对象
 
+!!!tips
+    原文链接：[(https://mp.weixin.qq.com/s/KP_4IQ2MZ-Pzq80WrJpCOA)](https://mp.weixin.qq.com/s/KP_4IQ2MZ-Pzq80WrJpCOA)
+
 ## 1. 目标
 
 目前已实现的 Spring 框架，在 Bean 操作上能提供出的能力，包括：**Bean 对象的定义和注册**，以及在**操作 Bean 对象过程中执行的**，`BeanFactoryPostProcessor`、`BeanPostProcessor`、`InitializingBean`、`DisposableBean`，以及在 **XML** 新增的一些配置处理，让我们可以 Bean 对象有更强的操作性。
@@ -474,4 +477,5 @@ Process finished with exit code 0
 
 ## 参考资料
 
-(https://mp.weixin.qq.com/s/KP_4IQ2MZ-Pzq80WrJpCOA)[https://mp.weixin.qq.com/s/KP_4IQ2MZ-Pzq80WrJpCOA]
+[https://mp.weixin.qq.com/s/KP_4IQ2MZ-Pzq80WrJpCOA](https://mp.weixin.qq.com/s/KP_4IQ2MZ-Pzq80WrJpCOA)
+

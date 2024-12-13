@@ -9,6 +9,9 @@ categories:
 
 # 实现一个简单的Bean容器
 
+!!!tips
+    原文链接：[https://mp.weixin.qq.com/s/fiWX6abSCiUKHAUa-HKg4A](https://mp.weixin.qq.com/s/fiWX6abSCiUKHAUa-HKg4A)
+    
 ## 一. 目标
 
 > Spring Bean 容器是什么？
