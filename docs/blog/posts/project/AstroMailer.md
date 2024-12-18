@@ -49,9 +49,6 @@ github地址: [AstroMailer](https://github.com/Pale-illusions/AstroMailer)
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/18/17345141645606.jpg)
 
 
-![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/17/17344065818296.jpg)
-
-
 ## 技术栈
 
 * 编程语言: Python 3.10+
