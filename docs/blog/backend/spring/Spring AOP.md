@@ -932,7 +932,7 @@ public class ProxyFactory {
 * `proxyTargetClass` 为 `false` 代表使用 `JDK` 动态代理
 * `proxyTargetClass` 为 `true` 代表使用 `Cglib` 动态代理
 
-而 `AdvisedSupport` 的 `proxyTargetClass` 参数 **默认值** 为 `false`，即默认使用 `JDK` 动态代理 ***(不过好像现在的 spring 默认全部调用 `cglib` 了？)***
+而 `AdvisedSupport` 的 `proxyTargetClass` 参数 **默认值** 为 `false`，即默认使用 `JDK` 动态代理
 
 
 
@@ -1266,13 +1266,288 @@ public class DynamicProxyTest {
 
 ## 动态代理融入Bean的生命周期
 
-`BeanPostProcessor`处理阶段可以修改和替换`bean`，正好可以在此阶段返回**代理对象替换原对象**。不过我们引入一种特殊的`BeanPostProcessor`——`InstantiationAwareBeanPostProcessor`，如果`InstantiationAwareBeanPostProcessor`处理阶段返回代理对象，会导致**短路**，不会继续走原来的创建bean的流程，具体实现查看`AbstractAutowireCapableBeanFactory#resolveBeforeInstantiation`。
+`BeanPostProcessor`处理阶段可以修改和替换`bean`，正好可以在此阶段返回**代理对象替换原对象**。不过我们引入一种特殊的`BeanPostProcessor`——`InstantiationAwareBeanPostProcessor`，织入逻辑位于`BeanPostProcessor#postProcessAfterInitialization`，具体实现查看`AbstractAutowireCapableBeanFactory#resolveBeforeInstantiation`。
 
 `DefaultAdvisorAutoProxyCreator`是处理横切逻辑的织入返回代理对象的`InstantiationAwareBeanPostProcessor`实现类，当对象实例化时，生成代理对象并返回。
 
 **至此，bean的生命周期如下** 
 
-![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/26/17351281696197.jpg)
+![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/27/17353103588346.jpg)
+
+
+1. 读取xml文件
+2. load beandefinition
+3. BeanFactoryProcessor 修改 BeanDefinition
+4. InstantiationAwareBeanPostProcessor#postProcessBeforeInstantiation
+5. bean实例化
+6. BeanFactoryAware(setBeanFactory, setBeanName, setBeanClassLoader)
+7. BeanPostProcessor前置处理 (例：ApplicationContextAwareProcessor)
+8. 执行 bean 的初始化方法
+    1. InitializingBean#afterPropertiesSet
+    2. 自定义初始化方法init-method
+9. BeanPostProcessor后置处理(InstantiationAwareBeanPostProcessor#postProcessAfterInitialization创建代理对象返回)
+10. 如果是DisposableBean注册销毁方法
+11. 判断scope
+    1. 如果是singleton，放入缓存
+    2. 如果是prototype，过
+12. 使用
+13. 执行bean的销毁方法(singleton）
+    1. DisposableBean#destroy
+    2. 自定义销毁方法destroy-metod
+    
+ 
+## @EnableAspectJAutoProxy
+ 
+在`spring`中我们要**开启自动代理**的功能需要在**配置类**添加如下的注解：
+ 
+```java
+@EnableAspectJAutoProxy
+public class AppConfiguration {}
+```
+
+当然在`xml`中配置也可：
+
+```xml
+<aop:aspectj-autoproxy />
+```
+ 
+注解源码如下：
+ 
+```java
+@Target(ElementType.TYPE)
+@Retention(RetentionPolicy.RUNTIME)
+@Documented
+@Import(AspectJAutoProxyRegistrar.class)
+public @interface EnableAspectJAutoProxy {
+
+	boolean proxyTargetClass() default false;
+
+	boolean exposeProxy() default false;
+
+}
+```
+ 
+在该注解中我们可以配置`proxyTargetClass`和`exposeProxy`两个重要属性，**它们分别控制着Spring如何创建和使用代理对象来实现切面功能。**
+
+### **proxyTargetClass**
+
+用于指示`Spring AOP`应使用**哪种类型的代理**来织入切面：
+
+* `proxyTargetClass = true`: 指示Spring使用`CGLIB`库生成基于类的代理。这意味着Spring会**创建目标类的子类**，并在其中插入切面逻辑。这种代理方式可以拦截类的所有方法（包括非接口方法和final方法），适用于那些**没有接口或者需要对非公共方法进行增强**的场景。
+
+* `proxyTargetClass = false 或未指定（默认情况）`: Spring将使用标准的**JDK动态代理**技术，即创建一个实现了目标类所有接口的新代理对象，并在代理对象的方法调用中插入切面逻辑。这种方式仅能用于**代理实现了至少一个接口的目标类，且只能拦截通过接口声明的方法**。
+
+### **exposeProxy**
+
+用于控制代理对象是否应被公开给被代理对象的内部方法访问：
+
+* `exposeProxy = true`: 当设置为**true**时，`Spring`会确保在**AOP代理对象上下文**中，通过 `AopContext.currentProxy()` 方法能够获取到**当前正在执行的代理对象**。
+这对于在被代理对象内部需要调用自身其他方法，并希望这些内部方法调用也能触发切面逻辑的情况非常有用。
+例如，一个服务类中的某个方法可能需要调用另一个**私有**或**受保护**的方法，而这两个方法都被同一个切面所增强。在这种情况下，若不暴露代理，内部方法调用将不会经过切面处理；而暴露代理后，可以通过 `AopContext.currentProxy().methodToCall()` 的方式确保内部方法调用也得到切面的拦截。
+
+* `exposeProxy = false 或未指定（默认情况）`： 默认情况下，`Spring`不会特别暴露代理对象，因此在被代理对象内部直接通过 `this` 调用其他方法时，这些方法调用将**不会触发切面逻辑**，而是直接调用目标类的原始方法。
+
+关于 **exposeProxy**，来看一个业务中的实际使用场景 *(我的 IM 项目中用到了)*
+
+以下是一段处理好友申请的业务逻辑
+
+```java
+/**
+ * 申请好友
+ * @param uid     uid
+ * @param request 请求
+ * @return {@link RestBean}
+ */
+@Transactional
+@Override
+@RedissonLock(key = "#uid")
+public RestBean<Void> apply(Long uid, FriendApplyReq request) {
+    // 不能添加自己为好友
+    if (Objects.equals(uid, request.getTargetUid())) {
+        return RestBean.failure(FriendErrorEnum.SELF_APPLY_FORBIDDEN);
+    }
+    // 判断是否存在好友关系
+    UserFriend isFriend = userFriendDao.getByFriend(uid, request.getTargetUid());
+    // 已经存在好友关系
+    if (Objects.nonNull(isFriend)) {
+        return RestBean.failure(FriendErrorEnum.ALREADY_FRIENDS);
+    }
+    // 判断是否存在申请记录 （我 -> 对方） 且 申请状态为 待审批
+    UserApply myFriendApply = userApplyDao.getFriendApply(uid, request.getTargetUid());
+    // 存在申请
+    if (Objects.nonNull(myFriendApply)) {
+        return RestBean.failure(FriendErrorEnum.EXISTS_FRIEND_APPLY);
+    }
+    // 判断是否存在申请记录 (对方 -> 我)
+    UserApply friendApply = userApplyDao.getFriendApply(request.getTargetUid(), uid);
+    // 如果存在，直接同意
+    if (Objects.nonNull(friendApply)) {
+        // 获取当前执行的对象的代理实例(确保事务正确执行)，同意申请
+        ((FriendService) AopContext.currentProxy()).applyApprove(uid, new FriendApplyApproveReq(friendApply.getId()));
+        return RestBean.success();
+    }
+    UserApply userApply = FriendAdapter.buildFriendApply(uid, request);
+    userApplyDao.save(userApply);
+    // 用户申请事件，向对方异步发送请求消息
+    applicationEventPublisher.publishEvent(new UserApplyEvent(this, userApply));
+    return RestBean.success();
+}
+``` 
+ 
+主要关注业务中处理 **如果申请记录(对方->我)存在，则直接同意申请** 的处理逻辑 
+
+这一行代码的核心是确保事务和其他切面逻辑（如 `@Transactional` 和 `@RedissonLock`）在调用 `applyApprove` 方法时能够生效。
+
+为什么需要通过代理调用？
+
+* **事务传播问题**：
+    * 在 Spring 中，如果类中的一个方法**直接调用**同类的另一个方法（比如 `apply` 调用 `this.applyApprove`），Spring 的**动态代理不会生效**。
+    * 这会导致 `applyApprove` 方法上的事务注解 `@Transactional` 被忽略，**事务功能失效**。
+
+* 代理解决方案：
+    * 使用 `AopContext.currentProxy()` 获取当前类的**代理对象**。
+    * 通过**代理对象**调用方法，保证事务和切面逻辑生效。
+
+ 
+## AOP 生成代理的三个时机
+
+ 
+### **实例化前(BeforeInstantiation)**
+
+讲道理一般不用
+
+具体时机在 `createBean` 方法上半部分 `#resolveBeforeInstantiation`，如果 `Bean` 在 **实例化前** 被动态代理了，判断 `Bean` 是否为 `null`，如果不为 `null`，则**短路并直接返回**
+
+无代理则进入下半部分 `doCreateBean`
+
+```java
+/**
+ * Apply before-instantiation post-processors, resolving whether there is a
+ * before-instantiation shortcut for the specified bean.
+ * @param beanName the name of the bean
+ * @param mbd the bean definition for the bean
+ * @return the shortcut-determined bean instance, or {@code null} if none
+ */
+@SuppressWarnings("deprecation")
+@Nullable
+protected Object resolveBeforeInstantiation(String beanName, RootBeanDefinition mbd) {
+	Object bean = null;
+	if (!Boolean.FALSE.equals(mbd.beforeInstantiationResolved)) {
+		// Make sure bean class is actually resolved at this point.
+		if (!mbd.isSynthetic() && hasInstantiationAwareBeanPostProcessors()) {
+			Class<?> targetType = determineTargetType(beanName, mbd);
+			if (targetType != null) {
+				bean = applyBeanPostProcessorsBeforeInstantiation(targetType, beanName);
+				if (bean != null) {
+					bean = applyBeanPostProcessorsAfterInitialization(bean, beanName);
+				}
+			}
+		}
+		mbd.beforeInstantiationResolved = (bean != null);
+	}
+	return bean;
+}
+```
+
+
+```java
+@Override
+public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) {
+    // 缓存代理
+    Object cacheKey = getCacheKey(beanClass, beanName);
+
+    if (!StringUtils.hasLength(beanName) || !this.targetSourcedBeans.contains(beanName)) {
+        if (this.advisedBeans.containsKey(cacheKey)) {
+            return null;
+        }
+        if (isInfrastructureClass(beanClass) || shouldSkip(beanClass, beanName)) {
+            this.advisedBeans.put(cacheKey, Boolean.FALSE);
+            return null;
+        }
+    }
+
+    // 如果我们有一个自定义的TargetSource，在这里创建代理。
+    // 抑制目标bean默认的实例化过程，就是说有这个配置就不会按照原有的方式进行实例化了
+    // TargetSource将以自定义方式处理目标实例。
+    TargetSource targetSource = getCustomTargetSource(beanClass, beanName);
+    if (targetSource != null) {
+        if (StringUtils.hasLength(beanName)) {
+            this.targetSourcedBeans.add(beanName);
+        }
+        Object[] specificInterceptors = getAdvicesAndAdvisorsForBean(beanClass, beanName, targetSource);
+        Object proxy = createProxy(beanClass, beanName, specificInterceptors, targetSource);
+        this.proxyTypes.put(cacheKey, proxy.getClass());
+        return proxy;
+    }
+
+    return null;
+}
+```
+
+
+
+### **初始化后(AfterInitialization)**
+
+
+具体时机在 `Bean` 实例化之后，填充属性完毕之后，在调用 `initializeBean` 方法中的子方法 `applyBeanPostProcessorsAfterInitialization`, 即 **BeanPostProcessor的后置方法**
+
+原理可以看以下这个类图，AOP代理的核心类 `AutoProxyCreator` 均实现了 `BeanPostProcessor` 这个接口
+
+![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/28/17353735113073.jpg)
+
+
+```java
+/**
+ * Create a proxy with the configured interceptors if the bean is
+ * identified as one to proxy by the subclass.
+ * @see #getAdvicesAndAdvisorsForBean
+ */
+@Override
+@Nullable
+public Object postProcessAfterInitialization(@Nullable Object bean, String beanName) {
+	if (bean != null) {
+		Object cacheKey = getCacheKey(bean.getClass(), beanName);
+		if (this.earlyBeanReferences.remove(cacheKey) != bean) {
+			return wrapIfNecessary(bean, beanName, cacheKey);
+		}
+	}
+	return bean;
+}
+```
+
+
+### **循坏依赖**
+
+如果开启了**循环引用**，在存在**循环引用**问题时，从**三级缓存**获取一个bean的代理对象的早期引用的时候可能为其生成代理，实现的逻辑和上边一样
+
+在 `doCreateBean` 方法中
+
+```java
+// 处理循环依赖，将实例化后的Bean对象提前放入缓存中暴露出来
+if (beanDefinition.isSingleton()) {
+    Object finalBean = bean;
+    addSingletonFactory(beanName, () -> getEarlyBeanReference(beanName, beanDefinition, finalBean));
+}
+```
+
+```java
+protected Object getEarlyBeanReference(String beanName, BeanDefinition beanDefinition, Object bean) {
+    Object exposedObject = bean;
+    for (BeanPostProcessor beanPostProcessor : getBeanPostProcessors()) {
+        if (beanPostProcessor instanceof InstantiationAwareBeanPostProcessor) {
+            exposedObject = ((InstantiationAwareBeanPostProcessor) beanPostProcessor).getEarlyBeanReference(exposedObject, beanName);
+            if (null == exposedObject) return exposedObject;
+        }
+    }
+```
+
+```java
+@Override
+public Object getEarlyBeanReference(Object bean, String beanName) {
+    earlyProxyReferences.add(beanName);
+    return wrapIfNecessary(bean, beanName);
+}
+```
 
 
 
