@@ -10,13 +10,13 @@
         <meta name="author" content="苍镜月">
       
       
-        <link rel="canonical" href="https://cangjingyue.top/blog/2024/11/21/git-commit-%E8%A7%84%E8%8C%83/">
+        <link rel="canonical" href="https://cangjingyue.top/blog/backend/spring/Spring%20tx/">
       
       
-        <link rel="prev" href="../../12/dijkstra%E7%AE%97%E6%B3%95/">
+        <link rel="prev" href="../Spring%20IOC/">
       
       
-        <link rel="next" href="../../../12/01/the-shell/">
+        <link rel="next" href="../simple-spring/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">
       
       
       <link rel="icon" href="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png">
@@ -24,14 +24,14 @@
     
     
       
-        <title>git commit 规范 - 苍镜月's docs</title>
+        <title>Spring 事务 - 苍镜月's docs</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.6f8fc17f.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.6f8fc17f.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,19 +50,19 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../../../stylesheets/link.css">
+      <link rel="stylesheet" href="../../../../stylesheets/link.css">
     
-      <link rel="stylesheet" href="../../../../../stylesheets/customize.css">
+      <link rel="stylesheet" href="../../../../stylesheets/customize.css">
     
-      <link rel="stylesheet" href="../../../../../stylesheets/editable-code.css">
+      <link rel="stylesheet" href="../../../../stylesheets/editable-code.css">
     
       <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -79,7 +79,7 @@
     
     
     
-    <link rel="stylesheet" href="../../../../../assets/stylesheets/custom.00c04c01.min.css">
+    <link rel="stylesheet" href="../../../../assets/stylesheets/custom.00c04c01.min.css">
   
   </head>
   
@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#git-commit" class="md-skip">
+        <a href="#spring" class="md-skip">
           跳转至
         </a>
       
@@ -114,7 +114,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../../.." title="苍镜月&#39;s docs" class="md-header__button md-logo" aria-label="苍镜月's docs" data-md-component="logo">
+    <a href="../../../.." title="苍镜月&#39;s docs" class="md-header__button md-logo" aria-label="苍镜月's docs" data-md-component="logo">
       
   <img src="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png" alt="logo">
 
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              git commit 规范
+              Spring 事务
             
           </span>
         </div>
@@ -289,7 +289,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
     
@@ -306,7 +306,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../tag/" class="md-tabs__link">
+      <a href="../../../../tag/" class="md-tabs__link">
         
   
     
@@ -321,13 +321,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
           
   
     
@@ -343,17 +341,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../backend/Java/FrequencyControl/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Java/FrequencyControl/" class="md-tabs__link">
           
   
     
@@ -382,7 +384,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../frontend/JavaScript/testJs/" class="md-tabs__link">
+        <a href="../../../frontend/JavaScript/testJs/" class="md-tabs__link">
           
   
     
@@ -405,7 +407,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../WeeklySummary/week01/" class="md-tabs__link">
+        <a href="../../../WeeklySummary/week01/" class="md-tabs__link">
           
   
     
@@ -425,7 +427,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../about/link/" class="md-tabs__link">
+        <a href="../../../../about/link/" class="md-tabs__link">
           
   
     
@@ -445,7 +447,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../about/me/" class="md-tabs__link">
+        <a href="../../../../about/me/" class="md-tabs__link">
           
   
     
@@ -469,9 +471,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -482,7 +482,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="苍镜月&#39;s docs" class="md-nav__button md-logo" aria-label="苍镜月's docs" data-md-component="logo">
+    <a href="../../../.." title="苍镜月&#39;s docs" class="md-nav__button md-logo" aria-label="苍镜月's docs" data-md-component="logo">
       
   <img src="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png" alt="logo">
 
@@ -511,7 +511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -531,7 +531,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../tag/" class="md-nav__link">
+      <a href="../../../../tag/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -548,8 +548,6 @@
       
   
   
-    
-  
   
   
     
@@ -566,24 +564,23 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -594,13 +591,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Blogger
@@ -625,13 +622,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -640,7 +634,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -667,7 +661,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2024/" class="md-nav__link">
+      <a href="../../../archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -717,13 +711,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -732,7 +723,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -759,7 +750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/algorithm/" class="md-nav__link">
+      <a href="../../../category/algorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -782,7 +773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/cs/" class="md-nav__link">
+      <a href="../../../category/cs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -805,7 +796,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/hello-world/" class="md-nav__link">
+      <a href="../../../category/hello-world/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -828,7 +819,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/opensource/" class="md-nav__link">
+      <a href="../../../category/opensource/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -851,7 +842,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/docker/" class="md-nav__link">
+      <a href="../../../category/docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -874,7 +865,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/linux/" class="md-nav__link">
+      <a href="../../../category/linux/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -897,7 +888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/tools/" class="md-nav__link">
+      <a href="../../../category/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -930,8 +921,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -942,21 +935,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -967,7 +961,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             后端
@@ -990,10 +984,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1002,7 +999,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1027,7 +1024,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/Java/FrequencyControl/" class="md-nav__link">
+      <a href="../../Java/FrequencyControl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1053,8 +1050,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1070,20 +1069,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1094,7 +1094,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_2">
             <span class="md-nav__icon md-icon"></span>
             spring
@@ -1108,7 +1108,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/spring/Spring%20AOP/" class="md-nav__link">
+      <a href="../Spring%20AOP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1129,7 +1129,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/spring/Spring%20IOC/" class="md-nav__link">
+      <a href="../Spring%20IOC/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1147,10 +1147,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../backend/spring/Spring%20tx/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Spring 事务
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1159,6 +1179,161 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#acid" class="md-nav__link">
+    <span class="md-ellipsis">
+      事务ACID
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      事务隔离级别
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="事务隔离级别">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 读未提交
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 读已提交
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 可重复读
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 串行化
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 小结
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      事务的传播行为
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="事务的传播行为">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-aservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 当AService存在事务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-aservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 当AService无事务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 嵌套事务
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      传播行为
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1217,7 +1392,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/spring/simple-spring/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" class="md-nav__link">
+      <a href="../simple-spring/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1355,7 +1530,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../frontend/JavaScript/testJs/" class="md-nav__link">
+      <a href="../../../frontend/JavaScript/testJs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1422,7 +1597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../frontend/JavaScript/QuickDive/BasicGrammar/" class="md-nav__link">
+      <a href="../../../frontend/JavaScript/QuickDive/BasicGrammar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1522,7 +1697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../WeeklySummary/week01/" class="md-nav__link">
+      <a href="../../../WeeklySummary/week01/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1543,7 +1718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../WeeklySummary/week02/" class="md-nav__link">
+      <a href="../../../WeeklySummary/week02/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1564,7 +1739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../WeeklySummary/week03/" class="md-nav__link">
+      <a href="../../../WeeklySummary/week03/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1585,7 +1760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../WeeklySummary/week04%2605/" class="md-nav__link">
+      <a href="../../../WeeklySummary/week04%2605/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1606,7 +1781,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../WeeklySummary/week06/" class="md-nav__link">
+      <a href="../../../WeeklySummary/week06/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1627,7 +1802,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../WeeklySummary/week07/" class="md-nav__link">
+      <a href="../../../WeeklySummary/week07/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1701,7 +1876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/link/" class="md-nav__link">
+      <a href="../../../../about/link/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1775,7 +1950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/me/" class="md-nav__link">
+      <a href="../../../../about/me/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1811,8 +1986,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1832,79 +2005,64 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#commit-message" class="md-nav__link">
+  <a href="#acid" class="md-nav__link">
     <span class="md-ellipsis">
-      Commit message 格式
+      事务ACID
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Commit message 格式">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      事务隔离级别
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="事务隔离级别">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#header" class="md-nav__link">
+  <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      Header
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Header">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-type" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. type
+      1. 读未提交
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#2-scope" class="md-nav__link">
+  <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      2. scope
+      2. 读已提交
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#3-subject" class="md-nav__link">
+  <a href="#3" class="md-nav__link">
     <span class="md-ellipsis">
-      3. subject
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#body" class="md-nav__link">
-    <span class="md-ellipsis">
-      Body
+      3. 可重复读
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#footer" class="md-nav__link">
+  <a href="#4" class="md-nav__link">
     <span class="md-ellipsis">
-      Footer
+      4. 串行化
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#revert" class="md-nav__link">
+  <a href="#5" class="md-nav__link">
     <span class="md-ellipsis">
-      Revert
+      5. 小结
     </span>
   </a>
   
@@ -1916,11 +2074,68 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
+  <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
-      参考资料
+      事务的传播行为
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="事务的传播行为">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      概述
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="概述">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-aservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 当AService存在事务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-aservice" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 当AService无事务
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 嵌套事务
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      传播行为
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1933,115 +2148,30 @@
             
           
           
-  <div class="md-content md-content--post" data-md-component="content">
-    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
-      <div class="md-sidebar__scrollwrap">
-        <div class="md-sidebar__inner md-post">
-          <nav class="md-nav md-nav--primary">
-            <div class="md-post__back">
-              <div class="md-nav__title md-nav__container">
-                <a href="../../../../" class="md-nav__link">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-                  <span class="md-ellipsis">
-                    回到主页
-                  </span>
-                </a>
-              </div>
-            </div>
-            
-              <div class="md-post__authors md-typeset">
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                  <div class="md-profile md-post__profile">
-                    <span class="md-author md-author--long">
-                      <img src="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png" alt="苍镜月">
-                    </span>
-                    <span class="md-profile__description">
-                      <strong>
-                        
-                          苍镜月
-                        
-                      </strong>
-                      <br>
-                      相信的心就是你的魔法！
-                    </span>
-                  </div>
-                
-              </div>
-            
-            <ul class="md-post__meta md-nav__list">
-              <li class="md-nav__item md-nav__item--section">
-                <div class="md-post__title">
-                  <span class="md-ellipsis">
-                    元数据
-                  </span>
-                </div>
-                <nav class="md-nav">
-                  <ul class="md-nav__list">
-                    <li class="md-nav__item">
-                      <div class="md-nav__link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2024-11-21 00:00:00+00:00" class="md-ellipsis">2024年11月21日星期四</time>
-                      </div>
-                    </li>
-                    
-                    
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
-                          <span class="md-ellipsis">
-                            分类于
-                            
-                              <a href="../../../../category/tools/">tools</a></span>
-                        </div>
-                      </li>
-                    
-                    
-                      
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
-                          <span class="md-ellipsis">
-                            
-                              需要 2 分钟阅读时间
-                            
-                          </span>
-                        </div>
-                      </li>
-                    
-                  </ul>
-                </nav>
-              </li>
-            </ul>
-          </nav>
-          
-        </div>
-      </div>
-    </div>
-    <article class="md-content__inner md-typeset">
-      
-        
+                  
   
-  
-
 <nav class="md-tags" >
   
     
     
     
-      <a href="../../../../../tag/#git" class="md-tag">git</a>
+      <a href="../../../../tag/#spring" class="md-tag">spring</a>
     
   
     
     
     
-      <a href="../../../../../tag/#tools" class="md-tag">tools</a>
+      <a href="../../../../tag/#java" class="md-tag">java</a>
     
   
 </nav>
 
 
   
-    <a href="https://github.com/Pale-illusions/my-mkdocs.git/edit/main/docs/blog/posts/tools/git commit.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/Pale-illusions/my-mkdocs.git/edit/main/docs/blog/backend/spring/Spring tx.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2050,140 +2180,196 @@
     
       
     
-    <a href="https://github.com/Pale-illusions/my-mkdocs.git/raw/main/docs/blog/posts/tools/git commit.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/Pale-illusions/my-mkdocs.git/raw/main/docs/blog/backend/spring/Spring tx.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="git-commit">git commit 规范<a class="headerlink" href="#git-commit" title="Permanent link">&para;</a></h1>
+<h1 id="spring">Spring 事务<a class="headerlink" href="#spring" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 679 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 33 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 3 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2051 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 49 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 5 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 7 分钟</p>
 </div>
-<h2 id="commit-message">Commit message 格式<a class="headerlink" href="#commit-message" title="Permanent link">&para;</a></h2>
-<p>每次提交，<strong>Commit message</strong> 都包括三个部分：<strong>header</strong>，<strong>body</strong> 和 <strong>footer</strong>。</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">git commit</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>&lt;type&gt;(&lt;scope&gt;): &lt;subject&gt;
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a>&lt;BLANK LINE&gt;
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a>&lt;body&gt;
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a>&lt;BLANK LINE&gt;
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a>&lt;footer&gt;
+<h2 id="acid">事务ACID<a class="headerlink" href="#acid" title="Permanent link">&para;</a></h2>
+<ul>
+<li><strong>原子性</strong>： <strong>一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成</strong>，不会结束在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。</li>
+<li><strong>一致性</strong>： 在事务开始之前和事务结束以后，数据库的<strong>完整性</strong>没有被破坏。这表示写入的资料必须完全符合所有的预设规则，这包含资料的精确度、串联性以及后续数据库可以自发性地完成预定的工作。</li>
+<li><strong>隔离性</strong>： 数据库允许多个并发事务同时对其数据进行读写和修改的能力，隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致。事务隔离分为不同级别，包括<strong>读未提交（Read uncommitted）、读提交（read committed）、可重复读（repeatable read）和串行化（Serializable）。</strong></li>
+<li><strong>持久性</strong>： 事务处理结束后，对数据的修改就是<strong>永久</strong>的，即便系统故障也不会丢失。</li>
+</ul>
+<h2 id="_1">事务隔离级别<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<h3 id="1"><strong>1. 读未提交</strong><a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ISOLATION_READ_UNCOMMITTED（读未提交）</strong>：其他事务会读取当前事务尚未更改的提交（相当于读取的是这个事务暂时缓存的内容，并不是数据库中的内容）</li>
+</ul>
+<p>首先是<strong>读未提交</strong>级别，此级别属于最低级别，相当于各个事务共享一个缓存区域，任何事务的操作都在这里进行。那么它会导致以下问题：</p>
+<p><img alt="Pasted image 20240820004523" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/28/pasted-image-20240820004523.png" /></p>
+<p>也就是说，事务A最后得到的实际上是一个毫无意义的数据（事务B已经回滚了）我们称此数据为 <strong><em>"脏数据"</em></strong> ，这种现象称为<strong>脏读</strong></p>
+<hr />
+<h3 id="2"><strong>2. 读已提交</strong><a class="headerlink" href="#2" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ISOLATION_READ_COMMITTED（读已提交）</strong>：其他事务会读取当前事务已经提交的数据（也就是直接读取数据库中已经发生更改的内容）</li>
+</ul>
+<p>我们接着来看<code>读已提交</code>级别，事务只能读取其他事务已经提交的内容，相当于直接从数据中读取数据，这样就可以避免<strong>脏读</strong>问题了，但是它还是存在以下问题：</p>
+<p><img alt="Pasted image 20240820004721" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/28/pasted-image-20240820004721.png" /></p>
+<p>这正是我们前面例子中提到的问题，虽然它避免了脏读问题，但是如果事件B修改并提交了数据，那么实际上事务A之前读取到的数据依然不是最新的数据，直接导致两次读取的数据<strong>不一致</strong>，这种现象称为<strong>虚读</strong>也可以称为<strong>不可重复读</strong></p>
+<hr />
+<h3 id="3"><strong>3. 可重复读</strong><a class="headerlink" href="#3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>ISOLATION_REPEATABLE_READ（可重复读）</strong>：其他事务会读取当前事务已经提交的数据并且其他事务执行过程中不允许再进行数据修改（注意这里仅仅是不允许修改数据）</li>
+</ul>
+<p>因此，下一个隔离级别<strong>可重复读</strong>就能够解决这样的问题（MySQL的默认隔离级别），它规定在其他事务执行时，不允许修改数据，这样，就可以有效地避免不可重复读的问题，但是这样就一定安全了吗？这里仅仅是<strong>禁止了事务执行过程中的UPDATE操作，但是它并没有禁止INSERT这类操作</strong>，因此，如果事务A执行过程中事务B插入了新的数据，那么A这时是毫不知情的，比如：</p>
+<p><img alt="Pasted image 20240820004951" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/28/pasted-image-20240820004951.png" /></p>
+<p>两个人<strong>同时</strong>报名一个活动，两个报名的事务<strong>同时</strong>在进行，但是他们一开始读取到的人数都是<strong>5</strong>，而这时，它们都会认为报名成功后人数应该变成<strong>6</strong>，而正常情况下应该是<strong>7</strong>，因此这个时候就发生了数据的<strong>幻读</strong>现象。</p>
+<hr />
+<h3 id="4"><strong>4. 串行化</strong><a class="headerlink" href="#4" title="Permanent link">&para;</a></h3>
+<p>要解决上述种种问题，只能使用最后一种隔离级别<strong>串行化</strong>来实现了，<strong>每个事务不能同时进行</strong>，直接避免所有并发问题，简单粗暴，但是效率爆减，并不推荐。</p>
+<hr />
+<h3 id="5"><strong>5. 小结</strong><a class="headerlink" href="#5" title="Permanent link">&para;</a></h3>
+<p>最后总结三种情况：</p>
+<ul>
+<li><strong>脏读</strong>：读取到了被回滚的数据，它毫无意义。</li>
+<li><strong>虚读（不可重复读）</strong>：由于其他事务更新数据，两次读取的数据不一致。</li>
+<li><strong>幻读</strong>：由于其他事务执行插入删除操作，而又无法感知到表中记录条数发生变化，当下次再读取时会莫名其妙多出或缺失数据，就像产生幻觉一样。</li>
+</ul>
+<p><em>（对于虚读和幻读的区分：虚读是某个数据前后读取不一致，幻读是整个表的记录数量前后读取不一致)</em></p>
+<p>最后这张图，请务必记在你的脑海，记在你的心中：</p>
+<p><img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/28/17353763265466.jpg" style="height:200px; display: block; margin: auto;"></p>
+<h2 id="_2">事务的传播行为<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<h3 id="_3">概述<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h3>
+<p>当一个 <code>service</code> 中调用了另一个 <code>service</code> 的方法，此时 <code>bservice</code> 的事务传播到了 <code>aservice</code> 中，这样就产生了事务的传播：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span>
+<span class="normal"><a href="#__codelineno-0-11">11</a></span>
+<span class="normal"><a href="#__codelineno-0-12">12</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nd">@Service</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AService</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">    </span><span class="nd">@Autowired</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">BService</span><span class="w"> </span><span class="n">bService</span><span class="p">;</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">order</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="n">xxx</span><span class="p">();</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">        </span><span class="n">bService</span><span class="p">().</span><span class="na">yyy</span><span class="p">();</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="w">        </span><span class="n">zzz</span><span class="p">();</span>
+<a id="__codelineno-0-11" name="__codelineno-0-11"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-12" name="__codelineno-0-12"></a><span class="p">}</span><span class="w">    </span>
 </code></pre></div></td></tr></table></div>
-<p>其中，<strong>header 是必需的，body 和 footer 可以省略</strong>。
-不管是哪一个部分，任何一行都<strong>不得超过72个字符</strong>（或100个字符）。这是为了避免自动换行影响美观。</p>
-<h3 id="header">Header<a class="headerlink" href="#header" title="Permanent link">&para;</a></h3>
-<p>Header部分只有一行，包括三个字段：<strong>type</strong>（必需）、<strong>scope</strong>（可选）和<strong>subject</strong>（必需）。</p>
-<hr />
-<h4 id="1-type">1. <strong>type</strong><a class="headerlink" href="#1-type" title="Permanent link">&para;</a></h4>
-<p>用于说明 <strong>commit</strong> 的类别，只允许使用下面<strong>7</strong>个标识。</p>
-<ul>
-<li><strong>feat</strong>：新功能（feature）</li>
-<li><strong>fix</strong>：修补bug</li>
-<li><strong>docs</strong>：文档（documentation）</li>
-<li><strong>style</strong>： 格式（不影响代码运行的变动）</li>
-<li><strong>refactor</strong>：重构（即不是新增功能，也不是修改bug的代码变动）</li>
-<li><strong>test</strong>：增加测试</li>
-<li><strong>chore</strong>：构建过程或辅助工具的变动</li>
-</ul>
-<p>如果type为<strong>feat</strong>和<strong>fix</strong>，则该 commit 将肯定出现在 Change log 之中。其他情况（<strong>docs</strong>、<strong>chore</strong>、<strong>style</strong>、<strong>refactor</strong>、<strong>test</strong>）由你决定，要不要放入 Change log，建议是不要。</p>
-<hr />
-<h4 id="2-scope">2. <strong>scope</strong><a class="headerlink" href="#2-scope" title="Permanent link">&para;</a></h4>
-<p><strong>scope</strong>用于说明 commit 影响的<strong>范围</strong>，比如数据层、控制层、视图层等等，视项目不同而不同。</p>
-<p>例如在<strong>Angular</strong>，可以是 <strong>$location</strong>, <strong>$browser</strong>, <strong>$compile</strong>, <strong>$rootScope</strong>, <strong>ngHref</strong>, <strong>ngClick</strong>, <strong>ngView</strong>等。</p>
-<p>如果你的修改影响了不止一个<strong>scope</strong>，你可以使用 <strong>*</strong> 代替。</p>
-<hr />
-<h4 id="3-subject">3. <strong>subject</strong><a class="headerlink" href="#3-subject" title="Permanent link">&para;</a></h4>
-<p><strong>subject</strong>是 commit 目的的简短描述，不超过50个字符。</p>
-<p>其他注意事项：</p>
-<ul>
-<li>以<strong>动词</strong>开头，使用<strong>第一人称现在时</strong>，比如<strong>change</strong>，而不是changed或changes</li>
-<li><strong>第一个字母小写</strong></li>
-<li><strong>结尾不加句号（.）</strong></li>
-</ul>
-<h3 id="body">Body<a class="headerlink" href="#body" title="Permanent link">&para;</a></h3>
-<p><strong>Body</strong> 部分是对本次 commit 的<strong>详细描述</strong>，可以分成多行。下面是一个范例。</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">git commit</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<p>因为两个 <code>service</code> 都存在事务，那么生成的sql语句可能如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
 <span class="normal"><a href="#__codelineno-1-2">2</a></span>
 <span class="normal"><a href="#__codelineno-1-3">3</a></span>
 <span class="normal"><a href="#__codelineno-1-4">4</a></span>
 <span class="normal"><a href="#__codelineno-1-5">5</a></span>
 <span class="normal"><a href="#__codelineno-1-6">6</a></span>
-<span class="normal"><a href="#__codelineno-1-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>More detailed explanatory text, if necessary.  Wrap it to 
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>about 72 characters or so. 
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a>Further paragraphs come after blank lines.
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a>- Bullet points are okay, too
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a>- Use a hanging indent
+<span class="normal"><a href="#__codelineno-1-7">7</a></span>
+<span class="normal"><a href="#__codelineno-1-8">8</a></span>
+<span class="normal"><a href="#__codelineno-1-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="k">BEGIN</span><span class="p">;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="k">update</span><span class="w"> </span><span class="n">xxx</span><span class="p">;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="c1">--- 事务分界线 ---</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="k">begin</span><span class="p">;</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">            </span><span class="k">update</span><span class="w"> </span><span class="n">yyy</span><span class="p">;</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">        </span><span class="k">commit</span><span class="p">;</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="c1">----------------</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="k">update</span><span class="w"> </span><span class="n">zzz</span><span class="p">;</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="k">commit</span><span class="p">;</span><span class="w">    </span>
 </code></pre></div></td></tr></table></div>
-<p>有3个注意点:</p>
-<ul>
-<li>使用<strong>第一人称现在时</strong>，比如使用change而不是changed或changes。</li>
-<li>永远别忘了<strong>第2行是空行</strong></li>
-<li>应该说明<strong>代码变动的动机</strong>，以及<strong>与以前行为的对比</strong>。</li>
-</ul>
-<h3 id="footer">Footer<a class="headerlink" href="#footer" title="Permanent link">&para;</a></h3>
-<p>Footer 部分只用于以下两种情况：</p>
-<ol>
-<li><strong>不兼容变动</strong></li>
-</ol>
-<p>如果当前代码与上一个版本不兼容，则 Footer 部分以BREAKING CHANGE开头，后面是对变动的描述、以及变动理由和迁移方法。</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">git commit</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span>
-<span class="normal"><a href="#__codelineno-2-12">12</a></span>
-<span class="normal"><a href="#__codelineno-2-13">13</a></span>
-<span class="normal"><a href="#__codelineno-2-14">14</a></span>
-<span class="normal"><a href="#__codelineno-2-15">15</a></span>
-<span class="normal"><a href="#__codelineno-2-16">16</a></span>
-<span class="normal"><a href="#__codelineno-2-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>BREAKING CHANGE: isolate scope bindings definition has changed.
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>    To migrate the code follow the example below:
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>    Before:
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>    scope: {
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a>      myAttr: &#39;attribute&#39;,
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a>    }
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a>    After:
-<a id="__codelineno-2-12" name="__codelineno-2-12"></a>
-<a id="__codelineno-2-13" name="__codelineno-2-13"></a>    scope: {
-<a id="__codelineno-2-14" name="__codelineno-2-14"></a>      myAttr: &#39;@&#39;,
-<a id="__codelineno-2-15" name="__codelineno-2-15"></a>    }
-<a id="__codelineno-2-16" name="__codelineno-2-16"></a>
-<a id="__codelineno-2-17" name="__codelineno-2-17"></a>    The removed `inject` wasn&#39;t generaly useful for directives so there should be no code using it.
+<p>显然，这里的事务逻辑存在问题，当第二个 <code>begin</code> 执行完毕后，会隐式地将第一个事务提交，从而导致 <code>AService</code> 的部分事务提交。
+所以当 <code>B事务</code> 传播到 <code>A事务</code> 中时 <code>B 事务</code> 需要做一下微调，微调的结果如下述几种情况：</p>
+<h4 id="1-aservice"><strong>1. 当AService存在事务</strong><a class="headerlink" href="#1-aservice" title="Permanent link">&para;</a></h4>
+<p><strong>第一种情况：融入A事务 (即B事务合并入A事务)</strong> </p>
+<p>形成的sql如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span>
+<span class="normal"><a href="#__codelineno-2-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">BEGIN</span><span class="p">;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="k">update</span><span class="w"> </span><span class="n">xxx</span><span class="p">;</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="c1">--- 事务分界线 ---</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">        </span><span class="k">update</span><span class="w"> </span><span class="n">yyy</span><span class="p">;</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="c1">----------------</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w">    </span><span class="k">update</span><span class="w"> </span><span class="n">zzz</span><span class="p">;</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="k">commit</span><span class="p">;</span><span class="w">   </span>
 </code></pre></div></td></tr></table></div>
-<ol>
-<li><strong>关闭issue</strong></li>
-</ol>
-<p>如果当前 commit 针对某个issue，那么可以在 Footer 部分关闭这个 issue 。</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">git commit</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>Closes #234
+<p><br/> </p>
+<p><strong>第二种情况：挂起A事务，让B事务独立于A事务运行。</strong></p>
+<p>当两个事务需要<strong>各自独立维护自身事务</strong>，单个事务无法独立完成，B事务启动时可以暂时将A事务挂起，即阻塞A，且不向A发送sql，使得其无法提交，而B开启一个新的事务，B执行完毕后A继续。</p>
+<p><img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/28/untitled-diagramdrawio1.png" style="height:400px; display: block; margin: auto;"></p>
+<hr />
+<h4 id="2-aservice"><strong>2. 当AService无事务</strong><a class="headerlink" href="#2-aservice" title="Permanent link">&para;</a></h4>
+<p><strong>第一种情况：B事务以事务的方式运行</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span>
+<span class="normal"><a href="#__codelineno-3-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="k">select</span><span class="w"> </span><span class="n">xxx</span><span class="p">;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="c1">--- 分界线 ---</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="w">    </span><span class="k">begin</span><span class="p">;</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">        </span><span class="k">update</span><span class="w"> </span><span class="n">yyy</span><span class="p">;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="w">    </span><span class="k">commit</span><span class="p">;</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="c1">-------------</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="k">select</span><span class="w"> </span><span class="n">zzz</span><span class="p">;</span><span class="w">    </span>
 </code></pre></div></td></tr></table></div>
-<h3 id="revert">Revert<a class="headerlink" href="#revert" title="Permanent link">&para;</a></h3>
-<p>还有一种特殊情况，如果当前 commit 用于撤销以前的 commit，则必须以revert:开头，后面跟着被撤销 Commit 的 Header。</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">git commit</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<p><br/></p>
+<p><strong>第二种情况：B事务以无事务的方式运行</strong></p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
 <span class="normal"><a href="#__codelineno-4-2">2</a></span>
-<span class="normal"><a href="#__codelineno-4-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>revert: feat(pencil): add &#39;graphiteWidth&#39; option
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a>This reverts commit 667ecc1654a317a13331b17617d973392f415f02.
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span>
+<span class="normal"><a href="#__codelineno-4-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="k">select</span><span class="w"> </span><span class="n">xxx</span><span class="p">;</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="w">    </span><span class="c1">--- 分界线 ---</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="k">select</span><span class="w"> </span><span class="n">yyy</span><span class="p">;</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">    </span><span class="c1">-------------</span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="k">select</span><span class="w"> </span><span class="n">zzz</span><span class="p">;</span><span class="w">    </span>
 </code></pre></div></td></tr></table></div>
-<p>Body部分的格式是固定的，必须写成<code>This reverts commit &amp;lt;hash&gt;.</code>，其中的hash是被撤销 commit 的 SHA 标识符。</p>
-<p>如果当前 commit 与被撤销的 commit，在同一个发布（release）里面，那么它们都不会出现在 Change log 里面。如果两者在不同的发布，那么当前 commit，会出现在 Change log 的Reverts小标题下面。</p>
-<h2 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
-<p><a href="https://segmentfault.com/a/1190000009048911">git commit 规范指南</a></p>
+<hr />
+<h4 id="3_1"><strong>3. 嵌套事务</strong><a class="headerlink" href="#3_1" title="Permanent link">&para;</a></h4>
+<p>通过设置保存点，将内部的事务转化为 <strong>设置保存点</strong> 和 <strong>回滚至保存点</strong>，实现类似两个事务的操作。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span>
+<span class="normal"><a href="#__codelineno-5-3">3</a></span>
+<span class="normal"><a href="#__codelineno-5-4">4</a></span>
+<span class="normal"><a href="#__codelineno-5-5">5</a></span>
+<span class="normal"><a href="#__codelineno-5-6">6</a></span>
+<span class="normal"><a href="#__codelineno-5-7">7</a></span>
+<span class="normal"><a href="#__codelineno-5-8">8</a></span>
+<span class="normal"><a href="#__codelineno-5-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="k">begin</span><span class="p">;</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="w">    </span><span class="k">update</span><span class="w"> </span><span class="n">xxx</span><span class="p">;</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="n">savepoint</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">        </span><span class="k">update</span><span class="w"> </span><span class="n">yyy</span><span class="p">;</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">        </span><span class="c1">--- 若报错，回滚至保存点a</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span><span class="k">rollback</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="c1">--- 后续事务不受影响</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="w">    </span><span class="k">update</span><span class="w"> </span><span class="n">zzz</span><span class="p">;</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="k">commit</span><span class="p">;</span><span class="w">    </span>
+</code></pre></div></td></tr></table></div>
+<p>嵌套过程如下：</p>
+<ol>
+<li>内部 <code>SAVEPOINT a</code> 后的代码如果报错则直接回滚到保存点</li>
+<li>整个事务的提交不收内部 <strong>伪事务</strong> 的影响。</li>
+</ol>
+<h3 id="_4">传播行为<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>PROPAGATION_REQUIRED</strong>：表示当前方法必须运行在事务中。如果当前事务存在，方法将会在该事务中运行。否则，会启动一个新的事务。REQUIRED 表示需要，即 B事务无论如何都要有事务。</li>
+<li><strong>PROPAGATION_SUPPORTS</strong>：表示当前方法不需要事务上下文。但是如果存在当前事务的话，那么该方法会在这个事务中运行</li>
+<li><strong>PROPAGATION_MANDATORY</strong>：(强制性的) 表示该方法必须在事务中运行。如果当前事务不存在，则会抛出一个异常。</li>
+<li><strong>PROPAGATION_REQUIRES_NEW</strong>：(需要一个新事务) 表示当前方法必须运行在它自己的事务中。一个新的事务将被启动。如果存在当前事务，在该方法执行期间，当前事务会被挂起。</li>
+<li><strong>PROPAGATION_NOT_SUPPORTED</strong>：(不支持事务) 表示该方法不应该运行在事务中。如果存在当前事务，在该方法运行期间，当前事务将被挂起。</li>
+<li><strong>PROPAGATION_NEVER</strong>：(不会运行在有事务的环境) 表示当前方法不应该运行在事务上下文中，如果当前有一个事务正在运行，则会抛出异常</li>
+<li><strong>PROPAGATION_NESTED</strong>：(嵌套的) 表示如果当前已经存在一个事务，那么该方法将会在嵌套事务中运行。嵌套的事务可以独立于当前事务进行独立地提交或回滚，如果当前事务不存在，那么其行为与 REQUIRED 一样。注意不同数据库对这种传播行为的支持是有所差异的。可以参考资源管理器的文档来确认它们是否支持嵌套事务。</li>
+</ol>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -2251,7 +2437,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-12-06</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-12-30</span>
   </span>
 
     
@@ -2326,8 +2512,6 @@
 
 
 <!-- Determine whether to show feedback -->
-
-  
 
 
 <!-- Was this page helpful? -->
@@ -2422,10 +2606,10 @@
 
 
 
-      
-    </article>
-  </div>
-
+                
+              </article>
+            </div>
+          
           
   <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
 
@@ -2447,8 +2631,6 @@
   
     
       
-        
-      
       <nav
         class="md-footer__inner md-grid"
         aria-label="页脚"
@@ -2459,9 +2641,9 @@
         
           
           <a
-            href="../../12/dijkstra%E7%AE%97%E6%B3%95/"
+            href="../Spring%20IOC/"
             class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: Dijkstra算法"
+            aria-label="上一页: Spring IOC 容器"
           >
             <div class="md-footer__button md-icon">
               
@@ -2472,7 +2654,7 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                Dijkstra算法
+                Spring IOC 容器
               </div>
             </div>
             
@@ -2483,16 +2665,16 @@
         
           
           <a
-            href="../../../12/01/the-shell/"
+            href="../simple-spring/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"
             class="md-footer__link md-footer__link--next"
-            aria-label="下一页: The Shell"
+            aria-label="下一页: Learn-Spring"
           >
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                The Shell
+                Learn-Spring
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2573,17 +2755,17 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["announce.dismiss", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
     
-      <script src="../../../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.88dd0f4e.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js"></script>
       
-        <script src="../../../../../javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
-        <script src="../../../../../javascripts/editable-code.js"></script>
+        <script src="../../../../javascripts/editable-code.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
@@ -2592,7 +2774,7 @@
         <script src="https://cdn.jsdelivr.net/npm/mermaid@10.0.2/dist/add-html-label-6e56ed67.min.js"></script>
       
     
-    <script src="../../../../../assets/javascripts/custom.9458f965.min.js"></script>
+    <script src="../../../../assets/javascripts/custom.9458f965.min.js"></script>
   
   </body>
 </html>
