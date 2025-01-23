@@ -1,6 +1,6 @@
 ---
 hide:
-#   - navigation
+  #   - navigation
   # - toc
   - feedback
 status: new
@@ -9,7 +9,7 @@ status: new
 # Hi, there! I am 苍镜月
 
 <p style="text-align: center; margin: 0px;" markdown>
-  <img src="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png" alt="arv-anshul" style="width: 300px; border-radius: 50%;" />
+  <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/23/106435907.jpeg" alt="arv-anshul" style="width: 300px; border-radius: 50%;" />
   <!-- <p style="text-align: center; font-size: 30px; margin: 0px;"><strong>苍镜月</strong></p> -->
     
 <br/>

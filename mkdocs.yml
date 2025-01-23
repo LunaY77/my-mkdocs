@@ -1,18 +1,17 @@
 #[Info]
 site_name: 苍镜月's docs #your site name 显示在左上角
 site_url: https://cangjingyue.top
-# site_url: https://pale-illusions.github.io/my-mkdocs/
 site_author: 苍镜月 # your name
 #[UI]
 theme:
   name: material
   custom_dir: docs/overrides #覆写路径
   font: #谷歌字体，自行搜索
-    text: Bitter  #文本字体
-    code: Roboto Mono  #代码字体
-  logo: https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png #左上角logo，可插入图片链接
+    text: Bitter #文本字体
+    code: Roboto Mono #代码字体
+  logo: https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/23/106435907.jpeg #左上角logo，可插入图片链接
 
-  favicon: https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png # 网页icon
+  favicon: https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/23/106435907.jpeg # 网页icon
 
   palette:
     - media: "(prefers-color-scheme)"
@@ -68,7 +67,6 @@ edit_uri: edit/main/docs # 编辑按钮跳转的链接
 repo_url: https://github.com/Pale-illusions/my-mkdocs.git # 右上角点击跳转的链接
 repo_name: Mkdocs-苍镜月 # 右上角的名字
 
-
 copyright: Copyright &copy; 2022~2024 苍镜月/All Rights Reserved. # 左下角的版权声明
 
 extra:
@@ -76,7 +74,7 @@ extra:
     - name: 简体中文
       link: /
       # https://wcowin-work.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=zh-CN&_x_tr_pto=wapp
-      lang: zh   
+      lang: zh
     - name: English
       link: /Pale-illusions/en/
       # https://wcowin-work.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=zh-CN&_x_tr_pto=wapp
@@ -188,6 +186,8 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
           class: mermaid
           format:
             !!python/name:pymdownx.superfences.fence_code_format # 代码块高亮插件
+
+
   - pymdownx.arithmatex: # latex支持
       generic: true
   - toc:
@@ -209,7 +209,7 @@ markdown_extensions: #详见https://squidfunk.github.io/mkdocs-material/setup/ex
 
 extra_javascript:
   # - javascripts/extra.js #自定义javascript
-  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js  # extra的cdn
+  - https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js # extra的cdn
   - javascripts/mathjax.js #Latex支持
   - javascripts/editable-code.js # 代码可执行
   - https://polyfill.io/v3/polyfill.min.js?features=es6 #Latex支持
@@ -234,14 +234,12 @@ extra_css:
   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-tc-webfont@1.0.0/style.css  #字体
   # - https://cdn.jsdelivr.net/npm/lxgw-wenkai-screen-webfont@1.1.0/style.css  #字体
 
-
-
   # [Navigtion]
 nav:
   - 主页: index.md
   - 标签: tag.md
   - Blogger:
-    - index: blog/index.md
+      - index: blog/index.md
   - 后端: blog/backend
     # - Java:
     #   - Frequency-Control-Starter: blog/backend/Java/FrequencyControl.md
@@ -255,7 +253,7 @@ nav:
     # - JavaScript:
     #   - JavaScript Code Runner: blog/frontend/JavaScript/testJs.md
     #   - JS基本语法: blog/frontend/JavaScript/QuickDive/BasicGrammar.md
-  - 周结: blog/WeeklySummary
+  # - 周结: blog/WeeklySummary
   - 友链:
       - 友链: about/link.md
   - 关于:

@@ -16,7 +16,7 @@ hide:
     <div class="link-navigation"> 
 
       <div class="card"> 
-        <img class="ava" src="https://s2.loli.net/2024/11/12/skvZLdl76xBab4C.png" /> 
+        <img class="ava" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/23/106435907.jpeg" /> 
         <div class="card-header"> 
           <div> 
           <a href="http://cangjingyue.top" target="_blank">苍镜月's docs</a> 

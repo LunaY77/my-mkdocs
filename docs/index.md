@@ -56,7 +56,7 @@ comments: false
 
     - [linux环境部署](blog/posts/linux/linux.md)
     - [Dijkstra算法模版](blog/posts/algorithm/Dijkstra.md)
-    
+    - [Simple-Spring](blog/backend/spring/simple-spring/simple-spring.md)
     
 -   :simple-aboutdotme:{ .lg .middle } __关于__
 
