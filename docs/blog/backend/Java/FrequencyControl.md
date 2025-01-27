@@ -13,7 +13,7 @@ categories:
 
 本项目为一个基于 **SpringBoot + Redis** 实现的频率控制组件
 
-github仓库地址：[Frequency-Control-Spring-Boot-Starter](https://github.com/Pale-illusions/Frequency-Control-Spring-Boot-Starter)
+github仓库地址：[Frequency-Control-Spring-Boot-Starter](https://github.com/LunaY77/Frequency-Control-Spring-Boot-Starter)
 
 ## 2. 项目亮点
 

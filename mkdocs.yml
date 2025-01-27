@@ -64,7 +64,7 @@ theme:
     repo: fontawesome/brands/github #右上角图标
     logo: logo
 edit_uri: edit/main/docs # 编辑按钮跳转的链接
-repo_url: https://github.com/Pale-illusions/my-mkdocs.git # 右上角点击跳转的链接
+repo_url: https://github.com/LunaY77/my-mkdocs.git # 右上角点击跳转的链接
 repo_name: Mkdocs-苍镜月 # 右上角的名字
 
 copyright: Copyright &copy; 2022~2024 苍镜月/All Rights Reserved. # 左下角的版权声明
@@ -86,7 +86,7 @@ extra:
   generator: true #是否删除页脚显示“使用 MkDocs 材料制造”
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/Pale-illusions
+      link: https://github.com/LunaY77
 
     - icon: fontawesome/regular/envelope #联系方式图标
       link: mailto:<2307984361@qq.com> #邮件联系方式

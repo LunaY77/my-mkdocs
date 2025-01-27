@@ -12,7 +12,7 @@ categories:
 
 **AstroMailer** 是一个**每日早安邮件发送器**，它通过集成 **NASA 天文每日一图（APOD）、词霸金句和百度翻译 API**，为用户带来浪漫、温暖的早安邮件。
 
-github地址: [AstroMailer](https://github.com/Pale-illusions/AstroMailer)
+github地址: [AstroMailer](https://github.com/LunaY77/AstroMailer)
 
 ## 功能概述
 
