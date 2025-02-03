@@ -10,13 +10,13 @@
         <meta name="author" content="苍镜月">
       
       
-        <link rel="canonical" href="https://cangjingyue.top/blog/2025/02/02/02ideagit-%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/">
+        <link rel="canonical" href="https://cangjingyue.top/blog/2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/">
       
       
-        <link rel="prev" href="../03ideagit-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">
+        <link rel="prev" href="../05ideagit-%E6%9D%82%E9%A1%B9/">
       
       
-        <link rel="next" href="../01ideagit-demo/">
+        <link rel="next" href="../03ideagit-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">
       
       
       <link rel="icon" href="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/23/106435907.jpeg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>02.IdeaGit 基础操作 - 苍镜月's docs</title>
+        <title>04.IdeaGit 分支管理 - 苍镜月's docs</title>
       
     
     
@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#02ideagit" class="md-skip">
+        <a href="#04ideagit" class="md-skip">
           跳转至
         </a>
       
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              02.IdeaGit 基础操作
+              04.IdeaGit 分支管理
             
           </span>
         </div>
@@ -1730,7 +1730,7 @@
         <li class="md-nav__item">
   <a href="#1" class="md-nav__link">
     <span class="md-ellipsis">
-      1. 初始化
+      1. 查看分支
     </span>
   </a>
   
@@ -1739,108 +1739,141 @@
         <li class="md-nav__item">
   <a href="#2" class="md-nav__link">
     <span class="md-ellipsis">
-      2. 将文件添加到版本库
+      2. 创建分支
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="2. 将文件添加到版本库">
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. 切换分支
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. 创建并切换分支
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 合并分支
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 删除分支
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. 建立本地分支和远程分支的关联
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="7. 建立本地分支和远程分支的关联">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#21" class="md-nav__link">
+  <a href="#71" class="md-nav__link">
     <span class="md-ellipsis">
-      2.1 将文件添加到暂存区
+      7.1 本地分支存在，远程分支存在，但之间没有关联关系。
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#22" class="md-nav__link">
+  <a href="#72" class="md-nav__link">
     <span class="md-ellipsis">
-      2.2 将暂存区文件提交到仓库
+      7.2 本地分支存在，但远程分支不存在。
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#23" class="md-nav__link">
+  <a href="#73" class="md-nav__link">
     <span class="md-ellipsis">
-      2.3 查看仓库状态
+      7.3 本地分支存在，远程分支存在，且关联关系已建立
     </span>
   </a>
   
 </li>
         
-          <li class="md-nav__item">
-  <a href="#24" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.4 查看仓库中的具体修改
-    </span>
-  </a>
+      </ul>
+    </nav>
   
 </li>
-        
-          <li class="md-nav__item">
-  <a href="#25" class="md-nav__link">
+      
+        <li class="md-nav__item">
+  <a href="#8" class="md-nav__link">
     <span class="md-ellipsis">
-      2.5 查看历史提交记录
+      8. 从远程仓库拉取
     </span>
   </a>
   
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#26" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6 版本回退
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="2.6 版本回退">
+    <nav class="md-nav" aria-label="8. 从远程仓库拉取">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#git" class="md-nav__link">
+  <a href="#81-git-fetch" class="md-nav__link">
     <span class="md-ellipsis">
-      git工作区域
+      8.1 git fetch
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#261-git-reset-soft" class="md-nav__link">
+  <a href="#82-git-pull" class="md-nav__link">
     <span class="md-ellipsis">
-      2.6.1 git reset --soft
+      8.2 git pull
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#262-git-reset-mixed" class="md-nav__link">
+  <a href="#83-idea" class="md-nav__link">
     <span class="md-ellipsis">
-      2.6.2 git reset --mixed
+      8.3 idea 拉取远程仓库
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.3 idea 拉取远程仓库">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 前置准备
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#263-git-reset-hard" class="md-nav__link">
+  <a href="#2-git-fetch" class="md-nav__link">
     <span class="md-ellipsis">
-      2.6.3 git reset --hard
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#264-git-reset-keep" class="md-nav__link">
-    <span class="md-ellipsis">
-      2.6.4 git reset --keep
+      2. git fetch
     </span>
   </a>
   
@@ -1852,18 +1885,18 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#27" class="md-nav__link">
+  <a href="#84-mergerebase" class="md-nav__link">
     <span class="md-ellipsis">
-      2.7 撤销修改
+      8.4 merge与rebase的区别(存在冲突)
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#28" class="md-nav__link">
+  <a href="#85-merge-fast-forward" class="md-nav__link">
     <span class="md-ellipsis">
-      2.8 删除文件
+      8.5 merge fast-forward(不存在冲突)
     </span>
   </a>
   
@@ -1952,7 +1985,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              需要 5 分钟阅读时间
+                              需要 4 分钟阅读时间
                             
                           </span>
                         </div>
@@ -1992,7 +2025,7 @@
 
 
   
-    <a href="https://github.com/LunaY77/my-mkdocs.git/edit/main/docs/blog/posts/tools/git/idea-git-02.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/LunaY77/my-mkdocs.git/edit/main/docs/blog/posts/tools/git/idea-git-04.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2001,243 +2034,182 @@
     
       
     
-    <a href="https://github.com/LunaY77/my-mkdocs.git/raw/main/docs/blog/posts/tools/git/idea-git-02.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/LunaY77/my-mkdocs.git/raw/main/docs/blog/posts/tools/git/idea-git-04.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="02ideagit">02.IdeaGit 基础操作<a class="headerlink" href="#02ideagit" title="Permanent link">&para;</a></h1>
+<h1 id="04ideagit">04.IdeaGit 分支管理<a class="headerlink" href="#04ideagit" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1713 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 26 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 31 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 6 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1063 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 29 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 25 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 4 分钟</p>
 </div>
-<h2 id="1">1. 初始化<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>git<span class="w"> </span>init
+<h2 id="1">1. 查看分支<a class="headerlink" href="#1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>git<span class="w"> </span>branch<span class="w">        </span>//<span class="w"> </span>查看本地分支信息
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>git<span class="w"> </span>branch<span class="w"> </span>-v<span class="w">     </span>//<span class="w"> </span>查看相对详细的本地分支信息
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>git<span class="w"> </span>branch<span class="w"> </span>-av<span class="w">     </span>//<span class="w"> </span>查看包括远程仓库在内的分支信息
 </code></pre></div></td></tr></table></div>
-<p>查看目录结构中，就可以看到包含有 <code>.git</code> 子目录，这就说明创建版本库成功</p>
-<p>相当于idea中的 <code>vcs----create git repository</code></p>
-<h2 id="2">2. 将文件添加到版本库<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
-<h3 id="21">2.1 将文件添加到暂存区<a class="headerlink" href="#21" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>git<span class="w"> </span>add<span class="w"> </span><span class="m">001</span>.txt<span class="w">        </span>//<span class="w"> </span>添加单个文件到暂存区
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a>git<span class="w"> </span>add<span class="w"> </span>.<span class="w">                </span>//<span class="w"> </span>将当前目录下所有修改添加到暂存区，除按照规则忽略的之外
+<p>注意：在 <code>git branch</code> 的输出内容中，有一个分支，前面带有 <code>*</code> 号，这标识我们当前所在的分支。</p>
+<h2 id="2">2. 创建分支<a class="headerlink" href="#2" title="Permanent link">&para;</a></h2>
+<p>分支创建后，新分支基于当前分支。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>git<span class="w"> </span>branch<span class="w"> </span>dev<span class="w"> </span>
 </code></pre></div></td></tr></table></div>
-<p>相当于idea中的<code>git --&gt; add</code></p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384735316063.jpg" /></p>
-<p>不同之处是在idea中即便不进行<code>add</code>，依旧可以<code>commit</code></p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384736316265.jpg" /></p>
-<hr />
-<h3 id="22">2.2 将暂存区文件提交到仓库<a class="headerlink" href="#22" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>git<span class="w"> </span>commit<span class="w">        </span>//<span class="w"> </span>如果暂存区有文件，则将其中的文件提交到仓库
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s1">&#39;your comments&#39;</span><span class="w">         </span>//<span class="w"> </span>带评论提交，用于说明提交内容、变更、作用等
+<p>idea 中</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385111405146.jpg" /></p>
+<h2 id="3">3. 切换分支<a class="headerlink" href="#3" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>dev
 </code></pre></div></td></tr></table></div>
-<p>这个和idea中的<code>git -commit</code>一致，不同点：<strong>注释必须写</strong></p>
-<hr />
-<h3 id="23">2.3 查看仓库状态<a class="headerlink" href="#23" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>git<span class="w"> </span>status
+<p>idea:</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385112531304.jpg" /></p>
+<h2 id="4">4. 创建并切换分支<a class="headerlink" href="#4" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>dev<span class="w"> </span><span class="c1"># 新建 dev 分支，并切换到该分支上</span>
 </code></pre></div></td></tr></table></div>
-<p>在idea中，直接在commit界面可以看到改动的所有文件以及未add的文件</p>
-<p><strong>红色</strong>: 代表未<code>add</code>到暂存区
-<strong>绿色</strong>: 代表已在暂存区但是有修改
-<strong>无标记</strong>：代表无修改</p>
-<hr />
-<h3 id="24">2.4 查看仓库中的具体修改<a class="headerlink" href="#24" title="Permanent link">&para;</a></h3>
+<h2 id="5">5. 合并分支<a class="headerlink" href="#5" title="Permanent link">&para;</a></h2>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
-<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>git<span class="w"> </span>diff<span class="w">    </span>//<span class="w"> </span>查看版本库中所有的改动
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>git<span class="w"> </span>diff<span class="w"> </span><span class="m">001</span>.txt<span class="w">        </span>//<span class="w"> </span>查看具体文件的改动
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>master<span class="w">        </span><span class="c1"># 切换回 master 分支</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>git<span class="w"> </span>merge<span class="w"> </span>dev<span class="w">            </span><span class="c1"># 将 dev 分钟中的修改合并回 master 分支</span>
 </code></pre></div></td></tr></table></div>
-<p>在idea中，可以在<code>commit</code>界面中双击文件查看，或者也可以通过右键标签<code>--show diff with working tree</code>查看</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384750087901.jpg" /></p>
-<hr />
-<h3 id="25">2.5 查看历史提交记录<a class="headerlink" href="#25" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
-<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>git<span class="w"> </span>log<span class="w">     </span>//<span class="w"> </span>显示所有提交的历史记录
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a>git<span class="w"> </span>log<span class="w"> </span>--pretty<span class="o">=</span>oneline<span class="w">    </span>//<span class="w"> </span>单行显示提交历史记录的内容
+<p>idea:先check out 到指定标签，在把需要合并的标签右键合并即可。</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385118440191.jpg" /></p>
+<h2 id="6">6. 删除分支<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>dev<span class="w"> </span><span class="c1"># 删除 dev 分支</span>
 </code></pre></div></td></tr></table></div>
-<p>相当于idea中的<code>git</code>窗口，同时<code>commit id</code> 位于右下角</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384755481541.jpg" /></p>
-<hr />
-<h3 id="26">2.6 版本回退<a class="headerlink" href="#26" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span>
-<span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD^<span class="w">        </span>//<span class="w"> </span>回退到上一个提交版本
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span>HEAD^^<span class="w">        </span>//<span class="w"> </span>回退到上上一个提交版本
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span><span class="s1">&#39;commit_id&#39;</span><span class="w">    </span>//<span class="w"> </span>会退到<span class="w"> </span>commit_id<span class="w"> </span>指定的提交版本
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385119365997.jpg" /></p>
+<h2 id="7">7. 建立本地分支和远程分支的关联<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
+<h3 id="71">7.1 本地分支存在，远程分支存在，但之间没有关联关系。<a class="headerlink" href="#71" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin/remote_branch<span class="w"> </span>命令推送。
 </code></pre></div></td></tr></table></div>
-<p>如下图，某个<code>git</code>仓库中存在2个提交记录，需要版本回退到第一个记录</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384762470357.jpg" /></p>
-<p>输入 <code>git reset --hard f731</code></p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384764342333.jpg" /></p>
-<p>此时，如果反悔了，不希望回退，如何重新返回？</p>
-<p>输入<code>git log</code>，发现仅存在一条提交记录，查询不到第2条提交记录</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384765048307.jpg" /></p>
-<p>可以通过<code>git reflog</code>找到之前的提交记录</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
-<span class="normal"><a href="#__codelineno-7-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>git<span class="w"> </span>reflog
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span><span class="s1">&#39;commit_id&#39;</span>
+<h3 id="72">7.2 本地分支存在，但远程分支不存在。<a class="headerlink" href="#72" title="Permanent link">&para;</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>local_branch:remote_branch<span class="w"> </span>
 </code></pre></div></td></tr></table></div>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384767022152.jpg" /></p>
-<hr />
-<h4 id="git"><strong>git工作区域</strong><a class="headerlink" href="#git" title="Permanent link">&para;</a></h4>
-<p><code>git reset</code>的方式不仅仅只有<code>hard</code>一种，还有<code>soft</code>、<code>mixed</code>、<code>keep</code>，而在介绍它们之间的异同前，首先需要理解git的工作区域</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384787225267.jpg" /></p>
-<ul>
-<li><strong>Workspace</strong>： 工作区，就是你平时存放项目代码的地方</li>
-<li><strong>Index / Stage</strong>： 暂存区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息</li>
-<li><strong>Repository</strong>： 仓库区（或版本库），就是安全存放数据的位置，这里面有你提交到所有版本的数据。其中HEAD指向最新放入仓库的版本</li>
-<li><strong>Remote</strong>： 远程仓库，托管代码的服务器，可以简单的认为是你项目组中的一台电脑用于远程数据交换</li>
-</ul>
-<p>执行<code>reset</code>命令后还存在文件的区域</p>
-<p><img alt="git reset" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/git-reset.png" /></p>
-<hr />
-<h4 id="261-git-reset-soft"><strong>2.6.1 git reset --soft</strong><a class="headerlink" href="#261-git-reset-soft" title="Permanent link">&para;</a></h4>
-<div class="admonition 操作">
-<p class="admonition-title">操作</p>
-<p>移动本地库HEAD指针</p>
-</div>
-<p>前置准备(其他演示类似不做过多赘述)</p>
-<p>类似上文，某个<code>git</code>仓库中存在2个提交记录，需要版本回退到第一个记录</p>
-<p>远程仓库如下图所示</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384798524843.jpg" /></p>
-<p>输入下述命令，使用<code>soft</code>回滚，并推送到远程仓库</p>
+<h3 id="73">7.3 本地分支存在，远程分支存在，且关联关系已建立<a class="headerlink" href="#73" title="Permanent link">&para;</a></h3>
+<p>使用 <code>git push</code> 命令进行推送即可</p>
+<p>idea中本地<code>push</code>时直接修改远程分支名即可</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385612620818.jpg" /></p>
+<h2 id="8">8. 从远程仓库拉取<a class="headerlink" href="#8" title="Permanent link">&para;</a></h2>
+<p>通过 <code>git fetch</code> 和 <code>git pull</code> 来获取远程仓库的内容。</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
-<span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>git<span class="w"> </span>reset<span class="w"> </span>--soft<span class="w"> </span><span class="s1">&#39;commitid&#39;</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a>git<span class="w"> </span>push<span class="w"> </span>--force<span class="w"> </span>origin<span class="w"> </span>master<span class="w"> </span><span class="c1"># 注意这里要强制推送</span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>git<span class="w"> </span>fetch<span class="w"> </span>origin<span class="w"> </span>master<span class="w">    </span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>master
 </code></pre></div></td></tr></table></div>
-<p>可以看到远程仓库中第2次提交不存在了，意味着<strong>版本库发生修改</strong></p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384801148839.jpg" /></p>
-<p>运行 <code>git status</code> 和 <code>ll</code>(alias for <code>ls -l</code>), 观察结果可知<strong>工作区和暂存区未发生修改</strong></p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384804227014.jpg" /></p>
-<div class="admonition 结论">
-<p class="admonition-title">结论</p>
-<p>soft只影响版本库，不影响工作区和暂存区</p>
-</div>
+<p><code>git fetch</code> 和 <code>git pull</code> 之间的区别：</p>
+<h3 id="81-git-fetch">8.1 git fetch<a class="headerlink" href="#81-git-fetch" title="Permanent link">&para;</a></h3>
+<p><code>git fetch</code> 是仅仅获取远程仓库的更新内容，并不会自动做合并。</p>
+<p>需要先查看更新：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>git<span class="w"> </span>log<span class="w"> </span>-p<span class="w"> </span>FETCH_HEAD
+</code></pre></div></td></tr></table></div>
+<p>或者拉取到一个其他分支（目前还没见过分支创建）</p>
+<p>如果没有问题，再进行合并：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>git<span class="w"> </span>merge<span class="w"> </span>origin/master
+</code></pre></div></td></tr></table></div>
+<p>新建一个本地分支，拉取远程到本地temp,查看不同，没问题则合并，合并后删除即可。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1">## 在本地新建一个temp分支，并将远程origin仓库的master分支代码下载到本地temp分支；</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>$<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span>origin<span class="w"> </span>master:temp
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="c1">## 比较本地代码与刚刚从远程下载下来的代码的区别；</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>temp
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="c1">## 合并temp分支到本地的master分支;</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a>$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>temp
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="c1">## 如果不想保留temp分支，删除;</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a>$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>temp
+</code></pre></div></td></tr></table></div>
+<p>实机演示:</p>
+<p>在远程仓库手动修改<code>t1</code>的<code>111</code>为<code>511</code>, 在本地仓库的<code>t1</code>文件中添加<code>666</code>并<code>commit</code></p>
+<p><strong>1. git fetch origin master:temp</strong></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385617397534.jpg" /></p>
+<p><strong>2. git diff temp</strong></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385621563579.jpg" /></p>
+<p><strong>3. git merge temp</strong></p>
+<p>出现冲突，手动解决</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385622823768.jpg" /></p>
+<p>选择全部接受(<code>lazygit</code>按<code>b</code>)，当然也可以只选择某一个<code>hunk</code></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385624491784.jpg" /></p>
+<p>最终<code>commit log</code>如下所示</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385625438433.jpg" /></p>
+<p><strong>4. git branch -d temp</strong></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385627395601.jpg" /></p>
 <hr />
-<h4 id="262-git-reset-mixed"><strong>2.6.2 git reset --mixed</strong><a class="headerlink" href="#262-git-reset-mixed" title="Permanent link">&para;</a></h4>
-<div class="admonition 操作">
-<p class="admonition-title">操作</p>
-<p>移动本地库HEAD指针<br>
-重置暂存区</p>
-</div>
-<p>输入下述命令，使用mixed回滚，并推送到远程仓库</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
-<span class="normal"><a href="#__codelineno-9-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>git<span class="w"> </span>reset<span class="w"> </span>--mixed<span class="w"> </span><span class="s1">&#39;commitid&#39;</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a>git<span class="w"> </span>push<span class="w"> </span>--force<span class="w"> </span>origin<span class="w"> </span>master<span class="w"> </span><span class="c1"># 注意这里要强制推送</span>
+<h3 id="82-git-pull">8.2 git pull<a class="headerlink" href="#82-git-pull" title="Permanent link">&para;</a></h3>
+<p><code>git pull</code> 在获取远程仓库的内容后，会自动做合并，可以看成 <code>git fetch</code> 之后 <code>git merge</code>。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># 因为存在冲突故git pull会报错，以下命令二选一即可</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>git<span class="w"> </span>pull<span class="w"> </span>--no-rebase<span class="w"> </span><span class="c1"># merge冲突</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a>git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span><span class="c1"># rebase冲突</span>
 </code></pre></div></td></tr></table></div>
-<p>可以看到远程仓库中第2次提交不存在了，意味着<strong>版本库发生修改</strong></p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384801148839.jpg" /></p>
-<p>运行 <code>git status</code> 和 <code>ll</code>(alias for <code>ls -l</code>), 观察结果可知<strong>工作区未发生修改，暂存区发生修改(丢失了对t2的追踪)</strong></p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384808994217.jpg" /></p>
-<div class="admonition 结论">
-<p class="admonition-title">结论</p>
-<p>mixed影响版本库和暂存区，不影响工作区</p>
-</div>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385631714218.jpg" /></p>
 <hr />
-<h4 id="263-git-reset-hard"><strong>2.6.3 git reset --hard</strong><a class="headerlink" href="#263-git-reset-hard" title="Permanent link">&para;</a></h4>
-<div class="admonition 操作">
-<p class="admonition-title">操作</p>
-<p>移动本地库HEAD指针<br>
-重置暂存区<br>
-重置工作区</p>
-</div>
-<p>输入下述命令，使用hard回滚，并推送到远程仓库</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
-<span class="normal"><a href="#__codelineno-10-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>git<span class="w"> </span>reset<span class="w"> </span>--hard<span class="w"> </span><span class="s1">&#39;commitid&#39;</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>git<span class="w"> </span>push<span class="w"> </span>--force<span class="w"> </span>origin<span class="w"> </span>master<span class="w"> </span><span class="c1"># 注意这里要强制推送</span>
-</code></pre></div></td></tr></table></div>
-<p>可以看到远程仓库中第2次提交不存在了，意味着<strong>版本库发生修改</strong></p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384801148839.jpg" /></p>
-<p>运行 <code>git status</code> 和 <code>ll</code>(alias for <code>ls -l</code>), 观察结果可知<strong>工作区发生修改，暂存区发生修改(丢失了对t2的追踪)</strong></p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384813014765.jpg" /></p>
-<div class="admonition 结论">
-<p class="admonition-title">结论</p>
-<p>hard影响版本库、暂存区和工作区</p>
-</div>
+<h3 id="83-idea">8.3 idea 拉取远程仓库<a class="headerlink" href="#83-idea" title="Permanent link">&para;</a></h3>
+<h4 id="1_1"><strong>1. 前置准备</strong><a class="headerlink" href="#1_1" title="Permanent link">&para;</a></h4>
+<p>本地创建<code>GitPullTest.java</code>并添加<code>f1</code>函数，提交并推送</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385636994485.jpg" /></p>
+<p>本地仓库添加<code>f2</code>函数，并提交</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385637972911.jpg" /></p>
+<p>远程仓库添加<code>f3</code>函数，并提交</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385639061562.jpg" /></p>
 <hr />
-<h4 id="264-git-reset-keep"><strong>2.6.4 git reset --keep</strong><a class="headerlink" href="#264-git-reset-keep" title="Permanent link">&para;</a></h4>
-<div class="admonition 操作">
-<p class="admonition-title">操作</p>
-<p>移动本地库HEAD指针<br>
-重置暂存区<br>
-重置工作区, 保留改动</p>
-</div>
-<p><code>keep</code>模式和<code>hard</code>模式有些类似，但是对工作区的操作有些不同，具体如下</p>
-<p>工作区中文件如果当前版本和退回版本之间没有发生过变动，则工作区的修改保持不便；如果发生了变动，并且工作区也进行了修改，需要自行合并（或者冲突解决）    </p>
-<p><strong>1. 工作区文件未发生变动</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>git<span class="w"> </span>reset<span class="w"> </span>--keep<span class="w"> </span><span class="s1">&#39;commitid&#39;</span>
-</code></pre></div></td></tr></table></div>
-<p>与<code>hard</code>模式保持一致，版本库、暂存区和工作区均发生修改</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17385062341253.jpg" /></p>
-<p><strong>2. 工作区文件发生变动</strong></p>
-<p>在<code>reset</code>之前，将<code>t1</code>文件中的<code>111</code>改为<code>311</code>，并添加到暂存区</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17385063385330.jpg" /></p>
-<p>执行reset</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>git<span class="w"> </span>reset<span class="w"> </span>--keep<span class="w"> </span><span class="s1">&#39;commitid&#39;</span>
-</code></pre></div></td></tr></table></div>
-<p>神奇的是，加入暂存区的对应文件发生的变动也被保留了下来</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17385066722249.jpg" /></p>
-<p>再来看变动的另一种情况，在<code>reset</code>之前，将<code>t1</code>文件中的<code>111</code>改为<code>311</code>，且将<code>t2</code>文件中的<code>222</code>改成<code>322</code>，并添加到暂存区</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17385070975436.jpg" /></p>
-<p>执行 reset</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>git<span class="w"> </span>reset<span class="w"> </span>--keep<span class="w"> </span><span class="s1">&#39;commitid&#39;</span>
-</code></pre></div></td></tr></table></div>
-<p>发现出现报错，原因是<code>f731</code>版本中<code>t2</code>文件是不存在的，导致无法<code>merge</code></p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17385072743507.jpg" /></p>
-<div class="admonition 结论">
-<p class="admonition-title">结论</p>
-<p>keep影响版本库、暂存区和工作区，可以撤销提交而不丢失文件的更改</p>
-</div>
-<hr />
-<p>接下来学习idea git中的版本回退</p>
-<p>首先在项目中创建一个名为 <code>GitResetTest.java</code> 的文件</p>
-<p>添加到暂存区并提交</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384772401073.jpg" /></p>
-<p>修改文件，再次提交</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384775261247.jpg" /></p>
-<p>右键希望回退到的版本，选择<code>Reset</code></p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384815478017.jpg" /></p>
-<p>选择hard模式</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384816262743.jpg" /></p>
-<p>如果希望撤销回滚，同样需要查询<code>reflog</code>, 打开<code>terminal</code>输入<code>git reflog</code>, 找到对应的<code>commitid</code></p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384817819940.jpg" /></p>
-<p>通过右键项目的reset head进行回退</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384818343975.jpg" /></p>
-<hr />
-<h3 id="27">2.7 撤销修改<a class="headerlink" href="#27" title="Permanent link">&para;</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
-<span class="normal"><a href="#__codelineno-14-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>--<span class="w"> </span><span class="m">004</span>.txt<span class="w">   </span>//<span class="w"> </span>如果<span class="w"> </span><span class="m">004</span>.txt<span class="w"> </span>文件在工作区，则丢弃其修改
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a>git<span class="w"> </span>checkout<span class="w"> </span>--<span class="w"> </span>.<span class="w">            </span>//<span class="w"> </span>丢弃当前目录下所有工作区中文件的修改
-</code></pre></div></td></tr></table></div>
-<p>idea中：</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384829703640.jpg" /></p>
-<p>注意到在<code>rollback</code>右侧有一个<strong>静默搁置</strong>按钮</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384830460831.jpg" /></p>
-<p>点击之后修改的代码也会消失，这个功能主要是用于<strong>暂存</strong>你修改后的代码，并把你工作区的代码回滚到最后commit的记录，恢复的时候通过:</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384831469756.jpg" /></p>
-<p>那么这个操作具体使用场景是什么呢？</p>
-<p>试想一下，在我们开发的时候，正在写某个需求的代码，然而此时项目经理要求你去做一个更加重要/紧迫的任务，那么现在这部分需求代码暂未写完，是不能提交的，此时就可以使用<strong>静默搁置</strong>，将代码暂时搁置，等到把项目经理的任务忙完后，选择取消静默，接着写即可</p>
-<hr />
-<h3 id="28">2.8 删除文件<a class="headerlink" href="#28" title="Permanent link">&para;</a></h3>
-<p>在被 git 管理的目录中删除文件时，可以选择如下两种方式来记录删除动作：</p>
+<h4 id="2-git-fetch"><strong>2. git fetch</strong><a class="headerlink" href="#2-git-fetch" title="Permanent link">&para;</a></h4>
+<p>找到idea上方<code>git</code>菜单，选择<code>fetch</code> (这里仅演示<code>fetch</code>，不演示<code>pull</code>，思想都是一致的)</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385640017030.jpg" /></p>
+<p>选择<code>remote</code>下的<code>main</code>分支，查看更改</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385644208683.jpg" /></p>
+<p>检查过后发现没有问题，右键<code>remote</code>的<code>main</code>分支，选择<code>merge</code>或<code>rebase</code>合并</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385645222242.jpg" /></p>
+<p>选择<code>merge</code>，发现出现冲突，需要解决</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385645636944.jpg" /></p>
+<p>点击<code>merge</code>按钮，弹出冲突解决页面</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385646405123.jpg" /></p>
+<p>左侧为本地仓库代码，右侧为远程仓库代码</p>
+<p>有两种方式解决冲突</p>
 <ol>
-<li>
-<p><code>rm + git commit -am "abc"</code></p>
-</li>
-<li>
-<p><code>git rm + git commit -m "abc"</code></p>
-</li>
+<li>左下角 <code>Accept Left</code> 和 <code>Accept Right</code>，但只能选择一个仓库的代码作为最终合并文件</li>
+<li>屏幕中间的<code>&gt;&gt;</code>和<code>&lt;&lt;</code>，可以同时保留本地和远程代码，也可以只选择其中一份</li>
 </ol>
-<p>区别在于</p>
+<p>这里选择同时保留本地和远程代码</p>
+<p>PS: 中间部分可以随意修改/调换位置，但两侧是无法修改的</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385649529158.jpg" /></p>
+<p>最终效果如图所示(<code>merge</code>)</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385650035106.jpg" /></p>
+<p>如果选择<code>rebase</code>，最终效果如下图所示</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385652050655.jpg" /></p>
+<hr />
+<h3 id="84-mergerebase">8.4 merge与rebase的区别(存在冲突)<a class="headerlink" href="#84-mergerebase" title="Permanent link">&para;</a></h3>
+<p><img alt="merge:rebase" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/mergerebase.png" /></p>
+<p><strong>1. merge</strong></p>
 <ul>
-<li>如果文件已经被git跟踪，那么 1、2 都可以正常工作</li>
-<li>如果文件未被git跟踪<ul>
-<li><code>rm + git commit -am "abc"</code> 不会提交删除</li>
-<li><code>git rm + git commit -m "abc"</code> 可以确保文件删除被git记录并提交</li>
+<li>保留分支历史（会产生合并提交 merge commit）。</li>
+<li>适合多人协作，不会修改历史记录。</li>
 </ul>
-</li>
+<p><strong>2. rebase</strong></p>
+<ul>
+<li>不产生合并提交，而是将 feature 分支上的提交重新应用到 main 分支后面。</li>
+<li>历史会被重写（提交哈希值改变），适合保持提交历史整洁。</li>
 </ul>
+<hr />
+<h3 id="85-merge-fast-forward">8.5 merge fast-forward(不存在冲突)<a class="headerlink" href="#85-merge-fast-forward" title="Permanent link">&para;</a></h3>
+<p><code>Fast-forward</code> 是 Git 中的一种 合并方式，当你执行 <code>git merge</code> 时，如果当前分支<strong>没有</strong>新的提交（即该分支的 HEAD <strong>没有分歧</strong>），Git 会直接将当前分支指向目标分支的最新提交，而不创建额外的合并提交。</p>
+<p>什么时候会发生 <code>Fast-Forward</code>？</p>
+<ul>
+<li>当目标分支<strong>没有新的提交</strong>，并且<strong>当前分支完全处于目标分支的前面</strong>（即目标分支是当前分支的祖先），Git 就可以简单地将当前分支 <strong>“快进”</strong> 到目标分支的最新提交，而不需要创建新的合并提交。</li>
+</ul>
+<p><img alt="merge ff:rebase" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/merge-ffrebase.png" /></p>
+<p>上面的例子中，<code>dev</code>分支为目标分支，<code>feature</code>分支为当前分支</p>
+<p><code>dev</code>分支中不存在新的提交，且<code>feature</code>分支完全处于<code>dev</code>分支之前，此时进行<code>merge</code>将触发<code>fast-forward</code>，效果与<code>rebase</code>一致</p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -2513,9 +2485,9 @@
         
           
           <a
-            href="../03ideagit-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/"
+            href="../05ideagit-%E6%9D%82%E9%A1%B9/"
             class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: 03.IdeaGit 远程仓库"
+            aria-label="上一页: 05.IdeaGit 杂项"
           >
             <div class="md-footer__button md-icon">
               
@@ -2526,7 +2498,7 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                03.IdeaGit 远程仓库
+                05.IdeaGit 杂项
               </div>
             </div>
             
@@ -2537,16 +2509,16 @@
         
           
           <a
-            href="../01ideagit-demo/"
+            href="../03ideagit-%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/"
             class="md-footer__link md-footer__link--next"
-            aria-label="下一页: 01.IdeaGit-Demo"
+            aria-label="下一页: 03.IdeaGit 远程仓库"
           >
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                01.IdeaGit-Demo
+                03.IdeaGit 远程仓库
               </div>
             </div>
             <div class="md-footer__button md-icon">

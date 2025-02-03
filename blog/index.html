@@ -2165,6 +2165,297 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2025-02-02 00:00:00+00:00">2025年2月2日星期日</time></li>
+        
+          <li class="md-meta__item">
+            分类于
+            
+              <a href="category/tools/" class="md-meta__link">tools</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 4 分钟阅读时间
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="04ideagit"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/">04.IdeaGit 分支管理</a></h2>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1063 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 29 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 25 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 4 分钟</p>
+</div>
+<h3 id="1"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#1">1. 查看分支</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>git<span class="w"> </span>branch<span class="w">        </span>//<span class="w"> </span>查看本地分支信息
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>git<span class="w"> </span>branch<span class="w"> </span>-v<span class="w">     </span>//<span class="w"> </span>查看相对详细的本地分支信息
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a>git<span class="w"> </span>branch<span class="w"> </span>-av<span class="w">     </span>//<span class="w"> </span>查看包括远程仓库在内的分支信息
+</code></pre></div></td></tr></table></div>
+<p>注意：在 <code>git branch</code> 的输出内容中，有一个分支，前面带有 <code>*</code> 号，这标识我们当前所在的分支。</p>
+<h3 id="2"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#2">2. 创建分支</a></h3>
+<p>分支创建后，新分支基于当前分支。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>git<span class="w"> </span>branch<span class="w"> </span>dev<span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<p>idea 中</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385111405146.jpg" /></p>
+<h3 id="3"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#3">3. 切换分支</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>dev
+</code></pre></div></td></tr></table></div>
+<p>idea:</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385112531304.jpg" /></p>
+<h3 id="4"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#4">4. 创建并切换分支</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>dev<span class="w"> </span><span class="c1"># 新建 dev 分支，并切换到该分支上</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="5"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#5">5. 合并分支</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>master<span class="w">        </span><span class="c1"># 切换回 master 分支</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>git<span class="w"> </span>merge<span class="w"> </span>dev<span class="w">            </span><span class="c1"># 将 dev 分钟中的修改合并回 master 分支</span>
+</code></pre></div></td></tr></table></div>
+<p>idea:先check out 到指定标签，在把需要合并的标签右键合并即可。</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385118440191.jpg" /></p>
+<h3 id="6"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#6">6. 删除分支</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>dev<span class="w"> </span><span class="c1"># 删除 dev 分支</span>
+</code></pre></div></td></tr></table></div>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385119365997.jpg" /></p>
+<h3 id="7"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#7">7. 建立本地分支和远程分支的关联</a></h3>
+<h4 id="71"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#71">7.1 本地分支存在，远程分支存在，但之间没有关联关系。</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin/remote_branch<span class="w"> </span>命令推送。
+</code></pre></div></td></tr></table></div>
+<h4 id="72"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#72">7.2 本地分支存在，但远程分支不存在。</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>local_branch:remote_branch<span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<h4 id="73"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#73">7.3 本地分支存在，远程分支存在，且关联关系已建立</a></h4>
+<p>使用 <code>git push</code> 命令进行推送即可</p>
+<p>idea中本地<code>push</code>时直接修改远程分支名即可</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385612620818.jpg" /></p>
+<h3 id="8"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#8">8. 从远程仓库拉取</a></h3>
+<p>通过 <code>git fetch</code> 和 <code>git pull</code> 来获取远程仓库的内容。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>git<span class="w"> </span>fetch<span class="w"> </span>origin<span class="w"> </span>master<span class="w">    </span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>master
+</code></pre></div></td></tr></table></div>
+<p><code>git fetch</code> 和 <code>git pull</code> 之间的区别：</p>
+<h4 id="81-git-fetch"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#81-git-fetch">8.1 git fetch</a></h4>
+<p><code>git fetch</code> 是仅仅获取远程仓库的更新内容，并不会自动做合并。</p>
+<p>需要先查看更新：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a>git<span class="w"> </span>log<span class="w"> </span>-p<span class="w"> </span>FETCH_HEAD
+</code></pre></div></td></tr></table></div>
+<p>或者拉取到一个其他分支（目前还没见过分支创建）</p>
+<p>如果没有问题，再进行合并：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>git<span class="w"> </span>merge<span class="w"> </span>origin/master
+</code></pre></div></td></tr></table></div>
+<p>新建一个本地分支，拉取远程到本地temp,查看不同，没问题则合并，合并后删除即可。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="c1">## 在本地新建一个temp分支，并将远程origin仓库的master分支代码下载到本地temp分支；</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>$<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span>origin<span class="w"> </span>master:temp
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="c1">## 比较本地代码与刚刚从远程下载下来的代码的区别；</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>temp
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="c1">## 合并temp分支到本地的master分支;</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a>$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>temp
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="c1">## 如果不想保留temp分支，删除;</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a>$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>temp
+</code></pre></div></td></tr></table></div>
+<p>实机演示:</p>
+<p>在远程仓库手动修改<code>t1</code>的<code>111</code>为<code>511</code>, 在本地仓库的<code>t1</code>文件中添加<code>666</code>并<code>commit</code></p>
+<p><strong>1. git fetch origin master:temp</strong></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385617397534.jpg" /></p>
+<p><strong>2. git diff temp</strong></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385621563579.jpg" /></p>
+<p><strong>3. git merge temp</strong></p>
+<p>出现冲突，手动解决</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385622823768.jpg" /></p>
+<p>选择全部接受(<code>lazygit</code>按<code>b</code>)，当然也可以只选择某一个<code>hunk</code></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385624491784.jpg" /></p>
+<p>最终<code>commit log</code>如下所示</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385625438433.jpg" /></p>
+<p><strong>4. git branch -d temp</strong></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385627395601.jpg" /></p>
+<hr />
+<h4 id="82-git-pull"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#82-git-pull">8.2 git pull</a></h4>
+<p><code>git pull</code> 在获取远程仓库的内容后，会自动做合并，可以看成 <code>git fetch</code> 之后 <code>git merge</code>。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="c1"># 因为存在冲突故git pull会报错，以下命令二选一即可</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>git<span class="w"> </span>pull<span class="w"> </span>--no-rebase<span class="w"> </span><span class="c1"># merge冲突</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a>git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span><span class="c1"># rebase冲突</span>
+</code></pre></div></td></tr></table></div>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385631714218.jpg" /></p>
+<hr />
+<h4 id="83-idea"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#83-idea">8.3 idea 拉取远程仓库</a></h4>
+<h5 id="1_1"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#1_1"><strong>1. 前置准备</strong></a></h5>
+<p>本地创建<code>GitPullTest.java</code>并添加<code>f1</code>函数，提交并推送</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385636994485.jpg" /></p>
+<p>本地仓库添加<code>f2</code>函数，并提交</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385637972911.jpg" /></p>
+<p>远程仓库添加<code>f3</code>函数，并提交</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385639061562.jpg" /></p>
+<hr />
+<h5 id="2-git-fetch"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#2-git-fetch"><strong>2. git fetch</strong></a></h5>
+<p>找到idea上方<code>git</code>菜单，选择<code>fetch</code> (这里仅演示<code>fetch</code>，不演示<code>pull</code>，思想都是一致的)</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385640017030.jpg" /></p>
+<p>选择<code>remote</code>下的<code>main</code>分支，查看更改</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385644208683.jpg" /></p>
+<p>检查过后发现没有问题，右键<code>remote</code>的<code>main</code>分支，选择<code>merge</code>或<code>rebase</code>合并</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385645222242.jpg" /></p>
+<p>选择<code>merge</code>，发现出现冲突，需要解决</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385645636944.jpg" /></p>
+<p>点击<code>merge</code>按钮，弹出冲突解决页面</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385646405123.jpg" /></p>
+<p>左侧为本地仓库代码，右侧为远程仓库代码</p>
+<p>有两种方式解决冲突</p>
+<ol>
+<li>左下角 <code>Accept Left</code> 和 <code>Accept Right</code>，但只能选择一个仓库的代码作为最终合并文件</li>
+<li>屏幕中间的<code>&gt;&gt;</code>和<code>&lt;&lt;</code>，可以同时保留本地和远程代码，也可以只选择其中一份</li>
+</ol>
+<p>这里选择同时保留本地和远程代码</p>
+<p>PS: 中间部分可以随意修改/调换位置，但两侧是无法修改的</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385649529158.jpg" /></p>
+<p>最终效果如图所示(<code>merge</code>)</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385650035106.jpg" /></p>
+<p>如果选择<code>rebase</code>，最终效果如下图所示</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385652050655.jpg" /></p>
+<hr />
+<h4 id="84-mergerebase"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#84-mergerebase">8.4 merge与rebase的区别(存在冲突)</a></h4>
+<p><img alt="merge:rebase" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/mergerebase.png" /></p>
+<p><strong>1. merge</strong></p>
+<ul>
+<li>保留分支历史（会产生合并提交 merge commit）。</li>
+<li>适合多人协作，不会修改历史记录。</li>
+</ul>
+<p><strong>2. rebase</strong></p>
+<ul>
+<li>不产生合并提交，而是将 feature 分支上的提交重新应用到 main 分支后面。</li>
+<li>历史会被重写（提交哈希值改变），适合保持提交历史整洁。</li>
+</ul>
+<hr />
+<h4 id="85-merge-fast-forward"><a class="toclink" href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#85-merge-fast-forward">8.5 merge fast-forward(不存在冲突)</a></h4>
+<p><code>Fast-forward</code> 是 Git 中的一种 合并方式，当你执行 <code>git merge</code> 时，如果当前分支<strong>没有</strong>新的提交（即该分支的 HEAD <strong>没有分歧</strong>），Git 会直接将当前分支指向目标分支的最新提交，而不创建额外的合并提交。</p>
+<p>什么时候会发生 <code>Fast-Forward</code>？</p>
+<ul>
+<li>当目标分支<strong>没有新的提交</strong>，并且<strong>当前分支完全处于目标分支的前面</strong>（即目标分支是当前分支的祖先），Git 就可以简单地将当前分支 <strong>“快进”</strong> 到目标分支的最新提交，而不需要创建新的合并提交。</li>
+</ul>
+<p><img alt="merge ff:rebase" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/merge-ffrebase.png" /></p>
+<p>上面的例子中，<code>dev</code>分支为目标分支，<code>feature</code>分支为当前分支</p>
+<p><code>dev</code>分支中不存在新的提交，且<code>feature</code>分支完全处于<code>dev</code>分支之前，此时进行<code>merge</code>将触发<code>fast-forward</code>，效果与<code>rebase</code>一致</p>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/23/106435907.jpeg" alt="苍镜月">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-02-02 00:00:00+00:00">2025年2月2日星期日</time></li>
+        
+          <li class="md-meta__item">
+            分类于
+            
+              <a href="category/tools/" class="md-meta__link">tools</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 2 分钟阅读时间
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="05ideagit"><a class="toclink" href="2025/02/02/05ideagit-%E6%9D%82%E9%A1%B9/">05.IdeaGit 杂项</a></h2>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 220 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 10 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 9 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 1 分钟</p>
+</div>
+<h3 id="cherry-pick"><a class="toclink" href="2025/02/02/05ideagit-%E6%9D%82%E9%A1%B9/#cherry-pick">Cherry-Pick</a></h3>
+<p>复用<a href="2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/">04.IdeaGit 分支管理</a>中<code>8.3</code>的前置准备</p>
+<p>在<code>merge</code>过程上略有不同，保留函数<code>f2</code>，去除函数<code>f3</code></p>
+<p>最终效果如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-0-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GitPullTest</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;f1&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a>
+<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;f2&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-9" name="__codelineno-0-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>此时，继续创建函数<code>f4</code></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385688027308.jpg" /></p>
+<p>问题来了，在实现函数<code>f4</code>时，发现其可以使用函数<code>f3</code>的逻辑简化代码</p>
+<p>而想要重新获取之前已经放弃的函数<code>f3</code>，可以选中记录后点击<code>cherry-pick</code>按钮进行合并（可能需要解决冲突），之后会对函数<code>f4</code>在主干上重新提交，被抛弃的代码也可以重新获得。</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385690143285.jpg" /></p>
+<p>解决冲突后，最终效果如下图所示</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385690638619.jpg" /></p>
+<h3 id="undo-commitrevert-commitdrop-commit"><a class="toclink" href="2025/02/02/05ideagit-%E6%9D%82%E9%A1%B9/#undo-commitrevert-commitdrop-commit">Undo Commit，Revert Commit，Drop Commit</a></h3>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385703923046.jpg" /></p>
+<p><img alt="undo:revert:drop" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/undorevertdrop.png" /></p>
+<h3 id="tag"><a class="toclink" href="2025/02/02/05ideagit-%E6%9D%82%E9%A1%B9/#tag">Tag</a></h3>
+<p>在项目完工准备发布时，可以对最后一个提交打上<code>Tag</code></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385705270381.jpg" /></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385705891215.jpg" /></p>
+<p>注意：push的时候一定要选中左下角<code>Push tags</code>，否则无法生效</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385707721201.jpg" /></p>
+<p>查看远端仓库</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385708440221.jpg" /></p>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/23/106435907.jpeg" alt="苍镜月">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2025-01-27 00:00:00+00:00">2025年1月27日星期一</time></li>
         
           <li class="md-meta__item">
@@ -3090,621 +3381,6 @@
 <p>关闭自动更新</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;export HOMEBREW_NO_AUTO_UPDATE=1&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.zshrc
 </code></pre></div></td></tr></table></div>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/23/106435907.jpeg" alt="苍镜月">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-12-06 00:00:00+00:00">2024年12月6日星期五</time></li>
-        
-          <li class="md-meta__item">
-            分类于
-            
-              <a href="category/tools/" class="md-meta__link">tools</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              需要 2 分钟阅读时间
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="oh-my-zsh"><a class="toclink" href="2024/12/06/oh-my-zsh/">oh-my-zsh</a></h2>
-<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 337 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 6 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 5 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 1 分钟</p>
-</div>
-<p>本文基于 <strong>macos</strong> 系统，使用 <strong>oh-my-zsh</strong> 对终端进行美化。</p>
-<p><strong>Oh My Zsh</strong> 是基于 <strong>zsh</strong> 命令行的一个扩展工具集，提供了丰富的扩展功能。</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/06/17334678151323.jpg" /></p>
-<h3 id="1-oh-my-zsh"><a class="toclink" href="2024/12/06/oh-my-zsh/#1-oh-my-zsh">1. 安装 oh-my-zsh</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://install.ohmyz.sh/<span class="k">)</span><span class="s2">&quot;</span>
-</code></pre></div></td></tr></table></div>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/06/17334625616432.jpg" /></p>
-<h3 id="2"><a class="toclink" href="2024/12/06/oh-my-zsh/#2">2. 配置主题</a></h3>
-<p>使用 <a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a> 主题。</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/romkatv/powerlevel10k.git<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k
-</code></pre></div></td></tr></table></div>
-<p>在 <code>~/.zshrc</code> 设置 <code>ZSH_THEME="powerlevel10k/powerlevel10k"</code>。</p>
-<p><strong>运行命令</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nb">source</span><span class="w"> </span>~/.zshrc
-</code></pre></div></td></tr></table></div>
-<p>接下来，终端会自动引导你配置 <code>powerlevel10k</code>。</p>
-<p>如果希望<strong>重新配置</strong>，输入以下命令</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>p10k<span class="w"> </span>configure
-</code></pre></div></td></tr></table></div>
-<h3 id="3"><a class="toclink" href="2024/12/06/oh-my-zsh/#3">3. 安装插件</a></h3>
-<h4 id="31-zsh-autosuggestions"><a class="toclink" href="2024/12/06/oh-my-zsh/#31-zsh-autosuggestions">3.1 zsh -autosuggestions</a></h4>
-<p><a href="https://github.com/zsh-users/zsh-autosuggestions">zsh -autosuggestions</a> 是一个命令提示插件，当你输入命令时，会自动推测你可能需要输入的命令，按下右键可以快速采用建议。效果如下：</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/06/17334673829105.jpg" /></p>
-<p>安装方式：把插件下载到本地的 <code>~/.oh-my-zsh/custom/plugins</code> 目录</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-autosuggestions<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-autosuggestions
-</code></pre></div></td></tr></table></div>
-<h4 id="32-zsh-syntax-highlighting"><a class="toclink" href="2024/12/06/oh-my-zsh/#32-zsh-syntax-highlighting">3.2 zsh-syntax-highlighting</a></h4>
-<p><a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting</a> 是一个命令语法校验插件，在输入命令的过程中，若指令不合法，则指令显示为红色，若指令合法就会显示为绿色。效果如下：</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/06/17334674054382.jpg" /></p>
-<p>安装方式：把插件下载到本地的 <code>~/.oh-my-zsh/custom/plugins</code> 目录。</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-syntax-highlighting.git<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-syntax-highlighting
-</code></pre></div></td></tr></table></div>
-<h4 id="33-z"><a class="toclink" href="2024/12/06/oh-my-zsh/#33-z">3.3 z</a></h4>
-<p><code>oh-my-zsh</code> 内置了 <code>z</code> 插件。<code>z</code> 是一个文件夹快捷跳转插件，对于曾经跳转过的目录，只需要输入最终目标文件夹名称，就可以快速跳转，避免再输入长串路径，提高切换文件夹的效率。效果如下：</p>
-<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/06/17334674281105.jpg" /></p>
-<h4 id="34"><a class="toclink" href="2024/12/06/oh-my-zsh/#34">3.4 启用插件</a></h4>
-<p>修改 <code>~/.zshrc</code> 中插件列表为：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>plugins=(git zsh-syntax-highlighting zsh-autosuggestions z)
-</code></pre></div></td></tr></table></div>
-<p>执行 <code>source ~/.zshrc</code></p>
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/23/106435907.jpeg" alt="苍镜月">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2024-12-04 00:00:00+00:00">2024年12月4日星期三</time></li>
-        
-          <li class="md-meta__item">
-            分类于
-            
-              <a href="category/cs/" class="md-meta__link">CS</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              需要 12 分钟阅读时间
-            
-          </li>
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="shell-tools-and-scripting"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/">Shell Tools and Scripting</a></h2>
-<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2038 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 149 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
-</div>
-<div class="admonition attachment">
-<p class="admonition-title">Attachment</p>
-<p>course link: <a href="https://missing.csail.mit.edu/2020/shell-tools/">Shell Tools and Scripting</a></p>
-</div>
-<h3 id="shell-scripting"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#shell-scripting">Shell Scripting</a></h3>
-<h4 id="1-assign-variables"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#1-assign-variables">1. Assign Variables</a></h4>
-<p>To assign variables in bash, use the syntax <code>foo=bar</code> and access the value of the variable with <code>$foo</code>. Note that <code>foo = bar</code> will not work since it is interpreted as calling the <code>foo</code> program with <strong>arguments <code>=</code> and <code>bar</code></strong>. In general, in shell scripts the space character will perform argument splitting. This behavior can be confusing to use at first, so always check for that.</p>
-<p>Strings in bash can be defined with <code>'</code> and <code>"</code> delimiters.</p>
-<p>Strings delimited with <code>'</code> are <strong>literal</strong> strings and <strong>will not</strong> substitute variable values.</p>
-<p>Strings delimited with <code>"</code> <strong>will</strong> substitute variable values.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nv">foo</span><span class="o">=</span>bar
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$foo</span><span class="s2">&quot;</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1"># prints bar</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;$foo&#39;</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1"># prints $foo</span>
-</code></pre></div></td></tr></table></div>
-<hr />
-<h4 id="2-functions"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#2-functions">2. Functions</a></h4>
-<p>As with most programming languages, bash supports control flow techniques including <code>if</code>, <code>case</code>, <code>while</code> and <code>for</code>. Similarly, bash has <strong>functions</strong> that take arguments and can operate with them. </p>
-<p>Here is an example of a function that <strong>creates a directory and cds into it</strong>.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
-<span class="normal"><a href="#__codelineno-1-2">2</a></span>
-<span class="normal"><a href="#__codelineno-1-3">3</a></span>
-<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>mcd<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="o">}</span>
-</code></pre></div></td></tr></table></div>
-<p>Here is how to test <code>mcd</code> function</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
-<span class="normal"><a href="#__codelineno-2-2">2</a></span>
-<span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span>
-<span class="normal"><a href="#__codelineno-2-5">5</a></span>
-<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>vim<span class="w"> </span>mcd.sh
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1"># paste the code into it...</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nb">source</span><span class="w"> </span>mcd.sh
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>mcd<span class="w"> </span><span class="nb">test</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="c1"># And you will find that you are in the test directory, which is a </span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="c1"># child dir in which you run the mcd program</span>
-</code></pre></div></td></tr></table></div>
-<hr />
-<h4 id="3-function-arguments"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#3-function-arguments">3. Function arguments</a></h4>
-<p>Unlike other scripting languages, bash uses a variety of special variables to refer to <strong>arguments, error codes, and other relevant variables</strong>. Below is a list of some of them. A more comprehensive list can be found <a href="https://tldp.org/LDP/abs/html/special-chars.html">here</a>.</p>
-<ul>
-<li><code>$0</code> - <strong>Name</strong> of the script</li>
-<li><code>$1</code> to <code>$9</code> - Arguments to the script. <code>$1</code> is the first argument and so on.</li>
-<li><code>$@</code> - <strong>All</strong> the arguments</li>
-<li><code>$#</code> - <strong>Number</strong> of arguments</li>
-<li><code>$?</code> - Return code of the <strong>previous</strong> command</li>
-<li><code>$$</code> - Process identification number <strong>(PID)</strong> for the current script</li>
-<li><code>!!</code> - <strong>Entire last command</strong>, including arguments. A common pattern is to execute a command only for it to fail due to missing permissions; you can quickly re-execute the command with sudo by doing <code>sudo !!</code></li>
-<li><code>$_</code> - <strong>Last argument</strong> from the <strong>last command</strong>. If you are in an interactive shell, you can also quickly get this value by typing <code>Esc</code> followed by <code>.</code> or <code>Alt+</code>.</li>
-</ul>
-<p>Commands will often return <strong>output</strong> using <code>STDOUT</code>, <strong>errors</strong> through <code>STDERR</code>, and a <strong>Return Code</strong> to report errors in a more script-friendly manner. </p>
-<p>The <strong>return code</strong> or <strong>exit status</strong> is the way scripts/commands have to communicate how execution went. </p>
-<ul>
-<li>A value of <code>0</code> usually means everything went <strong>OK</strong></li>
-<li>anything <strong>different</strong> from <code>0</code> means an <strong>error</strong> occurred.</li>
-</ul>
-<p>Exit codes can be used to conditionally execute commands using <code>&amp;&amp;</code> (and operator) and <code>||</code> (or operator), both of which are short-circuiting operators. </p>
-<p>Commands can also be separated within the same line using a semicolon <code>;</code>. </p>
-<ul>
-<li>The <code>true</code> program will always have a <code>0</code> return code</li>
-<li>the <code>false</code> command will always have a <code>1</code> return code. </li>
-</ul>
-<p>Let’s see some examples</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span>
-<span class="normal"><a href="#__codelineno-3-11">11</a></span>
-<span class="normal"><a href="#__codelineno-3-12">12</a></span>
-<span class="normal"><a href="#__codelineno-3-13">13</a></span>
-<span class="normal"><a href="#__codelineno-3-14">14</a></span>
-<span class="normal"><a href="#__codelineno-3-15">15</a></span>
-<span class="normal"><a href="#__codelineno-3-16">16</a></span>
-<span class="normal"><a href="#__codelineno-3-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nb">false</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Oops, fail&quot;</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1"># Oops, fail</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="nb">true</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Will not be printed&quot;</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="c1">#</span>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="nb">true</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Things went well&quot;</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="c1"># Things went well</span>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="nb">false</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Will not be printed&quot;</span>
-<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="c1">#</span>
-<a id="__codelineno-3-12" name="__codelineno-3-12"></a>
-<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="nb">true</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This will always run&quot;</span>
-<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="c1"># This will always run</span>
-<a id="__codelineno-3-15" name="__codelineno-3-15"></a>
-<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="nb">false</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This will always run&quot;</span>
-<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="c1"># This will always run</span>
-</code></pre></div></td></tr></table></div>
-<hr />
-<h4 id="4-substitution"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#4-substitution">4. Substitution</a></h4>
-<p>Another common pattern is wanting to get the output of a command as a variable. </p>
-<p>This can be done with <code>command substitution</code>. Whenever you place <code>$( CMD )</code> it will execute <code>CMD</code>, get the output of the command and substitute it in place. </p>
-<p>For example, if you do <code>for file in $(ls)</code>, the shell will first call ls and then iterate over those values. </p>
-<p>A lesser known similar feature is <code>process substitution</code>, <code>&lt;( CMD )</code> will execute <code>CMD</code> and place the output in a <strong>temporary file</strong> and <strong>substitute</strong> the <code>&lt;()</code> with that <strong>file’s name</strong>.</p>
-<p>This is useful when commands expect values to be passed by <strong>file</strong> instead of by <code>STDIN</code>. For example, <code>diff &lt;(ls foo) &lt;(ls bar)</code> will show differences between files in dirs <code>foo</code> and <code>bar</code>.</p>
-<p><br/></p>
-<p>let’s see an <strong>example</strong> that showcases some of these features. </p>
-<p><strong><em>It will iterate through the arguments we provide, grep for the string foobar, and append it to the file as a comment if it’s not found.</em></strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-4-10">10</a></span>
-<span class="normal"><a href="#__codelineno-4-11">11</a></span>
-<span class="normal"><a href="#__codelineno-4-12">12</a></span>
-<span class="normal"><a href="#__codelineno-4-13">13</a></span>
-<span class="normal"><a href="#__codelineno-4-14">14</a></span>
-<span class="normal"><a href="#__codelineno-4-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Starting program at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="c1"># Date will be substituted</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Running program </span><span class="nv">$0</span><span class="s2"> with </span><span class="nv">$#</span><span class="s2"> arguments with pid </span><span class="nv">$$</span><span class="s2">&quot;</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span>grep<span class="w"> </span>foobar<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">    </span><span class="c1"># When pattern is not found, grep has exit status 1</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">    </span><span class="c1"># We redirect STDOUT and STDERR to a null register since we do not care about them</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;File </span><span class="nv">$file</span><span class="s2"> does not have any foobar, adding one&quot;</span>
-<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# foobar&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span>
-<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="k">fi</span>
-<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="k">done</span>
-</code></pre></div></td></tr></table></div>
-<p>In the comparison we tested whether <strong><code>$?</code> was not equal to <code>0</code></strong>. Bash implements many comparisons of this sort - you can find a detailed list in the manpage for <a href="https://www.man7.org/linux/man-pages/man1/test.1.html">test</a>. </p>
-<p>When performing comparisons in bash, try to use double brackets <code>[[ ]]</code> in favor of simple brackets <code>[ ]</code>. Chances of making mistakes are lower although it won’t be portable to <code>sh</code>. A more detailed explanation can be found <a href="https://mywiki.wooledge.org/BashFAQ/031">here</a>.</p>
-<hr />
-<h4 id="5-globbing"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#5-globbing">5. Globbing</a></h4>
-<p>When launching scripts, you will often want to provide arguments that are <strong>similar</strong>. Bash has ways of making this easier, expanding expressions by carrying out filename expansion. These techniques are often referred to as <strong><em>shell globbing</em></strong>.</p>
-<ul>
-<li><strong>Wildcards</strong><ul>
-<li><code>?</code> match <strong>one</strong> character.</li>
-<li><code>*</code> match <strong>any</strong> amount of characters. </li>
-<li>For instance, given files <code>foo, foo1, foo2, foo10 and bar</code>, the command <code>rm foo?</code> will <strong>delete foo1 and foo2 whereas <code>rm foo*</code> will delete all but bar</strong>.</li>
-</ul>
-</li>
-<li><strong>Curly braces</strong> <code>{}</code> - Whenever you have a <strong>common substring</strong> in a <strong>series of commands</strong>, you can use curly braces for bash to <strong>expand</strong> this automatically. This comes in very handy when moving or converting files.</li>
-</ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-5-10">10</a></span>
-<span class="normal"><a href="#__codelineno-5-11">11</a></span>
-<span class="normal"><a href="#__codelineno-5-12">12</a></span>
-<span class="normal"><a href="#__codelineno-5-13">13</a></span>
-<span class="normal"><a href="#__codelineno-5-14">14</a></span>
-<span class="normal"><a href="#__codelineno-5-15">15</a></span>
-<span class="normal"><a href="#__codelineno-5-16">16</a></span>
-<span class="normal"><a href="#__codelineno-5-17">17</a></span>
-<span class="normal"><a href="#__codelineno-5-18">18</a></span>
-<span class="normal"><a href="#__codelineno-5-19">19</a></span>
-<span class="normal"><a href="#__codelineno-5-20">20</a></span>
-<span class="normal"><a href="#__codelineno-5-21">21</a></span>
-<span class="normal"><a href="#__codelineno-5-22">22</a></span>
-<span class="normal"><a href="#__codelineno-5-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>convert<span class="w"> </span>image.<span class="o">{</span>png,jpg<span class="o">}</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="c1"># Will expand to</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a>convert<span class="w"> </span>image.png<span class="w"> </span>image.jpg
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>cp<span class="w"> </span>/path/to/project/<span class="o">{</span>foo,bar,baz<span class="o">}</span>.sh<span class="w"> </span>/newpath
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="c1"># Will expand to</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a>cp<span class="w"> </span>/path/to/project/foo.sh<span class="w"> </span>/path/to/project/bar.sh<span class="w"> </span>/path/to/project/baz.sh<span class="w"> </span>/newpath
-<a id="__codelineno-5-8" name="__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="c1"># Globbing techniques can also be combined</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a>mv<span class="w"> </span>*<span class="o">{</span>.py,.sh<span class="o">}</span><span class="w"> </span>folder
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="c1"># Will move all *.py and *.sh files</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a>
-<a id="__codelineno-5-13" name="__codelineno-5-13"></a>
-<a id="__codelineno-5-14" name="__codelineno-5-14"></a>mkdir<span class="w"> </span>foo<span class="w"> </span>bar
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="c1"># This creates files foo/a, foo/b, ... foo/h, bar/a, bar/b, ... bar/h</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a>touch<span class="w"> </span><span class="o">{</span>foo,bar<span class="o">}</span>/<span class="o">{</span>a..h<span class="o">}</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a>touch<span class="w"> </span>foo/x<span class="w"> </span>bar/y
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="c1"># Show differences between files in foo and bar</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a>diff<span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>foo<span class="o">)</span><span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>bar<span class="o">)</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="c1"># Outputs</span>
-<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="c1"># &lt; x</span>
-<a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="c1"># ---</span>
-<a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="c1"># &gt; y</span>
-</code></pre></div></td></tr></table></div>
-<hr />
-<h4 id="6-shebang"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#6-shebang">6. shebang</a></h4>
-<p>Note that <strong>scripts</strong> need not necessarily be written in bash to be called from the terminal. For instance, here’s a simple Python script that outputs its arguments in reversed order:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
-<span class="normal"><a href="#__codelineno-6-2">2</a></span>
-<span class="normal"><a href="#__codelineno-6-3">3</a></span>
-<span class="normal"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="ch">#!/usr/local/bin/python</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
-<a id="__codelineno-6-4" name="__codelineno-6-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
-</code></pre></div></td></tr></table></div>
-<p>The kernel knows to execute this script with a <strong>python interpreter</strong> <strong>instead of</strong> <strong>a</strong> <strong>shell command</strong> because we included a <strong>shebang</strong> line at the top of the script. </p>
-<p>It is good practice to write <strong>shebang</strong> lines using the <code>env</code> command that will resolve to wherever the command lives in the system, increasing the portability of your scripts.</p>
-<p>btw, if you really want to figure out where your program is, type this: <code>which python</code>, namely <code>which ***</code>, and add the output to the <strong>shebang</strong> line </p>
-<p>To resolve the location, <code>env</code> will make use of the <code>PATH</code> environment variable we introduced in the first lecture. For this example the <strong>shebang</strong> line would look like <code>#!/usr/bin/env python</code>.</p>
-<p>Some differences between shell functions and scripts that you should keep in mind are:</p>
-<ul>
-<li><strong>Functions</strong> have to be in the <strong>same</strong> language as the <strong>shell</strong>, while <strong>scripts</strong> can be written in <strong>any language</strong>. This is why including a <strong>shebang</strong> for scripts is important.</li>
-<li><strong>Functions</strong> are <strong>loaded once</strong> when their definition is read. <strong>Scripts</strong> are <strong>loaded every time</strong> they are executed. This makes functions slightly <strong>faster</strong> to load, but whenever you change them you will have to <strong>reload</strong> their definition.</li>
-<li><strong>Functions</strong> are executed in the <strong>current shell environment</strong> whereas <strong>scripts</strong> execute in their <strong>own process</strong>. Thus, <strong>functions can modify environment variables</strong>, e.g. change your current directory, whereas scripts can’t. Scripts will be passed by value environment variables that have been exported using export</li>
-<li>As with any programming language, functions are a powerful construct to achieve modularity, code reuse, and clarity of shell code. Often shell scripts will include their own function definitions.</li>
-</ul>
-<h3 id="shell-tools"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#shell-tools">Shell Tools</a></h3>
-<h4 id="1-finding-how-to-use-commands"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#1-finding-how-to-use-commands">1. Finding how to use commands</a></h4>
-<ul>
-<li>the first-order approach is to call said command with the <code>-h</code> or <code>--help</code> flags. </li>
-<li>A more detailed approach is to use the <code>man</code> command. Short for manual, man provides a manual page (called manpage) for a command you specify.</li>
-<li>For interactive tools such as the ones based on ncurses, help for the commands can often be accessed within the program using the <code>:help</code> command or typing <code>?</code>.</li>
-</ul>
-<p>Sometimes <strong>manpages</strong> can provide <strong>overly detailed</strong> descriptions of the commands, making it hard to decipher what flags/syntax to use for common use cases. </p>
-<p><a href="https://tldr.sh/">TLDR pages</a> are a nifty complementary solution that focuses on giving example use cases of a command so you can quickly figure out which options to use. </p>
-<p>To use <code>tldr</code>, just type: <code>tldr ***</code> (<strong><del>just remind, you need to install it first</del></strong>)</p>
-<hr />
-<h4 id="2-finding-files"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#2-finding-files">2. Finding files</a></h4>
-<p><code>find</code> will recursively search for files matching some criteria. </p>
-<p>Some examples:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
-<span class="normal"><a href="#__codelineno-7-2">2</a></span>
-<span class="normal"><a href="#__codelineno-7-3">3</a></span>
-<span class="normal"><a href="#__codelineno-7-4">4</a></span>
-<span class="normal"><a href="#__codelineno-7-5">5</a></span>
-<span class="normal"><a href="#__codelineno-7-6">6</a></span>
-<span class="normal"><a href="#__codelineno-7-7">7</a></span>
-<span class="normal"><a href="#__codelineno-7-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># Find all directories named src</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span>src<span class="w"> </span>-type<span class="w"> </span>d
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="c1"># Find all python files that have a folder named test in their path</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a>find<span class="w"> </span>.<span class="w"> </span>-path<span class="w"> </span><span class="s1">&#39;*/test/*.py&#39;</span><span class="w"> </span>-type<span class="w"> </span>f
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="c1"># Find all files modified in the last day</span>
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a>find<span class="w"> </span>.<span class="w"> </span>-mtime<span class="w"> </span>-1
-<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="c1"># Find all zip files with size in range 500k to 10M</span>
-<a id="__codelineno-7-8" name="__codelineno-7-8"></a>find<span class="w"> </span>.<span class="w"> </span>-size<span class="w"> </span>+500k<span class="w"> </span>-size<span class="w"> </span>-10M<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.tar.gz&#39;</span>
-</code></pre></div></td></tr></table></div>
-<p>Beyond listing files, find can also perform actions over files that match your query. This property can be incredibly helpful to simplify what could be fairly monotonous tasks.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
-<span class="normal"><a href="#__codelineno-8-2">2</a></span>
-<span class="normal"><a href="#__codelineno-8-3">3</a></span>
-<span class="normal"><a href="#__codelineno-8-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="c1"># Delete all files with .tmp extension</span>
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.tmp&#39;</span><span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="c1"># Find all PNG files and convert them to JPG</span>
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.png&#39;</span><span class="w"> </span>-exec<span class="w"> </span>convert<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="o">{}</span>.jpg<span class="w"> </span><span class="se">\;</span>
-</code></pre></div></td></tr></table></div>
-<hr />
-<h4 id="3-finding-code"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#3-finding-code">3. Finding code</a></h4>
-<p><code>grep</code>, a generic tool for matching patterns from the input text. </p>
-<p>For now, know that <code>grep</code> has many flags that make it a very versatile tool. Some I frequently use are <code>-C</code> for getting Context around the matching line and <code>-v</code> for inverting the match, i.e. print all lines that do not match the pattern. </p>
-<p>For example, <code>grep -C 5</code> will print 5 lines before and after the match. When it comes to quickly searching through many files, you want to use <code>-R</code> since it will Recursively go into directories and look for files for the matching string.</p>
-<p>But <code>grep -R</code> can be improved in many ways, such as ignoring <code>.git</code> folders, using multi CPU support, &amp;c. </p>
-<p>Many grep alternatives have been developed, including <a href="https://github.com/beyondgrep/ack3">ack</a>, <a href="https://github.com/ggreer/the_silver_searcher">ag</a> and <a href="https://github.com/BurntSushi/ripgrep">rg</a>. All of them are fantastic and pretty much provide the same functionality. For now I am sticking with <strong>ripgrep (rg)</strong>, given how fast and intuitive it is. Some examples:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
-<span class="normal"><a href="#__codelineno-9-2">2</a></span>
-<span class="normal"><a href="#__codelineno-9-3">3</a></span>
-<span class="normal"><a href="#__codelineno-9-4">4</a></span>
-<span class="normal"><a href="#__codelineno-9-5">5</a></span>
-<span class="normal"><a href="#__codelineno-9-6">6</a></span>
-<span class="normal"><a href="#__codelineno-9-7">7</a></span>
-<span class="normal"><a href="#__codelineno-9-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># Find all python files where I used the requests library</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a>rg<span class="w"> </span>-t<span class="w"> </span>py<span class="w"> </span><span class="s1">&#39;import requests&#39;</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="c1"># Find all files (including hidden files) without a shebang line</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a>rg<span class="w"> </span>-u<span class="w"> </span>--files-without-match<span class="w"> </span><span class="s2">&quot;^#\!&quot;</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="c1"># Find all matches of foo and print the following 5 lines</span>
-<a id="__codelineno-9-6" name="__codelineno-9-6"></a>rg<span class="w"> </span>foo<span class="w"> </span>-A<span class="w"> </span><span class="m">5</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="c1"># Print statistics of matches (# of matched lines and files )</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8"></a>rg<span class="w"> </span>--stats<span class="w"> </span>PATTERN
-</code></pre></div></td></tr></table></div>
-<hr />
-<h4 id="4-finding-shell-commands"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#4-finding-shell-commands">4. Finding shell commands</a></h4>
-<p>The <code>history</code> command will let you access your shell history programmatically. </p>
-<p>It will print your <strong>shell history</strong> to the standard output. If we want to search there we can pipe that output to <strong>grep</strong> and <strong>search</strong> for patterns. <code>history | grep find</code> will print commands that contain the substring <code>“find”</code>.</p>
-<p>In most shells, you can make use of <code>Ctrl+R</code> to perform backwards search through your history. After pressing <code>Ctrl+R</code>, you can type a substring you want to match for commands in your history. As you keep pressing it, you will <strong>cycle</strong> through the matches in your history. </p>
-<hr />
-<h4 id="5-directory-navigation"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#5-directory-navigation">5. Directory Navigation</a></h4>
-<p>uh...just look up the lecture notes</p>
-<h3 id="exercises"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#exercises">Exercises</a></h3>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>I will write my own solution to the problem, If you want to solve those by yourself, please stop.</p>
-</div>
-<hr />
-<p><strong>Problem1</strong></p>
-<p>Read <code>man ls</code> and write an <code>ls</code> command that lists files in the following manner</p>
-<ul>
-<li>Includes all files, including hidden files</li>
-<li>Sizes are listed in human readable format (e.g. 454M instead of 454279954)</li>
-<li>Files are ordered by recency</li>
-<li>Output is colorized</li>
-</ul>
-<p>A sample output would look like this</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
-<span class="normal"><a href="#__codelineno-10-2">2</a></span>
-<span class="normal"><a href="#__codelineno-10-3">3</a></span>
-<span class="normal"><a href="#__codelineno-10-4">4</a></span>
-<span class="normal"><a href="#__codelineno-10-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="w"> </span>-rw-r--r--<span class="w">   </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span><span class="m">1</span>.1M<span class="w"> </span>Jan<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">09</span>:53<span class="w"> </span>baz
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w"> </span>drwxr-xr-x<span class="w">   </span><span class="m">5</span><span class="w"> </span>user<span class="w"> </span>group<span class="w">  </span><span class="m">160</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">09</span>:53<span class="w"> </span>.
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w"> </span>-rw-r--r--<span class="w">   </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w">  </span><span class="m">514</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">06</span>:42<span class="w"> </span>bar
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w"> </span>-rw-r--r--<span class="w">   </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span>106M<span class="w"> </span>Jan<span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">12</span>:12<span class="w"> </span>foo
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w"> </span>drwx------+<span class="w"> </span><span class="m">47</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span><span class="m">1</span>.5K<span class="w"> </span>Jan<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">18</span>:08<span class="w"> </span>..
-</code></pre></div></td></tr></table></div>
-<p><br/></p>
-<p><strong>Solution</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-11-10">10</a></span>
-<span class="normal"><a href="#__codelineno-11-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="o">[</span>root@iZbp12idmwavjjcx2k19kjZ<span class="w"> </span>course2<span class="o">]</span><span class="c1"># ls -a -l -h -t --color=auto</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2"></a>total<span class="w"> </span>88K
-<a id="__codelineno-11-3" name="__codelineno-11-3"></a>-rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span>54K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">21</span>:46<span class="w"> </span>install_lts.sh
-<a id="__codelineno-11-4" name="__codelineno-11-4"></a>drwxr-xr-x<span class="w">  </span><span class="m">5</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">21</span>:46<span class="w"> </span>.
-<a id="__codelineno-11-5" name="__codelineno-11-5"></a>-rwxrwxrwx<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">   </span><span class="m">83</span><span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">20</span>:04<span class="w"> </span>script.py
-<a id="__codelineno-11-6" name="__codelineno-11-6"></a>drwxr-xr-x<span class="w"> </span><span class="m">11</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">20</span>:02<span class="w"> </span>bar
-<a id="__codelineno-11-7" name="__codelineno-11-7"></a>drwxr-xr-x<span class="w"> </span><span class="m">11</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">20</span>:02<span class="w"> </span>foo
-<a id="__codelineno-11-8" name="__codelineno-11-8"></a>-rwxrwxrwx<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">   </span><span class="m">50</span><span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">19</span>:21<span class="w"> </span>mcd.sh
-<a id="__codelineno-11-9" name="__codelineno-11-9"></a>-rwxrwxrwx<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">485</span><span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">19</span>:21<span class="w"> </span>f.sh
-<a id="__codelineno-11-10" name="__codelineno-11-10"></a>drwxr-xr-x<span class="w">  </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">19</span>:17<span class="w"> </span><span class="nb">test</span>
-<a id="__codelineno-11-11" name="__codelineno-11-11"></a>drwxr-xr-x<span class="w"> </span><span class="m">14</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">19</span>:12<span class="w"> </span>..
-</code></pre></div></td></tr></table></div>
-<ul>
-<li><code>-a</code> : includes all files</li>
-<li><code>-l</code> : use a long listing format</li>
-<li><code>-h</code> : print sizes like 1K 234M 2G etc.</li>
-<li><code>-t</code> : sort by recency</li>
-<li><code>--color=auto</code> : colorize output</li>
-</ul>
-<hr />
-<p><strong>Problem2</strong></p>
-<p>Write bash functions <code>marco</code> and <code>polo</code> that do the following. Whenever you execute <code>marco</code> the current working directory should be saved in some manner, then when you execute <code>polo</code>, no matter what directory you are in, <code>polo</code> should <code>cd</code> you back to the directory where you executed <code>marco</code>. For ease of debugging you can write the code in a file <code>marco.sh</code> and (re)load the definitions to your shell by executing <code>source marco.sh</code>.</p>
-<p><br/></p>
-<p><strong>Solution</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
-<span class="normal"><a href="#__codelineno-12-2">2</a></span>
-<span class="normal"><a href="#__codelineno-12-3">3</a></span>
-<span class="normal"><a href="#__codelineno-12-4">4</a></span>
-<span class="normal"><a href="#__codelineno-12-5">5</a></span>
-<span class="normal"><a href="#__codelineno-12-6">6</a></span>
-<span class="normal"><a href="#__codelineno-12-7">7</a></span>
-<span class="normal"><a href="#__codelineno-12-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a>marco<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$HOME</span>/marco_history.log
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;save pwd - </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="o">}</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6"></a>polo<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="w">        </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/marco_history.log&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="o">}</span>
-</code></pre></div></td></tr></table></div>
-<hr />
-<p><strong>Problem3</strong></p>
-<p>Say you have a command that fails rarely. In order to debug it you need to capture its output but it can be time consuming to get a failure run. Write a bash script that runs the following script until it fails and captures its standard output and error streams to files and prints everything at the end. Bonus points if you can also report how many runs it took for the script to fail.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-13-10">10</a></span>
-<span class="normal"><a href="#__codelineno-13-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="w"> </span><span class="c1">#!/usr/bin/env bash</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a>
-<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w"> </span><span class="nv">n</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span><span class="nv">RANDOM</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="k">))</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4"></a>
-<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>n<span class="w"> </span>-eq<span class="w"> </span><span class="m">42</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Something went wrong&quot;</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="w">    </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;The error was using magic numbers&quot;</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
-<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w"> </span><span class="k">fi</span>
-<a id="__codelineno-13-10" name="__codelineno-13-10"></a>
-<a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Everything went according to plan&quot;</span>
-</code></pre></div></td></tr></table></div>
-<p><br/></p>
-<p><strong>Solution</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-14-10">10</a></span>
-<span class="normal"><a href="#__codelineno-14-11">11</a></span>
-<span class="normal"><a href="#__codelineno-14-12">12</a></span>
-<span class="normal"><a href="#__codelineno-14-13">13</a></span>
-<span class="normal"><a href="#__codelineno-14-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="ch">#!/usr/bin/env bash</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="nv">count</span><span class="o">=</span><span class="m">0</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="nb">echo</span><span class="w"> </span>&gt;<span class="w"> </span>out.log
-<a id="__codelineno-14-4" name="__codelineno-14-4"></a>
-<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="k">while</span><span class="w"> </span><span class="nb">true</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="k">do</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">        </span>./task3.sh<span class="w"> </span><span class="p">&amp;</span>&gt;&gt;<span class="w"> </span>out.log
-<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="w">                </span>cat<span class="w"> </span>out.log
-<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;failed after </span><span class="nv">$count</span><span class="s2"> times&quot;</span>
-<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="w">                </span><span class="k">break</span>
-<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="w">        </span><span class="k">fi</span>
-<a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="w">        </span><span class="o">((</span>count++<span class="o">))</span>
-<a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="k">done</span>
-</code></pre></div></td></tr></table></div>
-<hr />
-<p><strong>Problem4</strong></p>
-<p>As we covered in the lecture <code>find</code>’s <code>-exec</code> can be very powerful for performing operations over the files we are searching for. However, what if we want to do something with all the files, like creating a zip file? As you have seen so far commands will take input from both arguments and STDIN. When piping commands, we are connecting STDOUT to STDIN, but some commands like <code>tar</code> take inputs from arguments. To bridge this disconnect there’s the xargs command which will execute a command using STDIN as arguments. For example <code>ls | xargs rm</code> will delete the files in the current directory.</p>
-<p>Your task is to write a command that recursively finds all HTML files in the folder and makes a zip with them. Note that your command should work even if the files have spaces (hint: check <code>-d</code> flag for <code>xargs</code>).</p>
-<p><br/></p>
-<p><strong>Solution</strong></p>
-<p>prerequisite</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
-<span class="normal"><a href="#__codelineno-15-2">2</a></span>
-<span class="normal"><a href="#__codelineno-15-3">3</a></span>
-<span class="normal"><a href="#__codelineno-15-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>mkdir<span class="w"> </span>html_root
-<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="nb">cd</span><span class="w"> </span>html_root
-<a id="__codelineno-15-3" name="__codelineno-15-3"></a>mkdir<span class="w"> </span>html_<span class="o">{</span>a..h<span class="o">}</span>
-<a id="__codelineno-15-4" name="__codelineno-15-4"></a>touch<span class="w"> </span>html_<span class="o">{</span>a..h<span class="o">}</span>/<span class="o">{</span>a..h<span class="o">}</span>.html
-</code></pre></div></td></tr></table></div>
-<p>code</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.html&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span>tar<span class="w"> </span>-cvzf<span class="w"> </span>html.zip
-</code></pre></div></td></tr></table></div>
-<ol>
-<li>
-<p><code>find . -type f -name "*.html"</code></p>
-<ul>
-<li><code>find</code> searches for files and directories.</li>
-<li><code>.</code> specifies the current directory as the starting point.</li>
-<li><code>-type f</code> filters the results to include only files (not directories or other types).</li>
-<li><code>-name "*.html"</code> matches files with the .html extension.</li>
-<li>Output: A list of <code>.html</code> file paths.</li>
-</ul>
-</li>
-<li>
-<p><code>|</code> (Pipe symbol)</p>
-<ul>
-<li>Passes the output of find (list of .html files) as input to the next command, xargs.</li>
-</ul>
-</li>
-<li>
-<p><code>xargs -d '\n'</code></p>
-<ul>
-<li><code>xargs</code> converts the input (list of file paths) into arguments for the tar command.</li>
-<li><code>-d '\n'</code> specifies that each line of input is treated as a separate file. This ensures paths with spaces or special characters are handled correctly.</li>
-</ul>
-</li>
-<li>
-<p><code>tar -cvzf html.zip</code></p>
-<ul>
-<li><code>tar</code> creates compressed archives.</li>
-<li><code>-c</code> : Creates a new archive.</li>
-<li><code>-v</code> : Displays a list of files being added to the archive (verbose mode).</li>
-<li><code>-z</code> : Compresses the archive using gzip.</li>
-<li><code>-f</code> html.zip: Names the output file <code>html.zip</code>.</li>
-</ul>
-</li>
-</ol>
-<hr />
-<p><strong>Problem5</strong></p>
-<p>(Advanced) Write a command or script to recursively find the most recently modified file in a directory. More generally, can you list all files by recency?</p>
-<p><br/></p>
-<p><strong>Solution</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-print0<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-0<span class="w"> </span>ls<span class="w"> </span>-lt<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-1
-</code></pre></div></td></tr></table></div>
-<h3 id="summary"><a class="toclink" href="2024/12/04/shell-tools-and-scripting/#summary">Summary</a></h3>
-<p>uh... I find that I'm still quite uncomfortable with the grammar of bash script. The next step I think, before next lecture, maybe is to pursue a deeper and better understanding of bash script.</p>
     
   </div>
 </article>

@@ -2169,6 +2169,297 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2025-02-02 00:00:00+00:00">2025年2月2日星期日</time></li>
+        
+          <li class="md-meta__item">
+            分类于
+            
+              <a href="../../category/tools/" class="md-meta__link">tools</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 4 分钟阅读时间
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="04ideagit"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/">04.IdeaGit 分支管理</a></h2>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 1063 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 29 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 25 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 4 分钟</p>
+</div>
+<h3 id="1"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#1">1. 查看分支</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<span class="normal"><a href="#__codelineno-13-2">2</a></span>
+<span class="normal"><a href="#__codelineno-13-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>git<span class="w"> </span>branch<span class="w">        </span>//<span class="w"> </span>查看本地分支信息
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>git<span class="w"> </span>branch<span class="w"> </span>-v<span class="w">     </span>//<span class="w"> </span>查看相对详细的本地分支信息
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a>git<span class="w"> </span>branch<span class="w"> </span>-av<span class="w">     </span>//<span class="w"> </span>查看包括远程仓库在内的分支信息
+</code></pre></div></td></tr></table></div>
+<p>注意：在 <code>git branch</code> 的输出内容中，有一个分支，前面带有 <code>*</code> 号，这标识我们当前所在的分支。</p>
+<h3 id="2"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#2">2. 创建分支</a></h3>
+<p>分支创建后，新分支基于当前分支。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a>git<span class="w"> </span>branch<span class="w"> </span>dev<span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<p>idea 中</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385111405146.jpg" /></p>
+<h3 id="3"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#3">3. 切换分支</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>dev
+</code></pre></div></td></tr></table></div>
+<p>idea:</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385112531304.jpg" /></p>
+<h3 id="4"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#4">4. 创建并切换分支</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>-b<span class="w"> </span>dev<span class="w"> </span><span class="c1"># 新建 dev 分支，并切换到该分支上</span>
+</code></pre></div></td></tr></table></div>
+<h3 id="5"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#5">5. 合并分支</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>git<span class="w"> </span>checkout<span class="w"> </span>master<span class="w">        </span><span class="c1"># 切换回 master 分支</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a>git<span class="w"> </span>merge<span class="w"> </span>dev<span class="w">            </span><span class="c1"># 将 dev 分钟中的修改合并回 master 分支</span>
+</code></pre></div></td></tr></table></div>
+<p>idea:先check out 到指定标签，在把需要合并的标签右键合并即可。</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385118440191.jpg" /></p>
+<h3 id="6"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#6">6. 删除分支</a></h3>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>dev<span class="w"> </span><span class="c1"># 删除 dev 分支</span>
+</code></pre></div></td></tr></table></div>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385119365997.jpg" /></p>
+<h3 id="7"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#7">7. 建立本地分支和远程分支的关联</a></h3>
+<h4 id="71"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#71">7.1 本地分支存在，远程分支存在，但之间没有关联关系。</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a>git<span class="w"> </span>push<span class="w"> </span>-u<span class="w"> </span>origin/remote_branch<span class="w"> </span>命令推送。
+</code></pre></div></td></tr></table></div>
+<h4 id="72"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#72">7.2 本地分支存在，但远程分支不存在。</a></h4>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a>git<span class="w"> </span>push<span class="w"> </span>origin<span class="w"> </span>local_branch:remote_branch<span class="w"> </span>
+</code></pre></div></td></tr></table></div>
+<h4 id="73"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#73">7.3 本地分支存在，远程分支存在，且关联关系已建立</a></h4>
+<p>使用 <code>git push</code> 命令进行推送即可</p>
+<p>idea中本地<code>push</code>时直接修改远程分支名即可</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385612620818.jpg" /></p>
+<h3 id="8"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#8">8. 从远程仓库拉取</a></h3>
+<p>通过 <code>git fetch</code> 和 <code>git pull</code> 来获取远程仓库的内容。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1">1</a></span>
+<span class="normal"><a href="#__codelineno-21-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a>git<span class="w"> </span>fetch<span class="w"> </span>origin<span class="w"> </span>master<span class="w">    </span>
+<a id="__codelineno-21-2" name="__codelineno-21-2"></a>git<span class="w"> </span>pull<span class="w"> </span>origin<span class="w"> </span>master
+</code></pre></div></td></tr></table></div>
+<p><code>git fetch</code> 和 <code>git pull</code> 之间的区别：</p>
+<h4 id="81-git-fetch"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#81-git-fetch">8.1 git fetch</a></h4>
+<p><code>git fetch</code> 是仅仅获取远程仓库的更新内容，并不会自动做合并。</p>
+<p>需要先查看更新：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a>git<span class="w"> </span>log<span class="w"> </span>-p<span class="w"> </span>FETCH_HEAD
+</code></pre></div></td></tr></table></div>
+<p>或者拉取到一个其他分支（目前还没见过分支创建）</p>
+<p>如果没有问题，再进行合并：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a>git<span class="w"> </span>merge<span class="w"> </span>origin/master
+</code></pre></div></td></tr></table></div>
+<p>新建一个本地分支，拉取远程到本地temp,查看不同，没问题则合并，合并后删除即可。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-24-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-24-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-24-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-24-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-24-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-24-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-24-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-24-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-24-10">10</a></span>
+<span class="normal"><a href="#__codelineno-24-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="c1">## 在本地新建一个temp分支，并将远程origin仓库的master分支代码下载到本地temp分支；</span>
+<a id="__codelineno-24-2" name="__codelineno-24-2"></a>$<span class="w"> </span>git<span class="w"> </span>fetch<span class="w"> </span>origin<span class="w"> </span>master:temp
+<a id="__codelineno-24-3" name="__codelineno-24-3"></a>
+<a id="__codelineno-24-4" name="__codelineno-24-4"></a><span class="c1">## 比较本地代码与刚刚从远程下载下来的代码的区别；</span>
+<a id="__codelineno-24-5" name="__codelineno-24-5"></a>$<span class="w"> </span>git<span class="w"> </span>diff<span class="w"> </span>temp
+<a id="__codelineno-24-6" name="__codelineno-24-6"></a>
+<a id="__codelineno-24-7" name="__codelineno-24-7"></a><span class="c1">## 合并temp分支到本地的master分支;</span>
+<a id="__codelineno-24-8" name="__codelineno-24-8"></a>$<span class="w"> </span>git<span class="w"> </span>merge<span class="w"> </span>temp
+<a id="__codelineno-24-9" name="__codelineno-24-9"></a>
+<a id="__codelineno-24-10" name="__codelineno-24-10"></a><span class="c1">## 如果不想保留temp分支，删除;</span>
+<a id="__codelineno-24-11" name="__codelineno-24-11"></a>$<span class="w"> </span>git<span class="w"> </span>branch<span class="w"> </span>-d<span class="w"> </span>temp
+</code></pre></div></td></tr></table></div>
+<p>实机演示:</p>
+<p>在远程仓库手动修改<code>t1</code>的<code>111</code>为<code>511</code>, 在本地仓库的<code>t1</code>文件中添加<code>666</code>并<code>commit</code></p>
+<p><strong>1. git fetch origin master:temp</strong></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385617397534.jpg" /></p>
+<p><strong>2. git diff temp</strong></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385621563579.jpg" /></p>
+<p><strong>3. git merge temp</strong></p>
+<p>出现冲突，手动解决</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385622823768.jpg" /></p>
+<p>选择全部接受(<code>lazygit</code>按<code>b</code>)，当然也可以只选择某一个<code>hunk</code></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385624491784.jpg" /></p>
+<p>最终<code>commit log</code>如下所示</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385625438433.jpg" /></p>
+<p><strong>4. git branch -d temp</strong></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385627395601.jpg" /></p>
+<hr />
+<h4 id="82-git-pull"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#82-git-pull">8.2 git pull</a></h4>
+<p><code>git pull</code> 在获取远程仓库的内容后，会自动做合并，可以看成 <code>git fetch</code> 之后 <code>git merge</code>。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
+<span class="normal"><a href="#__codelineno-25-2">2</a></span>
+<span class="normal"><a href="#__codelineno-25-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="c1"># 因为存在冲突故git pull会报错，以下命令二选一即可</span>
+<a id="__codelineno-25-2" name="__codelineno-25-2"></a>git<span class="w"> </span>pull<span class="w"> </span>--no-rebase<span class="w"> </span><span class="c1"># merge冲突</span>
+<a id="__codelineno-25-3" name="__codelineno-25-3"></a>git<span class="w"> </span>pull<span class="w"> </span>--rebase<span class="w"> </span><span class="c1"># rebase冲突</span>
+</code></pre></div></td></tr></table></div>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385631714218.jpg" /></p>
+<hr />
+<h4 id="83-idea"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#83-idea">8.3 idea 拉取远程仓库</a></h4>
+<h5 id="1_1"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#1_1"><strong>1. 前置准备</strong></a></h5>
+<p>本地创建<code>GitPullTest.java</code>并添加<code>f1</code>函数，提交并推送</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385636994485.jpg" /></p>
+<p>本地仓库添加<code>f2</code>函数，并提交</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385637972911.jpg" /></p>
+<p>远程仓库添加<code>f3</code>函数，并提交</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385639061562.jpg" /></p>
+<hr />
+<h5 id="2-git-fetch"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#2-git-fetch"><strong>2. git fetch</strong></a></h5>
+<p>找到idea上方<code>git</code>菜单，选择<code>fetch</code> (这里仅演示<code>fetch</code>，不演示<code>pull</code>，思想都是一致的)</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385640017030.jpg" /></p>
+<p>选择<code>remote</code>下的<code>main</code>分支，查看更改</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385644208683.jpg" /></p>
+<p>检查过后发现没有问题，右键<code>remote</code>的<code>main</code>分支，选择<code>merge</code>或<code>rebase</code>合并</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385645222242.jpg" /></p>
+<p>选择<code>merge</code>，发现出现冲突，需要解决</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385645636944.jpg" /></p>
+<p>点击<code>merge</code>按钮，弹出冲突解决页面</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385646405123.jpg" /></p>
+<p>左侧为本地仓库代码，右侧为远程仓库代码</p>
+<p>有两种方式解决冲突</p>
+<ol>
+<li>左下角 <code>Accept Left</code> 和 <code>Accept Right</code>，但只能选择一个仓库的代码作为最终合并文件</li>
+<li>屏幕中间的<code>&gt;&gt;</code>和<code>&lt;&lt;</code>，可以同时保留本地和远程代码，也可以只选择其中一份</li>
+</ol>
+<p>这里选择同时保留本地和远程代码</p>
+<p>PS: 中间部分可以随意修改/调换位置，但两侧是无法修改的</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385649529158.jpg" /></p>
+<p>最终效果如图所示(<code>merge</code>)</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385650035106.jpg" /></p>
+<p>如果选择<code>rebase</code>，最终效果如下图所示</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385652050655.jpg" /></p>
+<hr />
+<h4 id="84-mergerebase"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#84-mergerebase">8.4 merge与rebase的区别(存在冲突)</a></h4>
+<p><img alt="merge:rebase" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/mergerebase.png" /></p>
+<p><strong>1. merge</strong></p>
+<ul>
+<li>保留分支历史（会产生合并提交 merge commit）。</li>
+<li>适合多人协作，不会修改历史记录。</li>
+</ul>
+<p><strong>2. rebase</strong></p>
+<ul>
+<li>不产生合并提交，而是将 feature 分支上的提交重新应用到 main 分支后面。</li>
+<li>历史会被重写（提交哈希值改变），适合保持提交历史整洁。</li>
+</ul>
+<hr />
+<h4 id="85-merge-fast-forward"><a class="toclink" href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/#85-merge-fast-forward">8.5 merge fast-forward(不存在冲突)</a></h4>
+<p><code>Fast-forward</code> 是 Git 中的一种 合并方式，当你执行 <code>git merge</code> 时，如果当前分支<strong>没有</strong>新的提交（即该分支的 HEAD <strong>没有分歧</strong>），Git 会直接将当前分支指向目标分支的最新提交，而不创建额外的合并提交。</p>
+<p>什么时候会发生 <code>Fast-Forward</code>？</p>
+<ul>
+<li>当目标分支<strong>没有新的提交</strong>，并且<strong>当前分支完全处于目标分支的前面</strong>（即目标分支是当前分支的祖先），Git 就可以简单地将当前分支 <strong>“快进”</strong> 到目标分支的最新提交，而不需要创建新的合并提交。</li>
+</ul>
+<p><img alt="merge ff:rebase" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/merge-ffrebase.png" /></p>
+<p>上面的例子中，<code>dev</code>分支为目标分支，<code>feature</code>分支为当前分支</p>
+<p><code>dev</code>分支中不存在新的提交，且<code>feature</code>分支完全处于<code>dev</code>分支之前，此时进行<code>merge</code>将触发<code>fast-forward</code>，效果与<code>rebase</code>一致</p>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/23/106435907.jpeg" alt="苍镜月">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2025-02-02 00:00:00+00:00">2025年2月2日星期日</time></li>
+        
+          <li class="md-meta__item">
+            分类于
+            
+              <a href="../../category/tools/" class="md-meta__link">tools</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              需要 2 分钟阅读时间
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="05ideagit"><a class="toclink" href="../../2025/02/02/05ideagit-%E6%9D%82%E9%A1%B9/">05.IdeaGit 杂项</a></h2>
+<div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 220 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 10 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 9 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 1 分钟</p>
+</div>
+<h3 id="cherry-pick"><a class="toclink" href="../../2025/02/02/05ideagit-%E6%9D%82%E9%A1%B9/#cherry-pick">Cherry-Pick</a></h3>
+<p>复用<a href="../../2025/02/02/04ideagit-%E5%88%86%E6%94%AF%E7%AE%A1%E7%90%86/">04.IdeaGit 分支管理</a>中<code>8.3</code>的前置准备</p>
+<p>在<code>merge</code>过程上略有不同，保留函数<code>f2</code>，去除函数<code>f3</code></p>
+<p>最终效果如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-1-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GitPullTest</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f1</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;f1&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">f2</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;f2&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>此时，继续创建函数<code>f4</code></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385688027308.jpg" /></p>
+<p>问题来了，在实现函数<code>f4</code>时，发现其可以使用函数<code>f3</code>的逻辑简化代码</p>
+<p>而想要重新获取之前已经放弃的函数<code>f3</code>，可以选中记录后点击<code>cherry-pick</code>按钮进行合并（可能需要解决冲突），之后会对函数<code>f4</code>在主干上重新提交，被抛弃的代码也可以重新获得。</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385690143285.jpg" /></p>
+<p>解决冲突后，最终效果如下图所示</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385690638619.jpg" /></p>
+<h3 id="undo-commitrevert-commitdrop-commit"><a class="toclink" href="../../2025/02/02/05ideagit-%E6%9D%82%E9%A1%B9/#undo-commitrevert-commitdrop-commit">Undo Commit，Revert Commit，Drop Commit</a></h3>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385703923046.jpg" /></p>
+<p><img alt="undo:revert:drop" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/undorevertdrop.png" /></p>
+<h3 id="tag"><a class="toclink" href="../../2025/02/02/05ideagit-%E6%9D%82%E9%A1%B9/#tag">Tag</a></h3>
+<p>在项目完工准备发布时，可以对最后一个提交打上<code>Tag</code></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385705270381.jpg" /></p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385705891215.jpg" /></p>
+<p>注意：push的时候一定要选中左下角<code>Push tags</code>，否则无法生效</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385707721201.jpg" /></p>
+<p>查看远端仓库</p>
+<p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385708440221.jpg" /></p>
+    
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+      <nav class="md-post__authors md-typeset">
+        
+          <span class="md-author">
+            <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/23/106435907.jpeg" alt="苍镜月">
+          </span>
+        
+      </nav>
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2025-01-27 00:00:00+00:00">2025年1月27日星期一</time></li>
         
           <li class="md-meta__item">

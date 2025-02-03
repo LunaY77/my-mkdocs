@@ -2541,40 +2541,40 @@
 <p><strong>Oh My Zsh</strong> 是基于 <strong>zsh</strong> 命令行的一个扩展工具集，提供了丰富的扩展功能。</p>
 <p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/06/17334678151323.jpg" /></p>
 <h3 id="1-oh-my-zsh"><a class="toclink" href="../../2024/12/06/oh-my-zsh/#1-oh-my-zsh">1. 安装 oh-my-zsh</a></h3>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://install.ohmyz.sh/<span class="k">)</span><span class="s2">&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>sh<span class="w"> </span>-c<span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>curl<span class="w"> </span>-fsSL<span class="w"> </span>https://install.ohmyz.sh/<span class="k">)</span><span class="s2">&quot;</span>
 </code></pre></div></td></tr></table></div>
 <p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/06/17334625616432.jpg" /></p>
 <h3 id="2"><a class="toclink" href="../../2024/12/06/oh-my-zsh/#2">2. 配置主题</a></h3>
 <p>使用 <a href="https://github.com/romkatv/powerlevel10k">powerlevel10k</a> 主题。</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/romkatv/powerlevel10k.git<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>git<span class="w"> </span>clone<span class="w"> </span>--depth<span class="o">=</span><span class="m">1</span><span class="w"> </span>https://github.com/romkatv/powerlevel10k.git<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="nv">$HOME</span><span class="p">/.oh-my-zsh/custom</span><span class="si">}</span>/themes/powerlevel10k
 </code></pre></div></td></tr></table></div>
 <p>在 <code>~/.zshrc</code> 设置 <code>ZSH_THEME="powerlevel10k/powerlevel10k"</code>。</p>
 <p><strong>运行命令</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nb">source</span><span class="w"> </span>~/.zshrc
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nb">source</span><span class="w"> </span>~/.zshrc
 </code></pre></div></td></tr></table></div>
 <p>接下来，终端会自动引导你配置 <code>powerlevel10k</code>。</p>
 <p>如果希望<strong>重新配置</strong>，输入以下命令</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a>p10k<span class="w"> </span>configure
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>p10k<span class="w"> </span>configure
 </code></pre></div></td></tr></table></div>
 <h3 id="3"><a class="toclink" href="../../2024/12/06/oh-my-zsh/#3">3. 安装插件</a></h3>
 <h4 id="31-zsh-autosuggestions"><a class="toclink" href="../../2024/12/06/oh-my-zsh/#31-zsh-autosuggestions">3.1 zsh -autosuggestions</a></h4>
 <p><a href="https://github.com/zsh-users/zsh-autosuggestions">zsh -autosuggestions</a> 是一个命令提示插件，当你输入命令时，会自动推测你可能需要输入的命令，按下右键可以快速采用建议。效果如下：</p>
 <p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/06/17334673829105.jpg" /></p>
 <p>安装方式：把插件下载到本地的 <code>~/.oh-my-zsh/custom/plugins</code> 目录</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-autosuggestions<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-autosuggestions
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-autosuggestions<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-autosuggestions
 </code></pre></div></td></tr></table></div>
 <h4 id="32-zsh-syntax-highlighting"><a class="toclink" href="../../2024/12/06/oh-my-zsh/#32-zsh-syntax-highlighting">3.2 zsh-syntax-highlighting</a></h4>
 <p><a href="https://github.com/zsh-users/zsh-syntax-highlighting">zsh-syntax-highlighting</a> 是一个命令语法校验插件，在输入命令的过程中，若指令不合法，则指令显示为红色，若指令合法就会显示为绿色。效果如下：</p>
 <p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/06/17334674054382.jpg" /></p>
 <p>安装方式：把插件下载到本地的 <code>~/.oh-my-zsh/custom/plugins</code> 目录。</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-syntax-highlighting.git<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-syntax-highlighting
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/zsh-users/zsh-syntax-highlighting.git<span class="w"> </span><span class="si">${</span><span class="nv">ZSH_CUSTOM</span><span class="k">:-</span><span class="p">~/.oh-my-zsh/custom</span><span class="si">}</span>/plugins/zsh-syntax-highlighting
 </code></pre></div></td></tr></table></div>
 <h4 id="33-z"><a class="toclink" href="../../2024/12/06/oh-my-zsh/#33-z">3.3 z</a></h4>
 <p><code>oh-my-zsh</code> 内置了 <code>z</code> 插件。<code>z</code> 是一个文件夹快捷跳转插件，对于曾经跳转过的目录，只需要输入最终目标文件夹名称，就可以快速跳转，避免再输入长串路径，提高切换文件夹的效率。效果如下：</p>
 <p><img alt="" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/06/17334674281105.jpg" /></p>
 <h4 id="34"><a class="toclink" href="../../2024/12/06/oh-my-zsh/#34">3.4 启用插件</a></h4>
 <p>修改 <code>~/.zshrc</code> 中插件列表为：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a>plugins=(git zsh-syntax-highlighting zsh-autosuggestions z)
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>plugins=(git zsh-syntax-highlighting zsh-autosuggestions z)
 </code></pre></div></td></tr></table></div>
 <p>执行 <code>source ~/.zshrc</code></p>
     
@@ -2629,40 +2629,40 @@
 <p>Strings in bash can be defined with <code>'</code> and <code>"</code> delimiters.</p>
 <p>Strings delimited with <code>'</code> are <strong>literal</strong> strings and <strong>will not</strong> substitute variable values.</p>
 <p>Strings delimited with <code>"</code> <strong>will</strong> substitute variable values.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-18-1">1</a></span>
-<span class="normal"><a href="#__codelineno-18-2">2</a></span>
-<span class="normal"><a href="#__codelineno-18-3">3</a></span>
-<span class="normal"><a href="#__codelineno-18-4">4</a></span>
-<span class="normal"><a href="#__codelineno-18-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1"></a><span class="nv">foo</span><span class="o">=</span>bar
-<a id="__codelineno-18-2" name="__codelineno-18-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$foo</span><span class="s2">&quot;</span>
-<a id="__codelineno-18-3" name="__codelineno-18-3"></a><span class="c1"># prints bar</span>
-<a id="__codelineno-18-4" name="__codelineno-18-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;$foo&#39;</span>
-<a id="__codelineno-18-5" name="__codelineno-18-5"></a><span class="c1"># prints $foo</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<span class="normal"><a href="#__codelineno-0-2">2</a></span>
+<span class="normal"><a href="#__codelineno-0-3">3</a></span>
+<span class="normal"><a href="#__codelineno-0-4">4</a></span>
+<span class="normal"><a href="#__codelineno-0-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="nv">foo</span><span class="o">=</span>bar
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$foo</span><span class="s2">&quot;</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="c1"># prints bar</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="nb">echo</span><span class="w"> </span><span class="s1">&#39;$foo&#39;</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="c1"># prints $foo</span>
 </code></pre></div></td></tr></table></div>
 <hr />
 <h4 id="2-functions"><a class="toclink" href="../../2024/12/04/shell-tools-and-scripting/#2-functions">2. Functions</a></h4>
 <p>As with most programming languages, bash supports control flow techniques including <code>if</code>, <code>case</code>, <code>while</code> and <code>for</code>. Similarly, bash has <strong>functions</strong> that take arguments and can operate with them. </p>
 <p>Here is an example of a function that <strong>creates a directory and cds into it</strong>.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-19-1">1</a></span>
-<span class="normal"><a href="#__codelineno-19-2">2</a></span>
-<span class="normal"><a href="#__codelineno-19-3">3</a></span>
-<span class="normal"><a href="#__codelineno-19-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1"></a>mcd<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-19-2" name="__codelineno-19-2"></a><span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<a id="__codelineno-19-3" name="__codelineno-19-3"></a><span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
-<a id="__codelineno-19-4" name="__codelineno-19-4"></a><span class="o">}</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>mcd<span class="w"> </span><span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span>mkdir<span class="w"> </span>-p<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$1</span><span class="s2">&quot;</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 <p>Here is how to test <code>mcd</code> function</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-20-1">1</a></span>
-<span class="normal"><a href="#__codelineno-20-2">2</a></span>
-<span class="normal"><a href="#__codelineno-20-3">3</a></span>
-<span class="normal"><a href="#__codelineno-20-4">4</a></span>
-<span class="normal"><a href="#__codelineno-20-5">5</a></span>
-<span class="normal"><a href="#__codelineno-20-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1"></a>vim<span class="w"> </span>mcd.sh
-<a id="__codelineno-20-2" name="__codelineno-20-2"></a><span class="c1"># paste the code into it...</span>
-<a id="__codelineno-20-3" name="__codelineno-20-3"></a><span class="nb">source</span><span class="w"> </span>mcd.sh
-<a id="__codelineno-20-4" name="__codelineno-20-4"></a>mcd<span class="w"> </span><span class="nb">test</span>
-<a id="__codelineno-20-5" name="__codelineno-20-5"></a><span class="c1"># And you will find that you are in the test directory, which is a </span>
-<a id="__codelineno-20-6" name="__codelineno-20-6"></a><span class="c1"># child dir in which you run the mcd program</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
+<span class="normal"><a href="#__codelineno-2-2">2</a></span>
+<span class="normal"><a href="#__codelineno-2-3">3</a></span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>vim<span class="w"> </span>mcd.sh
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="c1"># paste the code into it...</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="nb">source</span><span class="w"> </span>mcd.sh
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>mcd<span class="w"> </span><span class="nb">test</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="c1"># And you will find that you are in the test directory, which is a </span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="c1"># child dir in which you run the mcd program</span>
 </code></pre></div></td></tr></table></div>
 <hr />
 <h4 id="3-function-arguments"><a class="toclink" href="../../2024/12/04/shell-tools-and-scripting/#3-function-arguments">3. Function arguments</a></h4>
@@ -2690,39 +2690,39 @@
 <li>the <code>false</code> command will always have a <code>1</code> return code. </li>
 </ul>
 <p>Let’s see some examples</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-21-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-21-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-21-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-21-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-21-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-21-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-21-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-21-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-21-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-21-10">10</a></span>
-<span class="normal"><a href="#__codelineno-21-11">11</a></span>
-<span class="normal"><a href="#__codelineno-21-12">12</a></span>
-<span class="normal"><a href="#__codelineno-21-13">13</a></span>
-<span class="normal"><a href="#__codelineno-21-14">14</a></span>
-<span class="normal"><a href="#__codelineno-21-15">15</a></span>
-<span class="normal"><a href="#__codelineno-21-16">16</a></span>
-<span class="normal"><a href="#__codelineno-21-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1"></a><span class="nb">false</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Oops, fail&quot;</span>
-<a id="__codelineno-21-2" name="__codelineno-21-2"></a><span class="c1"># Oops, fail</span>
-<a id="__codelineno-21-3" name="__codelineno-21-3"></a>
-<a id="__codelineno-21-4" name="__codelineno-21-4"></a><span class="nb">true</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Will not be printed&quot;</span>
-<a id="__codelineno-21-5" name="__codelineno-21-5"></a><span class="c1">#</span>
-<a id="__codelineno-21-6" name="__codelineno-21-6"></a>
-<a id="__codelineno-21-7" name="__codelineno-21-7"></a><span class="nb">true</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Things went well&quot;</span>
-<a id="__codelineno-21-8" name="__codelineno-21-8"></a><span class="c1"># Things went well</span>
-<a id="__codelineno-21-9" name="__codelineno-21-9"></a>
-<a id="__codelineno-21-10" name="__codelineno-21-10"></a><span class="nb">false</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Will not be printed&quot;</span>
-<a id="__codelineno-21-11" name="__codelineno-21-11"></a><span class="c1">#</span>
-<a id="__codelineno-21-12" name="__codelineno-21-12"></a>
-<a id="__codelineno-21-13" name="__codelineno-21-13"></a><span class="nb">true</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This will always run&quot;</span>
-<a id="__codelineno-21-14" name="__codelineno-21-14"></a><span class="c1"># This will always run</span>
-<a id="__codelineno-21-15" name="__codelineno-21-15"></a>
-<a id="__codelineno-21-16" name="__codelineno-21-16"></a><span class="nb">false</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This will always run&quot;</span>
-<a id="__codelineno-21-17" name="__codelineno-21-17"></a><span class="c1"># This will always run</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-3-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-3-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-3-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span>
+<span class="normal"><a href="#__codelineno-3-12">12</a></span>
+<span class="normal"><a href="#__codelineno-3-13">13</a></span>
+<span class="normal"><a href="#__codelineno-3-14">14</a></span>
+<span class="normal"><a href="#__codelineno-3-15">15</a></span>
+<span class="normal"><a href="#__codelineno-3-16">16</a></span>
+<span class="normal"><a href="#__codelineno-3-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nb">false</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Oops, fail&quot;</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="c1"># Oops, fail</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="nb">true</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Will not be printed&quot;</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="c1">#</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="nb">true</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Things went well&quot;</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="c1"># Things went well</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="nb">false</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Will not be printed&quot;</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="c1">#</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12"></a>
+<a id="__codelineno-3-13" name="__codelineno-3-13"></a><span class="nb">true</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This will always run&quot;</span>
+<a id="__codelineno-3-14" name="__codelineno-3-14"></a><span class="c1"># This will always run</span>
+<a id="__codelineno-3-15" name="__codelineno-3-15"></a>
+<a id="__codelineno-3-16" name="__codelineno-3-16"></a><span class="nb">false</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;This will always run&quot;</span>
+<a id="__codelineno-3-17" name="__codelineno-3-17"></a><span class="c1"># This will always run</span>
 </code></pre></div></td></tr></table></div>
 <hr />
 <h4 id="4-substitution"><a class="toclink" href="../../2024/12/04/shell-tools-and-scripting/#4-substitution">4. Substitution</a></h4>
@@ -2734,35 +2734,35 @@
 <p><br/></p>
 <p>let’s see an <strong>example</strong> that showcases some of these features. </p>
 <p><strong><em>It will iterate through the arguments we provide, grep for the string foobar, and append it to the file as a comment if it’s not found.</em></strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-22-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-22-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-22-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-22-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-22-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-22-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-22-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-22-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-22-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-22-10">10</a></span>
-<span class="normal"><a href="#__codelineno-22-11">11</a></span>
-<span class="normal"><a href="#__codelineno-22-12">12</a></span>
-<span class="normal"><a href="#__codelineno-22-13">13</a></span>
-<span class="normal"><a href="#__codelineno-22-14">14</a></span>
-<span class="normal"><a href="#__codelineno-22-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-22-2" name="__codelineno-22-2"></a>
-<a id="__codelineno-22-3" name="__codelineno-22-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Starting program at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="c1"># Date will be substituted</span>
-<a id="__codelineno-22-4" name="__codelineno-22-4"></a>
-<a id="__codelineno-22-5" name="__codelineno-22-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Running program </span><span class="nv">$0</span><span class="s2"> with </span><span class="nv">$#</span><span class="s2"> arguments with pid </span><span class="nv">$$</span><span class="s2">&quot;</span>
-<a id="__codelineno-22-6" name="__codelineno-22-6"></a>
-<a id="__codelineno-22-7" name="__codelineno-22-7"></a><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
-<a id="__codelineno-22-8" name="__codelineno-22-8"></a><span class="w">    </span>grep<span class="w"> </span>foobar<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
-<a id="__codelineno-22-9" name="__codelineno-22-9"></a><span class="w">    </span><span class="c1"># When pattern is not found, grep has exit status 1</span>
-<a id="__codelineno-22-10" name="__codelineno-22-10"></a><span class="w">    </span><span class="c1"># We redirect STDOUT and STDERR to a null register since we do not care about them</span>
-<a id="__codelineno-22-11" name="__codelineno-22-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<a id="__codelineno-22-12" name="__codelineno-22-12"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;File </span><span class="nv">$file</span><span class="s2"> does not have any foobar, adding one&quot;</span>
-<a id="__codelineno-22-13" name="__codelineno-22-13"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# foobar&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span>
-<a id="__codelineno-22-14" name="__codelineno-22-14"></a><span class="w">    </span><span class="k">fi</span>
-<a id="__codelineno-22-15" name="__codelineno-22-15"></a><span class="k">done</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span>
+<span class="normal"><a href="#__codelineno-4-14">14</a></span>
+<span class="normal"><a href="#__codelineno-4-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Starting program at </span><span class="k">$(</span>date<span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span><span class="c1"># Date will be substituted</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Running program </span><span class="nv">$0</span><span class="s2"> with </span><span class="nv">$#</span><span class="s2"> arguments with pid </span><span class="nv">$$</span><span class="s2">&quot;</span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="k">for</span><span class="w"> </span>file<span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="s2">&quot;</span><span class="nv">$@</span><span class="s2">&quot;</span><span class="p">;</span><span class="w"> </span><span class="k">do</span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span>grep<span class="w"> </span>foobar<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/dev/null<span class="w"> </span><span class="m">2</span>&gt;<span class="w"> </span>/dev/null
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">    </span><span class="c1"># When pattern is not found, grep has exit status 1</span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">    </span><span class="c1"># We redirect STDOUT and STDERR to a null register since we do not care about them</span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;File </span><span class="nv">$file</span><span class="s2"> does not have any foobar, adding one&quot;</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;# foobar&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$file</span><span class="s2">&quot;</span>
+<a id="__codelineno-4-14" name="__codelineno-4-14"></a><span class="w">    </span><span class="k">fi</span>
+<a id="__codelineno-4-15" name="__codelineno-4-15"></a><span class="k">done</span>
 </code></pre></div></td></tr></table></div>
 <p>In the comparison we tested whether <strong><code>$?</code> was not equal to <code>0</code></strong>. Bash implements many comparisons of this sort - you can find a detailed list in the manpage for <a href="https://www.man7.org/linux/man-pages/man1/test.1.html">test</a>. </p>
 <p>When performing comparisons in bash, try to use double brackets <code>[[ ]]</code> in favor of simple brackets <code>[ ]</code>. Chances of making mistakes are lower although it won’t be portable to <code>sh</code>. A more detailed explanation can be found <a href="https://mywiki.wooledge.org/BashFAQ/031">here</a>.</p>
@@ -2778,62 +2778,62 @@
 </li>
 <li><strong>Curly braces</strong> <code>{}</code> - Whenever you have a <strong>common substring</strong> in a <strong>series of commands</strong>, you can use curly braces for bash to <strong>expand</strong> this automatically. This comes in very handy when moving or converting files.</li>
 </ul>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-23-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-23-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-23-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-23-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-23-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-23-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-23-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-23-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-23-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-23-10">10</a></span>
-<span class="normal"><a href="#__codelineno-23-11">11</a></span>
-<span class="normal"><a href="#__codelineno-23-12">12</a></span>
-<span class="normal"><a href="#__codelineno-23-13">13</a></span>
-<span class="normal"><a href="#__codelineno-23-14">14</a></span>
-<span class="normal"><a href="#__codelineno-23-15">15</a></span>
-<span class="normal"><a href="#__codelineno-23-16">16</a></span>
-<span class="normal"><a href="#__codelineno-23-17">17</a></span>
-<span class="normal"><a href="#__codelineno-23-18">18</a></span>
-<span class="normal"><a href="#__codelineno-23-19">19</a></span>
-<span class="normal"><a href="#__codelineno-23-20">20</a></span>
-<span class="normal"><a href="#__codelineno-23-21">21</a></span>
-<span class="normal"><a href="#__codelineno-23-22">22</a></span>
-<span class="normal"><a href="#__codelineno-23-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1"></a>convert<span class="w"> </span>image.<span class="o">{</span>png,jpg<span class="o">}</span>
-<a id="__codelineno-23-2" name="__codelineno-23-2"></a><span class="c1"># Will expand to</span>
-<a id="__codelineno-23-3" name="__codelineno-23-3"></a>convert<span class="w"> </span>image.png<span class="w"> </span>image.jpg
-<a id="__codelineno-23-4" name="__codelineno-23-4"></a>
-<a id="__codelineno-23-5" name="__codelineno-23-5"></a>cp<span class="w"> </span>/path/to/project/<span class="o">{</span>foo,bar,baz<span class="o">}</span>.sh<span class="w"> </span>/newpath
-<a id="__codelineno-23-6" name="__codelineno-23-6"></a><span class="c1"># Will expand to</span>
-<a id="__codelineno-23-7" name="__codelineno-23-7"></a>cp<span class="w"> </span>/path/to/project/foo.sh<span class="w"> </span>/path/to/project/bar.sh<span class="w"> </span>/path/to/project/baz.sh<span class="w"> </span>/newpath
-<a id="__codelineno-23-8" name="__codelineno-23-8"></a>
-<a id="__codelineno-23-9" name="__codelineno-23-9"></a><span class="c1"># Globbing techniques can also be combined</span>
-<a id="__codelineno-23-10" name="__codelineno-23-10"></a>mv<span class="w"> </span>*<span class="o">{</span>.py,.sh<span class="o">}</span><span class="w"> </span>folder
-<a id="__codelineno-23-11" name="__codelineno-23-11"></a><span class="c1"># Will move all *.py and *.sh files</span>
-<a id="__codelineno-23-12" name="__codelineno-23-12"></a>
-<a id="__codelineno-23-13" name="__codelineno-23-13"></a>
-<a id="__codelineno-23-14" name="__codelineno-23-14"></a>mkdir<span class="w"> </span>foo<span class="w"> </span>bar
-<a id="__codelineno-23-15" name="__codelineno-23-15"></a><span class="c1"># This creates files foo/a, foo/b, ... foo/h, bar/a, bar/b, ... bar/h</span>
-<a id="__codelineno-23-16" name="__codelineno-23-16"></a>touch<span class="w"> </span><span class="o">{</span>foo,bar<span class="o">}</span>/<span class="o">{</span>a..h<span class="o">}</span>
-<a id="__codelineno-23-17" name="__codelineno-23-17"></a>touch<span class="w"> </span>foo/x<span class="w"> </span>bar/y
-<a id="__codelineno-23-18" name="__codelineno-23-18"></a><span class="c1"># Show differences between files in foo and bar</span>
-<a id="__codelineno-23-19" name="__codelineno-23-19"></a>diff<span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>foo<span class="o">)</span><span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>bar<span class="o">)</span>
-<a id="__codelineno-23-20" name="__codelineno-23-20"></a><span class="c1"># Outputs</span>
-<a id="__codelineno-23-21" name="__codelineno-23-21"></a><span class="c1"># &lt; x</span>
-<a id="__codelineno-23-22" name="__codelineno-23-22"></a><span class="c1"># ---</span>
-<a id="__codelineno-23-23" name="__codelineno-23-23"></a><span class="c1"># &gt; y</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#__codelineno-5-19">19</a></span>
+<span class="normal"><a href="#__codelineno-5-20">20</a></span>
+<span class="normal"><a href="#__codelineno-5-21">21</a></span>
+<span class="normal"><a href="#__codelineno-5-22">22</a></span>
+<span class="normal"><a href="#__codelineno-5-23">23</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>convert<span class="w"> </span>image.<span class="o">{</span>png,jpg<span class="o">}</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="c1"># Will expand to</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a>convert<span class="w"> </span>image.png<span class="w"> </span>image.jpg
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a>cp<span class="w"> </span>/path/to/project/<span class="o">{</span>foo,bar,baz<span class="o">}</span>.sh<span class="w"> </span>/newpath
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="c1"># Will expand to</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a>cp<span class="w"> </span>/path/to/project/foo.sh<span class="w"> </span>/path/to/project/bar.sh<span class="w"> </span>/path/to/project/baz.sh<span class="w"> </span>/newpath
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="c1"># Globbing techniques can also be combined</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a>mv<span class="w"> </span>*<span class="o">{</span>.py,.sh<span class="o">}</span><span class="w"> </span>folder
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="c1"># Will move all *.py and *.sh files</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a>mkdir<span class="w"> </span>foo<span class="w"> </span>bar
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="c1"># This creates files foo/a, foo/b, ... foo/h, bar/a, bar/b, ... bar/h</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>touch<span class="w"> </span><span class="o">{</span>foo,bar<span class="o">}</span>/<span class="o">{</span>a..h<span class="o">}</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a>touch<span class="w"> </span>foo/x<span class="w"> </span>bar/y
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="c1"># Show differences between files in foo and bar</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a>diff<span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>foo<span class="o">)</span><span class="w"> </span>&lt;<span class="o">(</span>ls<span class="w"> </span>bar<span class="o">)</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="c1"># Outputs</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="c1"># &lt; x</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="c1"># ---</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="c1"># &gt; y</span>
 </code></pre></div></td></tr></table></div>
 <hr />
 <h4 id="6-shebang"><a class="toclink" href="../../2024/12/04/shell-tools-and-scripting/#6-shebang">6. shebang</a></h4>
 <p>Note that <strong>scripts</strong> need not necessarily be written in bash to be called from the terminal. For instance, here’s a simple Python script that outputs its arguments in reversed order:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-24-1">1</a></span>
-<span class="normal"><a href="#__codelineno-24-2">2</a></span>
-<span class="normal"><a href="#__codelineno-24-3">3</a></span>
-<span class="normal"><a href="#__codelineno-24-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1"></a><span class="ch">#!/usr/local/bin/python</span>
-<a id="__codelineno-24-2" name="__codelineno-24-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<a id="__codelineno-24-3" name="__codelineno-24-3"></a><span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
-<a id="__codelineno-24-4" name="__codelineno-24-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="ch">#!/usr/local/bin/python</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="k">for</span> <span class="n">arg</span> <span class="ow">in</span> <span class="nb">reversed</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">:]):</span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">arg</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>The kernel knows to execute this script with a <strong>python interpreter</strong> <strong>instead of</strong> <strong>a</strong> <strong>shell command</strong> because we included a <strong>shebang</strong> line at the top of the script. </p>
 <p>It is good practice to write <strong>shebang</strong> lines using the <code>env</code> command that will resolve to wherever the command lives in the system, increasing the portability of your scripts.</p>
@@ -2860,30 +2860,30 @@
 <h4 id="2-finding-files"><a class="toclink" href="../../2024/12/04/shell-tools-and-scripting/#2-finding-files">2. Finding files</a></h4>
 <p><code>find</code> will recursively search for files matching some criteria. </p>
 <p>Some examples:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-25-1">1</a></span>
-<span class="normal"><a href="#__codelineno-25-2">2</a></span>
-<span class="normal"><a href="#__codelineno-25-3">3</a></span>
-<span class="normal"><a href="#__codelineno-25-4">4</a></span>
-<span class="normal"><a href="#__codelineno-25-5">5</a></span>
-<span class="normal"><a href="#__codelineno-25-6">6</a></span>
-<span class="normal"><a href="#__codelineno-25-7">7</a></span>
-<span class="normal"><a href="#__codelineno-25-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-25-1" name="__codelineno-25-1"></a><span class="c1"># Find all directories named src</span>
-<a id="__codelineno-25-2" name="__codelineno-25-2"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span>src<span class="w"> </span>-type<span class="w"> </span>d
-<a id="__codelineno-25-3" name="__codelineno-25-3"></a><span class="c1"># Find all python files that have a folder named test in their path</span>
-<a id="__codelineno-25-4" name="__codelineno-25-4"></a>find<span class="w"> </span>.<span class="w"> </span>-path<span class="w"> </span><span class="s1">&#39;*/test/*.py&#39;</span><span class="w"> </span>-type<span class="w"> </span>f
-<a id="__codelineno-25-5" name="__codelineno-25-5"></a><span class="c1"># Find all files modified in the last day</span>
-<a id="__codelineno-25-6" name="__codelineno-25-6"></a>find<span class="w"> </span>.<span class="w"> </span>-mtime<span class="w"> </span>-1
-<a id="__codelineno-25-7" name="__codelineno-25-7"></a><span class="c1"># Find all zip files with size in range 500k to 10M</span>
-<a id="__codelineno-25-8" name="__codelineno-25-8"></a>find<span class="w"> </span>.<span class="w"> </span>-size<span class="w"> </span>+500k<span class="w"> </span>-size<span class="w"> </span>-10M<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.tar.gz&#39;</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span>
+<span class="normal"><a href="#__codelineno-7-7">7</a></span>
+<span class="normal"><a href="#__codelineno-7-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="c1"># Find all directories named src</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span>src<span class="w"> </span>-type<span class="w"> </span>d
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="c1"># Find all python files that have a folder named test in their path</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>find<span class="w"> </span>.<span class="w"> </span>-path<span class="w"> </span><span class="s1">&#39;*/test/*.py&#39;</span><span class="w"> </span>-type<span class="w"> </span>f
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="c1"># Find all files modified in the last day</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>find<span class="w"> </span>.<span class="w"> </span>-mtime<span class="w"> </span>-1
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="c1"># Find all zip files with size in range 500k to 10M</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a>find<span class="w"> </span>.<span class="w"> </span>-size<span class="w"> </span>+500k<span class="w"> </span>-size<span class="w"> </span>-10M<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.tar.gz&#39;</span>
 </code></pre></div></td></tr></table></div>
 <p>Beyond listing files, find can also perform actions over files that match your query. This property can be incredibly helpful to simplify what could be fairly monotonous tasks.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-26-1">1</a></span>
-<span class="normal"><a href="#__codelineno-26-2">2</a></span>
-<span class="normal"><a href="#__codelineno-26-3">3</a></span>
-<span class="normal"><a href="#__codelineno-26-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-26-1" name="__codelineno-26-1"></a><span class="c1"># Delete all files with .tmp extension</span>
-<a id="__codelineno-26-2" name="__codelineno-26-2"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.tmp&#39;</span><span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
-<a id="__codelineno-26-3" name="__codelineno-26-3"></a><span class="c1"># Find all PNG files and convert them to JPG</span>
-<a id="__codelineno-26-4" name="__codelineno-26-4"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.png&#39;</span><span class="w"> </span>-exec<span class="w"> </span>convert<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="o">{}</span>.jpg<span class="w"> </span><span class="se">\;</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span>
+<span class="normal"><a href="#__codelineno-8-3">3</a></span>
+<span class="normal"><a href="#__codelineno-8-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="c1"># Delete all files with .tmp extension</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.tmp&#39;</span><span class="w"> </span>-exec<span class="w"> </span>rm<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="se">\;</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="c1"># Find all PNG files and convert them to JPG</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a>find<span class="w"> </span>.<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.png&#39;</span><span class="w"> </span>-exec<span class="w"> </span>convert<span class="w"> </span><span class="o">{}</span><span class="w"> </span><span class="o">{}</span>.jpg<span class="w"> </span><span class="se">\;</span>
 </code></pre></div></td></tr></table></div>
 <hr />
 <h4 id="3-finding-code"><a class="toclink" href="../../2024/12/04/shell-tools-and-scripting/#3-finding-code">3. Finding code</a></h4>
@@ -2892,21 +2892,21 @@
 <p>For example, <code>grep -C 5</code> will print 5 lines before and after the match. When it comes to quickly searching through many files, you want to use <code>-R</code> since it will Recursively go into directories and look for files for the matching string.</p>
 <p>But <code>grep -R</code> can be improved in many ways, such as ignoring <code>.git</code> folders, using multi CPU support, &amp;c. </p>
 <p>Many grep alternatives have been developed, including <a href="https://github.com/beyondgrep/ack3">ack</a>, <a href="https://github.com/ggreer/the_silver_searcher">ag</a> and <a href="https://github.com/BurntSushi/ripgrep">rg</a>. All of them are fantastic and pretty much provide the same functionality. For now I am sticking with <strong>ripgrep (rg)</strong>, given how fast and intuitive it is. Some examples:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-27-1">1</a></span>
-<span class="normal"><a href="#__codelineno-27-2">2</a></span>
-<span class="normal"><a href="#__codelineno-27-3">3</a></span>
-<span class="normal"><a href="#__codelineno-27-4">4</a></span>
-<span class="normal"><a href="#__codelineno-27-5">5</a></span>
-<span class="normal"><a href="#__codelineno-27-6">6</a></span>
-<span class="normal"><a href="#__codelineno-27-7">7</a></span>
-<span class="normal"><a href="#__codelineno-27-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-27-1" name="__codelineno-27-1"></a><span class="c1"># Find all python files where I used the requests library</span>
-<a id="__codelineno-27-2" name="__codelineno-27-2"></a>rg<span class="w"> </span>-t<span class="w"> </span>py<span class="w"> </span><span class="s1">&#39;import requests&#39;</span>
-<a id="__codelineno-27-3" name="__codelineno-27-3"></a><span class="c1"># Find all files (including hidden files) without a shebang line</span>
-<a id="__codelineno-27-4" name="__codelineno-27-4"></a>rg<span class="w"> </span>-u<span class="w"> </span>--files-without-match<span class="w"> </span><span class="s2">&quot;^#\!&quot;</span>
-<a id="__codelineno-27-5" name="__codelineno-27-5"></a><span class="c1"># Find all matches of foo and print the following 5 lines</span>
-<a id="__codelineno-27-6" name="__codelineno-27-6"></a>rg<span class="w"> </span>foo<span class="w"> </span>-A<span class="w"> </span><span class="m">5</span>
-<a id="__codelineno-27-7" name="__codelineno-27-7"></a><span class="c1"># Print statistics of matches (# of matched lines and files )</span>
-<a id="__codelineno-27-8" name="__codelineno-27-8"></a>rg<span class="w"> </span>--stats<span class="w"> </span>PATTERN
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span>
+<span class="normal"><a href="#__codelineno-9-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="c1"># Find all python files where I used the requests library</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>rg<span class="w"> </span>-t<span class="w"> </span>py<span class="w"> </span><span class="s1">&#39;import requests&#39;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="c1"># Find all files (including hidden files) without a shebang line</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>rg<span class="w"> </span>-u<span class="w"> </span>--files-without-match<span class="w"> </span><span class="s2">&quot;^#\!&quot;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="c1"># Find all matches of foo and print the following 5 lines</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>rg<span class="w"> </span>foo<span class="w"> </span>-A<span class="w"> </span><span class="m">5</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="c1"># Print statistics of matches (# of matched lines and files )</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>rg<span class="w"> </span>--stats<span class="w"> </span>PATTERN
 </code></pre></div></td></tr></table></div>
 <hr />
 <h4 id="4-finding-shell-commands"><a class="toclink" href="../../2024/12/04/shell-tools-and-scripting/#4-finding-shell-commands">4. Finding shell commands</a></h4>
@@ -2931,39 +2931,39 @@
 <li>Output is colorized</li>
 </ul>
 <p>A sample output would look like this</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-28-1">1</a></span>
-<span class="normal"><a href="#__codelineno-28-2">2</a></span>
-<span class="normal"><a href="#__codelineno-28-3">3</a></span>
-<span class="normal"><a href="#__codelineno-28-4">4</a></span>
-<span class="normal"><a href="#__codelineno-28-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-28-1" name="__codelineno-28-1"></a><span class="w"> </span>-rw-r--r--<span class="w">   </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span><span class="m">1</span>.1M<span class="w"> </span>Jan<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">09</span>:53<span class="w"> </span>baz
-<a id="__codelineno-28-2" name="__codelineno-28-2"></a><span class="w"> </span>drwxr-xr-x<span class="w">   </span><span class="m">5</span><span class="w"> </span>user<span class="w"> </span>group<span class="w">  </span><span class="m">160</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">09</span>:53<span class="w"> </span>.
-<a id="__codelineno-28-3" name="__codelineno-28-3"></a><span class="w"> </span>-rw-r--r--<span class="w">   </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w">  </span><span class="m">514</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">06</span>:42<span class="w"> </span>bar
-<a id="__codelineno-28-4" name="__codelineno-28-4"></a><span class="w"> </span>-rw-r--r--<span class="w">   </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span>106M<span class="w"> </span>Jan<span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">12</span>:12<span class="w"> </span>foo
-<a id="__codelineno-28-5" name="__codelineno-28-5"></a><span class="w"> </span>drwx------+<span class="w"> </span><span class="m">47</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span><span class="m">1</span>.5K<span class="w"> </span>Jan<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">18</span>:08<span class="w"> </span>..
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="w"> </span>-rw-r--r--<span class="w">   </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span><span class="m">1</span>.1M<span class="w"> </span>Jan<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">09</span>:53<span class="w"> </span>baz
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w"> </span>drwxr-xr-x<span class="w">   </span><span class="m">5</span><span class="w"> </span>user<span class="w"> </span>group<span class="w">  </span><span class="m">160</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">09</span>:53<span class="w"> </span>.
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w"> </span>-rw-r--r--<span class="w">   </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w">  </span><span class="m">514</span><span class="w"> </span>Jan<span class="w"> </span><span class="m">14</span><span class="w"> </span><span class="m">06</span>:42<span class="w"> </span>bar
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w"> </span>-rw-r--r--<span class="w">   </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span>106M<span class="w"> </span>Jan<span class="w"> </span><span class="m">13</span><span class="w"> </span><span class="m">12</span>:12<span class="w"> </span>foo
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w"> </span>drwx------+<span class="w"> </span><span class="m">47</span><span class="w"> </span>user<span class="w"> </span>group<span class="w"> </span><span class="m">1</span>.5K<span class="w"> </span>Jan<span class="w"> </span><span class="m">12</span><span class="w"> </span><span class="m">18</span>:08<span class="w"> </span>..
 </code></pre></div></td></tr></table></div>
 <p><br/></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-29-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-29-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-29-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-29-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-29-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-29-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-29-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-29-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-29-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-29-10">10</a></span>
-<span class="normal"><a href="#__codelineno-29-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-29-1" name="__codelineno-29-1"></a><span class="o">[</span>root@iZbp12idmwavjjcx2k19kjZ<span class="w"> </span>course2<span class="o">]</span><span class="c1"># ls -a -l -h -t --color=auto</span>
-<a id="__codelineno-29-2" name="__codelineno-29-2"></a>total<span class="w"> </span>88K
-<a id="__codelineno-29-3" name="__codelineno-29-3"></a>-rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span>54K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">21</span>:46<span class="w"> </span>install_lts.sh
-<a id="__codelineno-29-4" name="__codelineno-29-4"></a>drwxr-xr-x<span class="w">  </span><span class="m">5</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">21</span>:46<span class="w"> </span>.
-<a id="__codelineno-29-5" name="__codelineno-29-5"></a>-rwxrwxrwx<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">   </span><span class="m">83</span><span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">20</span>:04<span class="w"> </span>script.py
-<a id="__codelineno-29-6" name="__codelineno-29-6"></a>drwxr-xr-x<span class="w"> </span><span class="m">11</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">20</span>:02<span class="w"> </span>bar
-<a id="__codelineno-29-7" name="__codelineno-29-7"></a>drwxr-xr-x<span class="w"> </span><span class="m">11</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">20</span>:02<span class="w"> </span>foo
-<a id="__codelineno-29-8" name="__codelineno-29-8"></a>-rwxrwxrwx<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">   </span><span class="m">50</span><span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">19</span>:21<span class="w"> </span>mcd.sh
-<a id="__codelineno-29-9" name="__codelineno-29-9"></a>-rwxrwxrwx<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">485</span><span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">19</span>:21<span class="w"> </span>f.sh
-<a id="__codelineno-29-10" name="__codelineno-29-10"></a>drwxr-xr-x<span class="w">  </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">19</span>:17<span class="w"> </span><span class="nb">test</span>
-<a id="__codelineno-29-11" name="__codelineno-29-11"></a>drwxr-xr-x<span class="w"> </span><span class="m">14</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">19</span>:12<span class="w"> </span>..
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span>
+<span class="normal"><a href="#__codelineno-11-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="o">[</span>root@iZbp12idmwavjjcx2k19kjZ<span class="w"> </span>course2<span class="o">]</span><span class="c1"># ls -a -l -h -t --color=auto</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>total<span class="w"> </span>88K
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a>-rw-r--r--<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span>54K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">21</span>:46<span class="w"> </span>install_lts.sh
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a>drwxr-xr-x<span class="w">  </span><span class="m">5</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">21</span>:46<span class="w"> </span>.
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a>-rwxrwxrwx<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">   </span><span class="m">83</span><span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">20</span>:04<span class="w"> </span>script.py
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a>drwxr-xr-x<span class="w"> </span><span class="m">11</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">20</span>:02<span class="w"> </span>bar
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a>drwxr-xr-x<span class="w"> </span><span class="m">11</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">20</span>:02<span class="w"> </span>foo
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a>-rwxrwxrwx<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">   </span><span class="m">50</span><span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">19</span>:21<span class="w"> </span>mcd.sh
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a>-rwxrwxrwx<span class="w">  </span><span class="m">1</span><span class="w"> </span>root<span class="w"> </span>root<span class="w">  </span><span class="m">485</span><span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">19</span>:21<span class="w"> </span>f.sh
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a>drwxr-xr-x<span class="w">  </span><span class="m">2</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">19</span>:17<span class="w"> </span><span class="nb">test</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a>drwxr-xr-x<span class="w"> </span><span class="m">14</span><span class="w"> </span>root<span class="w"> </span>root<span class="w"> </span><span class="m">4</span>.0K<span class="w"> </span>Dec<span class="w">  </span><span class="m">3</span><span class="w"> </span><span class="m">19</span>:12<span class="w"> </span>..
 </code></pre></div></td></tr></table></div>
 <ul>
 <li><code>-a</code> : includes all files</li>
@@ -2977,76 +2977,76 @@
 <p>Write bash functions <code>marco</code> and <code>polo</code> that do the following. Whenever you execute <code>marco</code> the current working directory should be saved in some manner, then when you execute <code>polo</code>, no matter what directory you are in, <code>polo</code> should <code>cd</code> you back to the directory where you executed <code>marco</code>. For ease of debugging you can write the code in a file <code>marco.sh</code> and (re)load the definitions to your shell by executing <code>source marco.sh</code>.</p>
 <p><br/></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-30-1">1</a></span>
-<span class="normal"><a href="#__codelineno-30-2">2</a></span>
-<span class="normal"><a href="#__codelineno-30-3">3</a></span>
-<span class="normal"><a href="#__codelineno-30-4">4</a></span>
-<span class="normal"><a href="#__codelineno-30-5">5</a></span>
-<span class="normal"><a href="#__codelineno-30-6">6</a></span>
-<span class="normal"><a href="#__codelineno-30-7">7</a></span>
-<span class="normal"><a href="#__codelineno-30-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-30-1" name="__codelineno-30-1"></a><span class="ch">#!/bin/bash</span>
-<a id="__codelineno-30-2" name="__codelineno-30-2"></a>marco<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-30-3" name="__codelineno-30-3"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$HOME</span>/marco_history.log
-<a id="__codelineno-30-4" name="__codelineno-30-4"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;save pwd - </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-30-5" name="__codelineno-30-5"></a><span class="o">}</span>
-<a id="__codelineno-30-6" name="__codelineno-30-6"></a>polo<span class="o">()</span><span class="w"> </span><span class="o">{</span>
-<a id="__codelineno-30-7" name="__codelineno-30-7"></a><span class="w">        </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/marco_history.log&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
-<a id="__codelineno-30-8" name="__codelineno-30-8"></a><span class="o">}</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span>
+<span class="normal"><a href="#__codelineno-12-6">6</a></span>
+<span class="normal"><a href="#__codelineno-12-7">7</a></span>
+<span class="normal"><a href="#__codelineno-12-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>marco<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span><span class="w"> </span>&gt;<span class="w"> </span><span class="nv">$HOME</span>/marco_history.log
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">        </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;save pwd - </span><span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="o">}</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a>polo<span class="o">()</span><span class="w"> </span><span class="o">{</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="w">        </span><span class="nb">cd</span><span class="w"> </span><span class="s2">&quot;</span><span class="k">$(</span>cat<span class="w"> </span><span class="s2">&quot;</span><span class="nv">$HOME</span><span class="s2">/marco_history.log&quot;</span><span class="k">)</span><span class="s2">&quot;</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="o">}</span>
 </code></pre></div></td></tr></table></div>
 <hr />
 <p><strong>Problem3</strong></p>
 <p>Say you have a command that fails rarely. In order to debug it you need to capture its output but it can be time consuming to get a failure run. Write a bash script that runs the following script until it fails and captures its standard output and error streams to files and prints everything at the end. Bonus points if you can also report how many runs it took for the script to fail.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-31-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-31-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-31-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-31-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-31-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-31-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-31-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-31-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-31-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-31-10">10</a></span>
-<span class="normal"><a href="#__codelineno-31-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-31-1" name="__codelineno-31-1"></a><span class="w"> </span><span class="c1">#!/usr/bin/env bash</span>
-<a id="__codelineno-31-2" name="__codelineno-31-2"></a>
-<a id="__codelineno-31-3" name="__codelineno-31-3"></a><span class="w"> </span><span class="nv">n</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span><span class="nv">RANDOM</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="k">))</span>
-<a id="__codelineno-31-4" name="__codelineno-31-4"></a>
-<a id="__codelineno-31-5" name="__codelineno-31-5"></a><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>n<span class="w"> </span>-eq<span class="w"> </span><span class="m">42</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<a id="__codelineno-31-6" name="__codelineno-31-6"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Something went wrong&quot;</span>
-<a id="__codelineno-31-7" name="__codelineno-31-7"></a><span class="w">    </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;The error was using magic numbers&quot;</span>
-<a id="__codelineno-31-8" name="__codelineno-31-8"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
-<a id="__codelineno-31-9" name="__codelineno-31-9"></a><span class="w"> </span><span class="k">fi</span>
-<a id="__codelineno-31-10" name="__codelineno-31-10"></a>
-<a id="__codelineno-31-11" name="__codelineno-31-11"></a><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Everything went according to plan&quot;</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="w"> </span><span class="c1">#!/usr/bin/env bash</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w"> </span><span class="nv">n</span><span class="o">=</span><span class="k">$((</span><span class="w"> </span><span class="nv">RANDOM</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="m">100</span><span class="w"> </span><span class="k">))</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w"> </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span>n<span class="w"> </span>-eq<span class="w"> </span><span class="m">42</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">    </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Something went wrong&quot;</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="w">    </span>&gt;<span class="p">&amp;</span><span class="m">2</span><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;The error was using magic numbers&quot;</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">    </span><span class="nb">exit</span><span class="w"> </span><span class="m">1</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w"> </span><span class="k">fi</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Everything went according to plan&quot;</span>
 </code></pre></div></td></tr></table></div>
 <p><br/></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-32-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-32-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-32-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-32-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-32-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-32-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-32-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-32-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-32-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-32-10">10</a></span>
-<span class="normal"><a href="#__codelineno-32-11">11</a></span>
-<span class="normal"><a href="#__codelineno-32-12">12</a></span>
-<span class="normal"><a href="#__codelineno-32-13">13</a></span>
-<span class="normal"><a href="#__codelineno-32-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-32-1" name="__codelineno-32-1"></a><span class="ch">#!/usr/bin/env bash</span>
-<a id="__codelineno-32-2" name="__codelineno-32-2"></a><span class="nv">count</span><span class="o">=</span><span class="m">0</span>
-<a id="__codelineno-32-3" name="__codelineno-32-3"></a><span class="nb">echo</span><span class="w"> </span>&gt;<span class="w"> </span>out.log
-<a id="__codelineno-32-4" name="__codelineno-32-4"></a>
-<a id="__codelineno-32-5" name="__codelineno-32-5"></a><span class="k">while</span><span class="w"> </span><span class="nb">true</span>
-<a id="__codelineno-32-6" name="__codelineno-32-6"></a><span class="k">do</span>
-<a id="__codelineno-32-7" name="__codelineno-32-7"></a><span class="w">        </span>./task3.sh<span class="w"> </span><span class="p">&amp;</span>&gt;&gt;<span class="w"> </span>out.log
-<a id="__codelineno-32-8" name="__codelineno-32-8"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
-<a id="__codelineno-32-9" name="__codelineno-32-9"></a><span class="w">                </span>cat<span class="w"> </span>out.log
-<a id="__codelineno-32-10" name="__codelineno-32-10"></a><span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;failed after </span><span class="nv">$count</span><span class="s2"> times&quot;</span>
-<a id="__codelineno-32-11" name="__codelineno-32-11"></a><span class="w">                </span><span class="k">break</span>
-<a id="__codelineno-32-12" name="__codelineno-32-12"></a><span class="w">        </span><span class="k">fi</span>
-<a id="__codelineno-32-13" name="__codelineno-32-13"></a><span class="w">        </span><span class="o">((</span>count++<span class="o">))</span>
-<a id="__codelineno-32-14" name="__codelineno-32-14"></a><span class="k">done</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-14-10">10</a></span>
+<span class="normal"><a href="#__codelineno-14-11">11</a></span>
+<span class="normal"><a href="#__codelineno-14-12">12</a></span>
+<span class="normal"><a href="#__codelineno-14-13">13</a></span>
+<span class="normal"><a href="#__codelineno-14-14">14</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="ch">#!/usr/bin/env bash</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="nv">count</span><span class="o">=</span><span class="m">0</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="nb">echo</span><span class="w"> </span>&gt;<span class="w"> </span>out.log
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="k">while</span><span class="w"> </span><span class="nb">true</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="k">do</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">        </span>./task3.sh<span class="w"> </span><span class="p">&amp;</span>&gt;&gt;<span class="w"> </span>out.log
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="o">[[</span><span class="w"> </span><span class="nv">$?</span><span class="w"> </span>-ne<span class="w"> </span><span class="m">0</span><span class="w"> </span><span class="o">]]</span><span class="p">;</span><span class="w"> </span><span class="k">then</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9"></a><span class="w">                </span>cat<span class="w"> </span>out.log
+<a id="__codelineno-14-10" name="__codelineno-14-10"></a><span class="w">                </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;failed after </span><span class="nv">$count</span><span class="s2"> times&quot;</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11"></a><span class="w">                </span><span class="k">break</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="w">        </span><span class="k">fi</span>
+<a id="__codelineno-14-13" name="__codelineno-14-13"></a><span class="w">        </span><span class="o">((</span>count++<span class="o">))</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14"></a><span class="k">done</span>
 </code></pre></div></td></tr></table></div>
 <hr />
 <p><strong>Problem4</strong></p>
@@ -3055,16 +3055,16 @@
 <p><br/></p>
 <p><strong>Solution</strong></p>
 <p>prerequisite</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-33-1">1</a></span>
-<span class="normal"><a href="#__codelineno-33-2">2</a></span>
-<span class="normal"><a href="#__codelineno-33-3">3</a></span>
-<span class="normal"><a href="#__codelineno-33-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-33-1" name="__codelineno-33-1"></a>mkdir<span class="w"> </span>html_root
-<a id="__codelineno-33-2" name="__codelineno-33-2"></a><span class="nb">cd</span><span class="w"> </span>html_root
-<a id="__codelineno-33-3" name="__codelineno-33-3"></a>mkdir<span class="w"> </span>html_<span class="o">{</span>a..h<span class="o">}</span>
-<a id="__codelineno-33-4" name="__codelineno-33-4"></a>touch<span class="w"> </span>html_<span class="o">{</span>a..h<span class="o">}</span>/<span class="o">{</span>a..h<span class="o">}</span>.html
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>mkdir<span class="w"> </span>html_root
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a><span class="nb">cd</span><span class="w"> </span>html_root
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a>mkdir<span class="w"> </span>html_<span class="o">{</span>a..h<span class="o">}</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a>touch<span class="w"> </span>html_<span class="o">{</span>a..h<span class="o">}</span>/<span class="o">{</span>a..h<span class="o">}</span>.html
 </code></pre></div></td></tr></table></div>
 <p>code</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-34-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-34-1" name="__codelineno-34-1"></a>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.html&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span>tar<span class="w"> </span>-cvzf<span class="w"> </span>html.zip
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-name<span class="w"> </span><span class="s1">&#39;*.html&#39;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-d<span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span>tar<span class="w"> </span>-cvzf<span class="w"> </span>html.zip
 </code></pre></div></td></tr></table></div>
 <ol>
 <li>
@@ -3106,7 +3106,7 @@
 <p>(Advanced) Write a command or script to recursively find the most recently modified file in a directory. More generally, can you list all files by recency?</p>
 <p><br/></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-35-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-35-1" name="__codelineno-35-1"></a>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-print0<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-0<span class="w"> </span>ls<span class="w"> </span>-lt<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-1
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>find<span class="w"> </span>.<span class="w"> </span>-type<span class="w"> </span>f<span class="w"> </span>-print0<span class="w"> </span><span class="p">|</span><span class="w"> </span>xargs<span class="w"> </span>-0<span class="w"> </span>ls<span class="w"> </span>-lt<span class="w"> </span><span class="p">|</span><span class="w"> </span>head<span class="w"> </span>-1
 </code></pre></div></td></tr></table></div>
 <h3 id="summary"><a class="toclink" href="../../2024/12/04/shell-tools-and-scripting/#summary">Summary</a></h3>
 <p>uh... I find that I'm still quite uncomfortable with the grammar of bash script. The next step I think, before next lecture, maybe is to pursue a deeper and better understanding of bash script.</p>
