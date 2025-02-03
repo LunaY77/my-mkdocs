@@ -3,6 +3,7 @@ title: 02.IdeaGit 基础操作
 authors: [cangjingyue]
 tags: 
     - tools
+    - git
 date: 2025-02-02 00:00:00
 categories:
   - tools

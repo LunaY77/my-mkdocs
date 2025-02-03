@@ -3,6 +3,7 @@ title: 03.IdeaGit 远程仓库
 authors: [cangjingyue]
 tags: 
     - tools
+    - git
 date: 2025-02-02 00:00:00
 categories:
   - tools
@@ -24,7 +25,7 @@ idea中即创建项目的时候选择 from version controll
 ## 2. 添加远程仓库
 
 ```bash
-git remote
+git remote add origin 你的仓库地址
 ```
 
 
