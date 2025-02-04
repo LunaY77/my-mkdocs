@@ -8,10 +8,7 @@ categories:
   - linux
 ---
 
-
-
 # ArchLinux安装与配置
-
 
 ## 安装
 
@@ -22,7 +19,6 @@ categories:
 安装成功！系统信息如下：
 
 ![1f11b2036d0a3e1b5d0790cb4b84588c_720](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/27/1f11b2036d0a3e1b5d0790cb4b84588c720.jpg)
-
 
 ## [解决] grub 找不到 Windows 引导
 
@@ -44,20 +40,18 @@ categories:
 
 ![1abbd9d2c00c07c241ddeca5f2a668f9](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/27/1abbd9d2c00c07c241ddeca5f2a668f9.jpeg)
 
-
 运行命令 `os-prober` 发现 `Windows` 引导
 
 运行命令 `grub-mkconfig -o /boot/grub/grub.cfg` 生成 `grub` 配置文件
-
 
 ![e7aa8d1ce4ebc6e5e972a16b405b71f3](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/27/e7aa8d1ce4ebc6e5e972a16b405b71f3.jpeg)
 
 最后`grub` 成功发现 `Windows` 引导，问题成功解决！！！
 
-
 ## 安装NVIDIA显卡驱动
 
 查看显卡
+
 ```bash
 lspci -k | grep -A 2 -E "(VGA|3D)"
 ```
@@ -117,20 +111,19 @@ env = WLR_NO_HARDWARE_CURSORS,1
 
 以下是 `Hyprland` 的基本操作
 
-* Win+Q 开启终端
-* Win+C 关闭窗口
-* Win+R 呼出菜单
-* Win+数字 切换桌面
-* Win+Shift+数字 将当前窗口移动到对应工作区
-* Win+鼠标左键 拖动窗口
-* Win+鼠标右键 调整窗口大小
-* Win+V 让窗口浮动出来
-
-
+- Win+Q 开启终端
+- Win+C 关闭窗口
+- Win+R 呼出菜单
+- Win+数字 切换桌面
+- Win+Shift+数字 将当前窗口移动到对应工作区
+- Win+鼠标左键 拖动窗口
+- Win+鼠标右键 调整窗口大小
+- Win+V 让窗口浮动出来
 
 ## 安装基础组件
 
 1. 安装输入法
+
 ```bash
 sudo pacman -S fcitx5-im # 输入法基础包组
 sudo pacman -S fcitx5-chinese-addons # 官方中文输入引擎
@@ -156,14 +149,14 @@ SDL_IM_MODULE=fcitx
 GLFW_IM_MODULE=ibus
 ```
 
-
-        
 2. 配置输入法
+
 ```bash
 fcitx5-configtool
 ```
 
 3. 安装paru
+
 ```bash   
 git clone https://aur.archlinux.org/paru.git
 cd paru
@@ -196,10 +189,8 @@ sudo pacman -S pavucontrol-qt
 pavucontrol-qt
 ```
 
-
 ## 最终效果
 
 帅！
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/28/17380204002928.jpg)
-

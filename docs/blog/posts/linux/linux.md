@@ -7,16 +7,18 @@ date: 2024-11-12 00:00:00
 categories:
   - linux
 ---
+
 # linux环境部署
 
 ## SSH连接
-我使用的是*macos*，选择软件 **Termius** 进行SSH远程连接
-<br/>
-![Termius](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/12/17314109093176.jpg)
-<br/>
 
+我使用的是*macos*，选择软件 **Termius** 进行SSH远程连接  
+
+![Termius](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/12/17314109093176.jpg)  
+<br/>
 
 ## linux 系统环境
+
 ``` bash
 [root@iZbp12idmwavjjcx2k19kjZ ~]# cat /etc/os-release 
 NAME="Alibaba Cloud Linux"
@@ -37,6 +39,7 @@ HOME_URL="https://www.aliyun.com/"
 <br/>
 
 ## 安装docker
+
 ``` bash
 # 更新yum
 yum upgrade
@@ -57,7 +60,6 @@ docker --version
 
 <br/>
 
-
 ## 安装 docker-compose
 
 ``` bash
@@ -71,10 +73,12 @@ pip install docker-compose
 # 查看 docker-compose 版本
 docker-compose --version
 ```
+
 <br/>
 
 ## docker 配置国内镜像源
-配置国内镜像源
+
+配置国内镜像源  
 [镜像源地址大全](https://blog.csdn.net/llc580231/article/details/139979603#:~:text=Docker镜像)
 
 ``` bash

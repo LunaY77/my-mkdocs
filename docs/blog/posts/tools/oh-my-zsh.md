@@ -16,14 +16,7 @@ categories:
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/06/17334678151323.jpg)
 
-
-
-
-
-
-
 ## 1. 安装 oh-my-zsh
-
 
 ```bash
 sh -c "$(curl -fsSL https://install.ohmyz.sh/)"
@@ -55,7 +48,6 @@ source ~/.zshrc
 p10k configure
 ```
 
-
 ## 3. 安装插件
 
 ### 3.1 zsh -autosuggestions
@@ -64,14 +56,11 @@ p10k configure
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/06/17334673829105.jpg)
 
-
-
 安装方式：把插件下载到本地的 `~/.oh-my-zsh/custom/plugins` 目录
 
 ```bash
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
-
 
 ### 3.2 zsh-syntax-highlighting
 
@@ -79,9 +68,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/06/17334674054382.jpg)
 
-
 安装方式：把插件下载到本地的 `~/.oh-my-zsh/custom/plugins` 目录。
-
 
 ```bash
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -92,9 +79,6 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 `oh-my-zsh` 内置了 `z` 插件。`z` 是一个文件夹快捷跳转插件，对于曾经跳转过的目录，只需要输入最终目标文件夹名称，就可以快速跳转，避免再输入长串路径，提高切换文件夹的效率。效果如下：
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/06/17334674281105.jpg)
-
-
-
 
 ### 3.4 启用插件
 

@@ -19,7 +19,6 @@ git branch -v     // 查看相对详细的本地分支信息
 git branch -av     // 查看包括远程仓库在内的分支信息
 ```
 
-
 注意：在 `git branch` 的输出内容中，有一个分支，前面带有 `*` 号，这标识我们当前所在的分支。
 
 ## 2. 创建分支
@@ -34,9 +33,7 @@ idea 中
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385111405146.jpg)
 
-
 ## 3. 切换分支
-
 
 ```bash
 git checkout dev
@@ -45,7 +42,6 @@ git checkout dev
 idea:
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385112531304.jpg)
-
 
 ## 4. 创建并切换分支
 
@@ -60,12 +56,9 @@ git checkout master        # 切换回 master 分支
 git merge dev            # 将 dev 分钟中的修改合并回 master 分支
 ```
 
-
-
 idea:先check out 到指定标签，在把需要合并的标签右键合并即可。
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385118440191.jpg)
-
 
 ## 6. 删除分支
 
@@ -75,9 +68,7 @@ git branch -d dev # 删除 dev 分支
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385119365997.jpg)
 
-
 ## 7. 建立本地分支和远程分支的关联
-
 
 ### 7.1 本地分支存在，远程分支存在，但之间没有关联关系。
 
@@ -95,11 +86,9 @@ git push origin local_branch:remote_branch
 
 使用 `git push` 命令进行推送即可
 
-
 idea中本地`push`时直接修改远程分支名即可
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385612620818.jpg)
-
 
 ## 8. 从远程仓库拉取
 
@@ -152,22 +141,17 @@ $ git branch -d temp
 
 **1. git fetch origin master:temp**
 
-
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385617397534.jpg)
-
 
 **2. git diff temp**
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385621563579.jpg)
-
-
 
 **3. git merge temp**
 
 出现冲突，手动解决
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385622823768.jpg)
-
 
 选择全部接受(`lazygit`按`b`)，当然也可以只选择某一个`hunk`
 
@@ -177,18 +161,15 @@ $ git branch -d temp
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385625438433.jpg)
 
-
 **4. git branch -d temp**
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385627395601.jpg)
-
 
 ---
 
 ### 8.2 git pull
 
 `git pull` 在获取远程仓库的内容后，会自动做合并，可以看成 `git fetch` 之后 `git merge`。
-
 
 ```bash
 # 因为存在冲突故git pull会报错，以下命令二选一即可
@@ -198,13 +179,9 @@ git pull --rebase # rebase冲突
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385631714218.jpg)
 
-
-
-
 ---
 
 ### 8.3 idea 拉取远程仓库
-
 
 #### **1. 前置准备**
 
@@ -232,11 +209,9 @@ git pull --rebase # rebase冲突
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385644208683.jpg)
 
-
 检查过后发现没有问题，右键`remote`的`main`分支，选择`merge`或`rebase`合并
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385645222242.jpg)
-
 
 选择`merge`，发现出现冲突，需要解决
 
@@ -259,16 +234,13 @@ PS: 中间部分可以随意修改/调换位置，但两侧是无法修改的
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385649529158.jpg)
 
-
 最终效果如图所示(`merge`)
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385650035106.jpg)
 
-
 如果选择`rebase`，最终效果如下图所示
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385652050655.jpg)
-
 
 ---
 
@@ -276,17 +248,15 @@ PS: 中间部分可以随意修改/调换位置，但两侧是无法修改的
 
 ![merge:rebase](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/mergerebase.png)
 
-
 **1. merge**
 
-* 保留分支历史（会产生合并提交 merge commit）。
-* 适合多人协作，不会修改历史记录。
+- 保留分支历史（会产生合并提交 merge commit）。
+- 适合多人协作，不会修改历史记录。
 
 **2. rebase**
 
-* 不产生合并提交，而是将 feature 分支上的提交重新应用到 main 分支后面。
-* 历史会被重写（提交哈希值改变），适合保持提交历史整洁。
-
+- 不产生合并提交，而是将 feature 分支上的提交重新应用到 main 分支后面。
+- 历史会被重写（提交哈希值改变），适合保持提交历史整洁。
 
 ---
 
@@ -296,16 +266,10 @@ PS: 中间部分可以随意修改/调换位置，但两侧是无法修改的
 
 什么时候会发生 `Fast-Forward`？
 
-* 当目标分支**没有新的提交**，并且**当前分支完全处于目标分支的前面**（即目标分支是当前分支的祖先），Git 就可以简单地将当前分支 **“快进”** 到目标分支的最新提交，而不需要创建新的合并提交。
+- 当目标分支**没有新的提交**，并且**当前分支完全处于目标分支的前面**（即目标分支是当前分支的祖先），Git 就可以简单地将当前分支 **“快进”** 到目标分支的最新提交，而不需要创建新的合并提交。
 
 ![merge ff:rebase](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/merge-ffrebase.png)
-
 
 上面的例子中，`dev`分支为目标分支，`feature`分支为当前分支
 
 `dev`分支中不存在新的提交，且`feature`分支完全处于`dev`分支之前，此时进行`merge`将触发`fast-forward`，效果与`rebase`一致
-
-
-
-
-

@@ -11,7 +11,7 @@ categories:
 
 # Shell Tools and Scripting
 
-!!!attachment
+!!!attachment  
     course link: [Shell Tools and Scripting](https://missing.csail.mit.edu/2020/shell-tools/)
 
 ## Shell Scripting
@@ -19,7 +19,6 @@ categories:
 ### 1. Assign Variables
 
 To assign variables in bash, use the syntax `foo=bar` and access the value of the variable with `$foo`. Note that `foo = bar` will not work since it is interpreted as calling the `foo` program with **arguments `=` and `bar`**. In general, in shell scripts the space character will perform argument splitting. This behavior can be confusing to use at first, so always check for that.
-
 
 Strings in bash can be defined with `'` and `"` delimiters.
 
@@ -67,30 +66,28 @@ mcd test
 
 Unlike other scripting languages, bash uses a variety of special variables to refer to **arguments, error codes, and other relevant variables**. Below is a list of some of them. A more comprehensive list can be found [here](https://tldp.org/LDP/abs/html/special-chars.html).
 
-* `$0` - **Name** of the script
-* `$1` to `$9` - Arguments to the script. `$1` is the first argument and so on.
-* `$@` - **All** the arguments
-* `$#` - **Number** of arguments
-* `$?` - Return code of the **previous** command
-* `$$` - Process identification number **(PID)** for the current script
-* `!!` - **Entire last command**, including arguments. A common pattern is to execute a command only for it to fail due to missing permissions; you can quickly re-execute the command with sudo by doing `sudo !!`
-* `$_` - **Last argument** from the **last command**. If you are in an interactive shell, you can also quickly get this value by typing `Esc` followed by `.` or `Alt+`.
-
+- `$0` - **Name** of the script
+- `$1` to `$9` - Arguments to the script. `$1` is the first argument and so on.
+- `$@` - **All** the arguments
+- `$#` - **Number** of arguments
+- `$?` - Return code of the **previous** command
+- `$$` - Process identification number **(PID)** for the current script
+- `!!` - **Entire last command**, including arguments. A common pattern is to execute a command only for it to fail due to missing permissions; you can quickly re-execute the command with sudo by doing `sudo !!`
+- `$_` - **Last argument** from the **last command**. If you are in an interactive shell, you can also quickly get this value by typing `Esc` followed by `.` or `Alt+`.
 
 Commands will often return **output** using `STDOUT`, **errors** through `STDERR`, and a **Return Code** to report errors in a more script-friendly manner. 
 
 The **return code** or **exit status** is the way scripts/commands have to communicate how execution went. 
 
-* A value of `0` usually means everything went **OK**
-* anything **different** from `0` means an **error** occurred.
+- A value of `0` usually means everything went **OK**
+- anything **different** from `0` means an **error** occurred.
 
 Exit codes can be used to conditionally execute commands using `&&` (and operator) and `||` (or operator), both of which are short-circuiting operators. 
 
 Commands can also be separated within the same line using a semicolon `;`. 
 
-* The `true` program will always have a `0` return code
-* the `false` command will always have a `1` return code. 
-
+- The `true` program will always have a `0` return code
+- the `false` command will always have a `1` return code. 
 
 Let’s see some examples
 
@@ -127,6 +124,7 @@ For example, if you do `for file in $(ls)`, the shell will first call ls and the
 A lesser known similar feature is `process substitution`, `<( CMD )` will execute `CMD` and place the output in a **temporary file** and **substitute** the `<()` with that **file’s name**.
 
 This is useful when commands expect values to be passed by **file** instead of by `STDIN`. For example, `diff <(ls foo) <(ls bar)` will show differences between files in dirs `foo` and `bar`.
+
  
  <br/>
 
@@ -156,19 +154,17 @@ In the comparison we tested whether **`$?` was not equal to `0`**. Bash implemen
 
 When performing comparisons in bash, try to use double brackets `[[ ]]` in favor of simple brackets `[ ]`. Chances of making mistakes are lower although it won’t be portable to `sh`. A more detailed explanation can be found [here](https://mywiki.wooledge.org/BashFAQ/031).
 
-
 ---
 
 ### 5. Globbing
 
 When launching scripts, you will often want to provide arguments that are **similar**. Bash has ways of making this easier, expanding expressions by carrying out filename expansion. These techniques are often referred to as ***shell globbing***.
 
-* **Wildcards**
-	* `?` match **one** character.
-	* `*` match **any** amount of characters. 
-	* For instance, given files `foo, foo1, foo2, foo10 and bar`, the command `rm foo?` will **delete foo1 and foo2 whereas `rm foo*` will delete all but bar**.
-* **Curly braces** `{}` - Whenever you have a **common substring** in a **series of commands**, you can use curly braces for bash to **expand** this automatically. This comes in very handy when moving or converting files.
-
+- **Wildcards**
+	- `?` match **one** character.
+	- `*` match **any** amount of characters. 
+	- For instance, given files `foo, foo1, foo2, foo10 and bar`, the command `rm foo?` will **delete foo1 and foo2 whereas `rm foo*` will delete all but bar**.
+- **Curly braces** `{}` - Whenever you have a **common substring** in a **series of commands**, you can use curly braces for bash to **expand** this automatically. This comes in very handy when moving or converting files.
 
 ```bash
 convert image.{png,jpg}
@@ -219,21 +215,18 @@ To resolve the location, `env` will make use of the `PATH` environment variable 
 
 Some differences between shell functions and scripts that you should keep in mind are:
 
-* **Functions** have to be in the **same** language as the **shell**, while **scripts** can be written in **any language**. This is why including a **shebang** for scripts is important.
-* **Functions** are **loaded once** when their definition is read. **Scripts** are **loaded every time** they are executed. This makes functions slightly **faster** to load, but whenever you change them you will have to **reload** their definition.
-* **Functions** are executed in the **current shell environment** whereas **scripts** execute in their **own process**. Thus, **functions can modify environment variables**, e.g. change your current directory, whereas scripts can’t. Scripts will be passed by value environment variables that have been exported using export
-* As with any programming language, functions are a powerful construct to achieve modularity, code reuse, and clarity of shell code. Often shell scripts will include their own function definitions.
-
-
+- **Functions** have to be in the **same** language as the **shell**, while **scripts** can be written in **any language**. This is why including a **shebang** for scripts is important.
+- **Functions** are **loaded once** when their definition is read. **Scripts** are **loaded every time** they are executed. This makes functions slightly **faster** to load, but whenever you change them you will have to **reload** their definition.
+- **Functions** are executed in the **current shell environment** whereas **scripts** execute in their **own process**. Thus, **functions can modify environment variables**, e.g. change your current directory, whereas scripts can’t. Scripts will be passed by value environment variables that have been exported using export
+- As with any programming language, functions are a powerful construct to achieve modularity, code reuse, and clarity of shell code. Often shell scripts will include their own function definitions.
 
 ## Shell Tools
 
-
 ### 1. Finding how to use commands
 
-* the first-order approach is to call said command with the `-h` or `--help` flags. 
-* A more detailed approach is to use the `man` command. Short for manual, man provides a manual page (called manpage) for a command you specify.
-* For interactive tools such as the ones based on ncurses, help for the commands can often be accessed within the program using the `:help` command or typing `?`.
+- the first-order approach is to call said command with the `-h` or `--help` flags. 
+- A more detailed approach is to use the `man` command. Short for manual, man provides a manual page (called manpage) for a command you specify.
+- For interactive tools such as the ones based on ncurses, help for the commands can often be accessed within the program using the `:help` command or typing `?`.
 
 Sometimes **manpages** can provide **overly detailed** descriptions of the commands, making it hard to decipher what flags/syntax to use for common use cases. 
 
@@ -269,12 +262,9 @@ find . -name '*.tmp' -exec rm {} \;
 find . -name '*.png' -exec convert {} {}.jpg \;
 ```
 
-
 ----
 
-
 ### 3. Finding code
-
 
 `grep`, a generic tool for matching patterns from the input text. 
 
@@ -297,9 +287,7 @@ rg foo -A 5
 rg --stats PATTERN
 ```
 
-
 ---
-
 
 ### 4. Finding shell commands
 
@@ -309,24 +297,17 @@ It will print your **shell history** to the standard output. If we want to searc
 
 In most shells, you can make use of `Ctrl+R` to perform backwards search through your history. After pressing `Ctrl+R`, you can type a substring you want to match for commands in your history. As you keep pressing it, you will **cycle** through the matches in your history. 
 
-
 ---
 
 ### 5. Directory Navigation
 
 uh...just look up the lecture notes
 
-
-
-
-
-
-
-
 ## Exercises
 
-!!!warning
+!!!warning  
     I will write my own solution to the problem, If you want to solve those by yourself, please stop.
+
     
 ---
 
@@ -334,11 +315,10 @@ uh...just look up the lecture notes
 
 Read `man ls` and write an `ls` command that lists files in the following manner
 
-* Includes all files, including hidden files
-* Sizes are listed in human readable format (e.g. 454M instead of 454279954)
-* Files are ordered by recency
-* Output is colorized
-
+- Includes all files, including hidden files
+- Sizes are listed in human readable format (e.g. 454M instead of 454279954)
+- Files are ordered by recency
+- Output is colorized
 
 A sample output would look like this
 
@@ -354,7 +334,6 @@ A sample output would look like this
 
 **Solution**
 
-
 ```bash
 [root@iZbp12idmwavjjcx2k19kjZ course2]# ls -a -l -h -t --color=auto
 total 88K
@@ -369,12 +348,11 @@ drwxr-xr-x  2 root root 4.0K Dec  3 19:17 test
 drwxr-xr-x 14 root root 4.0K Dec  3 19:12 ..
 ```
 
-* `-a` : includes all files
-* `-l` : use a long listing format
-* `-h` : print sizes like 1K 234M 2G etc.
-* `-t` : sort by recency
-* `--color=auto` : colorize output
-
+- `-a` : includes all files
+- `-l` : use a long listing format
+- `-h` : print sizes like 1K 234M 2G etc.
+- `-t` : sort by recency
+- `--color=auto` : colorize output
 
 ----
 
@@ -417,7 +395,6 @@ Say you have a command that fails rarely. In order to debug it you need to captu
  echo "Everything went according to plan"
 ```
 
-
 <br/>
 
 **Solution**
@@ -439,9 +416,7 @@ do
 done
 ```
 
-
 ---
-
 
 **Problem4**
 
@@ -449,9 +424,7 @@ As we covered in the lecture `find`’s `-exec` can be very powerful for perform
 
 Your task is to write a command that recursively finds all HTML files in the folder and makes a zip with them. Note that your command should work even if the files have spaces (hint: check `-d` flag for `xargs`).
 
-
 <br/>
-
 
 **Solution**
 
@@ -470,37 +443,34 @@ code
 find . -type f -name '*.html' | xargs -d '\n' tar -cvzf html.zip
 ```
 
-
-1. `find . -type f -name "*.html"
+1. `find . -type f -name "*.html"  
 `
-    * `find` searches for files and directories.
-    * `.` specifies the current directory as the starting point.
-    * `-type f` filters the results to include only files (not directories or other types).
-    * `-name "*.html"` matches files with the .html extension.
-    * Output: A list of `.html` file paths.
+    - `find` searches for files and directories.
+    - `.` specifies the current directory as the starting point.
+    - `-type f` filters the results to include only files (not directories or other types).
+    - `-name "*.html"` matches files with the .html extension.
+    - Output: A list of `.html` file paths.
 
 1. `|` (Pipe symbol)
 	
-	* Passes the output of find (list of .html files) as input to the next command, xargs.
+	- Passes the output of find (list of .html files) as input to the next command, xargs.
 
 2. `xargs -d '\n'`
-	* `xargs` converts the input (list of file paths) into arguments for the tar command.
-	* `-d '\n'` specifies that each line of input is treated as a separate file. This ensures paths with spaces or special characters are handled correctly.
+	- `xargs` converts the input (list of file paths) into arguments for the tar command.
+	- `-d '\n'` specifies that each line of input is treated as a separate file. This ensures paths with spaces or special characters are handled correctly.
 
 3. `tar -cvzf html.zip`
-	* `tar` creates compressed archives.
-	* `-c` : Creates a new archive.
-	* `-v` : Displays a list of files being added to the archive (verbose mode).
-	* `-z` : Compresses the archive using gzip.
-	* `-f` html.zip: Names the output file `html.zip`.
-
+	- `tar` creates compressed archives.
+	- `-c` : Creates a new archive.
+	- `-v` : Displays a list of files being added to the archive (verbose mode).
+	- `-z` : Compresses the archive using gzip.
+	- `-f` html.zip: Names the output file `html.zip`.
 
 ---
 
 **Problem5**
 
 (Advanced) Write a command or script to recursively find the most recently modified file in a directory. More generally, can you list all files by recency?
-
 
 <br/>
 
@@ -509,12 +479,6 @@ find . -type f -name '*.html' | xargs -d '\n' tar -cvzf html.zip
 ```bash
 find . -type f -print0 | xargs -0 ls -lt | head -1
 ```
-
-
-
-
-
-
 
 ## Summary
 

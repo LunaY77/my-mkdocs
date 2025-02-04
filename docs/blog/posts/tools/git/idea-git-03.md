@@ -17,17 +17,15 @@ categories:
 git clone 你的仓库地址
 ```
 
-idea中即创建项目的时候选择 from version controll
+idea中即创建项目的时候选择 from version control
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17385040106726.jpg)
-
 
 ## 2. 添加远程仓库
 
 ```bash
 git remote add origin 你的仓库地址
 ```
-
 
 ## 3. 查看远程仓库信息
 
@@ -54,4 +52,3 @@ git push -u origin <branch>
 ```bash
 git remote set-url origin url
 ```
-

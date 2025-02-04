@@ -37,14 +37,11 @@ categories:
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384715515555.jpg)
 
-
 此时还未定义`git remote`，点击`Define remote`，复制`github repo`的链接粘贴进去，再次尝试推送
-
 
 不出意外，应该要出意外了，idea会提示`push reject`，代表出现**冲突**
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384716669820.jpg)
-
 
 解决办法如下：
 
@@ -61,7 +58,6 @@ git pull --rebase origin main
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384720555254.jpg)
 
-
 我这里选择命令行执行
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384722185240.jpg)
@@ -69,4 +65,3 @@ git pull --rebase origin main
 此时 push 成功，rt
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384724897536.jpg)
-

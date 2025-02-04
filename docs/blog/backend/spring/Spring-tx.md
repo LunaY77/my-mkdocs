@@ -12,13 +12,12 @@ categories:
 
 ## 事务ACID
 
-* **原子性**： **一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成**，不会结束在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。
-* **一致性**： 在事务开始之前和事务结束以后，数据库的**完整性**没有被破坏。这表示写入的资料必须完全符合所有的预设规则，这包含资料的精确度、串联性以及后续数据库可以自发性地完成预定的工作。
-* **隔离性**： 数据库允许多个并发事务同时对其数据进行读写和修改的能力，隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致。事务隔离分为不同级别，包括**读未提交（Read uncommitted）、读提交（read committed）、可重复读（repeatable read）和串行化（Serializable）。**
-* **持久性**： 事务处理结束后，对数据的修改就是**永久**的，即便系统故障也不会丢失。
+- **原子性**： **一个事务（transaction）中的所有操作，要么全部完成，要么全部不完成**，不会结束在中间某个环节。事务在执行过程中发生错误，会被回滚（Rollback）到事务开始前的状态，就像这个事务从来没有执行过一样。
+- **一致性**： 在事务开始之前和事务结束以后，数据库的**完整性**没有被破坏。这表示写入的资料必须完全符合所有的预设规则，这包含资料的精确度、串联性以及后续数据库可以自发性地完成预定的工作。
+- **隔离性**： 数据库允许多个并发事务同时对其数据进行读写和修改的能力，隔离性可以防止多个事务并发执行时由于交叉执行而导致数据的不一致。事务隔离分为不同级别，包括**读未提交（Read uncommitted）、读提交（read committed）、可重复读（repeatable read）和串行化（Serializable）。**
+- **持久性**： 事务处理结束后，对数据的修改就是**永久**的，即便系统故障也不会丢失。
 
 ## 事务隔离级别
-
 
 ### **1. 读未提交**
 
@@ -27,7 +26,6 @@ categories:
 首先是**读未提交**级别，此级别属于最低级别，相当于各个事务共享一个缓存区域，任何事务的操作都在这里进行。那么它会导致以下问题：
 
 ![Pasted image 20240820004523](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/28/pasted-image-20240820004523.png)
-
 
 也就是说，事务A最后得到的实际上是一个毫无意义的数据（事务B已经回滚了）我们称此数据为 ***"脏数据"*** ，这种现象称为**脏读**
 
@@ -41,9 +39,7 @@ categories:
 
 ![Pasted image 20240820004721](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/28/pasted-image-20240820004721.png)
 
-
 这正是我们前面例子中提到的问题，虽然它避免了脏读问题，但是如果事件B修改并提交了数据，那么实际上事务A之前读取到的数据依然不是最新的数据，直接导致两次读取的数据**不一致**，这种现象称为**虚读**也可以称为**不可重复读**
-
 
 ---
 
@@ -55,7 +51,6 @@ categories:
 
 ![Pasted image 20240820004951](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/28/pasted-image-20240820004951.png)
 
-
 两个人**同时**报名一个活动，两个报名的事务**同时**在进行，但是他们一开始读取到的人数都是**5**，而这时，它们都会认为报名成功后人数应该变成**6**，而正常情况下应该是**7**，因此这个时候就发生了数据的**幻读**现象。
 
 ---
@@ -63,8 +58,6 @@ categories:
 ### **4. 串行化**
 
 要解决上述种种问题，只能使用最后一种隔离级别**串行化**来实现了，**每个事务不能同时进行**，直接避免所有并发问题，简单粗暴，但是效率爆减，并不推荐。
-
-
 
 ---
 
@@ -80,10 +73,7 @@ categories:
 
 最后这张图，请务必记在你的脑海，记在你的心中：
 
-
 <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/28/17353763265466.jpg" style="height:200px; display: block; margin: auto;">
-
-
 
 ## 事务的传播行为
 
@@ -120,9 +110,8 @@ BEGIN;
 commit;    
 ```
 
-显然，这里的事务逻辑存在问题，当第二个 `begin` 执行完毕后，会隐式地将第一个事务提交，从而导致 `AService` 的部分事务提交。
+显然，这里的事务逻辑存在问题，当第二个 `begin` 执行完毕后，会隐式地将第一个事务提交，从而导致 `AService` 的部分事务提交。  
 所以当 `B事务` 传播到 `A事务` 中时 `B 事务` 需要做一下微调，微调的结果如下述几种情况：
-
 
 #### **1. 当AService存在事务**
 
@@ -144,15 +133,11 @@ commit;
 
 **第二种情况：挂起A事务，让B事务独立于A事务运行。**
 
-
 当两个事务需要**各自独立维护自身事务**，单个事务无法独立完成，B事务启动时可以暂时将A事务挂起，即阻塞A，且不向A发送sql，使得其无法提交，而B开启一个新的事务，B执行完毕后A继续。
-
-
 
 <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/28/untitled-diagramdrawio1.png" style="height:400px; display: block; margin: auto;">
 
 ---
-
 
 #### **2. 当AService无事务**
 
@@ -203,7 +188,6 @@ commit;
 1. 内部 `SAVEPOINT a` 后的代码如果报错则直接回滚到保存点
 2. 整个事务的提交不收内部 **伪事务** 的影响。
 
-
 ### 传播行为
 
 1. **PROPAGATION_REQUIRED**：表示当前方法必须运行在事务中。如果当前事务存在，方法将会在该事务中运行。否则，会启动一个新的事务。REQUIRED 表示需要，即 B事务无论如何都要有事务。
@@ -214,29 +198,25 @@ commit;
 6. **PROPAGATION_NEVER**：(不会运行在有事务的环境) 表示当前方法不应该运行在事务上下文中，如果当前有一个事务正在运行，则会抛出异常
 7. **PROPAGATION_NESTED**：(嵌套的) 表示如果当前已经存在一个事务，那么该方法将会在嵌套事务中运行。嵌套的事务可以独立于当前事务进行独立地提交或回滚，如果当前事务不存在，那么其行为与 REQUIRED 一样。注意不同数据库对这种传播行为的支持是有所差异的。可以参考资源管理器的文档来确认它们是否支持嵌套事务。
 
-
-
-
 ## Spring事务管理
-
 
 spring提供了如下几个核心的组件，用于进行事务管理：
 
 1. **PlatformTransactionManager**
-    * 是事务管理的核心接口，负责开启、提交、回滚事务。
+    - 是事务管理的核心接口，负责开启、提交、回滚事务。
 2. **TransactionDefinition** ：
-    * 该接口允许开发者定制事务的各种属性，如隔离级别、传播行为、超时时间以及是否只读。
+    - 该接口允许开发者定制事务的各种属性，如隔离级别、传播行为、超时时间以及是否只读。
 3. **TransactionStatus**：
-    * 该接口用于记录事务执行过程中的状态。它包含了一些关键信息，例如是否处于活动状态、是否可以提交、是否需要回滚，挂起的资源等。
-    * 通过检查事务状态，事务管理器可以决定是否继续执行事务操作。
+    - 该接口用于记录事务执行过程中的状态。它包含了一些关键信息，例如是否处于活动状态、是否可以提交、是否需要回滚，挂起的资源等。
+    - 通过检查事务状态，事务管理器可以决定是否继续执行事务操作。
 4. **TransactionSynchronizationManager**
-    * 该组件为 `Spring` 提供了一种统一和灵活的方式来定义和配置事务的各种属性，使开发者能够根据不同的业务需求调整事务的行为。
-5. **TransactionSynchronization**
+    - 该组件为 `Spring` 提供了一种统一和灵活的方式来定义和配置事务的各种属性，使开发者能够根据不同的业务需求调整事务的行为。
+5. **TransactionSynchronization**  
 该接口用于在事务处理过程中实现同步回调：
-    * `TransactionSynchronization` 接口为 `Spring` 事务提供了灵活的扩展机制。
-    * 通过注册到 `TransactionSynchronizationManager`，您可以在事务提交、回滚或完成后执行相应的逻辑。
-    * 这对于日志记录、资源清理、缓存刷新等任务非常有用。
-    * 根据业务需求，您可以自定义实现，以满足特定的事务处理需求。
+    - `TransactionSynchronization` 接口为 `Spring` 事务提供了灵活的扩展机制。
+    - 通过注册到 `TransactionSynchronizationManager`，您可以在事务提交、回滚或完成后执行相应的逻辑。
+    - 这对于日志记录、资源清理、缓存刷新等任务非常有用。
+    - 根据业务需求，您可以自定义实现，以满足特定的事务处理需求。
 6. **TransactionSynchronization** 接口维护了一个事务同步状态：
 
 ```java
@@ -289,10 +269,7 @@ public interface TransactionSynchronization extends Ordered, Flushable {
 }
 ```
 
-
-
 ## 核心接口 PlatformTransactionManager
-
 
 ### 继承关系与方法基本概览
 
@@ -301,7 +278,6 @@ public interface TransactionSynchronization extends Ordered, Flushable {
 <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/05/platformtransactionmanager.png" style="height:750px; display: block; margin: auto;">
 
 - PlatformTransactionManager
-
   - 这是一个比较重要的接口。定义了获取事务状态、事务提交、事务回滚等方法
 
   ```java
@@ -313,9 +289,7 @@ public interface TransactionSynchronization extends Ordered, Flushable {
   ```
 
 - AbstractPlatformTransactionManager
-
   - 事务管理的抽象实现类。采用同样的套路定义了事务的操作流程，分别是**获取事务，事务提交，事务回滚**。这三个步骤在不同的数据源上操作又有区别，所以该抽象类同时定义了需要子类去实际执行的抽象方法。
-
   - ```java
     TransactionStatus getTransaction(@Nullable TransactionDefinition definition)
     ```
@@ -324,7 +298,6 @@ public interface TransactionSynchronization extends Ordered, Flushable {
 
     - 根据当前是否已经有事务，如果有，根据定义的事务传播行为返回一个事务
     - 如果没有根据事务的定义返回一个事务
-
   - ```java
     void commit(TransactionStatus status)
     ```
@@ -372,7 +345,6 @@ public interface TransactionSynchronization extends Ordered, Flushable {
 ### 获取事务对象
 
 抽象类`AbstractPlatformTransactionManager`的核心方法实现：
-
 
 ```java
 // 核心的方法：获取事务对象
@@ -433,7 +405,6 @@ public final TransactionStatus getTransaction(@Nullable TransactionDefinition de
 ```
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/05/17360072556113.jpg)
-
 
 首先通过 `doGetTransaction` 方法尝试获取当前的事务
 
@@ -520,13 +491,9 @@ private TransactionStatus handleExistingTransaction(
 }
 ```
 
-
 **2.** 当前不存在事务，则在当前方法内处理外部无事务的传播行为
 
-
-
 ## @Transactional 注解
-
 
 ```java
 public @interface Transactional {
@@ -572,17 +539,14 @@ public @interface Transactional {
 
 最好使用 `rollbackFor` 可以在编译的时候直接帮助检查是否出错。
 
-
 ```java
 @Transactional(rollbackFor = Exception.class, rollbackForClassName = {"java.lang.Exception"})
 ```
 
-!!!注意
+!!!注意  
     在使用 `@Transactional` 注解的时候，一定要设置`rollbackFor`的值，默认情况下是**不回滚的检查类异常**，比如 `IOException`、`SQLException` 等。
 
-
 ## Spring 事务管理与传播行为实践
-
 
 有以下约定：
 
@@ -614,11 +578,9 @@ public void B() {
 
 当B事务异常回滚的时候，要判断在A里面是否try了B事务，如果try就A不会回滚，只是B回滚。
 
-
 ---
 
 ### 挂起事务
-
 
 修改B事务的传播行为，让它生成新事务，挂起A事务
 
@@ -626,15 +588,11 @@ public void B() {
 @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRES_NEW)
 ```
 
-
 ---
-
 
 ### 融入事务
 
-
 修改B事务的传播行为，让它融入当前事务
-
 
 ```java
 @Transactional(rollbackFor = Exception.class, propagation = Propagation.REQUIRED)
@@ -644,14 +602,10 @@ public void B() {
 
 既然说是融入当前事务，那其实本质上还是一个事务，不管怎么样的异常，也不管如何处理异常，**A、B方法都是一起提交、或一起回滚**。
 
-
-
 ---
-
 
 ### 执行结果汇总
 
 排列组合结果如下：
-
 
 <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/04/17360051325588.jpg" style="height:500px; display: block; margin: auto;">

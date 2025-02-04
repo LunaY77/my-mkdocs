@@ -10,9 +10,8 @@ categories:
 
 # Spring MVC
 
-!!!注意
+!!!注意  
     文章中的代码大部分为我的项目 Simple-Spring 代码实现，非纯源码
-
 
 ## SpringMVC原理
 
@@ -21,25 +20,15 @@ categories:
 根据上图，我们可以得知Spring MVC的工作流程如下：
 
 1. 用户（客户端，即浏览器）发送请求至前端控制器（DispatcherServlet）
-
 2. 前端控制器收到请求后调⽤处理器映射器（HandlerMapping）
-
 3. 处理器映射器根据请求Url找到具体的处理器（Handler，也叫后端控制器），生成处理器对象及处理器拦截器（如果有）一并返回给前端控制器
-
 4. 前端控制器收到处理器对象及处理器拦截器（如果有）后调用处理器适配器（HandlerAdapter）去调用处理器Handler
-
 5. 处理器适配器执行处理器
-
 6. 处理器执行完后给处理器适配器返回ModelAndView
-
 7. 处理器适配器将ModelAndView（ModelAndView是SpringMVC框架的⼀个底层对象，包括 Model 和 View）返回给前端控制器
-
 8. 前端控制器接收到ModelAndView后，请求视图解析器（ViewResolver）去进⾏视图解析，根据逻辑视图名来解析真正的视图
-
 9. 视图解析器将解析完的View返回给前端控制器
-
 10. 前端控制器进⾏视图渲染，就是将模型数据（在 ModelAndView 对象中）填充到 request 域
-
 11. 前端控制器向⽤户响应结果
 
 ## 动态注册Web组件
@@ -63,7 +52,6 @@ public void onStartup(ServletContext servletContext) throws ServletException {}
 
 ### **继承 AbstractAnnotationConfigDispatcherServletInitializer**
 
-
 ```java
 public class WebMvcInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
  
@@ -74,7 +62,7 @@ public class WebMvcInitializer extends AbstractAnnotationConfigDispatcherServlet
 
 ### **容器启动**
 
-上述两种方法仅仅是给出了动态配置，而导入该配置的具体位置在 `org.springframework.web.SpringServletContainerInitializer#onStartup`  方法，**该方法即为 Web容器初始化并启动 的源头**。
+上述两种方法仅仅是给出了动态配置，而导入该配置的具体位置在 `org.springframework.web.SpringServletContainerInitializer#onStartup` 方法，**该方法即为 Web容器初始化并启动 的源头**。
 
 ```java
 @HandlesTypes({WebApplicationInitializer.class})
@@ -137,10 +125,7 @@ org.springframework.web.SpringServletContainerInitializer
 
 这种注册机制利用了 **JDK 的 SPI（Service Provider Interface）机制**，容器启动时会自动加载这个文件，从中读取并加载相应的初始化类。
 
-
 ---
-
-
 
 为了让 `ServletContainerInitializer` 能够接收到符合条件的类，必须使用 `@HandlesTypes` 注解来标明该类需要处理的类型。
 
@@ -163,8 +148,7 @@ public @interface HandlesTypes {
 
 ---
 
-
-Servlet 3.0+  容器会自动去扫描 `classpath` 下所有实现了 `WebApplicationInitializer` 接口的类，如果没有找到相关类，那么 `An INFO-level log message will be issued notifying the user`，会有一条INFO级别 的日志。
+Servlet 3.0+ 容器会自动去扫描 `classpath` 下所有实现了 `WebApplicationInitializer` 接口的类，如果没有找到相关类，那么 `An INFO-level log message will be issued notifying the user`，会有一条INFO级别 的日志。
 
 如果找到了多个实现类，那么都会被实例化，如果实现了`org.springframework.core.Ordered` 接口或者添加了 `@Order` 注解，那么就按照顺序来。
 
@@ -206,16 +190,11 @@ public void onStartup(@Nullable Set<Class<?>> webAppInitializerClasses, ServletC
 }
 ```
 
-
-
-
-
 ## 初始化
 
 Spring MVC 的核心是 DispatcherServlet，初始化也是围绕其展开的。类图如下：
 
 <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/11/dispatcherservlet.png" style="height:500px; display: block; margin: auto;">
-
 
 Servlet标准定义了init方法是其生命周期的初始化方法。
 
@@ -238,7 +217,6 @@ public final void init() throws ServletException {
 
 ### **容器初始化**
 
-
 `com.iflove.simplespring.webmvc.FrameworkServlet#initServletBean`
 
 ```java
@@ -259,7 +237,6 @@ protected void initServletBean() throws ServletException {
 ```
 
 `com.iflove.simplespring.webmvc.FrameworkServlet#initWebApplicationContext`
-
 
 ```java
 protected WebApplicationContext initWebApplicationContext() {
@@ -299,7 +276,6 @@ protected WebApplicationContext initWebApplicationContext() {
 
 ---
 
-
 #### **根容器查找**
 
 spring-mvc支持Spring容器与MVC容器共存，此时，**Spring容器即根容器，mvc容器将根容器视为父容器**。
@@ -331,7 +307,6 @@ public static WebApplicationContext getWebApplicationContext(ServletContext sc, 
 }
 ```
 
-
 可以得出结论:
 
 **如果Spring根容器存在，那么它被保存在ServletContext中，其key为`WebApplicationContext.class.getName() + ".ROOT"`。**
@@ -355,7 +330,6 @@ protected WebApplicationContext createWebApplicationContext(ApplicationContext p
 ```
 
 注意：这里创建新的IOC容器默认为 `AnnotationConfigWebApplicationContext`，而 Spring 源码中为 `XmlWebApplicationContext`
-
 
 `configureAndRefreshWebApplicationContext`主要作用即配置servlet上下文并刷新容器
 
@@ -505,7 +479,6 @@ com.iflove.simplespring.webmvc.HandlerAdapter=com.iflove.simplespring.webmvc.ada
 
 `com.iflove.simplespring.webmvc.DispatcherServlet#getDefaultStrategies`
 
-
 ```java
 /**
  * 与 DispatcherServlet 类相关的类路径资源的名称，用于定义 DispatcherServlet 的默认策略名称
@@ -559,28 +532,23 @@ protected Object createDefaultStrategy(ApplicationContext context, Class<?> claz
 
 ---
 
-
 #### **HandlerAdapter检查**
 
 套路和上面完全一样，**Spring默认使用`HttpRequestHandlerAdapter`、`SimpleControllerHandlerAdapter`、`RequestMappingHandlerAdapter`、`HandlerFunctionAdapter`，Simple-Spring中使用`RequestMappingHandlerMethodAdapter`**。
 
 btw, Spring的`DispatcherServlet.properties`在`org/springframework/web/servlet/DispatcherServlet.properties`
 
-
 ----
-
 
 ### **HandlerMapping初始化**
 
 此接口用以根据请求的URL寻找合适的处理器，下面以`RequestMappingHandlerMapping`位代表进行说明。
-
 
 #### **RequestMappingHandlerMapping**
 
 此实现根据`@Controller`和`@RequestMapping`注解完成解析。类图(忽略部分接口):
 
 ![HandlerMapping](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/19/handlermapping.png)
-
 
 初始化的入口位于`AbstractHandlerMapping`的`afterPropertiesSet`方法和`initApplicationContext`方法，`afterPropertiesSet`调用了`initHandlerMethods`:
 
@@ -620,7 +588,6 @@ private void initHandlerMethod() throws Exception {
     }
 }
 ```
-
 
 `detectHandlerMethods`方法将反射遍历类中所有的`public`方法，如果方法上含有`@RequestMapping`注解，那么将方法上的路径与类上的基础路径(如果有)进行合并，之后将映射(匹配关系)注册到`MappingRegistry`中。
 
@@ -683,19 +650,15 @@ protected RequestMappingInfo createRequestMappingInfo(
 
 ![HandlerMethodMappingNamingStrategy](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/19/handlermethodmappingnamingstrategy.png)
 
-
 比如对于我们的控制器, `SimpleController.echo`方法，最终得到的名字将是`SC#echo`。
-
 
 <br>
 
 以上是对Spring源码中如何保存(注册)映射关系的解读，而在`Simple-Spring`中实现的方法非常简单。
 
-
 首先是 `detectHandlerMethod` 方法，类似于 Spring 源码的实现，不过多赘述
 
 `com.iflove.simplespring.webmvc.handler.RequestMappingHandlerMapping#detectHandlerMethod`
-
 
 ```java
 @Override
@@ -746,9 +709,8 @@ protected void detectHandlerMethod(String name) throws Exception {
 
 如果路径包含 `{}`，即带有路径参数的占位符，例如 `/user/{id}`，则将 `{}` 中的内容替换成正则表达式 `(\w+)`，以支持路径参数的匹配。
 
-* 替换后的路径会用于后续的路径匹配。
-* 如果路径没有路径参数，直接注册该路径和对应的 HandlerMethod。
-
+- 替换后的路径会用于后续的路径匹配。
+- 如果路径没有路径参数，直接注册该路径和对应的 HandlerMethod。
 
 `com.iflove.simplespring.webmvc.handler.AbstractHandlerMapping#register(com.iflove.simplespring.webmvc.handler.HandlerMethod)`
 
@@ -776,9 +738,7 @@ public void register(String path, HandlerMethod handlerMethod) {
 }
 ```
 
-
 ----
-
 
 ### **HandlerAdapter初始化**
 
@@ -786,12 +746,9 @@ public void register(String path, HandlerMethod handlerMethod) {
 
 ![RequestMappingHandlerMethodAdapter](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/19/requestmappinghandlermethodadapter.png)
 
-
 显然，入口在实现了`InitializingBean`的`afterPropertiesSet`方法:
 
-
 `com.iflove.simplespring.webmvc.adapter.RequestMappingHandlerMethodAdapter#afterPropertiesSet`
-
 
 ```java
 /**
@@ -804,16 +761,13 @@ public void afterPropertiesSet() throws Exception {
 }
 ```
 
-
 ---
-
 
 #### **参数解析器**
 
 参数解析器，负责从request中解析、得到Controller方法所需的参数。
 
 ![diagram](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/19/diagram1.png)
-
 
 `com.iflove.simplespring.webmvc.adapter.RequestMappingHandlerMethodAdapter#getDefaultArgumentResolver`
 
@@ -838,7 +792,6 @@ public List<HandlerMethodArgumentResolver> getDefaultArgumentResolver() {
 }
 ```
 
-
 ----
 
 #### **返回结果解析器**
@@ -847,12 +800,7 @@ public List<HandlerMethodArgumentResolver> getDefaultArgumentResolver() {
 
 ![HandlerMethodReturnValueHandler](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/19/handlermethodreturnvaluehandler.png)
 
-
-
-
-
 ## 请求执行流程
-
 
 ### **1. Service**
 
@@ -860,7 +808,6 @@ public List<HandlerMethodArgumentResolver> getDefaultArgumentResolver() {
 
 - 如果请求类型为 `GET, POST, DELETE, PUT` 等常见 `Http` 方法，走 `super.service` 处理
 - 否则走自定义 `processRequest` 方法
-
 
 `com.iflove.simplespring.webmvc.FrameworkServlet#service`
 
@@ -959,7 +906,6 @@ protected final void doGet(HttpServletRequest request, HttpServletResponse respo
 
 ---
 
-
 ### **2. processRequest**
 
 `processRequest` 是 `FrameworkServlet` 中的核心方法，**用于接收并初始化 HTTP 请求处理的上下文环境**。
@@ -968,8 +914,8 @@ protected final void doGet(HttpServletRequest request, HttpServletResponse respo
 
 1. 记录开始时间
 2. 设置请求上下文
-    * 使用 `LocaleContextHolder` 和 `RequestContextHolder` 设置本地化上下文和请求上下文
-    * 通过 `buildLocaleContext` 和 `buildRequestAttributes` 方法为当前线程创建 `LocaleContext` 和 `ServletRequestAttributes`
+    - 使用 `LocaleContextHolder` 和 `RequestContextHolder` 设置本地化上下文和请求上下文
+    - 通过 `buildLocaleContext` 和 `buildRequestAttributes` 方法为当前线程创建 `LocaleContext` 和 `ServletRequestAttributes`
 3. 初始化异步管理器
 4. 调用 `doService` 方法
 5. 异常处理
@@ -1030,7 +976,6 @@ protected final void processRequest(HttpServletRequest request, HttpServletRespo
 
 ---
 
-
 ### **3. doService**
 
 `doService` 是 `processRequest` 的子流程，用于封装更多的细节逻辑，**包括为请求分发创建上下文环境，并调用核心分发方法 `doDispatch`**。
@@ -1040,7 +985,7 @@ protected final void processRequest(HttpServletRequest request, HttpServletRespo
 1. 日志记录
 2. 请求包含支持
 3. 添加框架级对象
-    * 将 Web 应用上下文、语言环境解析器（LocaleResolver）、主题解析器等对象添加到请求中，供后续处理使用。
+    - 将 Web 应用上下文、语言环境解析器（LocaleResolver）、主题解析器等对象添加到请求中，供后续处理使用。
 4. 解析闪存消息
 5. 路径解析
 6. 调用 `doDispatch`，进行核心的请求分发逻辑
@@ -1115,13 +1060,11 @@ protected void doService(HttpServletRequest request, HttpServletResponse respons
 }
 ```
 
-
 ---
 
 ### **4. 请求分发 doDispatch**
 
 `doDispatch` 是 `Spring MVC` 的请求分发核心逻辑，负责将请求分配给合适的处理器（Handler）并执行。
-
 
 `com.iflove.simplespring.webmvc.DispatcherServlet#doDispatch`
 
@@ -1169,7 +1112,6 @@ protected void doDispatch(HttpServletRequest req, HttpServletResponse resp) thro
 }
 ```
 
-
 ---
 
 ### **5. 处理器查找 getHandler**
@@ -1200,10 +1142,7 @@ protected HandlerExecutionChain getHandler(HttpServletRequest request) throws Ex
 }
 ```
 
-
-
 ---
-
 
 ### **6. 适配器查找 getHandlerAdapter**
 
@@ -1232,7 +1171,6 @@ protected HandlerAdapter getHandlerAdapter(HandlerMethod handler) throws Servlet
 ```
 
 ---
-
 
 ### **7. 请求处理 ha.handle(...)**
 
@@ -1266,6 +1204,3 @@ public void handle(HttpServletRequest req, HttpServletResponse res, HandlerMetho
     invocableMethod.invokeAndHandle(webServletRequest, handler);
 }
 ```
-
-
-

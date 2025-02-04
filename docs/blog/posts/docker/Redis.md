@@ -8,24 +8,25 @@ categories:
   - docker
 ---
 
-
 # Redis 部署 
 
 ## 创建挂载目录
+
 ``` bash
 #创建挂载目录
 mkdir -p /data/redis
 ```
 
 ## 创建yml文件
+
 ``` bash
 vim /data/redis/docker-compose.yml
 ```
 
 <br/>
 
-
 ## 填入配置
+
 ``` bash
 version: '3.8'
 services:
@@ -44,8 +45,8 @@ services:
 
 <br/>
 
-
 ## 创建挂载配置文件
+
 ``` bash
 vim /data/redis/redis.conf
 ```
@@ -70,6 +71,7 @@ requirepass 123456
 <br/>
 
 ## 启动容器
+
 ``` bash
 cd /data/redis
 docker-compose up -d

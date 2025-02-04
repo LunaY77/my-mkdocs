@@ -8,10 +8,10 @@ categories:
   - docker
 ---
 
-
 # RocketMQ 部署
 
 ## 创建挂载目录
+
 ``` bash
 #创建挂载目录
 mkdir -p /data/rocketmq/namesrv;
@@ -21,9 +21,11 @@ mkdir -p /data/rocketmq/console/data;
 ```
 
 ## 创建挂载的配置文件
+
 ``` bash
 vi /data/rocketmq/broker/conf/broker.conf
 ```
+
 ``` bash
 
 #所属集群名字
@@ -118,6 +120,7 @@ flushDiskType=ASYNC_FLUSH
 **如果有设置密码的需求，broker.conf开启acl密码配置 true**
 
 ## 创建acl文件，用于开启用户名密码
+
 ``` bash
 vi /data/rocketmq/broker/conf/plain_acl.yml
 ```
@@ -167,11 +170,12 @@ accounts:
     admin: true
 ```
 
-**密码**不能小于**6位数**
-**名称**也不能小于**6位**
+**密码**不能小于**6位数**  
+**名称**也不能小于**6位**  
 权限的描述可参考[链接](https://github.com/apache/rocketmq/blob/master/docs/cn/acl/user_guide.md)
 
 ## 设置console的账号密码
+
 ``` bash
 vi  /data/rocketmq/console/data/users.properties
 ```
@@ -193,9 +197,11 @@ admin=123456,1
 ```
 
 ## 创建yml文件
+
 ``` bash
 vi /data/rocketmq/docker-compose.yml
 ```
+
 ``` bash
 version: '3.8'
 services:
@@ -264,9 +270,9 @@ networks:
 
 ```
 
-如果acl密码改了，记得把yml的console帐号密码也一同更改
-`-Drocketmq.config.accessKey=admin123456 `
-`-Drocketmq.config.secretKey=Cjy123456`
+如果acl密码改了，记得把yml的console帐号密码也一同更改  
+`-Drocketmq.config.accessKey=admin123456 `  
+`-Drocketmq.config.secretKey=Cjy123456`  
 授予目录权限
 
 ``` bash
@@ -277,6 +283,7 @@ chmod -R 777 /data/rocketmq/console/;
 ```
 
 ## ！！安全组添加端口 9876，10911，8180 ！！
+
 ``` bash
 cd /data/rocketmq
 docker-compose up -d
@@ -285,18 +292,21 @@ docker-compose up -d
 <br/>
 
 **注意，第一次会启动不成功，因为broker需要创建一堆文件，没有权限。再执行一遍权限命令**
+
 ``` bash
 #目录权限：
 chmod -R 777 /data/rocketmq/namesrv/;
 chmod -R 777 /data/rocketmq/broker/;
 chmod -R 777 /data/rocketmq/console/;
 ```
-**把启动的mq相关镜像stop后，rm
+
+**把启动的mq相关镜像stop后，rm  
 再重新启动就可以使用了**
 
 ## 启动控制台
-启动后可以登录控制台
-`http://ip:8180/`
-输入账号密码
-`admin`
+
+启动后可以登录控制台  
+`http://ip:8180/`  
+输入账号密码  
+`admin`  
 `123456`

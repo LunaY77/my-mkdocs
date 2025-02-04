@@ -11,7 +11,6 @@ categories:
 
 # 02.IdeaGit 基础操作
 
-
 ## 1. 初始化
 
 ```bash
@@ -35,9 +34,10 @@ git add .                // 将当前目录下所有修改添加到暂存区，�
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384735316063.jpg)
 
-
  不同之处是在idea中即便不进行`add`，依旧可以`commit`
+
  
+
  ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384736316265.jpg)
 
 ---
@@ -53,7 +53,6 @@ git commit -m 'your comments'         // 带评论提交，用于说明提交内
 
 ---
 
-
 ### 2.3 查看仓库状态
 
 ```bash
@@ -62,12 +61,11 @@ git status
 
 在idea中，直接在commit界面可以看到改动的所有文件以及未add的文件
 
-**红色**: 代表未`add`到暂存区
-**绿色**: 代表已在暂存区但是有修改
+**红色**: 代表未`add`到暂存区  
+**绿色**: 代表已在暂存区但是有修改  
 **无标记**：代表无修改
 
 ---
-
 
 ### 2.4 查看仓库中的具体修改
 
@@ -134,21 +132,20 @@ git reset --hard 'commit_id'
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384787225267.jpg)
 
-* **Workspace**： 工作区，就是你平时存放项目代码的地方
-* **Index / Stage**： 暂存区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息
-* **Repository**： 仓库区（或版本库），就是安全存放数据的位置，这里面有你提交到所有版本的数据。其中HEAD指向最新放入仓库的版本
-* **Remote**： 远程仓库，托管代码的服务器，可以简单的认为是你项目组中的一台电脑用于远程数据交换
+- **Workspace**： 工作区，就是你平时存放项目代码的地方
+- **Index / Stage**： 暂存区，用于临时存放你的改动，事实上它只是一个文件，保存即将提交到文件列表信息
+- **Repository**： 仓库区（或版本库），就是安全存放数据的位置，这里面有你提交到所有版本的数据。其中HEAD指向最新放入仓库的版本
+- **Remote**： 远程仓库，托管代码的服务器，可以简单的认为是你项目组中的一台电脑用于远程数据交换
 
 执行`reset`命令后还存在文件的区域
 
 ![git reset](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/git-reset.png)
 
-
 ---
 
 #### **2.6.1 git reset --soft**
 
-!!!操作
+!!!操作  
     移动本地库HEAD指针
 
 前置准备(其他演示类似不做过多赘述)
@@ -158,7 +155,6 @@ git reset --hard 'commit_id'
 远程仓库如下图所示
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384798524843.jpg)
-
 
 输入下述命令，使用`soft`回滚，并推送到远程仓库
 
@@ -175,17 +171,15 @@ git push --force origin master # 注意这里要强制推送
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384804227014.jpg)
 
-
-!!!结论
+!!!结论  
     soft只影响版本库，不影响工作区和暂存区
-
 
 ---
 
 #### **2.6.2 git reset --mixed**
 
-!!!操作
-    移动本地库HEAD指针<br>
+!!!操作  
+    移动本地库HEAD指针  
     重置暂存区
 
 输入下述命令，使用mixed回滚，并推送到远程仓库
@@ -199,22 +193,20 @@ git push --force origin master # 注意这里要强制推送
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384801148839.jpg)
 
-
 运行 `git status` 和 `ll`(alias for `ls -l`), 观察结果可知**工作区未发生修改，暂存区发生修改(丢失了对t2的追踪)**
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384808994217.jpg)
 
-
-!!!结论
+!!!结论  
     mixed影响版本库和暂存区，不影响工作区
 
 ---
 
 #### **2.6.3 git reset --hard**
 
-!!!操作
-    移动本地库HEAD指针<br>
-    重置暂存区<br>
+!!!操作  
+    移动本地库HEAD指针  
+    重置暂存区  
     重置工作区
 
 输入下述命令，使用hard回滚，并推送到远程仓库
@@ -228,24 +220,25 @@ git push --force origin master # 注意这里要强制推送
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384801148839.jpg)
 
-
 运行 `git status` 和 `ll`(alias for `ls -l`), 观察结果可知**工作区发生修改，暂存区发生修改(丢失了对t2的追踪)**
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384813014765.jpg)
 
-
-!!!结论
+!!!结论  
     hard影响版本库、暂存区和工作区
+
     
 ---
 
 #### **2.6.4 git reset --keep**
 
-!!!操作
-    移动本地库HEAD指针<br>
-    重置暂存区<br>
+!!!操作  
+    移动本地库HEAD指针  
+    重置暂存区  
     重置工作区, 保留改动
+
     
+
 `keep`模式和`hard`模式有些类似，但是对工作区的操作有些不同，具体如下
 
 工作区中文件如果当前版本和退回版本之间没有发生过变动，则工作区的修改保持不便；如果发生了变动，并且工作区也进行了修改，需要自行合并（或者冲突解决）    
@@ -260,14 +253,11 @@ git reset --keep 'commitid'
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17385062341253.jpg)
 
-
-
 **2. 工作区文件发生变动**
 
 在`reset`之前，将`t1`文件中的`111`改为`311`，并添加到暂存区
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17385063385330.jpg)
-
 
 执行reset
 
@@ -277,9 +267,7 @@ git reset --keep 'commitid'
 
 神奇的是，加入暂存区的对应文件发生的变动也被保留了下来
 
-
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17385066722249.jpg)
-
 
 再来看变动的另一种情况，在`reset`之前，将`t1`文件中的`111`改为`311`，且将`t2`文件中的`222`改成`322`，并添加到暂存区
 
@@ -295,9 +283,7 @@ git reset --keep 'commitid'
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17385072743507.jpg)
 
-
-
-!!!结论
+!!!结论  
     keep影响版本库、暂存区和工作区，可以撤销提交而不丢失文件的更改
 
 ---
@@ -314,7 +300,6 @@ git reset --keep 'commitid'
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384775261247.jpg)
 
-
 右键希望回退到的版本，选择`Reset`
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384815478017.jpg)
@@ -322,7 +307,6 @@ git reset --keep 'commitid'
 选择hard模式
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/02/17384816262743.jpg)
-
 
 如果希望撤销回滚，同样需要查询`reflog`, 打开`terminal`输入`git reflog`, 找到对应的`commitid`
 
@@ -340,7 +324,6 @@ git reset --keep 'commitid'
 git checkout -- 004.txt   // 如果 004.txt 文件在工作区，则丢弃其修改
 git checkout -- .            // 丢弃当前目录下所有工作区中文件的修改
 ```
-
 
 idea中：
 
@@ -365,14 +348,13 @@ idea中：
 在被 git 管理的目录中删除文件时，可以选择如下两种方式来记录删除动作：
 
 1. `rm + git commit -am "abc"`
-
 2. `git rm + git commit -m "abc"`
 
 区别在于
 
-* 如果文件已经被git跟踪，那么 1、2 都可以正常工作
-* 如果文件未被git跟踪
-    * `rm + git commit -am "abc"` 不会提交删除
-    * `git rm + git commit -m "abc"` 可以确保文件删除被git记录并提交
+- 如果文件已经被git跟踪，那么 1、2 都可以正常工作
+- 如果文件未被git跟踪
+    - `rm + git commit -am "abc"` 不会提交删除
+    - `git rm + git commit -m "abc"` 可以确保文件删除被git记录并提交
     
     

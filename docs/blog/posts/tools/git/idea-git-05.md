@@ -42,21 +42,15 @@ public class GitPullTest {
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385690143285.jpg)
 
-
 解决冲突后，最终效果如下图所示
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385690638619.jpg)
 
-
-
 ## Undo Commit，Revert Commit，Drop Commit
-
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/17385703923046.jpg)
 
-
 ![undo:revert:drop](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/02/03/undorevertdrop.png)
-
 
 ## Tag
 

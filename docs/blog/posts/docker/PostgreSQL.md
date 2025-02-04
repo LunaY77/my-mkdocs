@@ -8,7 +8,6 @@ categories:
   - docker
 ---
 
-
 # PostgreSQL 部署
 
 ## 创建挂载目录
@@ -25,6 +24,7 @@ vim /data/postgresql/docker-compose.yml
 ```
 
 ## 填入配置
+
 ``` bash
 services:
   postgres_db: # 服务名称
@@ -50,6 +50,7 @@ networks:  # 网络
 ```
 
 ## 启动容器
+
 ``` bash
 cd /data/postgresql
 docker-compose up -d

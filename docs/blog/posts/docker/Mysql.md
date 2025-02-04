@@ -8,7 +8,6 @@ categories:
   - docker
 ---
 
-
 # Mysql 部署
 
 ## 创建挂载目录
@@ -22,6 +21,7 @@ mkdir -p /data/mysql/conf;
 <br/>
 
 ## 创建yml文件
+
 ``` bash
 vim /data/mysql/docker-compose.yml
 ```
@@ -29,6 +29,7 @@ vim /data/mysql/docker-compose.yml
 <br/>
 
 ## 填入配置
+
 ``` bash
 version: '3.8' # 选择合适版本
 services:
@@ -50,6 +51,7 @@ services:
 <br/>
 
 ## 创建配置文件
+
 ``` bash
 vim /data/mysql/conf/my.cnf
 ```
@@ -97,12 +99,12 @@ default-character-set=utf8mb4  # 设置mysql客户端默认字符集
 <br/>
 
 ## 启动容器
+
 ``` bash
 cd /data/mysql
 docker-compose up -d
 ```
+
 <br/>
-
-
 
 ## **!!! 安全组添加 3306 !!!**

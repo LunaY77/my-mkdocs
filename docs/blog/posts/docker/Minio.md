@@ -8,10 +8,10 @@ categories:
   - docker
 ---
 
-
 # Minio 部署
 
 ## 创建挂载目录
+
 ``` bash
 #创建挂载目录
 mkdir -p /data/minio
@@ -20,6 +20,7 @@ mkdir -p /data/minio
 <br/>
 
 ## 创建yml文件
+
 ``` bash
 vim /data/minio/docker-compose.yml
 ```
@@ -27,6 +28,7 @@ vim /data/minio/docker-compose.yml
 <br/>
 
 ## 填入配置
+
 ``` bash
 version: '3.9'
 services:
@@ -53,6 +55,7 @@ services:
 <br/>
 
 ## 启动容器
+
 ``` bash
 cd /data/minio
 docker-compose up -d
@@ -68,9 +71,10 @@ docker-compose up --force-recreate -d
 <br/>
 
 ## 配置桶
-创建桶
-![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/12/17314171812095.jpg)
-设置桶为公开
+
+创建桶  
+![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/12/17314171812095.jpg)  
+设置桶为公开  
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/12/17314171999358.jpg)
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/12/17314172139345.jpg)
@@ -81,5 +85,5 @@ docker-compose up --force-recreate -d
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/12/17314172366136.jpg)
 
-点击create按钮后，会随机生成accessKey secretKey。
+点击create按钮后，会随机生成accessKey secretKey。  
 会将这两个key进行展示，此时可以复制粘贴到一个文本文件上，后续使用代码上传文件时需要用到这两个key

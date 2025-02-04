@@ -11,25 +11,20 @@ categories:
 
 # Editors (Vim)
 
-!!!attachment
+!!!attachment  
     course link: [Editors (Vim)](https://missing.csail.mit.edu/2020/editors/)
-    
-    
-## Modal editing
 
+## Modal editing
 
 Vim has multiple operating modes.
 
-* **Normal**: for moving around a file and making edits
-* **Insert**: for inserting text
-* **Replace**: for replacing text
-* **Visual (plain, line, or block)**: for selecting blocks of text
-* **Command-line**: for running a command
-
-
+- **Normal**: for moving around a file and making edits
+- **Insert**: for inserting text
+- **Replace**: for replacing text
+- **Visual (plain, line, or block)**: for selecting blocks of text
+- **Command-line**: for running a command
 
 <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/14/17341679832612.jpg" style="height:400px; display: block; margin: auto;">
-
 
 ## Basics
 
@@ -65,36 +60,36 @@ Your cursor will jump to the command line at the **bottom** of the screen upon p
 
 This mode has many functionalities, including **opening, saving, and closing files, and quitting Vim**.
 
-* `:q` quit (close window)
-* `:w` save (“write”)
-* `:wq` save and quit
-* `:e {name of file}` open file for editing
-* `:ls` show open buffers
-* `:help {topic}` open help
-    * `:help :w` opens help for the `:w` command
-    * `:help w` opens help for the `w` movement
+- `:q` quit (close window)
+- `:w` save (“write”)
+- `:wq` save and quit
+- `:e {name of file}` open file for editing
+- `:ls` show open buffers
+- `:help {topic}` open help
+    - `:help :w` opens help for the `:w` command
+    - `:help w` opens help for the `w` movement
 
 ---
     
-## Vim’s interface is a programming language
 
+## Vim’s interface is a programming language
 
 ### Movement
 
 Movements in Vim are also called **“nouns”**, because **they refer to chunks of text**.
 
-* **Basic movement**: `hjkl` (left, down, up, right)
-* **Words**: `w` (next word), `b` (beginning of word), `e` (end of word)
-* **Lines**: `0` (beginning of line), `^` (first non-blank character), `$` (end of line)
-* **Screen**: `H` (top of screen), `M` (middle of screen), `L` (bottom of screen)
-* **Scroll**: `Ctrl-u` (up), `Ctrl-d` (down)
-* **File**: `gg` (beginning of file), `G` (end of file)
-* **Line numbers**: :`{number}<CR>` or `{number}G` (line {number})
-* **Misc**: `%` (corresponding item)
-* **Find**: `f{character}`, `t{character}`, `F{character}`, `T{character}`
-    * find/to forward/backward {character} on the current line
-    * `,` / `;` for navigating matches
-* **Search**: `/{regex}`, `n` / `N` for navigating matches    
+- **Basic movement**: `hjkl` (left, down, up, right)
+- **Words**: `w` (next word), `b` (beginning of word), `e` (end of word)
+- **Lines**: `0` (beginning of line), `^` (first non-blank character), `$` (end of line)
+- **Screen**: `H` (top of screen), `M` (middle of screen), `L` (bottom of screen)
+- **Scroll**: `Ctrl-u` (up), `Ctrl-d` (down)
+- **File**: `gg` (beginning of file), `G` (end of file)
+- **Line numbers**: :`{number}<CR>` or `{number}G` (line {number})
+- **Misc**: `%` (corresponding item)
+- **Find**: `f{character}`, `t{character}`, `F{character}`, `T{character}`
+    - find/to forward/backward {character} on the current line
+    - `,` / `;` for navigating matches
+- **Search**: `/{regex}`, `n` / `N` for navigating matches    
 
 ---
 
@@ -102,10 +97,9 @@ Movements in Vim are also called **“nouns”**, because **they refer to chunks
 
 **Visual** modes:
 
-* Visual: v
-* Visual Line: V
-* Visual Block: Ctrl-v
-
+- Visual: v
+- Visual Line: V
+- Visual Block: Ctrl-v
 
 Can use movement keys to make selection.
 
@@ -115,22 +109,22 @@ Can use movement keys to make selection.
 
 Vim’s editing commands are also called **“verbs”**, because **verbs act on nouns**.
 
-* `i` enter **Insert** mode
-    * but for manipulating/deleting text, want to use something more than backspace
-* `o` / `O` **insert line** ***below*** / ***above***
-* `d{motion}` **delete** `{motion}`
-    * e.g. `dw` is delete word, `d$` is delete to end of line, `d0` is delete to beginning of line
-* `c{motion}` **change** `{motion}`
-    * e.g. `cw` is change word
-    * like `d{motion}` followed by `i`
-* `x` **delete** character (equal do `dl`)
-* `s` **substitute** character (equal to `cl`)
-* **Visual mode + manipulation**
-    * select text, `d` to delete it or `c` to change it
-* `u` to **undo**, `<C-r>` to **redo**
-* `y` to **copy** / ***“yank”*** (some other commands like `d` also copy)
-* `p` to **paste**
-* Lots more to learn: e.g. `~` **flips the case** of a character
+- `i` enter **Insert** mode
+    - but for manipulating/deleting text, want to use something more than backspace
+- `o` / `O` **insert line** ***below*** / ***above***
+- `d{motion}` **delete** `{motion}`
+    - e.g. `dw` is delete word, `d$` is delete to end of line, `d0` is delete to beginning of line
+- `c{motion}` **change** `{motion}`
+    - e.g. `cw` is change word
+    - like `d{motion}` followed by `i`
+- `x` **delete** character (equal do `dl`)
+- `s` **substitute** character (equal to `cl`)
+- **Visual mode + manipulation**
+    - select text, `d` to delete it or `c` to change it
+- `u` to **undo**, `<C-r>` to **redo**
+- `y` to **copy** / ***“yank”*** (some other commands like `d` also copy)
+- `p` to **paste**
+- Lots more to learn: e.g. `~` **flips the case** of a character
 
 ---
 
@@ -138,9 +132,9 @@ Vim’s editing commands are also called **“verbs”**, because **verbs act on
 
 You can combine nouns and verbs with a **count**, which will perform a given action a number of times.
 
-* `3w` move 3 **words** **forward**
-* `5j` move 5 **lines** **down**
-* `7dw` **delete** 7 **words**
+- `3w` move 3 **words** **forward**
+- `5j` move 5 **lines** **down**
+- `7dw` **delete** 7 **words**
 
 ---
 
@@ -150,10 +144,9 @@ You can use **modifiers** to **change** the meaning of a **noun**.
 
 Some modifiers are `i`, which means **“inner”** or **“inside”**, and `a`, which means **“around”**.
 
-* `ci(` change the contents inside the current pair of parentheses
-* `ci[` change the contents inside the current pair of square brackets
-* `da'` delete a single-quoted string, including the surrounding single quotes
-
+- `ci(` change the contents inside the current pair of parentheses
+- `ci[` change the contents inside the current pair of square brackets
+- `da'` delete a single-quoted string, including the surrounding single quotes
 
 ## Customizing Vim
 
@@ -250,7 +243,6 @@ But never mind, just type `vim ~/.vimrc` and paste the code into it, then type `
 
 You will find that everything is done!
 
-
 ## Extending Vim
 
 ***copy lecture notes...need review***
@@ -259,39 +251,35 @@ There are tons of plugins for extending Vim. Contrary to outdated advice that yo
 
 Here are some of our favorite plugins:
 
-* [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim): fuzzy file finder
-* [ack.vim](https://github.com/mileszs/ack.vim): code search
-* [nerdtree](https://github.com/preservim/nerdtree): file explorer
-* [vim-easymotion](https://github.com/easymotion/vim-easymotion): magic motions
-
+- [ctrlp.vim](https://github.com/ctrlpvim/ctrlp.vim): fuzzy file finder
+- [ack.vim](https://github.com/mileszs/ack.vim): code search
+- [nerdtree](https://github.com/preservim/nerdtree): file explorer
+- [vim-easymotion](https://github.com/easymotion/vim-easymotion): magic motions
 
 We’re trying to avoid giving an overwhelmingly long list of plugins here. You can check out the instructors’ dotfiles ([Anish](https://github.com/anishathalye/dotfiles), [Jon](https://github.com/jonhoo/configs), [Jose](https://github.com/JJGO/dotfiles)) to see what other plugins we use. Check out [Vim Awesome](https://vimawesome.com/) for more awesome Vim plugins. There are also tons of blog posts on this topic: just search for “best Vim plugins”.
 
-
-
 ## Resources
 
-* **vimtutor** is a tutorial that comes installed with Vim - if Vim is installed, you should be able to run `vimtutor` from your shell
-* [Vim Adventures](https://vim-adventures.com/) is a game to learn Vim
-* [Vim Tips Wiki](https://vim.fandom.com/wiki/Vim_Tips_Wiki)
-* [Vim Advent Calendar](https://vimways.org/2019/) has various Vim tips
-* [Vim Golf](https://www.vimgolf.com/) is [code golf](https://en.wikipedia.org/wiki/Code_golf), but where the programming language is Vim’s UI
-* [Vi/Vim Stack Exchange](https://vi.stackexchange.com/)
-* [Vim Screencasts](http://vimcasts.org/)
-* [Practical Vim](https://pragprog.com/titles/dnvim2/practical-vim-second-edition/) (book)
-
+- **vimtutor** is a tutorial that comes installed with Vim - if Vim is installed, you should be able to run `vimtutor` from your shell
+- [Vim Adventures](https://vim-adventures.com/) is a game to learn Vim
+- [Vim Tips Wiki](https://vim.fandom.com/wiki/Vim_Tips_Wiki)
+- [Vim Advent Calendar](https://vimways.org/2019/) has various Vim tips
+- [Vim Golf](https://www.vimgolf.com/) is [code golf](https://en.wikipedia.org/wiki/Code_golf), but where the programming language is Vim’s UI
+- [Vi/Vim Stack Exchange](https://vi.stackexchange.com/)
+- [Vim Screencasts](http://vimcasts.org/)
+- [Practical Vim](https://pragprog.com/titles/dnvim2/practical-vim-second-edition/) (book)
 
 ## Exercises
 
-!!!warning
+!!!warning  
     I will write my own solution to the problem, If you want to solve those by yourself, please stop.
+
     
 ---
 
 **Problem1**
 
 Complete `vimtutor`. Note: it looks best in a `80x24` (80 columns by 24 lines) terminal window.
-
 
 <br/>
 
@@ -300,7 +288,6 @@ Complete `vimtutor`. Note: it looks best in a `80x24` (80 columns by 24 lines) t
 ```bash
 vimtutor
 ```
-
 
 ---
 
@@ -316,7 +303,6 @@ vimtutor
 <br/>
 
 **Solution**
-
 
 ...TO DO
 
@@ -344,11 +330,11 @@ def main():
 
 fix the following issues:
 
-* Main is never called
-* Starts at 0 instead of 1
-* Prints “fizz” and “buzz” on separate lines for multiples of 15
-* Prints “fizz” for multiples of 5
-* Uses a hard-coded argument of 10 instead of taking a command-line argument
+- Main is never called
+- Starts at 0 instead of 1
+- Prints “fizz” and “buzz” on separate lines for multiples of 15
+- Prints “fizz” for multiples of 5
+- Uses a hard-coded argument of 10 instead of taking a command-line argument
 
 <br/>
 
@@ -357,10 +343,12 @@ fix the following issues:
 1. `G` move to the bottom of the file
 2. `o` create a new line
 3. insert code:
+
 ```py
 if __name__ == '__main__':
     main()
 ```
+
 4. `/limit` search for `limit`, then press `n` to move to the next match
 2. `i` enter `insert` mode, and change `limit` to `1, limit + 1`
 3. `/fizz` search for `fizz`, then press `n` to move to the next match.
@@ -370,8 +358,8 @@ if __name__ == '__main__':
 7. `gg` move the cursor to the top of the file, `O` create the new line above，and insert `import sys`
 8. `/10` find `10`, then `ci(` change the text in `(`, type `int(sys.argv[1])`
 
-
 The final result:
+
 ```py
 import sys
 
@@ -391,13 +379,11 @@ if __name__ == '__main__':
     main()
 ```
 
-
 ---
 
 **Problem4**
 
 (Advanced) Convert XML to JSON ([example file](https://missing.csail.mit.edu/2020/files/example-data.xml)) using Vim macros. Try to do this on your own, but you can look at the macros section above if you get stuck.
-
 
 <br/>
 

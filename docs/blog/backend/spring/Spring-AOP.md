@@ -10,18 +10,16 @@ categories:
 
 # Spring AOP
 
-
 **AOP** 切点表达式和使用以及基于 **JDK** 和 **CGLIB** 的动态代理类关系：
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/29/17328624708126.jpg)
-
 
 `Joinpoint`，织入点，指需要执行代理操作的某个类的某个方法(仅支持方法级别的`JoinPoint`)；`Pointcut`是`JoinPoint`的表述方式，能捕获`JoinPoint`。
 
 最常用的切点表达式是`AspectJ`的切点表达式。
 
-* 需要匹配类，定义`ClassFilter`接口
-* 匹配方法，定义`MethodMatcher`接口
+- 需要匹配类，定义`ClassFilter`接口
+- 匹配方法，定义`MethodMatcher`接口
 
 `PointCut`需要同时匹配类和方法，包含`ClassFilter`和`MethodMatcher`, `AspectJExpressionPointcut`是支持`AspectJ`切点表达式的`PointCut`实现，简单实现仅支持`execution`函数。
 
@@ -29,17 +27,15 @@ categories:
 
 `AdvisedSupport` 的主要功能是：
 
-1.	存储 AOP 配置元信息：
-    * 目标对象（被代理对象）。
-    * 代理的接口列表。
-    * 应用的拦截器链或通知（Advices）。
-2.	管理代理行为：
-    * 决定代理是 JDK 动态代理还是 CGLIB 动态代理。
-    * 负责控制代理对象的生命周期。
-3.	支持运行时动态修改：
-    * 可以在运行时动态添加或移除通知（Advice）。
-
-
+1. 存储 AOP 配置元信息：
+    - 目标对象（被代理对象）。
+    - 代理的接口列表。
+    - 应用的拦截器链或通知（Advices）。
+2. 管理代理行为：
+    - 决定代理是 JDK 动态代理还是 CGLIB 动态代理。
+    - 负责控制代理对象的生命周期。
+3. 支持运行时动态修改：
+    - 可以在运行时动态添加或移除通知（Advice）。
 
 ## JDK动态代理
 
@@ -48,7 +44,6 @@ categories:
 `TargetSource`，被代理对象的封装。
 
 `MethodInterceptor`，方法拦截器，是`AOP Alliance`的"公民"，顾名思义，可以拦截方法，可在被代理执行的方法前后增加代理行为。
-
 
 <details>
 
@@ -89,8 +84,6 @@ public class WorldServiceInterceptor implements MethodInterceptor {
 
 </details>
 
-
-
 ### 1. JDK动态代理源码
 
 代码位置：`com.iflove.simplespring.aop.framework.JdkDynamicAopProxy`
@@ -115,11 +108,9 @@ public Object invoke(Object proxy, Method method, Object[] args) throws Throwabl
 重点关注以上两个核心方法
 
 1. `getProxy()`
-    * `getProxy()` 方法用于创建代理对象，返回一个基于 Java 动态代理的代理实例。
+    - `getProxy()` 方法用于创建代理对象，返回一个基于 Java 动态代理的代理实例。
 2. `invoke()`
-    * `invoke()` 方法用于处理代理对象上的方法调用，判断是否需要应用代理逻辑。如果方法匹配切面条件，则执行增强逻辑；否则直接调用目标方法。
-
-    
+    - `invoke()` 方法用于处理代理对象上的方法调用，判断是否需要应用代理逻辑。如果方法匹配切面条件，则执行增强逻辑；否则直接调用目标方法。
 
 ### 2. 运行测试代码
 
@@ -142,14 +133,13 @@ java -jar arthas-boot.jar
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/26/17350138436503.jpg)
 
-
 输入
+
 ```bash
 jad com.sun.proxy.$Proxy2
 ```
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/26/17350141712400.jpg)
-
 
 获得代理类信息如下：
 
@@ -253,10 +243,8 @@ implements WorldService {
 
 上述信息印证了一个重要的概念，即：
 
-!!!知识点
+!!!知识点  
     **JDK 动态代理生成的代理类和代理对象为兄弟关系，需要一个共同的接口**
-
-
 
 接下来看代理类实现的 `explode` 方法
 
@@ -304,7 +292,6 @@ public static Object newProxyInstance(ClassLoader loader,
 
 ---
 
-
 最后再来看 `invoke` 方法
 
 ```java
@@ -321,19 +308,17 @@ public Object invoke(Object proxy, Method method, Object[] args) throws Throwabl
 
 核心逻辑如下：
 
-1.	方法匹配：
-    * 调用 `advised.getMethodMatcher().matches(...)` 判断当前方法是否符合切面条件。
-    * 如果匹配，执行代理逻辑；否则直接调用目标方法。
+1. 方法匹配：
+    - 调用 `advised.getMethodMatcher().matches(...)` 判断当前方法是否符合切面条件。
+    - 如果匹配，执行代理逻辑；否则直接调用目标方法。
     
-2.	代理逻辑：
-    * 获取 `MethodInterceptor` 对象，封装了增强逻辑。
-    * 调用 `MethodInterceptor.invoke(...)`，传入一个`ReflectiveMethodInvocation` 对象。
-    * `ReflectiveMethodInvocation` 是 `Spring AOP` 的核心类，用于封装方法调用的上下文（目标对象、方法、参数等）。
+2. 代理逻辑：
+    - 获取 `MethodInterceptor` 对象，封装了增强逻辑。
+    - 调用 `MethodInterceptor.invoke(...)`，传入一个`ReflectiveMethodInvocation` 对象。
+    - `ReflectiveMethodInvocation` 是 `Spring AOP` 的核心类，用于封装方法调用的上下文（目标对象、方法、参数等）。
     
-3.	直接调用目标方法：
-    * 如果方法不匹配代理条件，直接调用目标对象的方法，使用反射机制。
-
-
+3. 直接调用目标方法：
+    - 如果方法不匹配代理条件，直接调用目标对象的方法，使用反射机制。
 
 ## Cglib 动态代理
 
@@ -341,9 +326,8 @@ public Object invoke(Object proxy, Method method, Object[] args) throws Throwabl
 
 基于CGLIB的动态代理能在运行期间**动态构建字节码的class文件**，为类生成子类，因此被代理类**不需要继承自任何接口**。
 
-!!!重要概念
+!!!重要概念  
     **cglib** 不要求目标实现接口，它生成的**代理类是目标的子类**，因此代理与目标之间是**子父**关系
-
 
 <details>
 
@@ -384,9 +368,7 @@ public void testCglibDynamicProxy2() throws Exception {
 
 </details>
 
-
 运行上述代码均无报错，即验证了 **代理与目标之间是子父关系** 
-
 
 ### 1. Cglib 动态代理源码
 
@@ -450,8 +432,8 @@ public class CglibAopProxy implements AopProxy {
 
 与 `JDK` 动态代理不同的是，`Cglib` 动态代理拥有两个特别的内部类 `DynamicAdvisedInterceptor` 和 `CglibMethodInvocation` 
 
- * `CglibMethodInvocation` 扩展 `ReflectiveMethodInvocation` 类以支持 `CGLIB` 代理
- * 主要是覆盖了 `invokeJoinpoint()` 方法，如果有 `MethodProxy` 对象,则通过调用 `MethodProxy#invoke` 方法，否则通过反射调用
+ - `CglibMethodInvocation` 扩展 `ReflectiveMethodInvocation` 类以支持 `CGLIB` 代理
+ - 主要是覆盖了 `invokeJoinpoint()` 方法，如果有 `MethodProxy` 对象,则通过调用 `MethodProxy#invoke` 方法，否则通过反射调用
 
 --- 
 
@@ -531,15 +513,14 @@ private static class FastClassInfo {
 }
 ```
 
-* `F1` 表示已经创建的**代理类**，包含代理逻辑
-* `F2` 表示**原始类的方法封装**，加速原生类方法调用
+- `F1` 表示已经创建的**代理类**，包含代理逻辑
+- `F2` 表示**原始类的方法封装**，加速原生类方法调用
 
 无论是**代理类**还是**原生的类**, 在**创建代理、执行代理内部的一些方法以及调用一些值**的时候, 如果要使用到**原生类中的方法**的话，是需要通过**反射的方式**去执行的。
 
 可以往**极端**一点的方向思考，如果**原生类中被调用的方法非常多**的话，会导致 `java` 进行**频繁的反射**，而使用反射，又会导致 `JVM` 机制进行**反射的检查**，所以这样做是相当**牺牲性能**的。
 
 为了解决这个问题，`Cglib` 创建了一个 `MethodProxy` 类，将**原生类中所有需要代理的方法**存入这个类中，那么在需要使用的时候，**直接执行**即可，相当于一个**缓存**的作用，好处就是可以**提高性能**。
-
 
 <br/>
 
@@ -857,8 +838,8 @@ Factory {
     }
 }
 ```
-</details>
 
+</details>
 
 主要关注动态代理后的 `explode` 方法做了什么？
 
@@ -881,10 +862,7 @@ public final void explode() {
 
 即 `DynamicAdvisedInterceptor` 类的 `intercept` 方法，**执行动态代理的方法**
 
-
-
 ## AOP 代理工厂
-
 
 ### 1. 测试代码
 
@@ -929,17 +907,14 @@ public class ProxyFactory {
 
 注意到切换 `JDK` 和 `Cglib` 动态代理之间的关键是 `AdvisedSupport` 的 `proxyTargetClass` 参数
 
-* `proxyTargetClass` 为 `false` 代表使用 `JDK` 动态代理
-* `proxyTargetClass` 为 `true` 代表使用 `Cglib` 动态代理
+- `proxyTargetClass` 为 `false` 代表使用 `JDK` 动态代理
+- `proxyTargetClass` 为 `true` 代表使用 `Cglib` 动态代理
 
 而 `AdvisedSupport` 的 `proxyTargetClass` 参数 **默认值** 为 `false`，即默认使用 `JDK` 动态代理
-
-
 
 ## 几种常用的Advice：BeforeAdvice/AfterAdvice/AfterReturningAdvice/ThrowsAdvice...
 
 `Spring` 将 `AOP` 联盟中的 `Advice` 细化出各种类型的 `Advice`，常用的有`BeforeAdvice/AfterAdvice/AfterReturningAdvice/ThrowsAdvice`，我们可以通过扩展`MethodInterceptor`来实现。
-
 
 测试代码
 
@@ -952,7 +927,6 @@ public class WorldServiceBeforeAdvice implements MethodBeforeAdvice {
 	}
 }
 ```
-
 
 ```java
 @Test
@@ -968,7 +942,6 @@ public void testBeforeAdvice() throws Exception {
 ```
 
 简单来说，就是通过规范 `Interceptor` 分类，根据需要的**代理时机**选择对应的 `Advice` 和 `Interceptor` 即可，相对简单，不过多赘述
-
 
 ## Spring AOP 拦截器链
 
@@ -1062,7 +1035,6 @@ jdk动态代理可以分为**获取拦截器链，将拦截器统一封装成 `R
 
 接下来，对`advisorChainFactory`获取拦截器链进行解读。
 
-
 整体代码并不复杂，首先获取所有`Advisor`**(切面)**，通过`pointcutAdvisor.getPointcut().getClassFilter().matches(actualClass)`校验当前代理对象是否匹配该`Advisor`，再通过`pointcutAdvisor.getPointcut().getMethodMatcher()`校验**是否匹配**当前调用`method`。
 
 如果通过校验，则提取`advisor`中的`interceptors`增强，添加到`interceptorList`中。
@@ -1111,8 +1083,6 @@ public List<Object> getInterceptorsAndDynamicInterceptionAdvice(AdvisedSupport c
 		this.interceptorsAndDynamicMethodMatchers=chain;
 	}
 ```
-
-
 
 ##### 3.执行拦截器链
 
@@ -1193,7 +1163,6 @@ public class AfterReturningAdviceInterceptor implements MethodInterceptor, After
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/26/17350539252278.jpg)
 
-
 ### 测试
 
 ```java
@@ -1227,11 +1196,9 @@ public void testBeforeAdvice() throws Exception {
 }
 ```
 
-
 ## PointcutAdvisor：Pointcut和Advice的组合
 
 `Advisor`是包含一个`Pointcut`和一个`Advice`的组合，`Pointcut`用于捕获`JoinPoint`，`Advice`决定在`JoinPoint`执行某种操作。实现了一个支持`aspectj`表达式的`AspectJExpressionPointcutAdvisor`。
-
 
 ```java
 public class DynamicProxyTest {
@@ -1263,7 +1230,6 @@ public class DynamicProxyTest {
 }
 ```
 
-
 ## 动态代理融入Bean的生命周期
 
 `BeanPostProcessor`处理阶段可以修改和替换`bean`，正好可以在此阶段返回**代理对象替换原对象**。不过我们引入一种特殊的`BeanPostProcessor`——`InstantiationAwareBeanPostProcessor`，织入逻辑位于`BeanPostProcessor#postProcessAfterInitialization`，具体实现查看`AbstractAutowireCapableBeanFactory#resolveBeforeInstantiation`。
@@ -1273,7 +1239,6 @@ public class DynamicProxyTest {
 **至此，bean的生命周期如下** 
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/27/17353103588346.jpg)
-
 
 1. 读取xml文件
 2. load beandefinition
@@ -1294,12 +1259,11 @@ public class DynamicProxyTest {
 13. 执行bean的销毁方法(singleton）
     1. DisposableBean#destroy
     2. 自定义销毁方法destroy-metod
-    
- 
+
 ## @EnableAspectJAutoProxy
- 
+
 在`spring`中我们要**开启自动代理**的功能需要在**配置类**添加如下的注解：
- 
+
 ```java
 @EnableAspectJAutoProxy
 public class AppConfiguration {}
@@ -1310,9 +1274,9 @@ public class AppConfiguration {}
 ```xml
 <aop:aspectj-autoproxy />
 ```
- 
+
 注解源码如下：
- 
+
 ```java
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
@@ -1326,26 +1290,25 @@ public @interface EnableAspectJAutoProxy {
 
 }
 ```
- 
+
 在该注解中我们可以配置`proxyTargetClass`和`exposeProxy`两个重要属性，**它们分别控制着Spring如何创建和使用代理对象来实现切面功能。**
 
 ### **proxyTargetClass**
 
 用于指示`Spring AOP`应使用**哪种类型的代理**来织入切面：
 
-* `proxyTargetClass = true`: 指示Spring使用`CGLIB`库生成基于类的代理。这意味着Spring会**创建目标类的子类**，并在其中插入切面逻辑。这种代理方式可以拦截类的所有方法（包括非接口方法和final方法），适用于那些**没有接口或者需要对非公共方法进行增强**的场景。
-
-* `proxyTargetClass = false 或未指定（默认情况）`: Spring将使用标准的**JDK动态代理**技术，即创建一个实现了目标类所有接口的新代理对象，并在代理对象的方法调用中插入切面逻辑。这种方式仅能用于**代理实现了至少一个接口的目标类，且只能拦截通过接口声明的方法**。
+- `proxyTargetClass = true`: 指示Spring使用`CGLIB`库生成基于类的代理。这意味着Spring会**创建目标类的子类**，并在其中插入切面逻辑。这种代理方式可以拦截类的所有方法（包括非接口方法和final方法），适用于那些**没有接口或者需要对非公共方法进行增强**的场景。
+- `proxyTargetClass = false 或未指定（默认情况）`: Spring将使用标准的**JDK动态代理**技术，即创建一个实现了目标类所有接口的新代理对象，并在代理对象的方法调用中插入切面逻辑。这种方式仅能用于**代理实现了至少一个接口的目标类，且只能拦截通过接口声明的方法**。
 
 ### **exposeProxy**
 
 用于控制代理对象是否应被公开给被代理对象的内部方法访问：
 
-* `exposeProxy = true`: 当设置为**true**时，`Spring`会确保在**AOP代理对象上下文**中，通过 `AopContext.currentProxy()` 方法能够获取到**当前正在执行的代理对象**。
-这对于在被代理对象内部需要调用自身其他方法，并希望这些内部方法调用也能触发切面逻辑的情况非常有用。
+- `exposeProxy = true`: 当设置为**true**时，`Spring`会确保在**AOP代理对象上下文**中，通过 `AopContext.currentProxy()` 方法能够获取到**当前正在执行的代理对象**。  
+这对于在被代理对象内部需要调用自身其他方法，并希望这些内部方法调用也能触发切面逻辑的情况非常有用。  
 例如，一个服务类中的某个方法可能需要调用另一个**私有**或**受保护**的方法，而这两个方法都被同一个切面所增强。在这种情况下，若不暴露代理，内部方法调用将不会经过切面处理；而暴露代理后，可以通过 `AopContext.currentProxy().methodToCall()` 的方式确保内部方法调用也得到切面的拦截。
 
-* `exposeProxy = false 或未指定（默认情况）`： 默认情况下，`Spring`不会特别暴露代理对象，因此在被代理对象内部直接通过 `this` 调用其他方法时，这些方法调用将**不会触发切面逻辑**，而是直接调用目标类的原始方法。
+- `exposeProxy = false 或未指定（默认情况）`： 默认情况下，`Spring`不会特别暴露代理对象，因此在被代理对象内部直接通过 `this` 调用其他方法时，这些方法调用将**不会触发切面逻辑**，而是直接调用目标类的原始方法。
 
 关于 **exposeProxy**，来看一个业务中的实际使用场景 *(我的 IM 项目中用到了)*
 
@@ -1393,25 +1356,22 @@ public RestBean<Void> apply(Long uid, FriendApplyReq request) {
     return RestBean.success();
 }
 ``` 
- 
+
 主要关注业务中处理 **如果申请记录(对方->我)存在，则直接同意申请** 的处理逻辑 
 
 这一行代码的核心是确保事务和其他切面逻辑（如 `@Transactional` 和 `@RedissonLock`）在调用 `applyApprove` 方法时能够生效。
 
 为什么需要通过代理调用？
 
-* **事务传播问题**：
-    * 在 Spring 中，如果类中的一个方法**直接调用**同类的另一个方法（比如 `apply` 调用 `this.applyApprove`），Spring 的**动态代理不会生效**。
-    * 这会导致 `applyApprove` 方法上的事务注解 `@Transactional` 被忽略，**事务功能失效**。
+- **事务传播问题**：
+    - 在 Spring 中，如果类中的一个方法**直接调用**同类的另一个方法（比如 `apply` 调用 `this.applyApprove`），Spring 的**动态代理不会生效**。
+    - 这会导致 `applyApprove` 方法上的事务注解 `@Transactional` 被忽略，**事务功能失效**。
+- 代理解决方案：
+    - 使用 `AopContext.currentProxy()` 获取当前类的**代理对象**。
+    - 通过**代理对象**调用方法，保证事务和切面逻辑生效。
 
-* 代理解决方案：
-    * 使用 `AopContext.currentProxy()` 获取当前类的**代理对象**。
-    * 通过**代理对象**调用方法，保证事务和切面逻辑生效。
-
- 
 ## AOP 生成代理的三个时机
 
- 
 ### **实例化前(BeforeInstantiation)**
 
 讲道理一般不用
@@ -1449,7 +1409,6 @@ protected Object resolveBeforeInstantiation(String beanName, RootBeanDefinition 
 }
 ```
 
-
 ```java
 @Override
 public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) {
@@ -1484,17 +1443,13 @@ public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName
 }
 ```
 
-
-
 ### **初始化后(AfterInitialization)**
-
 
 具体时机在 `Bean` 实例化之后，填充属性完毕之后，在调用 `initializeBean` 方法中的子方法 `applyBeanPostProcessorsAfterInitialization`, 即 **BeanPostProcessor的后置方法**
 
 原理可以看以下这个类图，AOP代理的核心类 `AutoProxyCreator` 均实现了 `BeanPostProcessor` 这个接口
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/12/28/17353735113073.jpg)
-
 
 ```java
 /**
@@ -1514,7 +1469,6 @@ public Object postProcessAfterInitialization(@Nullable Object bean, String beanN
 	return bean;
 }
 ```
-
 
 ### **循坏依赖**
 
@@ -1548,6 +1502,3 @@ public Object getEarlyBeanReference(Object bean, String beanName) {
     return wrapIfNecessary(bean, beanName);
 }
 ```
-
-
-

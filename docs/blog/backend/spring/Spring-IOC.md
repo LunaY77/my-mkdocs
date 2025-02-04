@@ -8,11 +8,10 @@ categories:
   - java
 ---
 
-
 # Spring IOC 容器
 
-
 ## 1. 什么是 IOC？
+
 IOC（Inversion of Control，控制反转）是一种设计思想，广泛应用于现代框架中，特别是 Spring。IOC 的核心理念是通过容器管理对象的创建和依赖关系，从而实现应用程序的解耦。
 
 ### 1.1 控制与反转
@@ -21,6 +20,7 @@ IOC（Inversion of Control，控制反转）是一种设计思想，广泛应用
 - **反转**：反转的是对象创建的控制权，由程序员手动创建对象，转变为由容器自动创建和管理。
 
 ### 1.2 依赖注入（DI）
+
 IOC 的具体实现方式是 **依赖注入（Dependency Injection, DI）**：
 
 - **依赖**：指一个对象需要另一个对象来完成其功能。
@@ -29,7 +29,9 @@ IOC 的具体实现方式是 **依赖注入（Dependency Injection, DI）**：
 ---
 
 ## 2. 为什么需要 IOC？
+
 ### 2.1 传统开发中的问题
+
 在传统开发中，程序员需要自己手动创建和管理对象：
 
 - 对象之间的强耦合导致系统难以维护和扩展。
@@ -46,7 +48,9 @@ IOC 的具体实现方式是 **依赖注入（Dependency Injection, DI）**：
 ---
 
 ## 3. Spring IOC 容器的工作原理
+
 ### 3.1 容器的定义
+
 Spring 的 IOC 容器是一个 **Bean 工厂**：
 
 - 它是一个管理 Bean 定义和生命周期的框架。
@@ -69,13 +73,16 @@ Spring 的 IOC 容器是一个 **Bean 工厂**：
 ---
 
 ## 4. IOC 与依赖倒置原则（DIP）
+
 ### 4.1 什么是依赖倒置原则？
+
 **依赖倒置原则（Dependency Inversion Principle, DIP）** 是面向对象设计中的重要原则：
 
 - **高层模块不依赖于低层模块，而是依赖于抽象接口**。
 - **低层模块实现抽象接口**。
 
 ### 4.2 IOC 如何实现 DIP？
+
 Spring 的 IOC 容器天然支持依赖倒置原则：
 
 - 高层模块只依赖接口（抽象）。
@@ -85,7 +92,9 @@ Spring 的 IOC 容器天然支持依赖倒置原则：
 ---
 
 ## 5. 示例：从代码角度理解 IOC
+
 ### 5.1 传统实现
+
 ```java
 public class UserService {
     private UserRepository userRepository = new UserRepository(); // 手动创建对象
@@ -98,8 +107,8 @@ public class UserService {
 
 问题：
 
-* `UserService` 和 `UserRepository` 强耦合。
-* 更换 `UserRepository` 的实现时，需要修改代码。
+- `UserService` 和 `UserRepository` 强耦合。
+- 更换 `UserRepository` 的实现时，需要修改代码。
 
 ### 5.2 IOC 实现
 
@@ -135,11 +144,10 @@ public class UserService {
 }
 ```
 
-
 优势：
 
-* `UserService` 只依赖 `UserRepository` 接口，低耦合。
-* 替换实现时，只需更改配置，不需修改代码。
+- `UserService` 只依赖 `UserRepository` 接口，低耦合。
+- 替换实现时，只需更改配置，不需修改代码。
 
 ---
 
@@ -151,4 +159,3 @@ public class UserService {
 4. **测试方便**：通过注入 Mock 对象，便于单元测试。
 5. **性能优化**：通过单例模式减少内存抖动和 GC 压力。
 6. **可靠性**：启动时发现问题，提升应用的安全性。
-
