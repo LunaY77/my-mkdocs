@@ -125,7 +125,6 @@ A lesser known similar feature is `process substitution`, `<( CMD )` will execut
 
 This is useful when commands expect values to be passed by **file** instead of by `STDIN`. For example, `diff <(ls foo) <(ls bar)` will show differences between files in dirs `foo` and `bar`.
 
- 
  <br/>
 
 let’s see an **example** that showcases some of these features. 
@@ -308,7 +307,6 @@ uh...just look up the lecture notes
 !!!warning  
     I will write my own solution to the problem, If you want to solve those by yourself, please stop.
 
-    
 ---
 
 **Problem1**
