@@ -10,13 +10,13 @@
         <meta name="author" content="苍镜月">
       
       
-        <link rel="canonical" href="https://cangjingyue.top/blog/2024/11/12/%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3%E6%A8%A1%E7%89%88/">
+        <link rel="canonical" href="https://cangjingyue.top/blog/backend/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E6%B6%88%E6%81%AF%E7%AB%AF%E5%88%B0%E7%AB%AF%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7%E4%B8%8E%E5%8F%AF%E9%9D%A0%E6%80%A7/">
       
       
-        <link rel="prev" href="../minio-%E9%83%A8%E7%BD%B2/">
+        <link rel="prev" href="../%E4%BB%8E%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%90%86%E8%A7%A3Pull%E4%B8%8EPush%E6%A8%A1%E5%9E%8B%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91/">
       
       
-        <link rel="next" href="../dijkstra%E7%AE%97%E6%B3%95/">
+        <link rel="next" href="../../../frontend/JavaScript/testJs/">
       
       
       <link rel="icon" href="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/23/106435907.jpeg">
@@ -24,14 +24,14 @@
     
     
       
-        <title>滑动窗口模版 - 苍镜月's docs</title>
+        <title>消息端到端的一致性与可靠性 - 苍镜月's docs</title>
       
     
     
-      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.8608ea7d.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.8608ea7d.min.css">
       
         
-        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,19 +50,19 @@
       
     
     
-      <link rel="stylesheet" href="../../../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../../../../stylesheets/link.css">
+      <link rel="stylesheet" href="../../../../stylesheets/link.css">
     
-      <link rel="stylesheet" href="../../../../../stylesheets/customize.css">
+      <link rel="stylesheet" href="../../../../stylesheets/customize.css">
     
-      <link rel="stylesheet" href="../../../../../stylesheets/editable-code.css">
+      <link rel="stylesheet" href="../../../../stylesheets/editable-code.css">
     
       <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css">
     
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.1.0/style.css">
     
-    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
   
@@ -79,7 +79,7 @@
     
     
     
-    <link rel="stylesheet" href="../../../../../assets/stylesheets/custom.00c04c01.min.css">
+    <link rel="stylesheet" href="../../../../assets/stylesheets/custom.00c04c01.min.css">
   
   </head>
   
@@ -99,6 +99,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#_1" class="md-skip">
+          跳转至
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -109,7 +114,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="页眉">
-    <a href="../../../../.." title="苍镜月&#39;s docs" class="md-header__button md-logo" aria-label="苍镜月's docs" data-md-component="logo">
+    <a href="../../../.." title="苍镜月&#39;s docs" class="md-header__button md-logo" aria-label="苍镜月's docs" data-md-component="logo">
       
   <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/23/106435907.jpeg" alt="logo">
 
@@ -128,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              滑动窗口模版
+              消息端到端的一致性与可靠性
             
           </span>
         </div>
@@ -284,7 +289,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../.." class="md-tabs__link">
+      <a href="../../../.." class="md-tabs__link">
         
   
     
@@ -301,7 +306,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../../tag/" class="md-tabs__link">
+      <a href="../../../../tag/" class="md-tabs__link">
         
   
     
@@ -316,13 +321,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../../" class="md-tabs__link">
           
   
     
@@ -338,17 +341,21 @@
         
   
   
+    
+  
   
     
     
       
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../../backend/Java/FrequencyControl/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../Java/FrequencyControl/" class="md-tabs__link">
           
   
     
@@ -377,7 +384,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../frontend/JavaScript/testJs/" class="md-tabs__link">
+        <a href="../../../frontend/JavaScript/testJs/" class="md-tabs__link">
           
   
     
@@ -400,7 +407,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../about/link/" class="md-tabs__link">
+        <a href="../../../../about/link/" class="md-tabs__link">
           
   
     
@@ -420,7 +427,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../../../about/me/" class="md-tabs__link">
+        <a href="../../../../about/me/" class="md-tabs__link">
           
   
     
@@ -444,9 +451,7 @@
           
             
               
-                
-              
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -457,7 +462,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../../.." title="苍镜月&#39;s docs" class="md-nav__button md-logo" aria-label="苍镜月's docs" data-md-component="logo">
+    <a href="../../../.." title="苍镜月&#39;s docs" class="md-nav__button md-logo" aria-label="苍镜月's docs" data-md-component="logo">
       
   <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/23/106435907.jpeg" alt="logo">
 
@@ -486,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../.." class="md-nav__link">
+      <a href="../../../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -507,7 +512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../tag/" class="md-nav__link">
+      <a href="../../../../tag/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -525,8 +530,6 @@
       
   
   
-    
-  
   
   
     
@@ -543,24 +546,23 @@
     
     
       
-        
-        
-      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../../" class="md-nav__link ">
+            <a href="../../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -572,13 +574,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Blogger
@@ -605,13 +607,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -620,7 +619,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
         
           
-          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -648,7 +647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2025/" class="md-nav__link">
+      <a href="../../../archive/2025/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -672,7 +671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../archive/2024/" class="md-nav__link">
+      <a href="../../../archive/2024/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -723,13 +722,10 @@
       
       
         
-          
-          
-        
       
     
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
@@ -738,7 +734,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
         
           
-          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="">
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -766,7 +762,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/algorithm/" class="md-nav__link">
+      <a href="../../../category/algorithm/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -790,7 +786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/cs/" class="md-nav__link">
+      <a href="../../../category/cs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -814,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/hello-world/" class="md-nav__link">
+      <a href="../../../category/hello-world/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -838,7 +834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/opensource/" class="md-nav__link">
+      <a href="../../../category/opensource/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -862,7 +858,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/docker/" class="md-nav__link">
+      <a href="../../../category/docker/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -886,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/linux/" class="md-nav__link">
+      <a href="../../../category/linux/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -910,7 +906,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../category/tools/" class="md-nav__link">
+      <a href="../../../category/tools/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -944,8 +940,10 @@
       
   
   
+    
   
   
+  
     
     
       
@@ -958,21 +956,22 @@
     
     
       
+        
+        
+      
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
-        
-          
-          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -984,7 +983,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4">
             <span class="md-nav__icon md-icon"></span>
             后端
@@ -1007,10 +1006,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1019,7 +1021,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
         
           
-          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1045,7 +1047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/Java/FrequencyControl/" class="md-nav__link">
+      <a href="../../Java/FrequencyControl/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1094,10 +1096,13 @@
       
       
         
+          
+          
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
@@ -1106,7 +1111,7 @@
         <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
         
           
-          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1132,7 +1137,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/spring/Spring-AOP/" class="md-nav__link">
+      <a href="../../spring/Spring-AOP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1154,7 +1159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/spring/Spring-IOC/" class="md-nav__link">
+      <a href="../../spring/Spring-IOC/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1176,7 +1181,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/spring/Spring-MVC/" class="md-nav__link">
+      <a href="../../spring/Spring-MVC/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1198,7 +1203,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/spring/Spring-tx/" class="md-nav__link">
+      <a href="../../spring/Spring-tx/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1220,7 +1225,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/spring/%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/" class="md-nav__link">
+      <a href="../../spring/%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1291,7 +1296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/spring/simple-spring/simple-spring/" class="md-nav__link">
+      <a href="../../spring/simple-spring/simple-spring/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1313,7 +1318,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/spring/simple-spring/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" class="md-nav__link">
+      <a href="../../spring/simple-spring/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1348,8 +1353,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -1361,20 +1368,21 @@
     
       
       
-        
-      
-    
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-        
         
           
+          
         
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_3" checked>
         
           
-          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1386,7 +1394,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_4_3">
             <span class="md-nav__icon md-icon"></span>
             架构设计
@@ -1400,7 +1408,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../backend/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E4%BB%8E%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%90%86%E8%A7%A3Pull%E4%B8%8EPush%E6%A8%A1%E5%9E%8B%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91/" class="md-nav__link">
+      <a href="../%E4%BB%8E%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%90%86%E8%A7%A3Pull%E4%B8%8EPush%E6%A8%A1%E5%9E%8B%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1419,10 +1427,31 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../../../backend/%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1/%E6%B6%88%E6%81%AF%E7%AB%AF%E5%88%B0%E7%AB%AF%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7%E4%B8%8E%E5%8F%AF%E9%9D%A0%E6%80%A7/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    消息端到端的一致性与可靠性
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1432,6 +1461,113 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景介绍
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      方案选型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="方案选型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 消息及时: 服务端实时接收消息并实时在线发送。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ack" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 消息可达: 超时重试，ACK确认。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-seqidseqid" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 消息幂等: 分配seqID，服务端存储seqID。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-seqid" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 消息有序: seqID可比较,接收端能按发送端的顺序对消息排序。
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      上行消息
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息转发
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      下行消息
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1555,7 +1691,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../frontend/JavaScript/testJs/" class="md-nav__link">
+      <a href="../../../frontend/JavaScript/testJs/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1624,7 +1760,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../frontend/JavaScript/QuickDive/BasicGrammar/" class="md-nav__link">
+      <a href="../../../frontend/JavaScript/QuickDive/BasicGrammar/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1716,7 +1852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/link/" class="md-nav__link">
+      <a href="../../../../about/link/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1792,7 +1928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../../about/me/" class="md-nav__link">
+      <a href="../../../../about/me/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1829,8 +1965,6 @@
             
             
               
-                
-              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -1840,6 +1974,103 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      背景介绍
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      方案选型
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="方案选型">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. 消息及时: 服务端实时接收消息并实时在线发送。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-ack" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. 消息可达: 超时重试，ACK确认。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-seqidseqid" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. 消息幂等: 分配seqID，服务端存储seqID。
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-seqid" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. 消息有序: seqID可比较,接收端能按发送端的顺序对消息排序。
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      上行消息
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      消息转发
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      下行消息
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1848,110 +2079,24 @@
             
           
           
-  <div class="md-content md-content--post" data-md-component="content">
-    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
-      <div class="md-sidebar__scrollwrap">
-        <div class="md-sidebar__inner md-post">
-          <nav class="md-nav md-nav--primary">
-            <div class="md-post__back">
-              <div class="md-nav__title md-nav__container">
-                <a href="../../../../" class="md-nav__link">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
-                  <span class="md-ellipsis">
-                    回到主页
-                  </span>
-                </a>
-              </div>
-            </div>
-            
-              <div class="md-post__authors md-typeset">
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
                 
-                  <div class="md-profile md-post__profile">
-                    <span class="md-author md-author--long">
-                      <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/23/106435907.jpeg" alt="苍镜月">
-                    </span>
-                    <span class="md-profile__description">
-                      <strong>
-                        
-                          苍镜月
-                        
-                      </strong>
-                      <br>
-                      相信的心就是你的魔法！
-                    </span>
-                  </div>
-                
-              </div>
-            
-            <ul class="md-post__meta md-nav__list">
-              <li class="md-nav__item md-nav__item--section">
-                <div class="md-post__title">
-                  <span class="md-ellipsis">
-                    元数据
-                  </span>
-                </div>
-                <nav class="md-nav">
-                  <ul class="md-nav__list">
-                    <li class="md-nav__item">
-                      <div class="md-nav__link">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2024-11-12 00:00:00+00:00" class="md-ellipsis">2024年11月12日星期二</time>
-                      </div>
-                    </li>
-                    
-                    
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
-                          <span class="md-ellipsis">
-                            分类于
-                            
-                              <a href="../../../../category/algorithm/">Algorithm</a></span>
-                        </div>
-                      </li>
-                    
-                    
-                      
-                      <li class="md-nav__item">
-                        <div class="md-nav__link">
-                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
-                          <span class="md-ellipsis">
-                            
-                              需要 1 分钟阅读时间
-                            
-                          </span>
-                        </div>
-                      </li>
-                    
-                  </ul>
-                </nav>
-              </li>
-            </ul>
-            
-          </nav>
-          
-        </div>
-      </div>
-    </div>
-    <article class="md-content__inner md-typeset">
-      
-        
-  
-
+                  
 
   <nav class="md-tags" >
     
       
       
       
-        <a href="../../../../../tag/#tag:algorithm" class="md-tag">Algorithm</a>
+        <a href="../../../../tag/#tag:architecture--design" class="md-tag">Architecture & Design</a>
       
     
   </nav>
 
 
   
-    <a href="https://github.com/LunaY77/my-mkdocs.git/edit/main/docs/blog/posts/algorithm/SlidingWindow.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/LunaY77/my-mkdocs.git/edit/main/docs/blog/backend/架构设计/消息端到端的一致性与可靠性.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -1960,96 +2105,344 @@
     
       
     
-    <a href="https://github.com/LunaY77/my-mkdocs.git/raw/main/docs/blog/posts/algorithm/SlidingWindow.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/LunaY77/my-mkdocs.git/raw/main/docs/blog/backend/架构设计/消息端到端的一致性与可靠性.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-  <h1>滑动窗口模版</h1>
-
+<h1 id="_1">消息端到端的一致性与可靠性<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 21 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 36 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 1 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 4688 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 3 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 16 分钟</p>
 </div>
-<p>统一模版
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
-<span class="normal"><a href="#__codelineno-0-2">2</a></span>
-<span class="normal"><a href="#__codelineno-0-3">3</a></span>
-<span class="normal"><a href="#__codelineno-0-4">4</a></span>
-<span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span>
-<span class="normal"><a href="#__codelineno-0-7">7</a></span>
-<span class="normal"><a href="#__codelineno-0-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="c1">//外层循环扩展右边界，内层循环扩展左边界</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">l</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">n</span><span class="w"> </span><span class="p">;</span><span class="w"> </span><span class="n">r</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">        </span><span class="c1">//当前考虑的元素</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">l</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="n">r</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">check</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="c1">//区间[left,right]不符合题意</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">        </span><span class="c1">//扩展左边界</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7"></a><span class="w">    </span><span class="c1">//区间[left,right]符合题意，统计相关信息</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div></p>
-<p><br/>
-<br/></p>
-<p>模版题：<a href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/?envType=study-plan-v2&amp;envId=top-100-liked">3. 无重复字符的子串</a></p>
-<p>Java题解
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-1-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-1-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-1-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-1-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span>
-<span class="normal"><a href="#__codelineno-1-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">class</span> <span class="nc">Solution</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="nf">lengthOfLongestSubstring</span><span class="p">(</span><span class="n">String</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">        </span><span class="kt">char</span><span class="o">[]</span><span class="w"> </span><span class="n">ss</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">toCharArray</span><span class="p">();</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Character</span><span class="o">&gt;</span><span class="w"> </span><span class="n">set</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">HashSet</span><span class="o">&lt;&gt;</span><span class="p">();</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">s</span><span class="p">.</span><span class="na">length</span><span class="p">();</span><span class="w"> </span><span class="n">right</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">            </span><span class="kt">char</span><span class="w"> </span><span class="n">ch</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">ss</span><span class="o">[</span><span class="n">right</span><span class="o">]</span><span class="p">;</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">            </span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="n">set</span><span class="p">.</span><span class="na">contains</span><span class="p">(</span><span class="n">ch</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">                </span><span class="n">set</span><span class="p">.</span><span class="na">remove</span><span class="p">(</span><span class="n">ss</span><span class="o">[</span><span class="n">left</span><span class="o">]</span><span class="p">);</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">                </span><span class="n">left</span><span class="o">++</span><span class="p">;</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="w">            </span><span class="p">}</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">            </span><span class="n">set</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="n">ss</span><span class="o">[</span><span class="n">right</span><span class="o">]</span><span class="p">);</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="w">            </span><span class="n">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Math</span><span class="p">.</span><span class="na">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="w"> </span><span class="n">right</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">left</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">);</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">res</span><span class="p">;</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div></p>
-<p>python题解
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-2-10">10</a></span>
-<span class="normal"><a href="#__codelineno-2-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">class</span><span class="w"> </span><span class="nc">Solution</span><span class="p">:</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a>    <span class="k">def</span><span class="w"> </span><span class="nf">lengthOfLongestSubstring</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>        <span class="n">x</span> <span class="o">=</span> <span class="nb">set</span><span class="p">()</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a>        <span class="n">res</span><span class="p">,</span> <span class="n">left</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5"></a>        <span class="k">for</span> <span class="n">right</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">s</span><span class="p">)):</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6"></a>            <span class="k">while</span> <span class="n">s</span><span class="p">[</span><span class="n">right</span><span class="p">]</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7"></a>                <span class="n">x</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">left</span><span class="p">])</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8"></a>                <span class="n">left</span> <span class="o">+=</span> <span class="mi">1</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9"></a>            <span class="n">x</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="n">right</span><span class="p">])</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10"></a>            <span class="n">res</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span> <span class="n">right</span> <span class="o">-</span> <span class="n">left</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11"></a>        <span class="k">return</span> <span class="n">res</span>
-</code></pre></div></td></tr></table></div></p>
+<h2 id="_2">背景介绍<a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><strong>可靠性</strong>: 消息一旦显示发送成功就必定送达到对端</p>
+</li>
+<li>
+<p><strong>一致性</strong>:任意时刻消息保证与发送端顺序一致。</p>
+</li>
+</ul>
+<p>消息<strong>可靠与一致</strong>对于IM来说，就是指: <strong>可达有序,不重不漏</strong>。</p>
+<p>设计IM必须具有<a href="https://blog.csdn.net/do_best_/article/details/79755904">端对端的设计思维</a>，底层对可靠性的保证仅能保证底层的可靠，而不能保证上层的可靠, 底层的可靠仅是减小了发生故障的概率: 底层可靠不等于上层可靠，同理: 底层一致不等于上层一致</p>
+<p>消息的端到端可靠性 = 上行消息可靠 + 服务端业务可靠 + 下行消息可靠</p>
+<p>消息的端到端一致性 = 上行消息一致 + 服务端业务一致 + 下行消息一致</p>
+<p>为论述方便，下文中提到的_<strong>消息可用</strong><em>指的是</em><strong>IM消息可用性</strong>_, 包含<strong>消息可靠性和一致性</strong>两个方面</p>
+<hr />
+<p>TCP其实自带<strong>超时重传</strong>机制，保证了消息可靠性的传输，那么为什么我们还要再去讨论和实现 <strong>消息可用</strong> 呢？</p>
+<p><strong>TCP究竟帮助我们做到哪一步?</strong></p>
+<ol>
+<li>
+<p>客户端A 发送 msg1和msg2两个消息给到服务端。</p>
+</li>
+<li>
+<p>msg1和msg2在一个tcp链接上到达服务端。</p>
+</li>
+</ol>
+<p><img alt="image.png" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250220105049.png" /></p>
+<p>理论上来说，msg1 和 msg2 是遵循顺序从客户端 A 发送到服务端的，似乎消息是一定收到的，但是这其实是一个<strong>端到端可靠性</strong>的问题，<em><strong>TCP 作为传输层协议，只能说消息可靠到达了传输层，但是不能说消息可靠到达了业务层</strong></em>。</p>
+<p><strong>问题</strong></p>
+<ol>
+<li>
+<p>在传递给业务层时服务端进程崩溃，但客户端A认为已经送达，服务端业务层无感知, 自然无法发送到客户端 B，因此<strong>消息丢失</strong>。</p>
+</li>
+<li>
+<p>msg1和msg2到达应用层, 解析后交由两个线程处理, 可能msg2 消息体小一些，msg1 消息体大一些，导致了m2 先解析完毕，落表后先发送给客户端 B, 造成<strong>消息乱序</strong>。</p>
+</li>
+<li>
+<p>msg1消息存储失败，msg2消息存储成功先发送给了客户端B，造成<strong>丢失且乱序</strong>。</p>
+</li>
+</ol>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>洞见: TCP/UDP是双方通信 (本质上是 C/S 模式)，而IM本质上是三方通信。</p>
+</div>
+<p><strong>技术挑战在哪里?</strong></p>
+<ol>
+<li>
+<p><strong>三方通信</strong>，网络层面无法保证消息必达。</p>
+</li>
+<li>
+<p>没有<strong>全局时钟</strong>，确定唯一顺序，且是符合因果顺序的。</p>
+</li>
+<li>
+<p><strong>多客户端发送消息/多服务端接收消息/多线程多协程处理消息</strong>，顺序难以确定。</p>
+</li>
+</ol>
+<h2 id="_3">方案选型<a class="headerlink" href="#_3" title="Permanent link">&para;</a></h2>
+<p><strong>及时性,可达性,幂等性,时序性</strong></p>
+<h3 id="1">1. <strong>消息及时</strong>: 服务端实时接收消息并实时在线发送。<a class="headerlink" href="#1" title="Permanent link">&para;</a></h3>
+<p>及时性强调客户端双方进行端到端通信的过程中，要保证能够在 <strong>200ms</strong> 以内完成，也就是说，一旦一个功能超过 <strong>200ms</strong>，用户就会感知到<strong>延迟</strong>现象，但是对于一些<strong>大规模</strong>的场景，比如说_<strong>网络的高峰期，或者数据中心的负载比较高</strong>_，那么这个时候可以允许 <strong>p99 达到 1 秒</strong>，但是如果<strong>超过 1 秒</strong>，用户就会觉得收发消息非常<strong>卡顿</strong>。</p>
+<h3 id="2-ack">2. <strong>消息可达</strong>: 超时重试，ACK确认。<a class="headerlink" href="#2-ack" title="Permanent link">&para;</a></h3>
+<p>类似 TCP 协议通过 <strong>超时重试</strong> 和 <strong>ACK 确认</strong> 机制来保证消息的可靠传输，同样可以采取类似的机制来保证 <strong>消息可达性</strong>。</p>
+<p><img alt="image.png" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250220105229.png" /></p>
+<p><strong>消息传递流程</strong></p>
+<ol>
+<li>
+<p><strong>客户端 A 到服务端</strong>：</p>
+<ul>
+<li>
+<p>客户端 A 发送消息到服务端。</p>
+</li>
+<li>
+<p>服务端将消息 <strong>先落库</strong>（存入数据库）。这一步保证了即便服务端崩溃，消息也不会丢失。</p>
+</li>
+<li>
+<p>一旦消息成功写入数据库，服务端会返回 <strong>ACK 确认</strong> 给客户端 A，表示消息已成功接收，无需重发。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>消息传输失败的重试机制</strong>：</p>
+<ul>
+<li>
+<p>如果客户端 A 没有收到 <strong>ACK 确认</strong>，即说明消息未成功传输。此时，客户端 A 会启动 <strong>定时器</strong>，定期检查是否超时。</p>
+</li>
+<li>
+<p>如果超时，客户端 A 会重新发送消息。</p>
+</li>
+<li>
+<p>消息再次到达服务端后，服务端会再次写入数据库并返回 <strong>ACK</strong>。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>消息到达客户端 B 的流程</strong>：</p>
+<ul>
+<li>
+<p>服务端在成功存储消息后，开始将消息发送给客户端 B。</p>
+</li>
+<li>
+<p>客户端 B 在接收消息时也会执行 <strong>ACK 确认</strong>。</p>
+</li>
+<li>
+<p>如果客户端 B 发送的 <strong>ACK 丢失</strong>，则会触发服务端的 <strong>重发机制</strong>，重新发送消息，直到接收到 ACK 确认。</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>丢失 ACK 的情况</strong>：</p>
+<ul>
+<li>
+<p>如果客户端 B 收到消息后，ACK 确认丢失，客户端 B 会重新发送 ACK。</p>
+</li>
+<li>
+<p>服务端收到新的 ACK 后，会 <strong>取消定时器</strong>，停止重发消息。</p>
+</li>
+</ul>
+</li>
+</ol>
+<h3 id="5-seqidseqid">5. <strong>消息幂等</strong>: 分配seqID，服务端存储seqID。<a class="headerlink" href="#5-seqidseqid" title="Permanent link">&para;</a></h3>
+<h3 id="6-seqid">6. <strong>消息有序</strong>: seqID可比较,接收端能按发送端的顺序对消息排序。<a class="headerlink" href="#6-seqid" title="Permanent link">&para;</a></h3>
+<p><em><strong>消息幂等与消息有序的解决思路即为消息分配 ID，将在下文中详细讨论。</strong></em></p>
+<p>这里简要阐述 <strong>消息ID</strong> 的设计逻辑</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>connID/clientID/seqID/sessionID/msgID
+</code></pre></div></td></tr></table></div>
+<p>如果说仅仅使用一个 <code>messageID</code> 去实现各种功能，那么这个<strong>设计的复杂度是非常高</strong>的。</p>
+<p>为了降低设计的复杂度，<code>消息ID</code> 可以按照<strong>消息的不同用途</strong>拆分成多种 ID，虽然在存储空间上有一定的浪费，但是ID 设计方案的复杂度可以降低很多。</p>
+<ol>
+<li>
+<p><code>clientID</code>: <code>clientID</code> 是一个<strong>链接级别</strong>的 ID，当一个客户端与服务端建立链接后 <code>clientId</code> 被<strong>正式初始化为 0</strong>，强调的是<strong>客户端发送方消息的逻辑顺序</strong>，这个顺序由用户自己触发和维护，完全符合于用户，同时 id 大小与用户发送消息的先后有关。但是在群聊场景中，每一个用户的 <code>clientID</code> 是一个<strong>偏序</strong>，只能保证自身的有序性(<strong>局部有序</strong>)，而不是全局有序。所以在服务端中，<strong>不能</strong>用 <code>clientID</code> 做<strong>消息汇总和消息转发。</strong>因此我们需要一个全局有序的 ID，即 <code>seqID</code>。( 需要补充的是，为什么可以这样设计？原因在于 TCP 在 4 次挥手完成后，会有一个 <strong>2MSL</strong> 的 <strong>TIME_WAIT</strong>，保证上一个 TCP 链接的消息不会影响到下一个 TCP 链接，所以可以这么说，<code>clientID</code> 的<strong>生命周期是从客户端发送给服务端，服务端接收为止</strong>，这个 clientID 就没有意义了 )</p>
+</li>
+<li>
+<p><code>sessionID</code>：<code>sessionID</code> 即为会话 ID，用于<strong>标识客户端的会话</strong>。原因是在用户的聊天界面，可能存在多个会话，而消息的时间线排序，是对于每一个会话来说的，同时 <code>sessionID</code> 也起到帮助服务端找到消息所在的会话的作用。所以，客户端向服务端发送消息时要传递 <code>clientID</code> 和 <code>sessionID</code>。</p>
+</li>
+<li>
+<p><code>seqID</code> : <code>seqID</code> 是一个<strong>会话级别</strong>的 ID，本质上起到两个作用，一是保证<strong>唯一性</strong>从而实现幂等，二是保证<strong>有序性 (将客户端消息的顺序性传递到服务端)</strong>。 <code>seqID</code> 由<strong>服务端</strong>维护并分发，是每个会话所特有的，具体表现为，在 Redis 中以 <code>msg:{sessionID}:seqID - int64</code> 格式存储，其中 <code>sessionID</code> 为可变量， <code>value</code> 通过 <code>lua</code> 脚本 <code>incrby</code> 。如果 <code>seqID</code> 作为一个全局变量，可能会存在<strong>单点问题</strong>，Redis 的上限为<strong>十万</strong> <strong>QPS</strong>，而消息转发可能<strong>远大于 10 万 QPS</strong> 的量级，但是引入 <code>sessionID</code> 则可以显著降低问题发生的可能性，一种方案是根据 <code>sessionID</code> 做 Redis 集群分片，实现水平扩展。</p>
+</li>
+<li>
+<p><code>msgID</code> : <code>msgID</code> 是一个<strong>应用级别</strong>的 ID，作用是保证消息的<strong>全局唯一性</strong>。生成方案可以是雪花算法，也可以通过 <code>seqID + sessionID</code> 通过某种算法变换得到。</p>
+</li>
+</ol>
+<p>对 <code>seqID</code> 做一些补充。</p>
+<p><code>seqID</code> 的特点是<strong>万有一失的严格递增</strong>，处于严格递增和趋势递增的中间态。在一个较长的时间范围内，保证严格递增是非常困难的。通过 redis 举例阐述，redis 存在主从节点，并通过 pull 模式进行主从同步，此时从节点对主节点发起 pull，得到的 <code>seqID</code> 为 <code>1000</code>，在这个瞬间 master 节点异步地分配了一个 <code>seqID</code> 并自增到 <code>1001</code> 并且发生了单点故障，那么就会发生主从切换，这样的结果是出现了 2 次值为 <code>1000</code> 的 <code>seqID</code> 分配到了不同的消息上，这种现象被称为<strong>回退。</strong></p>
+<p>解决这个问题的方法是，可以使用 <strong>lua 脚本</strong>操控 redis，并通过 <code>runid</code> 判断主从节点</p>
+<ol>
+<li>
+<p>第一次查询时，首先 <code>，如果获取到的 ，如果获取到的 到的</code>runid<code>和之前的</code>runid<code>是一致的，则直接</code>incrby<code>并返回</code>seqID`</p>
+</li>
+<li>
+<p>如果发生了<strong>主从切换</strong>，那么获取到的 <code>runid</code> 是不一致的，为了避免<strong>回退</strong>，可以给当前的 <code>seqID</code> 加上一个偏移值，可以是当前时间戳等幅度较大的数值，用这段<strong>跳变</strong>防止发生<strong>回退</strong>，且能保证<strong>唯一性</strong>，而因为 redis 的主从切换的频率并不高，所以在 99% 的时间内都是严格递增的，所以称其为<strong>万有一失的严格递增</strong></p>
+</li>
+</ol>
+<p>但是上述解决方案又引出了另一个问题：<strong>万有一失的严格递增能够保证不回退，但是不能保证不跳变(称其为消息漏洞)，那么客户端应该如何识别这个跳变是主从切换引起的还是消息丢失引起的？</strong></p>
+<p>解决方案也较为简单，当客户端发现出现了消息漏洞，即消息 ID 不连续的情况，那么就向服务端主动拉取一个<strong>分页的历史消息请求(称其为消息补洞)</strong>，通过这种<strong>推拉结合</strong>的方式，进行对比后，就可以判断是发生了<strong>主从切换</strong>还是<strong>消息丢失</strong>了。</p>
+<h2 id="_4">上行消息<a class="headerlink" href="#_4" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>客户端A将消息发送给服务端，这一阶段要保证消息从客户端到服务端的可用性。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>方案</strong></td>
+<td><strong>收益</strong></td>
+<td><strong>代价</strong></td>
+</tr>
+<tr>
+<td><strong>clientID 严格递增</strong><br><br>1. 客户端A创建会话与服务端建立长连接<br>    <br>2. 在发送消息msg1时分配一个clientID 此值在会话内<strong>严格递增</strong><br>    <br>3. 连接建立时 clientID 初始为0。<br>    <br>4. 服务端将上一次收到消息的clientID缓存为preClientID，当且仅当<code>clientID == preClientID + 1</code>时接收此消息(<strong>保证幂等</strong>)<br>    <br>5. 仅当服务端接收到消息后才回复客户端A，ACK消息<br>    <br>6. 仅当客户端A收到服务端对消息ACK的回复，才禁止重发(可设置最多三次)</td>
+<td>1. 任意时刻仅存储一个消息ID<br>    <br>2. 保证严格的有序性<br>    <br>3. 实现简单，可用<br>    <br>4. 长连接通信延迟低<br>    <br>5. 以发送方顺序为标准(权衡)</td>
+<td>1. 弱网情况下，消息丢包严重时将造成大规模消息重发，导致网络瘫痪影响消息及时性。<br>    <br>2. 无法保证群聊中的消息因果顺序</td>
+</tr>
+<tr>
+<td>弱网问题，可以通过优化传输层协议(比如协议升级为Quic)来优化，长连接不适合在弱网环境工作，丢包和断线 属于传输层问题。</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>clientID 链表</strong><br><br>1. 客户端A使用本地时间戳作为clientID，并在每次发送消息的时候携带上个消息的clientID。<br>    <br>2. 服务端存储上一个消息的clientID记作为preClientID，只有preClientID 和 当前消息的preClientID对比，匹配上则说明消息未丢失，否则拒绝。</td>
+<td></td>
+<td>1. 协议的消息带宽</td>
+</tr>
+<tr>
+<td><strong>clientID list</strong><br><br>1. 服务端针对每个连接存储多个clientID，形成clientID list<br>    <br>2. 使用此 client List作为滑动窗口，来保证消息幂等</td>
+<td>1. 减少弱网重传时的消息风暴问题</td>
+<td>1. 实现更加复杂<br>    <br>2. 网关层需要更多内存维护连接状态<br>    <br>3. 由于传输层使用tcp，已经对弱网有一定的优化，应用层也维护滑动窗口收益不大</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_5">消息转发<a class="headerlink" href="#_5" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>分配seqID，异步存储消息，处理业务逻辑，将消息转发给客户端B。</p>
+</blockquote>
+<p><strong>为什么要分配seqID?</strong></p>
+<blockquote>
+<p>IM场景中聊天会话至少有两个客户端参与(单聊/群聊),因此任何一个客户端分配的clientID都不能作为整个会话内的消息ID，否则会产生顺序冲突，因此clientID仅是保证消息按客户端A发送的顺序到达服务端，服务端需要在整个会话范围内分配一个全局递增的ID。</p>
+</blockquote>
+<div class="admonition tips">
+<p class="admonition-title">Tips</p>
+<p>洞见: 事实上仅需要保证同一个客户发送消息的先后顺序即可。</p>
+</div>
+<p><strong>消息转发的可用性如何保证?</strong></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>方案</strong></td>
+<td><strong>收益</strong></td>
+<td><strong>代价</strong></td>
+</tr>
+<tr>
+<td>如果服务端在分配seqID前此请求失败或进程崩溃怎么办?<br><br><strong>服务端在分配seqID之后再回复ACK消息。</strong></td>
+<td>保证了分配seqID消息的可用性</td>
+<td>1. ack回复变慢,收发消息变慢<br>    <br>2. 如果消息存储失败消息将丢失<br>    <br>3. seqID 分配成为性能瓶颈</td>
+</tr>
+<tr>
+<td>如果服务端在<strong>存储消息</strong>，<strong>业务处理</strong>，<strong>接入层路由</strong>时失败怎么办?<br><br>1. <strong>消息存储后再回复ACK，如果ACK失败则客户端重试时再次幂等地回复ACK。</strong><br>    <br>2. 一旦消息存储，如果服务崩溃导致长连接断开，客户端重新建立连接时可以发送一个pull信令，拉取历史消息进行消息补洞，以此保证消息<strong>可用性</strong>。<br>    <br>3. 如果消息存储后，仅是业务层失败，接入层长连接无感知，业务层<strong>需要做异常捕获</strong>，并追加pull信令请求给到客户端B，主动触发其拉取历史消息。</td>
+<td>1. 保证了业务处理全流程的可用性<br>    <br>2. 在出现异常情况时，可毫秒级触发接收端，保证消息及时性</td>
+<td>1. 上行消息的p95延迟将增加<br>    <br>2. 整体通信复杂度增高<br>    <br>3. 应对弱网环境需要协议升降级机制</td>
+</tr>
+<tr>
+<td>可以将消息交给MQ异步存储，MQ来保证消息不丢失。</td>
+<td>异步写入，优化了p95延迟</td>
+<td></td>
+</tr>
+<tr>
+<td>seqID无需全局有序，仅保证在会话内有序即可</td>
+<td>解决了seqID分配的单点瓶颈</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="_6">下行消息<a class="headerlink" href="#_6" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>服务端将消息发送给客户端B，其协议设计依赖于seqID的生成方式。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>方案</strong></td>
+<td><strong>收益</strong></td>
+<td><strong>代价</strong></td>
+</tr>
+<tr>
+<td>客户端定期轮询发起pull请求拿到新消息</td>
+<td>实现简单，保证可用性</td>
+<td>1. 客户端耗电高(用户体验差)<br>    <br>2. 消息时延高，不满足及时性</td>
+</tr>
+<tr>
+<td>依赖seqID的<strong>严格递增</strong><br><br>1. 用redis incrby 生成seqID， key是sessionID/connID。<br>    <br>2. 按消息到达服务端的顺序分配seqID，使其具有会话范围内的全局序。<br>    <br>3. 服务端保证seqID严格递增的前提下将消息发送给客户端B，客户端B也是按<code>preSeqID == seqID+1</code>的方式来做到幂等<br>    <br>4. 服务端需等待客户端B的ACK消息，否则超时后需要重传</td>
+<td>1. 实现简单，可以快速上线<br>    <br>2. 最大程度的保证严格递增</td>
+<td>1. 弱网重传问题<br>    <br>2. Redis 存在单点问题，难以保证严格递增<br>    <br>3. 需要维护超时重传消息队列以及定时器<br>    <br>4. 不能解决客户端B不在线时消息的传递</td>
+</tr>
+<tr>
+<td>应对redis的单点故障，seqID的趋势递增<br><br>1. 使用lua脚本，存储maxSeqID以及当前的node的runID。<br>    <br>2. lua脚本每次获取ID时，都会检查当前node的runID和存储的runID是否一致<br>    <br>3. 发现不一致时，说明发生了主从切换，然后对maxSeqID进行一次跳变保证递增，避免从节点由于同步数据不及时分配了一个曾经分配过的ID出去<br>    <br>4. 客户端B在发现消息不连续时不是直接拒绝，而是发送pull信令进行增补<br>    <br>5. 如果拉取不到新消息，则说明是seqID的跳变导致，不再进一步处理<br>    <br>6. 如果客户端B不在线，查询用户状态后仅存储不推送即可</td>
+<td>1. 尽最大可能保证连续性<br>    <br>2. 任意时刻保证单调和递增性<br>    <br>3. 由于使用会话级别的seqID，则不需要全局分布式ID生成，redis可以使用cluster模式进行水平扩展。<br>    <br>4. 识别了用户是否在线的状态，减少了网络带宽消耗</td>
+<td>1. 协议交互变得更加复杂，实现难度上升。<br>    <br>2. 可评估用户规模进行决策是否支持如此级别的可用性<br>    <br>3. 群聊场景，将造成消息风暴</td>
+</tr>
+<tr>
+<td><strong>推拉结合+服务端打包整流</strong></td>
+<td>解决消息风暴问题</td>
+<td>实现更加复杂</td>
+</tr>
+<tr>
+<td>SeqID 链表<br><br>1. 客户端B在本地存储最后接收到的seqID的值记作maxSeqID<br>    <br>2. 服务端发送消息时，携带上一条消息的seqID记作preSeqID和当前seqID<br>    <br>3. 客户端B接收消息时通过对比maxSeqID == preSeqID 则接收否则拒绝<br>    <br>4. 服务端在设计消息存储时，要存储上一条消息的seqID，形成逻辑链表<br>    <br>5. 客户端发现preSeqID不一致，则退化为pull请求去拉缺失的消息</td>
+<td>1. 屏蔽了对seqID 趋势递增的依赖</td>
+<td>1. 收益不大，且在消息存储时要多一个preSeqID</td>
+</tr>
+</tbody>
+</table>
+<h1 id="_7">最终方案<a class="headerlink" href="#_7" title="Permanent link">&para;</a></h1>
+<p><img alt="image.png" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250220105808.png" /></p>
+<ol>
+<li>
+<p>客户端A创建连接后，分配一个clientID，从0开始即可，发送一个消息时获得clientID并自增。</p>
+</li>
+<li>
+<p>启动一个消息计时器，等待ack消息的回复，或者超时后触发重传。</p>
+</li>
+<li>
+<p>基于tcp连接将msg1发送给服务端。</p>
+</li>
+<li>
+<p>服务端请求redis使用sessionID进行分片，incryBy获得seqID。</p>
+</li>
+<li>
+<p>异步写入MQ，保证消息可靠存储。</p>
+</li>
+<li>
+<p>立即回复客户端A ack消息，告诉他消息已经可靠送达。</p>
+</li>
+<li>
+<p>启动一个下行消息定时器，等等客户端B的ack消息，或者超时后触发重传。</p>
+</li>
+<li>
+<p>客户端A收到ack消息后，取消定时器。</p>
+</li>
+<li>
+<p>服务端发起下行消息请求，将msg1发送给客户端B。</p>
+</li>
+<li>
+<p>客户端B根据当前session的maxSeqID+1 是否等于当前消息的seqID来决定是否接收。</p>
+</li>
+<li>
+<p>客户端B回复服务端消息已经确认或者拒绝。</p>
+</li>
+<li>
+<p>服务端根据客户端B回复决定是进行消息补洞还是关闭定时器。</p>
+</li>
+</ol>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -2117,7 +2510,7 @@
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2024-11-17</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date">2025-02-20</span>
   </span>
 
     
@@ -2192,8 +2585,6 @@
 
 
 <!-- Determine whether to show feedback -->
-
-  
 
 
 <!-- Was this page helpful? -->
@@ -2288,10 +2679,10 @@
 
 
 
-      
-    </article>
-  </div>
-
+                
+              </article>
+            </div>
+          
           
   <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
 
@@ -2313,8 +2704,6 @@
   
     
       
-        
-      
       <nav
         class="md-footer__inner md-grid"
         aria-label="页脚"
@@ -2325,9 +2714,9 @@
         
           
           <a
-            href="../minio-%E9%83%A8%E7%BD%B2/"
+            href="../%E4%BB%8E%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97%E7%90%86%E8%A7%A3Pull%E4%B8%8EPush%E6%A8%A1%E5%9E%8B%E5%BA%95%E5%B1%82%E9%80%BB%E8%BE%91/"
             class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: Minio 部署"
+            aria-label="上一页: 从消息队列理解Pull与Push模型底层逻辑"
           >
             <div class="md-footer__button md-icon">
               
@@ -2338,7 +2727,7 @@
                 上一页
               </span>
               <div class="md-ellipsis">
-                Minio 部署
+                从消息队列理解Pull与Push模型底层逻辑
               </div>
             </div>
             
@@ -2349,16 +2738,16 @@
         
           
           <a
-            href="../dijkstra%E7%AE%97%E6%B3%95/"
+            href="../../../frontend/JavaScript/testJs/"
             class="md-footer__link md-footer__link--next"
-            aria-label="下一页: Dijkstra算法"
+            aria-label="下一页: JavaScript Code Runner"
           >
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                Dijkstra算法
+                JavaScript Code Runner
               </div>
             </div>
             <div class="md-footer__button md-icon">
@@ -2439,17 +2828,17 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../../../..", "features": ["announce.dismiss", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["announce.dismiss", "content.code.annotate", "navigation.tracking", "navigation.tabs", "navigation.sections", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "search.share", "navigation.expand", "navigation.indexes", "content.tabs.link", "content.tooltips", "content.code.copy", "content.action.edit", "content.action.view", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
     
     
     
-      <script src="../../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.f1b6f286.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/gh/Wcowin/Wcowin.github.io@main/docs/javascripts/extra.js"></script>
       
-        <script src="../../../../../javascripts/mathjax.js"></script>
+        <script src="../../../../javascripts/mathjax.js"></script>
       
-        <script src="../../../../../javascripts/editable-code.js"></script>
+        <script src="../../../../javascripts/editable-code.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
@@ -2458,7 +2847,7 @@
         <script src="https://cdn.jsdelivr.net/npm/mermaid@10.0.2/dist/add-html-label-6e56ed67.min.js"></script>
       
     
-    <script src="../../../../../assets/javascripts/custom.9458f965.min.js"></script>
+    <script src="../../../../assets/javascripts/custom.9458f965.min.js"></script>
   
   </body>
 </html>
