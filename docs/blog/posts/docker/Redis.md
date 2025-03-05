@@ -14,13 +14,13 @@ categories:
 
 ``` bash
 #创建挂载目录
-mkdir -p /data/redis
+mkdir -p /docker/data/redis
 ```
 
 ## 创建yml文件
 
 ``` bash
-vim /data/redis/docker-compose.yml
+vim /docker/data/redis/docker-compose.yml
 ```
 
 <br/>
@@ -37,9 +37,9 @@ services:
     ports:
       - 6379:6379
     volumes:
-      - /data/redis/redis.conf:/etc/redis/redis.conf
-      - /data/redis/data:/data
-      - /data/redis/logs:/logs
+      - /docker/data/redis/redis.conf:/etc/redis/redis.conf
+      - /docker/data/redis/data:/data
+      - /docker/data/redis/logs:/logs
     command: ["redis-server","/etc/redis/redis.conf"]
 ```
 
@@ -48,7 +48,7 @@ services:
 ## 创建挂载配置文件
 
 ``` bash
-vim /data/redis/redis.conf
+vim /docker/data/redis/redis.conf
 ```
 
 ``` bash
@@ -73,7 +73,7 @@ requirepass 123456
 ## 启动容器
 
 ``` bash
-cd /data/redis
+cd /docker/data/redis
 docker-compose up -d
 #如果需要强制重新构建
 docker-compose up --force-recreate -d

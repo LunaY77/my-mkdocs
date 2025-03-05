@@ -33,23 +33,20 @@ github仓库地址：[Frequency-Control-Spring-Boot-Starter](https://github.com/
 
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/17/17318134711509.jpg)
 
-
-
 ### 3.2 效果展示
 
 同时我配置了 `spring-configuration-metadata.json` 文件，实现配置信息的自动提示、补全功能
 
-1. 自动提示
+1. 自动提示  
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/17/17318122861454.jpg)
 
-3. 自动补全
+3. 自动补全  
 ![](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/17/17318122934815.jpg)
-
 
 ## 4. 频控注解及切面实现
 
-
 ### 4.1 频控注解
+
 定义如下频控注解，包含**频控算法**及**相关算法配置**等属性
 
 ``` java
@@ -85,12 +82,13 @@ public @interface FrequencyControl {
 注意到：注解属性默认值大部分设置为 **-1** 或 **空字符串**
 
 原因在于：
+
   1. 注解属性**不可变**，无法通过 `Properties` 动态配置，所以采用 **-1 或 空字符串** 表示采用默认值
   2. 基于上一点，那么如果注解属性不为 **-1 或 空字符串**，则在切面执行时表示**不使用**默认值
 
-  
 ### 4.2 可重复注解
-同时，为了实现一个接口可以拥有**多种**频控策略或频控算法，需要实现注解可重复使用
+
+同时，为了实现一个接口可以拥有**多种**频控策略或频控算法，需要实现注解可重复使用  
 参考 [Java8新特性(六)重复注解与类型注解](https://blog.csdn.net/weixin_43833851/article/details/129677389)，定义容器注解类：
 
 ``` java
@@ -165,6 +163,7 @@ public Object around(ProceedingJoinPoint joinPoint) throws Throwable {
 重点关注以下3个方法：
 
 #### 1. **#executeWithFrequencyControlMap**
+
 ``` java
 /**
  * 执行限流策略
@@ -182,6 +181,7 @@ private void executeWithFrequencyControlMap(Map<String, K> frequencyControlMap) 
     addFrequencyControlStatisticsCount(frequencyControlMap);
 }
 ```
+
 功能：**执行限流策略，通过指定的频控配置判断是否达到限流阈值，并在未达到限流阈值时增加频控统计计数**
 
 ---
@@ -224,10 +224,10 @@ protected abstract void addFrequencyControlStatisticsCount(Map<String, K> freque
 ### 5.2 固定窗口
 
 #### 1. 基本介绍
+
 固定时间窗口（Fixed Window Rate Limiting Algorithm）（也叫计数器）是最常见的限流算法之一。它划分了多块固定的时间窗口，并且限制了每块窗口的最大请求数量。
 
 <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/17/17318127687313.jpg" style="height:250px; display: block; margin: auto;">
-
 
 如果将时间**每秒作为一个时间窗口**，设置每个时间窗口不能超过**4个请求**。这时候会发现固定窗口有个很严重的问题，就是**临界点**问题。当切换窗口的时候，所有计数将会重新计数，就会出现短短**0.5秒内达到6个请求**的情况。
 
@@ -235,7 +235,6 @@ protected abstract void addFrequencyControlStatisticsCount(Map<String, K> freque
     - 固定窗口算法非常简单，**易于实现和理解**。
 - 缺点：
     - 存在明显的**临界**问题，如果请求集中在两个窗口之间。那么请求次数可能会超过我们的预期，最高达到**预期的两倍**。
-
 
 #### 2. 适用场景
 
@@ -246,6 +245,7 @@ protected abstract void addFrequencyControlStatisticsCount(Map<String, K> freque
 代码位置：`com.iflove.starter.frequencycontrol.service.frequencycontrol.strategy.TotalCountWithInFixTimeFrequencyController`
 
 核心代码：
+
 ```java
 @Override
 protected boolean reachRateLimit(Map<String, FixedWindowDTO> frequencyControlMap) {
@@ -270,22 +270,22 @@ protected void addFrequencyControlStatisticsCount(Map<String, FixedWindowDTO> fr
     frequencyControlMap.forEach((k, v) -> RedisUtil.inc(k, v.getTime(), v.getUnit()));
 }
 ```
+
 ---
 
 - `#reachRateLimit`
 
     功能：**判断是否达到限流阈值**
-    
+
     1. **批量获取**：将所有限流键提取为 `List`，并使用 `RedisUtil.mget` 方法从 `Redis` 中批量获取这些键的计数值。
     2. **遍历并检查**：遍历每个键的计数值，检查其是否达到限流阈值。
     3. **限流判断**：如果某个键的计数值达到或超过限流阈值，记录日志，并返回 `true` 表示已限流。否则，继续遍历。
     4. **返回结果**：如果所有键都未达到限流阈值，返回 `false` 表示未限流。
 
-
 - `#addFrequencyControlStatisticsCount`
 
     功能：**增加每个限流键的计数，并设置键的过期时间。**
-    
+
     1. **计数递增**：遍历 `frequencyControlMap`，对每个限流键调用 `RedisUtil.inc` 方法，增加计数并设置过期时间。
     2. **设置过期时间**：`RedisUtil.inc` 接收一个时间和单位参数，用于设置 `Redis` 键的过期时间，以确保计数在窗口结束后重置。
 
@@ -327,7 +327,6 @@ end
 - 缺点：
     - **状态性**，滑动窗口算法需要维护窗口内的请求信息，并且这些请求不是单纯的数值，它们和最小格子挂钩，这可能会导致一定的状态存储开销，尤其对于大规模的系统。
 
-
 #### 2. 适用场景
 
 选择场景前，依然要了解它的优缺点，才知道怎么去适配场景。滑动窗口最大`优点`是**平滑**。能够允许**偶尔突发**的请求，但是会**限制**窗口内的总次数，适合需要保证平均速率的场景。`缺点`是他需要保存窗口内**每个请求**的时间分布状态，比较占用内存。正是因为这样的状态。滑动窗口最好是用于全局的限流。如果用于用户级别的限流，那就会为每一个用户都创建一个滑动窗口，比较消耗内存。
@@ -340,10 +339,9 @@ end
 
 正是由于滑动窗口的状态特性。他能保存每一个请求的时间分布这类原始信息。我们可以很容易的统计出1s，5s，10s内的请求数量，成功数量，限流数量。sentinel底层正是用滑动窗口来实现这些状态的记录与限流。
 
-
 #### 3. 代码实现
 
-代码位置：
+代码位置：  
 `com.iflove.starter.frequencycontrol.service.frequencycontrol.strategy.SlidingWindowFrequencyController`
 
 核心代码：
@@ -390,20 +388,20 @@ protected void addFrequencyControlStatisticsCount(Map<String, SlidingWindowDTO> 
 - `#reachRateLimit`
 
     功能：**判断是否达到限流阈值**
-    
+
     1. **批量获取**：将所有限流键提取为 `List`，并使用 `RedisUtil.mget `方法从 `Redis` 中批量获取这些键的计数值。
     2. **获取计数**：遍历 `frequencyControlMap` 中的限流键，并使用 `Redis` 的 `zCard` 方法获取每个键对应的滑动窗口内计数值。
     3. **限流判断**：对每个键的计数值进行限流检查，若达到或超过设定阈值，则记录日志并返回 `true` 表示限流。
     4. **返回结果**：如果所有键都未达到限流阈值，返回 `false` 表示未限流。
 
 - `#addFrequencyControlStatisticsCount`
-    
+
     功能：**增加每个限流键的计数，并设置键的过期时间。**
- 
+
 ---
- 
+
 滑动窗口相关实现相对复杂，首先来看`滑动窗口实体类(SlidingWindowDTO)`是如何定义的   
-    
+
 ``` java
 public class SlidingWindowDTO extends FrequencyControlDTO {
     /**
@@ -443,9 +441,9 @@ public class FrequencyControlDTO {
 ```
 
 而子类实现上定义了 滑动窗口特有的属性：`windowSize` 和 `period`
-  
-  * `windowSize` 表示 **滑动窗口总大小(数据范围)** ，同时也代表着Redis存储的**过期时间**
-  * `period` 表示**窗口最小周期**，代表**时间粒度大小**
+
+  - `windowSize` 表示 **滑动窗口总大小(数据范围)** ，同时也代表着Redis存储的**过期时间**
+  - `period` 表示**窗口最小周期**，代表**时间粒度大小**
 
 ---
 
@@ -498,18 +496,15 @@ public static void zAddAndExpire(String key, long startTime, long expireTime, lo
 
 <img src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/17/17318145134372.jpg" style="height:400px; display: block; margin: auto;">
 
-
-不规则的请求随意的投递到我们的桶里，然后会有固定的频率去消费它，如果超过桶的最大容量10，那么请求将会被丢弃。
+不规则的请求随意的投递到我们的桶里，然后会有固定的频率去消费它，如果超过桶的最大容量10，那么请求将会被丢弃。  
 漏桶限流算法最大的特点就是**流量整型**。让不规则的请求频率，转为规则的频率进行消费。
 
 - 优点：
     - 可以严格限制请求的处理速度，避免瞬间请求过多导致系统崩溃或者雪崩。
-
 - 缺点：
     - 需要对请求进行缓存，会增加服务器的内存消耗。
     - 面对突发流量的时候，优点同时也会是缺点。无法适应瞬时的突增流量
 
-  
 #### 2. 不适合场景
 
 漏桶算法不太适合C端接口的限流。因为对于都到了限流的场景了。并发已经比较高了。我们希望的是超过限制的请求，立马就给他快速失败返回了，而不是停在桶里休眠等待响应。这样整体的响应时间会很高，同时还占用的请求连接池。
@@ -522,8 +517,8 @@ public static void zAddAndExpire(String key, long startTime, long expireTime, lo
 
 #### 1. 基本介绍
 
-
 令牌桶算法维护一个**固定容量**的令牌桶，每秒钟会向令牌桶中**放入一定数量的令牌**。每一个请求都需要**消耗一个令牌**才能放行。你会发现他和漏桶算法很像，都有个容量固定的桶。
+
   - 一个是匀速流出请求，一个是匀速放入令牌。
   - 一个积累的是请求，一个积累的是可放行的令牌。
 
@@ -538,11 +533,9 @@ public static void zAddAndExpire(String key, long startTime, long expireTime, lo
     - **无状态性**：相较于滑动窗口算法等需要维护状态信息的算法，令牌桶算法不需要持续维护大量的状态信息，使其更具扩展性和高效性。
   
 - 缺点：
-
     - **实现复杂**：令牌桶算法需要在固定的时间间隔内生成令牌，需要开启一个线程。当然也可以用特殊手段不需要线程，但是实现就更加复杂。
     - **需要预热**：在刚启动时，桶中可能没有足够的令牌，这时候退化成了一个没桶的漏桶，很可能在一开始对请求产生较大的限制。
 
-  
 #### 2. 适用场景
 
 相比起漏桶，令牌桶算法更加适合**应对突发的流量**。流量达到极限后，就会退化成没桶的漏桶，速率变成了严格控制。适用于流量整体平滑的情况下，同时也可以满足一定的突发流程场景
@@ -551,7 +544,7 @@ public static void zAddAndExpire(String key, long startTime, long expireTime, lo
 
 #### 3. 代码实现
 
-代码位置：
+代码位置：  
 `com.iflove.starter.frequencycontrol.service.frequencycontrol.strategy.TokenBucketFrequencyController`
 
 核心代码：
@@ -587,7 +580,7 @@ protected void addFrequencyControlStatisticsCount(Map<String, TokenBucketDTO> fr
 - `#reachRateLimit`
 
     功能：**判断是否达到限流阈值**
-    
+
     1. **获取频率控制键列表**：将 `frequencyControlMap` 的键存入 `frequencyKeys` 列表中。
     2. **逐个检查令牌桶**：
         - 遍历每个频率控制键 `key`。
@@ -598,7 +591,7 @@ protected void addFrequencyControlStatisticsCount(Map<String, TokenBucketDTO> fr
 - `#addFrequencyControlStatisticsCount`
 
     功能：**增加每个限流键的计数。**
-    
+
     1. 遍历 `frequencyKeys` 中的每个 **key**。
     2. 获取令牌桶配置信息 `dto`，包括桶的容量和令牌填充速率。 
     3. 调用 `tokenBucketManager.createTokenBucket(key, dto.getCapacity(), dto.getRate())` 创建令牌桶（如果不存在）。

@@ -2,10 +2,10 @@
 title: AstroMailer 一个每日早安邮件发送器
 authors: [cangjingyue]
 tags: 
-    - OpenSource
+    - project
 date: 2024-12-17 00:00:00
 categories:
-  - OpenSource
+  - project
 ---
 
 # AstroMailer 🌌

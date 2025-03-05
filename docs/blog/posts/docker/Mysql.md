@@ -14,8 +14,8 @@ categories:
 
 ``` bash
 #创建挂载目录
-mkdir -p /data/mysql/data;
-mkdir -p /data/mysql/conf;
+mkdir -p /docker/data/mysql/data
+mkdir -p /docker/data/mysql/conf
 ```
 
 <br/>
@@ -23,7 +23,7 @@ mkdir -p /data/mysql/conf;
 ## 创建yml文件
 
 ``` bash
-vim /data/mysql/docker-compose.yml
+vim /docker/data/mysql/docker-compose.yml
 ```
 
 <br/>
@@ -37,8 +37,8 @@ services:
     image: mysql:8.0.30 #mysql版本
     container_name: mysql
     volumes:
-      - /data/mysql/data:/var/lib/mysql
-      - /data/mysql/conf/my.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
+      - /docker/data/mysql/data:/var/lib/mysql
+      - /docker/data/mysql/conf/my.cnf:/etc/mysql/mysql.conf.d/mysqld.cnf
     restart: always
     ports:
       - 3306:3306
@@ -53,7 +53,7 @@ services:
 ## 创建配置文件
 
 ``` bash
-vim /data/mysql/conf/my.cnf
+vim /docker/data/mysql/conf/my.cnf
 ```
 
 ``` bash
@@ -101,7 +101,7 @@ default-character-set=utf8mb4  # 设置mysql客户端默认字符集
 ## 启动容器
 
 ``` bash
-cd /data/mysql
+cd /docker/data/mysql
 docker-compose up -d
 ```
 
