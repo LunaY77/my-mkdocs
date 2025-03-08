@@ -16,7 +16,7 @@ categories:
 
 ## 1. @Transactional应用在非 public 修饰的方法上
 
-使用@Transactional修饰的方法，必须是public修饰、非static修饰、非final修饰的，一个不满足就会导致事务失效
+使用@Transactional修饰的方法，必须是public修饰、非static修饰、非final修饰的，一个不满足就会导致事务失效，**但是这是不准确的！**
 
 ![image.png](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250307194551.png)
 
@@ -160,9 +160,9 @@ public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods>
 **2. JDK 动态代理，B+注解，A 不加**
 
 
-SpringBoot 默认启用 Cglib 动态代理，如果希望使用 JDK 动态代理，需要在 XML 配置中添加如下代码，后续不再赘述，**注意是 XML, XML, XML !!! 在启动类上没用!**
+SpringBoot 默认启用 Cglib 动态代理，如果希望使用 JDK 动态代理，需要在 YAML 配置中添加如下代码，后续不再赘述，**注意是 YAML, YAML, YAML !!! 在启动类上没用!**
 
-```xml
+```YAML
 spring:
   aop:
     proxy-target-class: false
