@@ -24,11 +24,306 @@ categories:
 
 我们知道 AOP 的实现有两种，分别是 JDK 动态代理和 Cglib 动态代理。JDK 动态代理是基于接口的，和代理对象为兄弟关系；Cglib 动态代理是基于继承的，和代理对象是父子关系。
 
-1. **public 修饰**：这个其实并不准确，如果是 JDK 动态代理实现那么必须是 public 修饰，因为如果方法为 private 或者 protected，那么对应的代理类是获取不到这个方法的，也就无法有效代理。但是如果使用 Cglib 动态代理，比如在启动类上设置 (**@EnableAspectJAutoProxy(proxyTargetClass = true)**)，表明只使用 Cglib 动态代理，那么 protected 是允许的，因为其可以被继承。所以准确来说是非 private 修饰
-2. **非 static 修饰**：无论哪种动态代理都是基于对象的，而非基于类的，如果能够代理 static 方法，应该称其为**静态代理而非动态代理**了
-3. **非 final 修饰**：因为 final 修饰无法被继承
 
-> PS: 如果你使用的是新版的 idea，那么会直接在编译时期报错，所以基本不可能出现这种情况
+> PS: 如果你使用的是新版的 idea，那么违反上述情况均会直接在编译时期报错，但是依然可以运行，请多加注意⚠️
+
+
+---
+
+### **1. public 修饰**
+
+#### **1. 接口继承方法(@Override)**
+
+如果一个方法继承自接口，那么一定是 public 的，事务生效
+
+----
+
+#### **2. 多个方法**
+
+为了简化讨论，仅对两个方法的情况进行测试，但两个和多个本质上差别不大
+
+***假设 A 方法为接口继承方法(一定为 public)，B 方法为实现类自定义方法，条件变量为@Transactional 注解位置、B 方法修饰符、动态代理类型。***
+
+前置准备如下:
+
+<details>
+
+<summary>前置准备</summary>
+
+表结构
+
+```sql
+create table goods  
+(  
+    id    int auto_increment  
+        primary key,  
+    price decimal(10, 2) null  
+);
+```
+
+实体类
+
+```java
+@TableName(value ="goods")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+public class Goods implements Serializable {
+    /**
+     * 
+     */
+    @TableId(value = "id", type = IdType.AUTO)
+    private Integer id;
+
+    /**
+     * 
+     */
+    @TableField(value = "price")
+    private BigDecimal price;
+}
+```
+
+Mapper
+
+```java
+@Mapper
+public interface GoodsMapper extends BaseMapper<Goods> {
+
+}
+```
+
+Service
+
+```java
+@Slf4j
+@Service
+public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods>
+    implements GoodsService {
+
+    @Resource
+    GoodsMapper goodsMapper;
+
+	...
+}
+```
+
+启动类
+
+```java
+@SpringBootApplication
+@EnableAspectJAutoProxy(exposeProxy = true)
+public class Demo1Application {
+
+    public static void main(String[] args) {
+        ConfigurableApplicationContext context = SpringApplication.run(Demo1Application.class, args);
+        // 测试
+        GoodsService service = context.getBean(GoodsService.class);
+        service.insert(2, new BigDecimal("123"));
+    }
+}
+```
+
+</details>
+
+**1. A+注解，B 不加**
+
+测试代码
+
+```java
+@Slf4j
+@Service
+public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods>
+    implements GoodsService {
+
+    @Resource
+    GoodsMapper goodsMapper;
+
+    @Override
+    @Transactional
+    public void insert(Integer id, BigDecimal price) {
+        doInsert(id, price);
+    }
+
+    private void doInsert(Integer id, BigDecimal price) {
+        log.info("===========>{}", TransactionSynchronizationManager.getCurrentTransactionName());
+        Goods goods = new Goods(id, price);
+        goodsMapper.insert(goods);
+        throw new RuntimeException("error");
+    }
+}
+```
+
+这其实跟一个方法没有本质区别，**事务生效！**
+
+---
+
+**2. JDK 动态代理，B+注解，A 不加**
+
+
+SpringBoot 默认启用 Cglib 动态代理，如果希望使用 JDK 动态代理，需要在 XML 配置中添加如下代码，后续不再赘述，**注意是 XML, XML, XML !!! 在启动类上没用!**
+
+```xml
+spring:
+  aop:
+    proxy-target-class: false
+```
+
+测试代码:
+
+```java
+@Slf4j
+@Service
+public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods>
+    implements GoodsService {
+
+    @Resource
+    GoodsMapper goodsMapper;
+
+    @Override
+    public void insert(Integer id, BigDecimal price) {
+        ((GoodsServiceImpl) AopContext.currentProxy()).doInsert(id, price);
+    }
+
+    @Transactional
+    private void doInsert(Integer id, BigDecimal price) {
+        log.info("===========>{}", TransactionSynchronizationManager.getCurrentTransactionName());
+        Goods goods = new Goods(id, price);
+        goodsMapper.insert(goods);
+        throw new RuntimeException("error");
+    }
+}
+```
+
+注意这里使用了 AopContext 获取代理类，并且是实现类，因为接口方法没有实现类的私有方法。
+
+**调用的时候直接报错了，也就不存在事务失效问题了**
+
+来看看报错信息，信息表示不能 cast，原因是 JDK 动态代理基于接口，两个实现类(兄弟关系)之间肯定不能互相 cast 的
+
+```
+Exception in thread "main" java.lang.ClassCastException: class jdk.proxy2.$Proxy57 cannot be cast to class com.example.demo.service.impl.GoodsServiceImpl (jdk.proxy2.$Proxy57 is in module jdk.proxy2 of loader 'app'; com.example.demo.service.impl.GoodsServiceImpl is in unnamed module of loader 'app')
+	at com.example.demo.service.impl.GoodsServiceImpl.insert(GoodsServiceImpl.java:33)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:216)
+	at jdk.proxy2/jdk.proxy2.$Proxy57.insert(Unknown Source)
+	at com.example.demo.Demo1Application.main(Demo1Application.java:18)
+```
+
+---
+
+**3. Cglib 动态代理，B+注解，B 修饰符为 private，A 不加**
+
+测试代码:
+
+```java
+@Slf4j
+@Service
+public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods>
+    implements GoodsService {
+
+    @Resource
+    GoodsMapper goodsMapper;
+
+    @Override
+    public void insert(Integer id, BigDecimal price) {
+        ((GoodsServiceImpl) AopContext.currentProxy()).doInsert(id, price);
+    }
+
+    @Transactional
+    private void doInsert(Integer id, BigDecimal price) {
+        log.info("===========>{}", TransactionSynchronizationManager.getCurrentTransactionName());
+        Goods goods = new Goods(id, price);
+        goodsMapper.insert(goods);
+        throw new RuntimeException("error");
+    }
+}
+```
+
+报错信息：
+
+解读：cglib子类代理无法继承 private 方法，代理对象会直接调用父类的 private 方法，但是**Spring 只会对代理对象进行依赖注入，而不会注入原始目标对象**，导致调用 private 方法会空指针
+
+**这个场景操作数据库的 mapper 失效了，日志信息显示获取不到事务，同样不能判定为事务失效的场景**
+
+![image.png](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250308170733.png)
+
+---
+
+**4. Cglib 动态代理，B+注解，B 修饰符为 protected，A 不加**
+
+测试代码和上一个场景类似，仅仅**修改 private 为 protected**，不 cv 了
+
+**事务生效！**来看看日志信息
+
+首先打印了事务信息，而且数据库中没有新增数据，证明了事务生效。
+
+报错为测试代码中手动抛出，不用理会
+
+![image.png](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250308170656.png)
+
+解读：**Cglib 动态代理是基于继承的，所以 protected 方法可以被继承，并成功代理！**
+
+---
+
+**5. A+注解，B+注解**
+
+这个其实跟事务传播行为有关了，下文中有详细讨论，这里不做测试
+
+---
+
+### **2. 非 static 修饰**
+
+无论哪种动态代理都是基于对象的，而非基于类的，如果能够代理 static 方法，应该称其为**静态代理而非动态代理**了
+
+---
+
+### **3. final 修饰**
+
+沿用测试public 修饰时的背景和代码
+
+#### **1. JDK 动态代理**
+
+```java
+@Slf4j
+@Service
+public class GoodsServiceImpl extends ServiceImpl<GoodsMapper, Goods>
+    implements GoodsService {
+
+    @Resource
+    GoodsMapper goodsMapper;
+
+    @Override
+    @Transactional
+    public final void insert(Integer id, BigDecimal price) {
+        log.info("===========>{}", TransactionSynchronizationManager.getCurrentTransactionName());
+        Goods goods = new Goods(id, price);
+        goodsMapper.insert(goods);
+        throw new RuntimeException("error");
+    }
+}
+```
+
+**事务生效！网上很多人都说加 final 事务会失效，这是不准确的!!!**
+
+![image.png](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250308172209.png)
+
+原因在于，JDK 动态代理生成的代理对象，内部会有一个目标对象，调用 insert 方法时，会路由到这个目标对象中，同时他又有自己的切面逻辑保证事务生效。
+
+
+#### **2. Cglib 动态代理**
+
+测试代码不变
+
+**出现了空指针异常**
+
+原因是，cglib子类代理无法继承 final 方法，代理对象会直接调用父类的 final 方法，但是**Spring 只会对代理对象进行依赖注入，而不会注入原始目标对象**，导致调用 final 方法会空指针
+
+![image.png](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250308172702.png)
+
+**这个场景操作数据库的 mapper 失效了，日志信息显示获取不到事务，同样不能判定为事务失效的场景**
+
 
 ## 2. propagation 属性设置错误
 
@@ -125,7 +420,6 @@ public RestBean<Void> apply(Long uid, FriendApplyReq request) {
 
 这一行代码的核心是确保事务和其他切面逻辑（如 `@Transactional` 和 `@RedissonLock` ）在调用 `applyApprove` 方法时能够生效。
 
-
 ## 5. 异常捕获导致@Transactional失效
 
 > 当一个事务方法中抛出了异常，此时该异常通过 `try...catch` 进行了捕获，此时就会导致该方法的事务注解 `@Transactional` 失效
@@ -158,7 +452,6 @@ Class AServiceImpl implements IAService{
 
 **综上所诉**：在 `Service` 层中，方法中最好不要随便写 `try...catch` ，如果写了则一定要手动抛异常
 
-
 ## 6. 数据库引擎不支持事务
 
 > 从 `MySQL 5.5.5` 开始的默认存储引擎是： `InnoDB` ，之前默认的都是： `MyISAM` 。也就是说是从 `MySQL5.5.5` 开始， `MySQL` 才支持事务
@@ -189,11 +482,9 @@ public class SpringBootApplication {
 }
 ```
 
-
 ## 8. Bean没有纳入Spring容器管理
 
 > Sprinｇ的事务管理核心是动态代理，不是动态代理的Bean是无法进行被Spring进行事务管理的
-
 
 ## 9. 事务方法启动新线程进行异步操作
 
