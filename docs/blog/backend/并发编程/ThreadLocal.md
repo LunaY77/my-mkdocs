@@ -165,7 +165,6 @@ public class Thread implements Runnable {
 
 ![ThreadLocal.png](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/ThreadLocal.png)
 
-
 ---
 
 ### 4.2 get
@@ -223,7 +222,6 @@ public void set(T value) {
 
 ![ThreadLocal.drawio.png](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/ThreadLocal.drawio.png)
 
-
 - ThreadLocal 是一个**壳子**，真正的存储结构是 ThreadLocal 里的 **ThreadLocalMap (静态内部类，用 Entry 存储)**，每个 Thread 对象维护着一个 ThreadLocalMap 的引用。
 - 当调用 `ThreadLocal.set()` 方法时，本质上是往 ThreadLocalMap 中设置值，key 是 ThreadLocal 对象，值 Value 是传递进来的对象。
 - 当调用 `ThreadLocal.get()` 方法时，本质上是往 ThreadLocalMap 中获取值，key 是 ThreadLocal 对象
@@ -265,12 +263,11 @@ public void set(T value) {
 
 ---
 
-### 5.2  为什么要用弱引用？不用如何？
+### 5.2 为什么要用弱引用？不用如何？
 
 ***弱引用：对于只有弱引用的对象而言，只要垃圾回收机制一运行，不管JVM的内存空间是否足够，都会回收该对象占用的内存。***
 
 ![image.png](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250315172909.png)
-
 
 1. 为什么要用弱引用：
 
@@ -328,13 +325,11 @@ private int expungeStaleEntry(int staleSlot) {
 }
 ```
 
-
 ## 6. 最佳实践
 
 - ThreadLocal一定要初始化，避免空指针异常。
 - 建议把ThreadLocal修饰为static
 - 用完记得手动remove
-
 
 ## 7. 总结
 
@@ -344,6 +339,3 @@ private int expungeStaleEntry(int staleSlot) {
 - 每个线程持有一个只属于它自己的专属map并维护了ThreadLocal对象与具体实例的映射，该Map由于只被持有他的线程访问，故不存在线程安全以及锁的问题
 - ThreadLocalMap的Entry对ThreadLocal的引用为弱引用。避免了ThreadLocal对象无法被回收的问题
 - 都会通过expungeStaleEntry，cleanSomeSlots，replaceStaleEntry这三个方法回收键为null的Entry对象的值（即为具体实例）以及entry对象本身从而防止内存泄漏，属于安全加固的方法
-
-
-

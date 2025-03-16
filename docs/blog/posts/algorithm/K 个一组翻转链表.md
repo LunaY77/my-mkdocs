@@ -1,9 +1,10 @@
 ---
 title: K 个一组翻转链表
-authors: [cangjingyue]
-tags: 
-    - Algorithm
-date: 2024-11-12 00:00:00
+authors:
+  - cangjingyue
+tags:
+  - Algorithm
+date: 2025-03-16 00:00:00
 categories:
   - Algorithm
 ---

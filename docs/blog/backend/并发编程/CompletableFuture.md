@@ -15,12 +15,9 @@ categories:
 ![image.png](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250315113527.png)
 
 - **接口CompletionStage**
-
 	- 代表异步计算过程中的某一个阶段，一个阶段完成以后可能会触发另外一个阶段。
 	- 一个阶段的执行可能是被单个阶段的完成触发，也可能是由多个阶段一起触发
-
 - **类CompletableFuture**
-
 	- 提供了非常强大的Future的扩展功能，可以帮助我们简化异步编程的复杂性，并且提供了函数式编程的能力，可以通过回调的方式处理计算结果，也提供了转换和组合CompletableFuture的方法
 	- 它可能代表一个明确完成的Future，也可能代表一个完成阶段（CompletionStage），它支持在计算完成以后触发一些函数或执行某些动作
 
@@ -29,8 +26,6 @@ categories:
 ![image.png](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250315113623.png)
 
 对于上述Executor参数说明：若没有指定，则使用默认的**ForkJoinPoolcommonPool()** 作为它的线程池执行异步代码，如果指定线程池，则使用我们自定义的或者特别指定的线程池执行异步代码
-
-
 
 ```java
 @Slf4j(topic = "c.FutureTest1")
@@ -178,16 +173,13 @@ CompletableFuture优点：
 电商网站比价需求分析：
 
 1. 需求说明：
-
 	1. 同一款产品，同时搜索出同款产品在各大电商平台的售价
 	2. 同一款产品，同时搜索出本产品在同一个电商平台下，各个入驻卖家售价是多少
-
 2. 输出返回： 
-	1. 出来结果希望是同款产品的在不同地方的价格清单列表，返回一个`List<String>`
+	1. 出来结果希望是同款产品的在不同地方的价格清单列表，返回一个`List<String>`  
 	例如：***《Mysql》 in jd price is 88.05 《Mysql》 in taobao price is 90.43***
 
 3. 解决方案，对比同一个产品在各个平台上的价格，要求获得一个清单列表
-
 	1. step by step，按部就班，查完淘宝查京东，查完京东查天猫....
 	2. all in，万箭齐发，一口气多线程异步任务同时查询
 
@@ -278,20 +270,16 @@ class NetMall {
 12:22:44.584 c.FutureTest3 [main] - costTime: 1011 ms
 ```
 
-
 ## 4. CompletableFuture常用方法
 
 ### 4.1 获得结果和触发计算
 
 1. 获取结果
-
 	1. `public T get()`
 	2. `public T get(long timeout,TimeUnit unit)`
 	3. `public T join() `--->和get一样的作用，只是不需要抛出异常
 	4. `public T getNow(T valuelfAbsent)` --->计算完成就返回正常值，否则返回备胎值（传入的参数），立即获取结果不阻塞
-
 2. 主动触发计算
-
 	1. `public boolean complete(T value)` ---->是否打断get方法立即返回括号值
 
 ---
@@ -358,7 +346,6 @@ public class CompletableFutureApi2Demo {
 }
 ```
 
-
 - 对比补充
 	
 	- `thenRun(Runnable runnable)` :任务A执行完执行B，并且不需要A的结果
@@ -385,13 +372,10 @@ public class CompletableFutureApi2Demo {
 ```
 
 - CompletableFuture和线程池说明
-
 	- 如果没有传入自定义线程池，都用默认线程池ForkJoinPool
 	- 传入一个线程池，如果你执行第一个任务时，传入了一个自定义线程池
-
 		- 调用thenRun方法执行第二个任务时，则第二个任务和第一个任务时共用同一个线程池
 		- 调用thenRunAsync执行第二个任务时，则第一个任务使用的是你自定义的线程池，第二个任务使用的是ForkJoin线程池
-
 	- 备注：可能是线程处理太快，系统优化切换原则，直接使用main线程处理，thenAccept和thenAcceptAsync，thenApply和thenApplyAsync等，之间的区别同理。
 
 ---
