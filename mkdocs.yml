@@ -254,6 +254,7 @@ nav:
     #   - JavaScript Code Runner: blog/frontend/JavaScript/testJs.md
     #   - JS基本语法: blog/frontend/JavaScript/QuickDive/BasicGrammar.md
   # - 周结: blog/WeeklySummary
+  - 操作系统: blog/os
   - 友链:
       - 友链: about/link.md
   - 关于:
