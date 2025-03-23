@@ -2477,165 +2477,165 @@
 <h3 id="customizing-vim"><a class="toclink" href="../../2024/12/14/editors-vim/#customizing-vim">Customizing Vim</a></h3>
 <p>Vim is customized through a plain-text configuration file in <code>~/.vimrc</code> (containing Vimscript commands).</p>
 <p>Here is the basic configuration file that provided by this course.</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">VimL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-10-10">10</a></span>
-<span class="normal"><a href="#__codelineno-10-11">11</a></span>
-<span class="normal"><a href="#__codelineno-10-12">12</a></span>
-<span class="normal"><a href="#__codelineno-10-13">13</a></span>
-<span class="normal"><a href="#__codelineno-10-14">14</a></span>
-<span class="normal"><a href="#__codelineno-10-15">15</a></span>
-<span class="normal"><a href="#__codelineno-10-16">16</a></span>
-<span class="normal"><a href="#__codelineno-10-17">17</a></span>
-<span class="normal"><a href="#__codelineno-10-18">18</a></span>
-<span class="normal"><a href="#__codelineno-10-19">19</a></span>
-<span class="normal"><a href="#__codelineno-10-20">20</a></span>
-<span class="normal"><a href="#__codelineno-10-21">21</a></span>
-<span class="normal"><a href="#__codelineno-10-22">22</a></span>
-<span class="normal"><a href="#__codelineno-10-23">23</a></span>
-<span class="normal"><a href="#__codelineno-10-24">24</a></span>
-<span class="normal"><a href="#__codelineno-10-25">25</a></span>
-<span class="normal"><a href="#__codelineno-10-26">26</a></span>
-<span class="normal"><a href="#__codelineno-10-27">27</a></span>
-<span class="normal"><a href="#__codelineno-10-28">28</a></span>
-<span class="normal"><a href="#__codelineno-10-29">29</a></span>
-<span class="normal"><a href="#__codelineno-10-30">30</a></span>
-<span class="normal"><a href="#__codelineno-10-31">31</a></span>
-<span class="normal"><a href="#__codelineno-10-32">32</a></span>
-<span class="normal"><a href="#__codelineno-10-33">33</a></span>
-<span class="normal"><a href="#__codelineno-10-34">34</a></span>
-<span class="normal"><a href="#__codelineno-10-35">35</a></span>
-<span class="normal"><a href="#__codelineno-10-36">36</a></span>
-<span class="normal"><a href="#__codelineno-10-37">37</a></span>
-<span class="normal"><a href="#__codelineno-10-38">38</a></span>
-<span class="normal"><a href="#__codelineno-10-39">39</a></span>
-<span class="normal"><a href="#__codelineno-10-40">40</a></span>
-<span class="normal"><a href="#__codelineno-10-41">41</a></span>
-<span class="normal"><a href="#__codelineno-10-42">42</a></span>
-<span class="normal"><a href="#__codelineno-10-43">43</a></span>
-<span class="normal"><a href="#__codelineno-10-44">44</a></span>
-<span class="normal"><a href="#__codelineno-10-45">45</a></span>
-<span class="normal"><a href="#__codelineno-10-46">46</a></span>
-<span class="normal"><a href="#__codelineno-10-47">47</a></span>
-<span class="normal"><a href="#__codelineno-10-48">48</a></span>
-<span class="normal"><a href="#__codelineno-10-49">49</a></span>
-<span class="normal"><a href="#__codelineno-10-50">50</a></span>
-<span class="normal"><a href="#__codelineno-10-51">51</a></span>
-<span class="normal"><a href="#__codelineno-10-52">52</a></span>
-<span class="normal"><a href="#__codelineno-10-53">53</a></span>
-<span class="normal"><a href="#__codelineno-10-54">54</a></span>
-<span class="normal"><a href="#__codelineno-10-55">55</a></span>
-<span class="normal"><a href="#__codelineno-10-56">56</a></span>
-<span class="normal"><a href="#__codelineno-10-57">57</a></span>
-<span class="normal"><a href="#__codelineno-10-58">58</a></span>
-<span class="normal"><a href="#__codelineno-10-59">59</a></span>
-<span class="normal"><a href="#__codelineno-10-60">60</a></span>
-<span class="normal"><a href="#__codelineno-10-61">61</a></span>
-<span class="normal"><a href="#__codelineno-10-62">62</a></span>
-<span class="normal"><a href="#__codelineno-10-63">63</a></span>
-<span class="normal"><a href="#__codelineno-10-64">64</a></span>
-<span class="normal"><a href="#__codelineno-10-65">65</a></span>
-<span class="normal"><a href="#__codelineno-10-66">66</a></span>
-<span class="normal"><a href="#__codelineno-10-67">67</a></span>
-<span class="normal"><a href="#__codelineno-10-68">68</a></span>
-<span class="normal"><a href="#__codelineno-10-69">69</a></span>
-<span class="normal"><a href="#__codelineno-10-70">70</a></span>
-<span class="normal"><a href="#__codelineno-10-71">71</a></span>
-<span class="normal"><a href="#__codelineno-10-72">72</a></span>
-<span class="normal"><a href="#__codelineno-10-73">73</a></span>
-<span class="normal"><a href="#__codelineno-10-74">74</a></span>
-<span class="normal"><a href="#__codelineno-10-75">75</a></span>
-<span class="normal"><a href="#__codelineno-10-76">76</a></span>
-<span class="normal"><a href="#__codelineno-10-77">77</a></span>
-<span class="normal"><a href="#__codelineno-10-78">78</a></span>
-<span class="normal"><a href="#__codelineno-10-79">79</a></span>
-<span class="normal"><a href="#__codelineno-10-80">80</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="c">&quot; Comments in Vimscript start with a `&quot;`.</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a>
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="c">&quot; If you open this file in Vim, it&#39;ll be syntax highlighted for you.</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a>
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="c">&quot; Vim is based on Vi. Setting `nocompatible` switches from the default</span>
-<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="c">&quot; Vi-compatibility mode and enables useful Vim functionality. This</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="c">&quot; configuration option turns out not to be necessary for the file named</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="c">&quot; &#39;~/.vimrc&#39;, because Vim automatically enters nocompatible mode if that file</span>
-<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="c">&quot; is present. But we&#39;re including it here just in case this config file is</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="c">&quot; loaded some other way (e.g. saved as `foo`, and then Vim started with</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="c">&quot; `vim -u foo`).</span>
-<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="k">set</span> <span class="nb">nocompatible</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13"></a>
-<a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="c">&quot; Turn on syntax highlighting.</span>
-<a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="nb">syntax</span> <span class="k">on</span>
-<a id="__codelineno-10-16" name="__codelineno-10-16"></a>
-<a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="c">&quot; Disable the default Vim startup message.</span>
-<a id="__codelineno-10-18" name="__codelineno-10-18"></a><span class="k">set</span> <span class="nb">shortmess</span><span class="p">+=</span>I
-<a id="__codelineno-10-19" name="__codelineno-10-19"></a>
-<a id="__codelineno-10-20" name="__codelineno-10-20"></a><span class="c">&quot; Show line numbers.</span>
-<a id="__codelineno-10-21" name="__codelineno-10-21"></a><span class="k">set</span> <span class="k">number</span>
-<a id="__codelineno-10-22" name="__codelineno-10-22"></a>
-<a id="__codelineno-10-23" name="__codelineno-10-23"></a><span class="c">&quot; This enables relative line numbering mode. With both number and</span>
-<a id="__codelineno-10-24" name="__codelineno-10-24"></a><span class="c">&quot; relativenumber enabled, the current line shows the true line number, while</span>
-<a id="__codelineno-10-25" name="__codelineno-10-25"></a><span class="c">&quot; all other lines (above and below) are numbered relative to the current line.</span>
-<a id="__codelineno-10-26" name="__codelineno-10-26"></a><span class="c">&quot; This is useful because you can tell, at a glance, what count is needed to</span>
-<a id="__codelineno-10-27" name="__codelineno-10-27"></a><span class="c">&quot; jump up or down to a particular line, by {count}k to go up or {count}j to go</span>
-<a id="__codelineno-10-28" name="__codelineno-10-28"></a><span class="c">&quot; down.</span>
-<a id="__codelineno-10-29" name="__codelineno-10-29"></a><span class="k">set</span> <span class="nb">relativenumber</span>
-<a id="__codelineno-10-30" name="__codelineno-10-30"></a>
-<a id="__codelineno-10-31" name="__codelineno-10-31"></a><span class="c">&quot; Always show the status line at the bottom, even if you only have one window open.</span>
-<a id="__codelineno-10-32" name="__codelineno-10-32"></a><span class="k">set</span> <span class="nb">laststatus</span><span class="p">=</span><span class="m">2</span>
-<a id="__codelineno-10-33" name="__codelineno-10-33"></a>
-<a id="__codelineno-10-34" name="__codelineno-10-34"></a><span class="c">&quot; The backspace key has slightly unintuitive behavior by default. For example,</span>
-<a id="__codelineno-10-35" name="__codelineno-10-35"></a><span class="c">&quot; by default, you can&#39;t backspace before the insertion point set with &#39;i&#39;.</span>
-<a id="__codelineno-10-36" name="__codelineno-10-36"></a><span class="c">&quot; This configuration makes backspace behave more reasonably, in that you can</span>
-<a id="__codelineno-10-37" name="__codelineno-10-37"></a><span class="c">&quot; backspace over anything.</span>
-<a id="__codelineno-10-38" name="__codelineno-10-38"></a><span class="k">set</span> <span class="nb">backspace</span><span class="p">=</span>indent<span class="p">,</span><span class="nb">eol</span><span class="p">,</span><span class="k">start</span>
-<a id="__codelineno-10-39" name="__codelineno-10-39"></a>
-<a id="__codelineno-10-40" name="__codelineno-10-40"></a><span class="c">&quot; By default, Vim doesn&#39;t let you hide a buffer (i.e. have a buffer that isn&#39;t</span>
-<a id="__codelineno-10-41" name="__codelineno-10-41"></a><span class="c">&quot; shown in any window) that has unsaved changes. This is to prevent you from &quot;</span>
-<a id="__codelineno-10-42" name="__codelineno-10-42"></a><span class="c">&quot; forgetting about unsaved changes and then quitting e.g. via `:qa!`. We find</span>
-<a id="__codelineno-10-43" name="__codelineno-10-43"></a><span class="c">&quot; hidden buffers helpful enough to disable this protection. See `:help hidden`</span>
-<a id="__codelineno-10-44" name="__codelineno-10-44"></a><span class="c">&quot; for more information on this.</span>
-<a id="__codelineno-10-45" name="__codelineno-10-45"></a><span class="k">set</span> <span class="nb">hidden</span>
-<a id="__codelineno-10-46" name="__codelineno-10-46"></a>
-<a id="__codelineno-10-47" name="__codelineno-10-47"></a><span class="c">&quot; This setting makes search case-insensitive when all characters in the string</span>
-<a id="__codelineno-10-48" name="__codelineno-10-48"></a><span class="c">&quot; being searched are lowercase. However, the search becomes case-sensitive if</span>
-<a id="__codelineno-10-49" name="__codelineno-10-49"></a><span class="c">&quot; it contains any capital letters. This makes searching more convenient.</span>
-<a id="__codelineno-10-50" name="__codelineno-10-50"></a><span class="k">set</span> <span class="nb">ignorecase</span>
-<a id="__codelineno-10-51" name="__codelineno-10-51"></a><span class="k">set</span> <span class="nb">smartcase</span>
-<a id="__codelineno-10-52" name="__codelineno-10-52"></a>
-<a id="__codelineno-10-53" name="__codelineno-10-53"></a><span class="c">&quot; Enable searching as you type, rather than waiting till you press enter.</span>
-<a id="__codelineno-10-54" name="__codelineno-10-54"></a><span class="k">set</span> <span class="nb">incsearch</span>
-<a id="__codelineno-10-55" name="__codelineno-10-55"></a>
-<a id="__codelineno-10-56" name="__codelineno-10-56"></a><span class="c">&quot; Unbind some useless/annoying default key bindings.</span>
-<a id="__codelineno-10-57" name="__codelineno-10-57"></a>nmap Q <span class="p">&lt;</span>Nop<span class="p">&gt;</span> <span class="c">&quot; &#39;Q&#39; in normal mode enters Ex mode. You almost never want this.</span>
-<a id="__codelineno-10-58" name="__codelineno-10-58"></a>
-<a id="__codelineno-10-59" name="__codelineno-10-59"></a><span class="c">&quot; Disable audible bell because it&#39;s annoying.</span>
-<a id="__codelineno-10-60" name="__codelineno-10-60"></a><span class="k">set</span> <span class="nb">noerrorbells</span> <span class="nb">visualbell</span> <span class="nb">t_vb</span><span class="p">=</span>
-<a id="__codelineno-10-61" name="__codelineno-10-61"></a>
-<a id="__codelineno-10-62" name="__codelineno-10-62"></a><span class="c">&quot; Enable mouse support. You should avoid relying on this too much, but it can</span>
-<a id="__codelineno-10-63" name="__codelineno-10-63"></a><span class="c">&quot; sometimes be convenient.</span>
-<a id="__codelineno-10-64" name="__codelineno-10-64"></a><span class="k">set</span> <span class="nb">mouse</span><span class="p">+=</span><span class="k">a</span>
-<a id="__codelineno-10-65" name="__codelineno-10-65"></a>
-<a id="__codelineno-10-66" name="__codelineno-10-66"></a><span class="c">&quot; Try to prevent bad habits like using the arrow keys for movement. This is</span>
-<a id="__codelineno-10-67" name="__codelineno-10-67"></a><span class="c">&quot; not the only possible bad habit. For example, holding down the h/j/k/l keys</span>
-<a id="__codelineno-10-68" name="__codelineno-10-68"></a><span class="c">&quot; for movement, rather than using more efficient movement commands, is also a</span>
-<a id="__codelineno-10-69" name="__codelineno-10-69"></a><span class="c">&quot; bad habit. The former is enforceable through a .vimrc, while we don&#39;t know</span>
-<a id="__codelineno-10-70" name="__codelineno-10-70"></a><span class="c">&quot; how to prevent the latter.</span>
-<a id="__codelineno-10-71" name="__codelineno-10-71"></a><span class="c">&quot; Do this in normal mode...</span>
-<a id="__codelineno-10-72" name="__codelineno-10-72"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>Left<span class="p">&gt;</span>  :<span class="k">echoe</span> <span class="s2">&quot;Use h&quot;</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
-<a id="__codelineno-10-73" name="__codelineno-10-73"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>Right<span class="p">&gt;</span> :<span class="k">echoe</span> <span class="s2">&quot;Use l&quot;</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
-<a id="__codelineno-10-74" name="__codelineno-10-74"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>Up<span class="p">&gt;</span>    :<span class="k">echoe</span> <span class="s2">&quot;Use k&quot;</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
-<a id="__codelineno-10-75" name="__codelineno-10-75"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>Down<span class="p">&gt;</span>  :<span class="k">echoe</span> <span class="s2">&quot;Use j&quot;</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
-<a id="__codelineno-10-76" name="__codelineno-10-76"></a><span class="c">&quot; ...and in insert mode</span>
-<a id="__codelineno-10-77" name="__codelineno-10-77"></a><span class="nb">inoremap</span> <span class="p">&lt;</span>Left<span class="p">&gt;</span>  <span class="p">&lt;</span>ESC<span class="p">&gt;</span>:<span class="k">echoe</span> <span class="s2">&quot;Use h&quot;</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
-<a id="__codelineno-10-78" name="__codelineno-10-78"></a><span class="nb">inoremap</span> <span class="p">&lt;</span>Right<span class="p">&gt;</span> <span class="p">&lt;</span>ESC<span class="p">&gt;</span>:<span class="k">echoe</span> <span class="s2">&quot;Use l&quot;</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
-<a id="__codelineno-10-79" name="__codelineno-10-79"></a><span class="nb">inoremap</span> <span class="p">&lt;</span>Up<span class="p">&gt;</span>    <span class="p">&lt;</span>ESC<span class="p">&gt;</span>:<span class="k">echoe</span> <span class="s2">&quot;Use k&quot;</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
-<a id="__codelineno-10-80" name="__codelineno-10-80"></a><span class="nb">inoremap</span> <span class="p">&lt;</span>Down<span class="p">&gt;</span>  <span class="p">&lt;</span>ESC<span class="p">&gt;</span>:<span class="k">echoe</span> <span class="s2">&quot;Use j&quot;</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">VimL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-5-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-5-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-5-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-5-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-5-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-5-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-5-10">10</a></span>
+<span class="normal"><a href="#__codelineno-5-11">11</a></span>
+<span class="normal"><a href="#__codelineno-5-12">12</a></span>
+<span class="normal"><a href="#__codelineno-5-13">13</a></span>
+<span class="normal"><a href="#__codelineno-5-14">14</a></span>
+<span class="normal"><a href="#__codelineno-5-15">15</a></span>
+<span class="normal"><a href="#__codelineno-5-16">16</a></span>
+<span class="normal"><a href="#__codelineno-5-17">17</a></span>
+<span class="normal"><a href="#__codelineno-5-18">18</a></span>
+<span class="normal"><a href="#__codelineno-5-19">19</a></span>
+<span class="normal"><a href="#__codelineno-5-20">20</a></span>
+<span class="normal"><a href="#__codelineno-5-21">21</a></span>
+<span class="normal"><a href="#__codelineno-5-22">22</a></span>
+<span class="normal"><a href="#__codelineno-5-23">23</a></span>
+<span class="normal"><a href="#__codelineno-5-24">24</a></span>
+<span class="normal"><a href="#__codelineno-5-25">25</a></span>
+<span class="normal"><a href="#__codelineno-5-26">26</a></span>
+<span class="normal"><a href="#__codelineno-5-27">27</a></span>
+<span class="normal"><a href="#__codelineno-5-28">28</a></span>
+<span class="normal"><a href="#__codelineno-5-29">29</a></span>
+<span class="normal"><a href="#__codelineno-5-30">30</a></span>
+<span class="normal"><a href="#__codelineno-5-31">31</a></span>
+<span class="normal"><a href="#__codelineno-5-32">32</a></span>
+<span class="normal"><a href="#__codelineno-5-33">33</a></span>
+<span class="normal"><a href="#__codelineno-5-34">34</a></span>
+<span class="normal"><a href="#__codelineno-5-35">35</a></span>
+<span class="normal"><a href="#__codelineno-5-36">36</a></span>
+<span class="normal"><a href="#__codelineno-5-37">37</a></span>
+<span class="normal"><a href="#__codelineno-5-38">38</a></span>
+<span class="normal"><a href="#__codelineno-5-39">39</a></span>
+<span class="normal"><a href="#__codelineno-5-40">40</a></span>
+<span class="normal"><a href="#__codelineno-5-41">41</a></span>
+<span class="normal"><a href="#__codelineno-5-42">42</a></span>
+<span class="normal"><a href="#__codelineno-5-43">43</a></span>
+<span class="normal"><a href="#__codelineno-5-44">44</a></span>
+<span class="normal"><a href="#__codelineno-5-45">45</a></span>
+<span class="normal"><a href="#__codelineno-5-46">46</a></span>
+<span class="normal"><a href="#__codelineno-5-47">47</a></span>
+<span class="normal"><a href="#__codelineno-5-48">48</a></span>
+<span class="normal"><a href="#__codelineno-5-49">49</a></span>
+<span class="normal"><a href="#__codelineno-5-50">50</a></span>
+<span class="normal"><a href="#__codelineno-5-51">51</a></span>
+<span class="normal"><a href="#__codelineno-5-52">52</a></span>
+<span class="normal"><a href="#__codelineno-5-53">53</a></span>
+<span class="normal"><a href="#__codelineno-5-54">54</a></span>
+<span class="normal"><a href="#__codelineno-5-55">55</a></span>
+<span class="normal"><a href="#__codelineno-5-56">56</a></span>
+<span class="normal"><a href="#__codelineno-5-57">57</a></span>
+<span class="normal"><a href="#__codelineno-5-58">58</a></span>
+<span class="normal"><a href="#__codelineno-5-59">59</a></span>
+<span class="normal"><a href="#__codelineno-5-60">60</a></span>
+<span class="normal"><a href="#__codelineno-5-61">61</a></span>
+<span class="normal"><a href="#__codelineno-5-62">62</a></span>
+<span class="normal"><a href="#__codelineno-5-63">63</a></span>
+<span class="normal"><a href="#__codelineno-5-64">64</a></span>
+<span class="normal"><a href="#__codelineno-5-65">65</a></span>
+<span class="normal"><a href="#__codelineno-5-66">66</a></span>
+<span class="normal"><a href="#__codelineno-5-67">67</a></span>
+<span class="normal"><a href="#__codelineno-5-68">68</a></span>
+<span class="normal"><a href="#__codelineno-5-69">69</a></span>
+<span class="normal"><a href="#__codelineno-5-70">70</a></span>
+<span class="normal"><a href="#__codelineno-5-71">71</a></span>
+<span class="normal"><a href="#__codelineno-5-72">72</a></span>
+<span class="normal"><a href="#__codelineno-5-73">73</a></span>
+<span class="normal"><a href="#__codelineno-5-74">74</a></span>
+<span class="normal"><a href="#__codelineno-5-75">75</a></span>
+<span class="normal"><a href="#__codelineno-5-76">76</a></span>
+<span class="normal"><a href="#__codelineno-5-77">77</a></span>
+<span class="normal"><a href="#__codelineno-5-78">78</a></span>
+<span class="normal"><a href="#__codelineno-5-79">79</a></span>
+<span class="normal"><a href="#__codelineno-5-80">80</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="c">&quot; Comments in Vimscript start with a `&quot;`.</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="c">&quot; If you open this file in Vim, it&#39;ll be syntax highlighted for you.</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="c">&quot; Vim is based on Vi. Setting `nocompatible` switches from the default</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="c">&quot; Vi-compatibility mode and enables useful Vim functionality. This</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="c">&quot; configuration option turns out not to be necessary for the file named</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8"></a><span class="c">&quot; &#39;~/.vimrc&#39;, because Vim automatically enters nocompatible mode if that file</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="c">&quot; is present. But we&#39;re including it here just in case this config file is</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="c">&quot; loaded some other way (e.g. saved as `foo`, and then Vim started with</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="c">&quot; `vim -u foo`).</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="k">set</span> <span class="nb">nocompatible</span>
+<a id="__codelineno-5-13" name="__codelineno-5-13"></a>
+<a id="__codelineno-5-14" name="__codelineno-5-14"></a><span class="c">&quot; Turn on syntax highlighting.</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="nb">syntax</span> <span class="k">on</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="c">&quot; Disable the default Vim startup message.</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="k">set</span> <span class="nb">shortmess</span><span class="p">+=</span>I
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a>
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="c">&quot; Show line numbers.</span>
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="k">set</span> <span class="k">number</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a>
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="c">&quot; This enables relative line numbering mode. With both number and</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="c">&quot; relativenumber enabled, the current line shows the true line number, while</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="c">&quot; all other lines (above and below) are numbered relative to the current line.</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26"></a><span class="c">&quot; This is useful because you can tell, at a glance, what count is needed to</span>
+<a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="c">&quot; jump up or down to a particular line, by {count}k to go up or {count}j to go</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="c">&quot; down.</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29"></a><span class="k">set</span> <span class="nb">relativenumber</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30"></a>
+<a id="__codelineno-5-31" name="__codelineno-5-31"></a><span class="c">&quot; Always show the status line at the bottom, even if you only have one window open.</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32"></a><span class="k">set</span> <span class="nb">laststatus</span><span class="p">=</span><span class="m">2</span>
+<a id="__codelineno-5-33" name="__codelineno-5-33"></a>
+<a id="__codelineno-5-34" name="__codelineno-5-34"></a><span class="c">&quot; The backspace key has slightly unintuitive behavior by default. For example,</span>
+<a id="__codelineno-5-35" name="__codelineno-5-35"></a><span class="c">&quot; by default, you can&#39;t backspace before the insertion point set with &#39;i&#39;.</span>
+<a id="__codelineno-5-36" name="__codelineno-5-36"></a><span class="c">&quot; This configuration makes backspace behave more reasonably, in that you can</span>
+<a id="__codelineno-5-37" name="__codelineno-5-37"></a><span class="c">&quot; backspace over anything.</span>
+<a id="__codelineno-5-38" name="__codelineno-5-38"></a><span class="k">set</span> <span class="nb">backspace</span><span class="p">=</span>indent<span class="p">,</span><span class="nb">eol</span><span class="p">,</span><span class="k">start</span>
+<a id="__codelineno-5-39" name="__codelineno-5-39"></a>
+<a id="__codelineno-5-40" name="__codelineno-5-40"></a><span class="c">&quot; By default, Vim doesn&#39;t let you hide a buffer (i.e. have a buffer that isn&#39;t</span>
+<a id="__codelineno-5-41" name="__codelineno-5-41"></a><span class="c">&quot; shown in any window) that has unsaved changes. This is to prevent you from &quot;</span>
+<a id="__codelineno-5-42" name="__codelineno-5-42"></a><span class="c">&quot; forgetting about unsaved changes and then quitting e.g. via `:qa!`. We find</span>
+<a id="__codelineno-5-43" name="__codelineno-5-43"></a><span class="c">&quot; hidden buffers helpful enough to disable this protection. See `:help hidden`</span>
+<a id="__codelineno-5-44" name="__codelineno-5-44"></a><span class="c">&quot; for more information on this.</span>
+<a id="__codelineno-5-45" name="__codelineno-5-45"></a><span class="k">set</span> <span class="nb">hidden</span>
+<a id="__codelineno-5-46" name="__codelineno-5-46"></a>
+<a id="__codelineno-5-47" name="__codelineno-5-47"></a><span class="c">&quot; This setting makes search case-insensitive when all characters in the string</span>
+<a id="__codelineno-5-48" name="__codelineno-5-48"></a><span class="c">&quot; being searched are lowercase. However, the search becomes case-sensitive if</span>
+<a id="__codelineno-5-49" name="__codelineno-5-49"></a><span class="c">&quot; it contains any capital letters. This makes searching more convenient.</span>
+<a id="__codelineno-5-50" name="__codelineno-5-50"></a><span class="k">set</span> <span class="nb">ignorecase</span>
+<a id="__codelineno-5-51" name="__codelineno-5-51"></a><span class="k">set</span> <span class="nb">smartcase</span>
+<a id="__codelineno-5-52" name="__codelineno-5-52"></a>
+<a id="__codelineno-5-53" name="__codelineno-5-53"></a><span class="c">&quot; Enable searching as you type, rather than waiting till you press enter.</span>
+<a id="__codelineno-5-54" name="__codelineno-5-54"></a><span class="k">set</span> <span class="nb">incsearch</span>
+<a id="__codelineno-5-55" name="__codelineno-5-55"></a>
+<a id="__codelineno-5-56" name="__codelineno-5-56"></a><span class="c">&quot; Unbind some useless/annoying default key bindings.</span>
+<a id="__codelineno-5-57" name="__codelineno-5-57"></a>nmap Q <span class="p">&lt;</span>Nop<span class="p">&gt;</span> <span class="c">&quot; &#39;Q&#39; in normal mode enters Ex mode. You almost never want this.</span>
+<a id="__codelineno-5-58" name="__codelineno-5-58"></a>
+<a id="__codelineno-5-59" name="__codelineno-5-59"></a><span class="c">&quot; Disable audible bell because it&#39;s annoying.</span>
+<a id="__codelineno-5-60" name="__codelineno-5-60"></a><span class="k">set</span> <span class="nb">noerrorbells</span> <span class="nb">visualbell</span> <span class="nb">t_vb</span><span class="p">=</span>
+<a id="__codelineno-5-61" name="__codelineno-5-61"></a>
+<a id="__codelineno-5-62" name="__codelineno-5-62"></a><span class="c">&quot; Enable mouse support. You should avoid relying on this too much, but it can</span>
+<a id="__codelineno-5-63" name="__codelineno-5-63"></a><span class="c">&quot; sometimes be convenient.</span>
+<a id="__codelineno-5-64" name="__codelineno-5-64"></a><span class="k">set</span> <span class="nb">mouse</span><span class="p">+=</span><span class="k">a</span>
+<a id="__codelineno-5-65" name="__codelineno-5-65"></a>
+<a id="__codelineno-5-66" name="__codelineno-5-66"></a><span class="c">&quot; Try to prevent bad habits like using the arrow keys for movement. This is</span>
+<a id="__codelineno-5-67" name="__codelineno-5-67"></a><span class="c">&quot; not the only possible bad habit. For example, holding down the h/j/k/l keys</span>
+<a id="__codelineno-5-68" name="__codelineno-5-68"></a><span class="c">&quot; for movement, rather than using more efficient movement commands, is also a</span>
+<a id="__codelineno-5-69" name="__codelineno-5-69"></a><span class="c">&quot; bad habit. The former is enforceable through a .vimrc, while we don&#39;t know</span>
+<a id="__codelineno-5-70" name="__codelineno-5-70"></a><span class="c">&quot; how to prevent the latter.</span>
+<a id="__codelineno-5-71" name="__codelineno-5-71"></a><span class="c">&quot; Do this in normal mode...</span>
+<a id="__codelineno-5-72" name="__codelineno-5-72"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>Left<span class="p">&gt;</span>  :<span class="k">echoe</span> <span class="s2">&quot;Use h&quot;</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<a id="__codelineno-5-73" name="__codelineno-5-73"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>Right<span class="p">&gt;</span> :<span class="k">echoe</span> <span class="s2">&quot;Use l&quot;</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<a id="__codelineno-5-74" name="__codelineno-5-74"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>Up<span class="p">&gt;</span>    :<span class="k">echoe</span> <span class="s2">&quot;Use k&quot;</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<a id="__codelineno-5-75" name="__codelineno-5-75"></a><span class="nb">nnoremap</span> <span class="p">&lt;</span>Down<span class="p">&gt;</span>  :<span class="k">echoe</span> <span class="s2">&quot;Use j&quot;</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<a id="__codelineno-5-76" name="__codelineno-5-76"></a><span class="c">&quot; ...and in insert mode</span>
+<a id="__codelineno-5-77" name="__codelineno-5-77"></a><span class="nb">inoremap</span> <span class="p">&lt;</span>Left<span class="p">&gt;</span>  <span class="p">&lt;</span>ESC<span class="p">&gt;</span>:<span class="k">echoe</span> <span class="s2">&quot;Use h&quot;</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<a id="__codelineno-5-78" name="__codelineno-5-78"></a><span class="nb">inoremap</span> <span class="p">&lt;</span>Right<span class="p">&gt;</span> <span class="p">&lt;</span>ESC<span class="p">&gt;</span>:<span class="k">echoe</span> <span class="s2">&quot;Use l&quot;</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<a id="__codelineno-5-79" name="__codelineno-5-79"></a><span class="nb">inoremap</span> <span class="p">&lt;</span>Up<span class="p">&gt;</span>    <span class="p">&lt;</span>ESC<span class="p">&gt;</span>:<span class="k">echoe</span> <span class="s2">&quot;Use k&quot;</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
+<a id="__codelineno-5-80" name="__codelineno-5-80"></a><span class="nb">inoremap</span> <span class="p">&lt;</span>Down<span class="p">&gt;</span>  <span class="p">&lt;</span>ESC<span class="p">&gt;</span>:<span class="k">echoe</span> <span class="s2">&quot;Use j&quot;</span><span class="p">&lt;</span>CR<span class="p">&gt;</span>
 </code></pre></div></td></tr></table></div>
 <p>For macos, There might not have the default <code>.vimrc</code> file in <code>~</code>.</p>
 <p>But never mind, just type <code>vim ~/.vimrc</code> and paste the code into it, then type <code>:wq</code>.</p>
@@ -2672,7 +2672,7 @@
 <p>Complete <code>vimtutor</code>. Note: it looks best in a <code>80x24</code> (80 columns by 24 lines) terminal window.</p>
 <p><br/></p>
 <p><strong>Solution</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>vimtutor
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Bash</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>vimtutor
 </code></pre></div></td></tr></table></div>
 <hr />
 <p><strong>Problem2</strong></p>
@@ -2694,27 +2694,27 @@
 <p><strong>Problem3</strong></p>
 <p>To practice using Vim, re-do the Demo from lecture on your own machine.</p>
 <p>Here is a broken fizz buzz implementation:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-12-10">10</a></span>
-<span class="normal"><a href="#__codelineno-12-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">fizz_buzz</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a>            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fizz&#39;</span><span class="p">)</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6"></a>            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fizz&#39;</span><span class="p">)</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span><span class="p">:</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9"></a>
-<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11"></a>    <span class="n">fizz_buzz</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-7-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-7-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-7-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-7-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-7-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-7-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-7-10">10</a></span>
+<span class="normal"><a href="#__codelineno-7-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">fizz_buzz</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fizz&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fizz&#39;</span><span class="p">)</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-7-8" name="__codelineno-7-8"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-7-9" name="__codelineno-7-9"></a>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a>    <span class="n">fizz_buzz</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
 <p>fix the following issues:</p>
 <ul>
@@ -2731,9 +2731,9 @@
 <li><code>o</code> create a new line</li>
 <li>insert code:</li>
 </ol>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
-<span class="normal"><a href="#__codelineno-13-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a>    <span class="n">main</span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<span class="normal"><a href="#__codelineno-8-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a>    <span class="n">main</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <ol>
 <li><code>/limit</code> search for <code>limit</code>, then press <code>n</code> to move to the next match</li>
@@ -2746,37 +2746,37 @@
 <li><code>/10</code> find <code>10</code>, then <code>ci(</code> change the text in <code>(</code>, type <code>int(sys.argv[1])</code></li>
 </ol>
 <p>The final result:</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-14-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-14-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-14-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-14-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-14-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-14-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-14-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-14-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-14-10">10</a></span>
-<span class="normal"><a href="#__codelineno-14-11">11</a></span>
-<span class="normal"><a href="#__codelineno-14-12">12</a></span>
-<span class="normal"><a href="#__codelineno-14-13">13</a></span>
-<span class="normal"><a href="#__codelineno-14-14">14</a></span>
-<span class="normal"><a href="#__codelineno-14-15">15</a></span>
-<span class="normal"><a href="#__codelineno-14-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a>
-<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">fizz_buzz</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">limit</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<a id="__codelineno-14-6" name="__codelineno-14-6"></a>            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fizz&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<a id="__codelineno-14-7" name="__codelineno-14-7"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<a id="__codelineno-14-8" name="__codelineno-14-8"></a>            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;buzz&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
-<a id="__codelineno-14-9" name="__codelineno-14-9"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span><span class="p">:</span>
-<a id="__codelineno-14-10" name="__codelineno-14-10"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-<a id="__codelineno-14-11" name="__codelineno-14-11"></a>
-<a id="__codelineno-14-12" name="__codelineno-14-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
-<a id="__codelineno-14-13" name="__codelineno-14-13"></a>    <span class="n">fizz_buzz</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
-<a id="__codelineno-14-14" name="__codelineno-14-14"></a>
-<a id="__codelineno-14-15" name="__codelineno-14-15"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-<a id="__codelineno-14-16" name="__codelineno-14-16"></a>    <span class="n">main</span><span class="p">()</span>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Python</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-9-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-9-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-9-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-9-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-9-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-9-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-9-10">10</a></span>
+<span class="normal"><a href="#__codelineno-9-11">11</a></span>
+<span class="normal"><a href="#__codelineno-9-12">12</a></span>
+<span class="normal"><a href="#__codelineno-9-13">13</a></span>
+<span class="normal"><a href="#__codelineno-9-14">14</a></span>
+<span class="normal"><a href="#__codelineno-9-15">15</a></span>
+<span class="normal"><a href="#__codelineno-9-16">16</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="k">def</span><span class="w"> </span><span class="nf">fizz_buzz</span><span class="p">(</span><span class="n">limit</span><span class="p">):</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">limit</span> <span class="o">+</span> <span class="mi">1</span><span class="p">):</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a>            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fizz&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a>            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;buzz&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;&#39;</span><span class="p">)</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a>        <span class="k">if</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">3</span> <span class="ow">and</span> <span class="n">i</span> <span class="o">%</span> <span class="mi">5</span><span class="p">:</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a>            <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a>
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a>    <span class="n">fizz_buzz</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16"></a>    <span class="n">main</span><span class="p">()</span>
 </code></pre></div></td></tr></table></div>
 <hr />
 <p><strong>Problem4</strong></p>
