@@ -87,6 +87,18 @@ hide:
         </div>
       </div>
 
+      <div class="card">
+        <img class="ava" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/b_fe521bb737289f842c2dd42061835264.jpg" />
+        <div class="card-header">
+          <div>
+          <a href="https://krisonzhang.cn" target="_blank">Krison's Blog</a>
+          </div>
+          <div class="info">
+            天地有大美而不言
+          </div>
+        </div>
+      </div>
+
 
     </div>
 
