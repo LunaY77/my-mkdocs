@@ -99,6 +99,17 @@ hide:
         </div>
       </div>
 
+      <div class="card">
+        <img class="ava" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/512x512.png" />
+        <div class="card-header">
+          <div>
+          <a href="https://baoshuo.ren" target="_blank">宝硕</a>
+          </div>
+          <div class="info">
+            即使是沉重的过去，也要接受它再继续向前迈进。
+          </div>
+        </div>
+      </div>
 
     </div>
 
