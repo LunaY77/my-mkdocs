@@ -10,13 +10,13 @@
         <meta name="author" content="苍镜月">
       
       
-        <link rel="canonical" href="https://cangjingyue.top/blog/backend/spring/Spring%E4%B8%AD%40Transactional%E5%A4%B1%E6%95%88%E5%9C%BA%E6%99%AF/">
+        <link rel="canonical" href="https://cangjingyue.top/blog/backend/spring/%E8%AF%A6%E8%A7%A3%20Spring%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/">
       
       
-        <link rel="prev" href="../Spring-tx/">
+        <link rel="prev" href="../%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/">
       
       
-        <link rel="next" href="../%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/">
+        <link rel="next" href="../simple-spring/simple-spring/">
       
       
       <link rel="icon" href="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2025/01/23/106435907.jpeg">
@@ -24,7 +24,7 @@
     
     
       
-        <title>Spring中@Transactional失效场景 - 苍镜月's docs</title>
+        <title>详解 Spring 生命周期 - 苍镜月's docs</title>
       
     
     
@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#springtransactional" class="md-skip">
+        <a href="#spring" class="md-skip">
           跳转至
         </a>
       
@@ -133,7 +133,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Spring中@Transactional失效场景
+              详解 Spring 生命周期
             
           </span>
         </div>
@@ -1381,32 +1381,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    Spring中@Transactional失效场景
-    
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../Spring%E4%B8%AD%40Transactional%E5%A4%B1%E6%95%88%E5%9C%BA%E6%99%AF/" class="md-nav__link">
         
   
   
@@ -1417,197 +1395,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="目录">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      目录
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#spring" class="md-nav__link">
-    <span class="md-ellipsis">
-      Spring 事务基本介绍
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#1-transactional-public" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. @Transactional应用在非 public 修饰的方法上
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. @Transactional应用在非 public 修饰的方法上">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-public" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. public 修饰
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. public 修饰">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-override" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 接口继承方法(@Override)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 多个方法
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-static" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 非 static 修饰
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-final" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. final 修饰
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. final 修饰">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-jdk" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. JDK 动态代理
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-cglib" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Cglib 动态代理
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-propagation" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. propagation 属性设置错误
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#3-rollbackfor" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. rollbackFor属性设置错误
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#4-transactional" class="md-nav__link">
-    <span class="md-ellipsis">
-      4. 方法调用导致@Transactional失效
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#5-transactional" class="md-nav__link">
-    <span class="md-ellipsis">
-      5. 异常捕获导致@Transactional失效
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
-    <span class="md-ellipsis">
-      6. 数据库引擎不支持事务
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
-    <span class="md-ellipsis">
-      7. 未启用事务
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#8-beanspring" class="md-nav__link">
-    <span class="md-ellipsis">
-      8. Bean没有纳入Spring容器管理
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#9" class="md-nav__link">
-    <span class="md-ellipsis">
-      9. 事务方法启动新线程进行异步操作
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1640,10 +1427,32 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../%E8%AF%A6%E8%A7%A3%20Spring%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    详解 Spring 生命周期
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   
@@ -1654,6 +1463,170 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-spring" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. Spring 生命周期流程图
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-applicationcontextinitializer" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. ApplicationContextInitializer
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-beandefinitionregistrypostprocessor" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. BeanDefinitionRegistryPostProcessor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-beanfactorypostprocessor" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. BeanFactoryPostProcessor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-applicationeventmulticaster" class="md-nav__link">
+    <span class="md-ellipsis">
+      5. ApplicationEventMulticaster
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-instantiationawarebeanpostprocessor" class="md-nav__link">
+    <span class="md-ellipsis">
+      6. InstantiationAwareBeanPostProcessor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-smartinstantiationawarebeanpostprocessor" class="md-nav__link">
+    <span class="md-ellipsis">
+      7. SmartInstantiationAwareBeanPostProcessor
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-beanfactoryaware" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. BeanFactoryAware
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-beanpostprocessor-postprocessbeforeinitialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      9. BeanPostProcessor #postProcessBeforeInitialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-initializingbean" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. InitializingBean
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-beanpostprocessor-postprocessafterinitialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. BeanPostProcessor #postProcessAfterInitialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-smartinitializingsingleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. SmartInitializingSingleton
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-commandlinerunner" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. CommandLineRunner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-disposablebean" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. DisposableBean
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-applicationlistener" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. ApplicationListener
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考资料
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -2659,171 +2632,144 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#spring" class="md-nav__link">
+  <a href="#1-spring" class="md-nav__link">
     <span class="md-ellipsis">
-      Spring 事务基本介绍
+      1. Spring 生命周期流程图
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#1-transactional-public" class="md-nav__link">
+  <a href="#2-applicationcontextinitializer" class="md-nav__link">
     <span class="md-ellipsis">
-      1. @Transactional应用在非 public 修饰的方法上
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. @Transactional应用在非 public 修饰的方法上">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-public" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. public 修饰
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="1. public 修饰">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-override" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. 接口继承方法(@Override)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 多个方法
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-static" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. 非 static 修饰
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#3-final" class="md-nav__link">
-    <span class="md-ellipsis">
-      3. final 修饰
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="3. final 修饰">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#1-jdk" class="md-nav__link">
-    <span class="md-ellipsis">
-      1. JDK 动态代理
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#2-cglib" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. Cglib 动态代理
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#2-propagation" class="md-nav__link">
-    <span class="md-ellipsis">
-      2. propagation 属性设置错误
+      2. ApplicationContextInitializer
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-rollbackfor" class="md-nav__link">
+  <a href="#3-beandefinitionregistrypostprocessor" class="md-nav__link">
     <span class="md-ellipsis">
-      3. rollbackFor属性设置错误
+      3. BeanDefinitionRegistryPostProcessor
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-transactional" class="md-nav__link">
+  <a href="#4-beanfactorypostprocessor" class="md-nav__link">
     <span class="md-ellipsis">
-      4. 方法调用导致@Transactional失效
+      4. BeanFactoryPostProcessor
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-transactional" class="md-nav__link">
+  <a href="#5-applicationeventmulticaster" class="md-nav__link">
     <span class="md-ellipsis">
-      5. 异常捕获导致@Transactional失效
+      5. ApplicationEventMulticaster
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#6" class="md-nav__link">
+  <a href="#6-instantiationawarebeanpostprocessor" class="md-nav__link">
     <span class="md-ellipsis">
-      6. 数据库引擎不支持事务
+      6. InstantiationAwareBeanPostProcessor
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#7" class="md-nav__link">
+  <a href="#7-smartinstantiationawarebeanpostprocessor" class="md-nav__link">
     <span class="md-ellipsis">
-      7. 未启用事务
+      7. SmartInstantiationAwareBeanPostProcessor
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#8-beanspring" class="md-nav__link">
+  <a href="#8-beanfactoryaware" class="md-nav__link">
     <span class="md-ellipsis">
-      8. Bean没有纳入Spring容器管理
+      8. BeanFactoryAware
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#9" class="md-nav__link">
+  <a href="#9-beanpostprocessor-postprocessbeforeinitialization" class="md-nav__link">
     <span class="md-ellipsis">
-      9. 事务方法启动新线程进行异步操作
+      9. BeanPostProcessor #postProcessBeforeInitialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-initializingbean" class="md-nav__link">
+    <span class="md-ellipsis">
+      10. InitializingBean
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-beanpostprocessor-postprocessafterinitialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      11. BeanPostProcessor #postProcessAfterInitialization
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-smartinitializingsingleton" class="md-nav__link">
+    <span class="md-ellipsis">
+      12. SmartInitializingSingleton
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-commandlinerunner" class="md-nav__link">
+    <span class="md-ellipsis">
+      13. CommandLineRunner
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14-disposablebean" class="md-nav__link">
+    <span class="md-ellipsis">
+      14. DisposableBean
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15-applicationlistener" class="md-nav__link">
+    <span class="md-ellipsis">
+      15. ApplicationListener
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      参考资料
     </span>
   </a>
   
@@ -2861,7 +2807,7 @@
 
 
   
-    <a href="https://github.com/LunaY77/my-mkdocs.git/edit/main/docs/blog/backend/spring/Spring中@Transactional失效场景.md" title="编辑此页" class="md-content__button md-icon">
+    <a href="https://github.com/LunaY77/my-mkdocs.git/edit/main/docs/blog/backend/spring/详解 Spring 生命周期.md" title="编辑此页" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"/></svg>
     </a>
@@ -2870,57 +2816,54 @@
     
       
     
-    <a href="https://github.com/LunaY77/my-mkdocs.git/raw/main/docs/blog/backend/spring/Spring中@Transactional失效场景.md" title="查看本页的源代码" class="md-content__button md-icon">
+    <a href="https://github.com/LunaY77/my-mkdocs.git/raw/main/docs/blog/backend/spring/详解 Spring 生命周期.md" title="查看本页的源代码" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 18c.56 0 1 .44 1 1s-.44 1-1 1-1-.44-1-1 .44-1 1-1m0-3c-2.73 0-5.06 1.66-6 4 .94 2.34 3.27 4 6 4s5.06-1.66 6-4c-.94-2.34-3.27-4-6-4m0 6.5a2.5 2.5 0 0 1-2.5-2.5 2.5 2.5 0 0 1 2.5-2.5 2.5 2.5 0 0 1 2.5 2.5 2.5 2.5 0 0 1-2.5 2.5M9.27 20H6V4h7v5h5v4.07c.7.08 1.36.25 2 .49V8l-6-6H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h4.5a8.2 8.2 0 0 1-1.23-2"/></svg>
     </a>
   
 
 
-<h1 id="springtransactional">Spring中@Transactional失效场景<a class="headerlink" href="#springtransactional" title="Permanent link">&para;</a></h1>
+<h1 id="spring">详解 Spring 生命周期<a class="headerlink" href="#spring" title="Permanent link">&para;</a></h1>
 <div style="margin-top: -30px; font-size: 0.75em; opacity: 0.7;">
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2796 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 200 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 5 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 12 分钟</p>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10h-2a8 8 0 0 1-8 8 8 8 0 0 1-8-8 8 8 0 0 1 8-8zm6.78 1a.7.7 0 0 0-.48.2l-1.22 1.21 2.5 2.5L20.8 5.7c.26-.26.26-.7 0-.95L19.25 3.2c-.13-.13-.3-.2-.47-.2m-2.41 2.12L9 12.5V15h2.5l7.37-7.38z"/></svg></span> 约 2032 个字 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M392.8 1.2c-17-4.9-34.7 5-39.6 22l-128 448c-4.9 17 5 34.7 22 39.6s34.7-5 39.6-22l128-448c4.9-17-5-34.7-22-39.6m80.6 120.1c-12.5 12.5-12.5 32.8 0 45.3l89.3 89.4-89.4 89.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l112-112c12.5-12.5 12.5-32.8 0-45.3l-112-112c-12.5-12.5-32.8-12.5-45.3 0zm-306.7 0c-12.5-12.5-32.8-12.5-45.3 0l-112 112c-12.5 12.5-12.5 32.8 0 45.3l112 112c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256l89.4-89.4c12.5-12.5 12.5-32.8 0-45.3"/></svg></span> 179 行代码 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 17H7V3h14m0-2H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V3a2 2 0 0 0-2-2M3 5H1v16a2 2 0 0 0 2 2h16v-2H3m12.96-10.71-2.75 3.54-1.96-2.36L8.5 15h11z"/></svg></span> 1 张图片 <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c4.42 0 8-3.58 8-8s-3.58-8-8-8-8 3.58-8 8 3.58 8 8 8m0-18c5.5 0 10 4.5 10 10s-4.5 10-10 10C6.47 22 2 17.5 2 12S6.5 2 12 2m.5 11H11V7h1.5v4.26l3.7-2.13.75 1.3z"/></svg></span> 预计阅读时间 9 分钟</p>
 </div>
-<h2 id="spring">Spring 事务基本介绍<a class="headerlink" href="#spring" title="Permanent link">&para;</a></h2>
-<p>基本介绍-&gt; <a href="../Spring-tx/">Spring事务</a></p>
-<h2 id="1-transactional-public">1. @Transactional应用在非 public 修饰的方法上<a class="headerlink" href="#1-transactional-public" title="Permanent link">&para;</a></h2>
-<p>使用@Transactional修饰的方法，必须是public修饰、非static修饰、非final修饰的，一个不满足就会导致事务失效，<strong>但是这是不准确的！</strong></p>
-<p><img alt="image.png" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250307194551.png" /></p>
-<p>因为Spring的事务是通过AOP实现的，而 AOP 无法拦截 private 方法。</p>
-<p>我们知道 AOP 的实现有两种，分别是 JDK 动态代理和 Cglib 动态代理。JDK 动态代理是基于接口的，和代理对象为兄弟关系；Cglib 动态代理是基于继承的，和代理对象是父子关系。</p>
 <blockquote>
-<p>PS: 如果你使用的是新版的 idea，那么违反上述情况均会直接在编译时期报错，但是依然可以运行，请多加注意⚠️</p>
+<p>本文中除了 Simple-Spring 未实现的的功能，均使用 Simple-Spring 中的代码</p>
 </blockquote>
-<hr />
-<h3 id="1-public"><strong>1. public 修饰</strong><a class="headerlink" href="#1-public" title="Permanent link">&para;</a></h3>
-<h4 id="1-override"><strong>1. 接口继承方法(@Override)</strong><a class="headerlink" href="#1-override" title="Permanent link">&para;</a></h4>
-<p>如果一个方法继承自接口，那么一定是 public 的，事务生效</p>
-<hr />
-<h4 id="2"><strong>2. 多个方法</strong><a class="headerlink" href="#2" title="Permanent link">&para;</a></h4>
-<p>为了简化讨论，仅对两个方法的情况进行测试，但两个和多个本质上差别不大</p>
-<p><strong><em>假设 A 方法为接口继承方法(一定为 public)，B 方法为实现类自定义方法，条件变量为@Transactional 注解位置、B 方法修饰符、动态代理类型。</em></strong></p>
-<p>前置准备如下:</p>
-<details>
-
-<summary>前置准备</summary>
-
-表结构
-
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">SQL</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
+<h2 id="1-spring">1. Spring 生命周期流程图<a class="headerlink" href="#1-spring" title="Permanent link">&para;</a></h2>
+<p><img alt="Spring 生命周期.png" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/Spring%20%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png" /></p>
+<h2 id="2-applicationcontextinitializer">2. ApplicationContextInitializer<a class="headerlink" href="#2-applicationcontextinitializer" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>org.springframework.context.ApplicationContextInitializer</p>
+</blockquote>
+<p>这是整个spring容器在刷新之前初始化<code>ConfigurableApplicationContext</code>的回调接口，简单来说，就是在容器刷新之前调用此类的<code>initialize</code>方法。这个点允许被用户自己扩展。用户可以在整个spring容器还没被初始化之前做一些事情。</p>
+<p>可以想到的场景可能为，在最开始激活一些配置，或者利用这时候class还没被类加载器加载的时机，进行动态字节码注入等操作。</p>
+<p>扩展方式为：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span>
 <span class="normal"><a href="#__codelineno-0-2">2</a></span>
 <span class="normal"><a href="#__codelineno-0-3">3</a></span>
 <span class="normal"><a href="#__codelineno-0-4">4</a></span>
 <span class="normal"><a href="#__codelineno-0-5">5</a></span>
-<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="k">create</span><span class="w"> </span><span class="k">table</span><span class="w"> </span><span class="n">goods</span><span class="w">  </span>
-<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="p">(</span><span class="w">  </span>
-<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="n">id</span><span class="w">    </span><span class="nb">int</span><span class="w"> </span><span class="n">auto_increment</span><span class="w">  </span>
-<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="k">primary</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w">  </span>
-<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="n">price</span><span class="w"> </span><span class="nb">decimal</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">null</span><span class="w">  </span>
-<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">);</span>
+<span class="normal"><a href="#__codelineno-0-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestApplicationContextInitializer</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">ApplicationContextInitializer</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initialize</span><span class="p">(</span><span class="n">ConfigurableApplicationContext</span><span class="w"> </span><span class="n">applicationContext</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-0-4" name="__codelineno-0-4"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[ApplicationContextInitializer]&quot;</span><span class="p">);</span>
+<a id="__codelineno-0-5" name="__codelineno-0-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-0-6" name="__codelineno-0-6"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-
-实体类
-
+<p>因为这时候spring容器还没被初始化，所以想要自己的扩展的生效，有以下三种方式：</p>
+<ul>
+<li>在启动类中用<code>springApplication.addInitializers(new TestApplicationContextInitializer())</code>语句加入</li>
+<li>配置文件配置<code>context.initializer.classes=com.example.demo.TestApplicationContextInitializer</code></li>
+<li>Spring SPI扩展，在spring.factories中加入<code>org.springframework.context.ApplicationContextInitializer=com.example.demo.TestApplicationContextInitializer</code></li>
+</ul>
+<h2 id="3-beandefinitionregistrypostprocessor">3. BeanDefinitionRegistryPostProcessor<a class="headerlink" href="#3-beandefinitionregistrypostprocessor" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>org.springframework.beans.factory.support.BeanDefinitionRegistryPostProcessor</p>
+</blockquote>
+<p>这个接口在读取项目中的<code>beanDefinition</code>之后执行，提供一个补充的扩展点</p>
+<p>使用场景：你可以在这里动态注册自己的<code>beanDefinition</code>，可以加载classpath之外的bean</p>
+<p>扩展方式为:</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-1-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-1-3"> 3</a></span>
@@ -2931,44 +2874,46 @@
 <span class="normal"><a href="#__codelineno-1-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-1-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-1-10">10</a></span>
-<span class="normal"><a href="#__codelineno-1-11">11</a></span>
-<span class="normal"><a href="#__codelineno-1-12">12</a></span>
-<span class="normal"><a href="#__codelineno-1-13">13</a></span>
-<span class="normal"><a href="#__codelineno-1-14">14</a></span>
-<span class="normal"><a href="#__codelineno-1-15">15</a></span>
-<span class="normal"><a href="#__codelineno-1-16">16</a></span>
-<span class="normal"><a href="#__codelineno-1-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="nd">@TableName</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="s">&quot;goods&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="nd">@Data</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="nd">@AllArgsConstructor</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="nd">@NoArgsConstructor</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Goods</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Serializable</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6"></a><span class="w">    </span><span class="cm">/**</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="cm">     * </span>
-<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="cm">     */</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">    </span><span class="nd">@TableId</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;id&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">type</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">IdType</span><span class="p">.</span><span class="na">AUTO</span><span class="p">)</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="p">;</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11"></a>
-<a id="__codelineno-1-12" name="__codelineno-1-12"></a><span class="w">    </span><span class="cm">/**</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13"></a><span class="cm">     * </span>
-<a id="__codelineno-1-14" name="__codelineno-1-14"></a><span class="cm">     */</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15"></a><span class="w">    </span><span class="nd">@TableField</span><span class="p">(</span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;price&quot;</span><span class="p">)</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">BigDecimal</span><span class="w"> </span><span class="n">price</span><span class="p">;</span>
-<a id="__codelineno-1-17" name="__codelineno-1-17"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-1-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestBeanDefinitionRegistryPostProcessor</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">BeanDefinitionRegistryPostProcessor</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">postProcessBeanDefinitionRegistry</span><span class="p">(</span><span class="n">BeanDefinitionRegistry</span><span class="w"> </span><span class="n">registry</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">BeansException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[BeanDefinitionRegistryPostProcessor] postProcessBeanDefinitionRegistry&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">postProcessBeanFactory</span><span class="p">(</span><span class="n">ConfigurableListableBeanFactory</span><span class="w"> </span><span class="n">beanFactory</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">BeansException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[BeanDefinitionRegistryPostProcessor] postProcessBeanFactory&quot;</span><span class="p">);</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-
-Mapper
-
+<h2 id="4-beanfactorypostprocessor">4. BeanFactoryPostProcessor<a class="headerlink" href="#4-beanfactorypostprocessor" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>com.iflove.simplespring.beans.factory.config.BeanFactoryPostProcessor</p>
+</blockquote>
+<p>这个接口是<code>beanFactory</code>的扩展接口，调用时机在spring在读取<code>beanDefinition</code>信息之后，实例化bean之前。</p>
+<p>在这个时机，用户可以通过实现这个扩展接口来自行处理一些东西，比如修改已经注册的<code>beanDefinition</code>的元信息。</p>
+<p>扩展方式为：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1">1</a></span>
 <span class="normal"><a href="#__codelineno-2-2">2</a></span>
 <span class="normal"><a href="#__codelineno-2-3">3</a></span>
-<span class="normal"><a href="#__codelineno-2-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="nd">@Mapper</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">GoodsMapper</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">BaseMapper</span><span class="o">&lt;</span><span class="n">Goods</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3"></a>
-<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-2-4">4</a></span>
+<span class="normal"><a href="#__codelineno-2-5">5</a></span>
+<span class="normal"><a href="#__codelineno-2-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestBeanFactoryPostProcessor</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">BeanFactoryPostProcessor</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">postProcessBeanFactory</span><span class="p">(</span><span class="n">ConfigurableListableBeanFactory</span><span class="w"> </span><span class="n">beanFactory</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">BeansException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[BeanFactoryPostProcessor]&quot;</span><span class="p">);</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-
-Service
-
+<h2 id="5-applicationeventmulticaster">5. ApplicationEventMulticaster<a class="headerlink" href="#5-applicationeventmulticaster" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>com.iflove.simplespring.context.event.ApplicationEventMulticaster
+com.iflove.simplespring.context.event.AbstractApplicationEventMulticaster
+com.iflove.simplespring.context.ApplicationEvent</p>
+</blockquote>
+<p><code>AbstractApplicationEventMulticaster</code> 该抽象类实现了 <code>ApplicationEventMulticaster</code> 接口，用户可以通过继承这个抽象类实现发布以及监听时间的功能。</p>
+<p><code>ApplicationEvent</code> 类表示了事件定义，继承这个类已实现自定义事件。</p>
+<p>扩展方式：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-3-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-3-3"> 3</a></span>
@@ -2978,20 +2923,19 @@ Service
 <span class="normal"><a href="#__codelineno-3-7"> 7</a></span>
 <span class="normal"><a href="#__codelineno-3-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-3-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-3-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="nd">@Slf4j</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="nd">@Service</span>
-<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GoodsServiceImpl</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ServiceImpl</span><span class="o">&lt;</span><span class="n">GoodsMapper</span><span class="p">,</span><span class="w"> </span><span class="n">Goods</span><span class="o">&gt;</span>
-<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="w">    </span><span class="kd">implements</span><span class="w"> </span><span class="n">GoodsService</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-3-5" name="__codelineno-3-5"></a>
-<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="w">    </span><span class="nd">@Resource</span>
-<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="w">    </span><span class="n">GoodsMapper</span><span class="w"> </span><span class="n">goodsMapper</span><span class="p">;</span>
-<a id="__codelineno-3-8" name="__codelineno-3-8"></a>
-<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">    </span><span class="p">...</span>
-<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-3-10">10</a></span>
+<span class="normal"><a href="#__codelineno-3-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ContextRefreshedEvent</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ApplicationEvent</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a><span class="w">    </span><span class="cm">/**</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a><span class="cm">     * Constructs a prototypical Event.</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a><span class="cm">     *</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a><span class="cm">     * @param source The object on which the Event initially occurred.</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a><span class="cm">     * @throws IllegalArgumentException if source is null.</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7"></a><span class="cm">     */</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ContextRefreshedEvent</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">source</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9"></a><span class="w">        </span><span class="kd">super</span><span class="p">(</span><span class="n">source</span><span class="p">);</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-
-启动类
-
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
@@ -3002,23 +2946,38 @@ Service
 <span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
 <span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
 <span class="normal"><a href="#__codelineno-4-10">10</a></span>
-<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="nd">@SpringBootApplication</span>
-<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="nd">@EnableAspectJAutoProxy</span><span class="p">(</span><span class="n">exposeProxy</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span>
-<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Demo1Application</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-4" name="__codelineno-4-4"></a>
-<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="w">        </span><span class="n">ConfigurableApplicationContext</span><span class="w"> </span><span class="n">context</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">SpringApplication</span><span class="p">.</span><span class="na">run</span><span class="p">(</span><span class="n">Demo1Application</span><span class="p">.</span><span class="na">class</span><span class="p">,</span><span class="w"> </span><span class="n">args</span><span class="p">);</span>
-<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">        </span><span class="c1">// 测试</span>
-<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">        </span><span class="n">GoodsService</span><span class="w"> </span><span class="n">service</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">context</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="n">GoodsService</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
-<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">        </span><span class="n">service</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">BigDecimal</span><span class="p">(</span><span class="s">&quot;123&quot;</span><span class="p">));</span>
-<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span>
+<span class="normal"><a href="#__codelineno-4-12">12</a></span>
+<span class="normal"><a href="#__codelineno-4-13">13</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SimpleApplicationEventMulticaster</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">AbstractApplicationEventMulticaster</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">SimpleApplicationEventMulticaster</span><span class="p">(</span><span class="n">BeanFactory</span><span class="w"> </span><span class="n">beanFactory</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="w">        </span><span class="n">setBeanFactory</span><span class="p">(</span><span class="n">beanFactory</span><span class="p">);</span><span class="w">  </span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="w">    </span><span class="p">}</span><span class="w">  </span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="w">    </span><span class="nd">@Override</span><span class="w">  </span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">multicastEvent</span><span class="p">(</span><span class="kd">final</span><span class="w"> </span><span class="n">ApplicationEvent</span><span class="w"> </span><span class="n">event</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">ApplicationListener</span><span class="w"> </span><span class="n">listener</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">getApplicationListeners</span><span class="p">(</span><span class="n">event</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="w">            </span><span class="n">listener</span><span class="p">.</span><span class="na">onApplicationEvent</span><span class="p">(</span><span class="n">event</span><span class="p">);</span><span class="w">  </span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="w">        </span><span class="p">}</span><span class="w">  </span>
+<a id="__codelineno-4-12" name="__codelineno-4-12"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-4-13" name="__codelineno-4-13"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-
-</details>
-
-<p><strong>1. A+注解，B 不加</strong></p>
-<p>测试代码</p>
+<h2 id="6-instantiationawarebeanpostprocessor">6. InstantiationAwareBeanPostProcessor<a class="headerlink" href="#6-instantiationawarebeanpostprocessor" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>com.iflove.simplespring.beans.factory.config.InstantiationAwareBeanPostProcessor</p>
+</blockquote>
+<p>该接口继承了<code>BeanPostProcess</code>接口，区别如下：</p>
+<p><strong><code>BeanPostProcess</code>接口只在bean的初始化阶段进行扩展（注入spring上下文前后），而<code>InstantiationAwareBeanPostProcessor</code>接口在此基础上增加了3个方法，把可扩展的范围增加了实例化阶段和属性注入阶段。</strong></p>
+<p>该类主要的扩展点有以下5个方法，主要在bean生命周期的两大阶段：<strong>实例化阶段</strong>和<strong>初始化阶段</strong>，下面一起进行说明，按调用顺序为：</p>
+<ul>
+<li><code>postProcessBeforeInstantiation</code>：实例化bean之前，相当于new这个bean之前</li>
+<li><code>postProcessAfterInstantiation</code>：实例化bean之后，相当于new这个bean之后</li>
+<li><code>postProcessPropertyValues</code>：bean已经实例化完成，在属性注入时阶段触发，<code>@Autowired</code>,<code>@Resource</code>等注解原理基于此方法实现</li>
+<li><code>postProcessBeforeInitialization</code>：初始化bean之前，相当于把bean注入spring上下文之前</li>
+<li><code>postProcessAfterInitialization</code>：初始化bean之后，相当于把bean注入spring上下文之后</li>
+</ul>
+<p>使用场景：这个扩展点非常有用 ，无论是写中间件和业务中，都能利用这个特性。比如对实现了某一类接口的bean在各个生命期间进行收集，或者对某个类型的bean进行统一的设值等等。</p>
+<p>扩展方式为：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-5-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-5-3"> 3</a></span>
@@ -3039,39 +2998,72 @@ Service
 <span class="normal"><a href="#__codelineno-5-18">18</a></span>
 <span class="normal"><a href="#__codelineno-5-19">19</a></span>
 <span class="normal"><a href="#__codelineno-5-20">20</a></span>
-<span class="normal"><a href="#__codelineno-5-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="nd">@Slf4j</span>
-<a id="__codelineno-5-2" name="__codelineno-5-2"></a><span class="nd">@Service</span>
-<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GoodsServiceImpl</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ServiceImpl</span><span class="o">&lt;</span><span class="n">GoodsMapper</span><span class="p">,</span><span class="w"> </span><span class="n">Goods</span><span class="o">&gt;</span>
-<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="kd">implements</span><span class="w"> </span><span class="n">GoodsService</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-5" name="__codelineno-5-5"></a>
-<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">    </span><span class="nd">@Resource</span>
-<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="n">GoodsMapper</span><span class="w"> </span><span class="n">goodsMapper</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-5-21">21</a></span>
+<span class="normal"><a href="#__codelineno-5-22">22</a></span>
+<span class="normal"><a href="#__codelineno-5-23">23</a></span>
+<span class="normal"><a href="#__codelineno-5-24">24</a></span>
+<span class="normal"><a href="#__codelineno-5-25">25</a></span>
+<span class="normal"><a href="#__codelineno-5-26">26</a></span>
+<span class="normal"><a href="#__codelineno-5-27">27</a></span>
+<span class="normal"><a href="#__codelineno-5-28">28</a></span>
+<span class="normal"><a href="#__codelineno-5-29">29</a></span>
+<span class="normal"><a href="#__codelineno-5-30">30</a></span>
+<span class="normal"><a href="#__codelineno-5-31">31</a></span>
+<span class="normal"><a href="#__codelineno-5-32">32</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestInstantiationAwareBeanPostProcessor</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">InstantiationAwareBeanPostProcessor</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">postProcessBeforeInitialization</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">bean</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">beanName</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">BeansException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[TestInstantiationAwareBeanPostProcessor] before initialization &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">beanName</span><span class="p">);</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">bean</span><span class="p">;</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-5-8" name="__codelineno-5-8"></a>
 <a id="__codelineno-5-9" name="__codelineno-5-9"></a><span class="w">    </span><span class="nd">@Override</span>
-<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">    </span><span class="nd">@Transactional</span>
-<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">BigDecimal</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">        </span><span class="n">doInsert</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">price</span><span class="p">);</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">postProcessAfterInitialization</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">bean</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">beanName</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">BeansException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[TestInstantiationAwareBeanPostProcessor] after initialization &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">beanName</span><span class="p">);</span>
+<a id="__codelineno-5-12" name="__codelineno-5-12"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">bean</span><span class="p">;</span>
 <a id="__codelineno-5-13" name="__codelineno-5-13"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-5-14" name="__codelineno-5-14"></a>
-<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doInsert</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">BigDecimal</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;===========&gt;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">TransactionSynchronizationManager</span><span class="p">.</span><span class="na">getCurrentTransactionName</span><span class="p">());</span>
-<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">        </span><span class="n">Goods</span><span class="w"> </span><span class="n">goods</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Goods</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">price</span><span class="p">);</span>
-<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">        </span><span class="n">goodsMapper</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">goods</span><span class="p">);</span>
-<a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="s">&quot;error&quot;</span><span class="p">);</span>
-<a id="__codelineno-5-20" name="__codelineno-5-20"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="p">}</span>
+<a id="__codelineno-5-15" name="__codelineno-5-15"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-5-16" name="__codelineno-5-16"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">postProcessBeforeInstantiation</span><span class="p">(</span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">beanClass</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">beanName</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">BeansException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-17" name="__codelineno-5-17"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[TestInstantiationAwareBeanPostProcessor] before instantiation &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">beanName</span><span class="p">);</span>
+<a id="__codelineno-5-18" name="__codelineno-5-18"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<a id="__codelineno-5-19" name="__codelineno-5-19"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-20" name="__codelineno-5-20"></a>
+<a id="__codelineno-5-21" name="__codelineno-5-21"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-5-22" name="__codelineno-5-22"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">postProcessAfterInstantiation</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">bean</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">beanName</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">BeansException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-23" name="__codelineno-5-23"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[TestInstantiationAwareBeanPostProcessor] after instantiation &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">beanName</span><span class="p">);</span>
+<a id="__codelineno-5-24" name="__codelineno-5-24"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span>
+<a id="__codelineno-5-25" name="__codelineno-5-25"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-26" name="__codelineno-5-26"></a>
+<a id="__codelineno-5-27" name="__codelineno-5-27"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-5-28" name="__codelineno-5-28"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">PropertyValues</span><span class="w"> </span><span class="nf">postProcessPropertyValues</span><span class="p">(</span><span class="n">PropertyValues</span><span class="w"> </span><span class="n">pvs</span><span class="p">,</span><span class="w"> </span><span class="n">PropertyDescriptor</span><span class="o">[]</span><span class="w"> </span><span class="n">pds</span><span class="p">,</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="n">bean</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">beanName</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">BeansException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-5-29" name="__codelineno-5-29"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[TestInstantiationAwareBeanPostProcessor] postProcessPropertyValues &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">beanName</span><span class="p">);</span>
+<a id="__codelineno-5-30" name="__codelineno-5-30"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">pvs</span><span class="p">;</span>
+<a id="__codelineno-5-31" name="__codelineno-5-31"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-5-32" name="__codelineno-5-32"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>这其实跟一个方法没有本质区别，<strong>事务生效！</strong></p>
-<hr />
-<p><strong>2. JDK 动态代理，B+注解，A 不加</strong></p>
-<p>SpringBoot 默认启用 Cglib 动态代理，如果希望使用 JDK 动态代理，需要在 YAML 配置中添加如下代码，后续不再赘述，<strong>注意是 YAML, YAML, YAML !!! 在启动类上没用!</strong></p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">YAML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<h2 id="7-smartinstantiationawarebeanpostprocessor">7. SmartInstantiationAwareBeanPostProcessor<a class="headerlink" href="#7-smartinstantiationawarebeanpostprocessor" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>org.springframework.beans.factory.config.SmartInstantiationAwareBeanPostProcessor</p>
+</blockquote>
+<p>该扩展接口有3个触发点方法：</p>
+<ul>
+<li><code>predictBeanType</code>：该触发点发生在<code>postProcessBeforeInstantiation</code>之前(在图上并没有标明，因为一般不太需要扩展这个点)，这个方法用于预测Bean的类型，返回第一个预测成功的Class类型，如果不能预测返回null；当你调用<code>BeanFactory.getType(name)</code>时当通过bean的名字无法得到bean类型信息时就调用该回调方法来决定类型信息。</li>
+<li><code>determineCandidateConstructors</code>：该触发点发生在<code>postProcessBeforeInstantiation</code>之后，用于确定该bean的构造函数之用，返回的是该bean的所有构造函数列表。用户可以扩展这个点，来自定义选择相应的构造器来实例化这个bean。</li>
+<li><code>getEarlyBeanReference</code>：该触发点发生在<code>postProcessAfterInstantiation</code>之后，当有循环依赖的场景，当bean实例化好之后，为了防止有循环依赖，会提前暴露回调方法，用于bean实例化的后置处理。这个方法就是在提前暴露的回调方法中触发。</li>
+</ul>
+<p><code>getEarlyBeanReference</code> 在 bean 实例化之后作为回调函数放入三级缓存之中。</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
 <span class="normal"><a href="#__codelineno-6-2">2</a></span>
-<span class="normal"><a href="#__codelineno-6-3">3</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="nt">spring</span><span class="p">:</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="w">  </span><span class="nt">aop</span><span class="p">:</span>
-<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="nt">proxy-target-class</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">false</span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a><span class="c1">// 处理循环依赖，将实例化后的Bean对象提前放入缓存中暴露出来  </span>
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">beanDefinition</span><span class="p">.</span><span class="na">isSingleton</span><span class="p">())</span><span class="w"> </span><span class="p">{</span><span class="w">  </span>
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a><span class="w">    </span><span class="n">Object</span><span class="w"> </span><span class="n">finalBean</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">bean</span><span class="p">;</span><span class="w">  </span>
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a><span class="w">    </span><span class="n">addSingletonFactory</span><span class="p">(</span><span class="n">beanName</span><span class="p">,</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="n">getEarlyBeanReference</span><span class="p">(</span><span class="n">beanName</span><span class="p">,</span><span class="w"> </span><span class="n">beanDefinition</span><span class="p">,</span><span class="w"> </span><span class="n">finalBean</span><span class="p">));</span><span class="w">  </span>
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>测试代码:</p>
+<p>扩展方式为：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-7-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-7-3"> 3</a></span>
@@ -3091,51 +3083,51 @@ Service
 <span class="normal"><a href="#__codelineno-7-17">17</a></span>
 <span class="normal"><a href="#__codelineno-7-18">18</a></span>
 <span class="normal"><a href="#__codelineno-7-19">19</a></span>
-<span class="normal"><a href="#__codelineno-7-20">20</a></span>
-<span class="normal"><a href="#__codelineno-7-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="nd">@Slf4j</span>
-<a id="__codelineno-7-2" name="__codelineno-7-2"></a><span class="nd">@Service</span>
-<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GoodsServiceImpl</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ServiceImpl</span><span class="o">&lt;</span><span class="n">GoodsMapper</span><span class="p">,</span><span class="w"> </span><span class="n">Goods</span><span class="o">&gt;</span>
-<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">    </span><span class="kd">implements</span><span class="w"> </span><span class="n">GoodsService</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-5" name="__codelineno-7-5"></a>
-<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">    </span><span class="nd">@Resource</span>
-<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span><span class="n">GoodsMapper</span><span class="w"> </span><span class="n">goodsMapper</span><span class="p">;</span>
+<span class="normal"><a href="#__codelineno-7-20">20</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestSmartInstantiationAwareBeanPostProcessor</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">SmartInstantiationAwareBeanPostProcessor</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="nf">predictBeanType</span><span class="p">(</span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">beanClass</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">beanName</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">BeansException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[TestSmartInstantiationAwareBeanPostProcessor] predictBeanType &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">beanName</span><span class="p">);</span>
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">beanClass</span><span class="p">;</span>
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a><span class="w">    </span><span class="p">}</span>
 <a id="__codelineno-7-8" name="__codelineno-7-8"></a>
 <a id="__codelineno-7-9" name="__codelineno-7-9"></a><span class="w">    </span><span class="nd">@Override</span>
-<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">BigDecimal</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">        </span><span class="p">((</span><span class="n">GoodsServiceImpl</span><span class="p">)</span><span class="w"> </span><span class="n">AopContext</span><span class="p">.</span><span class="na">currentProxy</span><span class="p">()).</span><span class="na">doInsert</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">price</span><span class="p">);</span>
-<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-7-13" name="__codelineno-7-13"></a>
-<a id="__codelineno-7-14" name="__codelineno-7-14"></a><span class="w">    </span><span class="nd">@Transactional</span>
-<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doInsert</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">BigDecimal</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;===========&gt;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">TransactionSynchronizationManager</span><span class="p">.</span><span class="na">getCurrentTransactionName</span><span class="p">());</span>
-<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">        </span><span class="n">Goods</span><span class="w"> </span><span class="n">goods</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Goods</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">price</span><span class="p">);</span>
-<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">        </span><span class="n">goodsMapper</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">goods</span><span class="p">);</span>
-<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="s">&quot;error&quot;</span><span class="p">);</span>
-<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-7-21" name="__codelineno-7-21"></a><span class="p">}</span>
+<a id="__codelineno-7-10" name="__codelineno-7-10"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Constructor</span><span class="o">&lt;?&gt;[]</span><span class="w"> </span><span class="nf">determineCandidateConstructors</span><span class="p">(</span><span class="n">Class</span><span class="o">&lt;?&gt;</span><span class="w"> </span><span class="n">beanClass</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">beanName</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">BeansException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-11" name="__codelineno-7-11"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[TestSmartInstantiationAwareBeanPostProcessor] determineCandidateConstructors &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">beanName</span><span class="p">);</span>
+<a id="__codelineno-7-12" name="__codelineno-7-12"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span>
+<a id="__codelineno-7-13" name="__codelineno-7-13"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-14" name="__codelineno-7-14"></a>
+<a id="__codelineno-7-15" name="__codelineno-7-15"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-7-16" name="__codelineno-7-16"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">getEarlyBeanReference</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">bean</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">beanName</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">BeansException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-7-17" name="__codelineno-7-17"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[TestSmartInstantiationAwareBeanPostProcessor] getEarlyBeanReference &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">beanName</span><span class="p">);</span>
+<a id="__codelineno-7-18" name="__codelineno-7-18"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">bean</span><span class="p">;</span>
+<a id="__codelineno-7-19" name="__codelineno-7-19"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-7-20" name="__codelineno-7-20"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>注意这里使用了 AopContext 获取代理类，并且是实现类，因为接口方法没有实现类的私有方法。</p>
-<p><strong>调用的时候直接报错了，也就不存在事务失效问题了</strong></p>
-<p>来看看报错信息，信息表示不能 cast，原因是 JDK 动态代理基于接口，两个实现类(兄弟关系)之间肯定不能互相 cast 的</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Text Only</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
+<h2 id="8-beanfactoryaware">8. BeanFactoryAware<a class="headerlink" href="#8-beanfactoryaware" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>com.iflove.simplespring.beans.factory.BeanFactoryAware</p>
+</blockquote>
+<p>这个类只有一个触发点，发生在bean的实例化之后，注入属性之前，也就是Setter之前。这个类的扩展点方法为<code>setBeanFactory</code>，可以拿到<code>BeanFactory</code>这个属性。</p>
+<p>使用场景为，你可以在bean实例化之后，但还未初始化之前，拿到 <code>BeanFactory</code>，在这个时候，可以对每个bean作特殊化的定制。也或者可以把<code>BeanFactory</code>拿到进行缓存，日后使用。</p>
+<p>扩展方式为：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1">1</a></span>
 <span class="normal"><a href="#__codelineno-8-2">2</a></span>
 <span class="normal"><a href="#__codelineno-8-3">3</a></span>
 <span class="normal"><a href="#__codelineno-8-4">4</a></span>
 <span class="normal"><a href="#__codelineno-8-5">5</a></span>
-<span class="normal"><a href="#__codelineno-8-6">6</a></span>
-<span class="normal"><a href="#__codelineno-8-7">7</a></span>
-<span class="normal"><a href="#__codelineno-8-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a>Exception in thread &quot;main&quot; java.lang.ClassCastException: class jdk.proxy2.$Proxy57 cannot be cast to class com.example.demo.service.impl.GoodsServiceImpl (jdk.proxy2.$Proxy57 is in module jdk.proxy2 of loader &#39;app&#39;; com.example.demo.service.impl.GoodsServiceImpl is in unnamed module of loader &#39;app&#39;)
-<a id="__codelineno-8-2" name="__codelineno-8-2"></a>    at com.example.demo.service.impl.GoodsServiceImpl.insert(GoodsServiceImpl.java:33)
-<a id="__codelineno-8-3" name="__codelineno-8-3"></a>    at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-<a id="__codelineno-8-4" name="__codelineno-8-4"></a>    at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-<a id="__codelineno-8-5" name="__codelineno-8-5"></a>    at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:355)
-<a id="__codelineno-8-6" name="__codelineno-8-6"></a>    at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:216)
-<a id="__codelineno-8-7" name="__codelineno-8-7"></a>    at jdk.proxy2/jdk.proxy2.$Proxy57.insert(Unknown Source)
-<a id="__codelineno-8-8" name="__codelineno-8-8"></a>    at com.example.demo.Demo1Application.main(Demo1Application.java:18)
+<span class="normal"><a href="#__codelineno-8-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestBeanFactoryAware</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">BeanFactoryAware</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">setBeanFactory</span><span class="p">(</span><span class="n">BeanFactory</span><span class="w"> </span><span class="n">beanFactory</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">BeansException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[TestBeanFactoryAware] &quot;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">beanFactory</span><span class="p">.</span><span class="na">getBean</span><span class="p">(</span><span class="n">TestBeanFactoryAware</span><span class="p">.</span><span class="na">class</span><span class="p">).</span><span class="na">getClass</span><span class="p">().</span><span class="na">getSimpleName</span><span class="p">());</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<hr />
-<p><strong>3. Cglib 动态代理，B+注解，B 修饰符为 private，A 不加</strong></p>
-<p>测试代码:</p>
+<h2 id="9-beanpostprocessor-postprocessbeforeinitialization">9. BeanPostProcessor #postProcessBeforeInitialization<a class="headerlink" href="#9-beanpostprocessor-postprocessbeforeinitialization" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>com.iflove.simplespring.beans.factory.support.AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsBeforeInitialization</p>
+</blockquote>
+<p>BeanPostProcessor 前置处理</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-9-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-9-3"> 3</a></span>
@@ -3153,176 +3145,50 @@ Service
 <span class="normal"><a href="#__codelineno-9-15">15</a></span>
 <span class="normal"><a href="#__codelineno-9-16">16</a></span>
 <span class="normal"><a href="#__codelineno-9-17">17</a></span>
-<span class="normal"><a href="#__codelineno-9-18">18</a></span>
-<span class="normal"><a href="#__codelineno-9-19">19</a></span>
-<span class="normal"><a href="#__codelineno-9-20">20</a></span>
-<span class="normal"><a href="#__codelineno-9-21">21</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nd">@Slf4j</span>
-<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="nd">@Service</span>
-<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GoodsServiceImpl</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ServiceImpl</span><span class="o">&lt;</span><span class="n">GoodsMapper</span><span class="p">,</span><span class="w"> </span><span class="n">Goods</span><span class="o">&gt;</span>
-<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">    </span><span class="kd">implements</span><span class="w"> </span><span class="n">GoodsService</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-5" name="__codelineno-9-5"></a>
-<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">    </span><span class="nd">@Resource</span>
-<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="w">    </span><span class="n">GoodsMapper</span><span class="w"> </span><span class="n">goodsMapper</span><span class="p">;</span>
-<a id="__codelineno-9-8" name="__codelineno-9-8"></a>
-<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="w">    </span><span class="nd">@Override</span>
-<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">BigDecimal</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">        </span><span class="p">((</span><span class="n">GoodsServiceImpl</span><span class="p">)</span><span class="w"> </span><span class="n">AopContext</span><span class="p">.</span><span class="na">currentProxy</span><span class="p">()).</span><span class="na">doInsert</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">price</span><span class="p">);</span>
-<a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-9-13" name="__codelineno-9-13"></a>
-<a id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="w">    </span><span class="nd">@Transactional</span>
-<a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doInsert</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">BigDecimal</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;===========&gt;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">TransactionSynchronizationManager</span><span class="p">.</span><span class="na">getCurrentTransactionName</span><span class="p">());</span>
-<a id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="w">        </span><span class="n">Goods</span><span class="w"> </span><span class="n">goods</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Goods</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">price</span><span class="p">);</span>
-<a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="w">        </span><span class="n">goodsMapper</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">goods</span><span class="p">);</span>
-<a id="__codelineno-9-19" name="__codelineno-9-19"></a><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="s">&quot;error&quot;</span><span class="p">);</span>
-<a id="__codelineno-9-20" name="__codelineno-9-20"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-9-21" name="__codelineno-9-21"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-9-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="cm">/**</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="cm"> * 执行 BeanPostProcessors 接口实现类的 postProcessBeforeInitialization 方法</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="cm"> *</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="cm"> * @param existingBean</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="cm"> * @param beanName</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="cm"> * @return</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="cm"> * @throws BeansException</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8"></a><span class="cm"> */</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9"></a><span class="nd">@Override</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10"></a><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">applyBeanPostProcessorsBeforeInitialization</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">existingBean</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">beanName</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">BeansException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-11" name="__codelineno-9-11"></a><span class="w">    </span><span class="n">Object</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">existingBean</span><span class="p">;</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12"></a><span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">BeanPostProcessor</span><span class="w"> </span><span class="n">processor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">getBeanPostProcessors</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-9-13" name="__codelineno-9-13"></a><span class="w">        </span><span class="n">Object</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">processor</span><span class="p">.</span><span class="na">postProcessBeforeInitialization</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">beanName</span><span class="p">);</span>
+<a id="__codelineno-9-14" name="__codelineno-9-14"></a><span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Objects</span><span class="p">.</span><span class="na">isNull</span><span class="p">(</span><span class="n">current</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<a id="__codelineno-9-15" name="__codelineno-9-15"></a><span class="w">        </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">current</span><span class="p">;</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-9-17" name="__codelineno-9-17"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>报错信息：</p>
-<p>解读：cglib子类代理无法继承 private 方法，代理对象会直接调用父类的 private 方法，但是<strong>Spring 只会对代理对象进行依赖注入，而不会注入原始目标对象</strong>，导致调用 private 方法会空指针</p>
-<p><strong>这个场景操作数据库的 mapper 失效了，日志信息显示获取不到事务，同样不能判定为事务失效的场景</strong></p>
-<p><img alt="image.png" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250308170733.png" /></p>
-<hr />
-<p><strong>4. Cglib 动态代理，B+注解，B 修饰符为 protected，A 不加</strong></p>
-<p>测试代码和上一个场景类似，仅仅<strong>修改 private 为 protected</strong>，不 cv 了</p>
-<p><strong>事务生效！</strong>来看看日志信息</p>
-<p>首先打印了事务信息，而且数据库中没有新增数据，证明了事务生效。</p>
-<p>报错为测试代码中手动抛出，不用理会</p>
-<p><img alt="image.png" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250308170656.png" /></p>
-<p>解读：<strong>Cglib 动态代理是基于继承的，所以 protected 方法可以被继承，并成功代理！</strong></p>
-<hr />
-<p><strong>5. A+注解，B+注解</strong></p>
-<p>这个其实跟事务传播行为有关了，下文中有详细讨论，这里不做测试</p>
-<hr />
-<h3 id="2-static"><strong>2. 非 static 修饰</strong><a class="headerlink" href="#2-static" title="Permanent link">&para;</a></h3>
-<p>无论哪种动态代理都是基于对象的，而非基于类的，如果能够代理 static 方法，应该称其为<strong>静态代理而非动态代理</strong>了</p>
-<hr />
-<h3 id="3-final"><strong>3. final 修饰</strong><a class="headerlink" href="#3-final" title="Permanent link">&para;</a></h3>
-<p>沿用测试public 修饰时的背景和代码</p>
-<h4 id="1-jdk"><strong>1. JDK 动态代理</strong><a class="headerlink" href="#1-jdk" title="Permanent link">&para;</a></h4>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-10-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-10-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-10-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-10-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-10-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-10-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-10-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-10-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-10-10">10</a></span>
-<span class="normal"><a href="#__codelineno-10-11">11</a></span>
-<span class="normal"><a href="#__codelineno-10-12">12</a></span>
-<span class="normal"><a href="#__codelineno-10-13">13</a></span>
-<span class="normal"><a href="#__codelineno-10-14">14</a></span>
-<span class="normal"><a href="#__codelineno-10-15">15</a></span>
-<span class="normal"><a href="#__codelineno-10-16">16</a></span>
-<span class="normal"><a href="#__codelineno-10-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="nd">@Slf4j</span>
-<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="nd">@Service</span>
-<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">GoodsServiceImpl</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ServiceImpl</span><span class="o">&lt;</span><span class="n">GoodsMapper</span><span class="p">,</span><span class="w"> </span><span class="n">Goods</span><span class="o">&gt;</span>
-<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">    </span><span class="kd">implements</span><span class="w"> </span><span class="n">GoodsService</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-5" name="__codelineno-10-5"></a>
-<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">    </span><span class="nd">@Resource</span>
-<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">    </span><span class="n">GoodsMapper</span><span class="w"> </span><span class="n">goodsMapper</span><span class="p">;</span>
-<a id="__codelineno-10-8" name="__codelineno-10-8"></a>
-<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="w">    </span><span class="nd">@Override</span>
-<a id="__codelineno-10-10" name="__codelineno-10-10"></a><span class="w">    </span><span class="nd">@Transactional</span>
-<a id="__codelineno-10-11" name="__codelineno-10-11"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">insert</span><span class="p">(</span><span class="n">Integer</span><span class="w"> </span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">BigDecimal</span><span class="w"> </span><span class="n">price</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-10-12" name="__codelineno-10-12"></a><span class="w">        </span><span class="n">log</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">&quot;===========&gt;{}&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">TransactionSynchronizationManager</span><span class="p">.</span><span class="na">getCurrentTransactionName</span><span class="p">());</span>
-<a id="__codelineno-10-13" name="__codelineno-10-13"></a><span class="w">        </span><span class="n">Goods</span><span class="w"> </span><span class="n">goods</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Goods</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">price</span><span class="p">);</span>
-<a id="__codelineno-10-14" name="__codelineno-10-14"></a><span class="w">        </span><span class="n">goodsMapper</span><span class="p">.</span><span class="na">insert</span><span class="p">(</span><span class="n">goods</span><span class="p">);</span>
-<a id="__codelineno-10-15" name="__codelineno-10-15"></a><span class="w">        </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">RuntimeException</span><span class="p">(</span><span class="s">&quot;error&quot;</span><span class="p">);</span>
-<a id="__codelineno-10-16" name="__codelineno-10-16"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-10-17" name="__codelineno-10-17"></a><span class="p">}</span>
-</code></pre></div></td></tr></table></div>
-<p><strong>事务生效！网上很多人都说加 final 事务会失效，这是不准确的!!!</strong></p>
-<p><img alt="image.png" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250308172209.png" /></p>
-<p>原因在于，JDK 动态代理生成的代理对象，内部会有一个目标对象，调用 insert 方法时，会路由到这个目标对象中，同时他又有自己的切面逻辑保证事务生效。</p>
-<h4 id="2-cglib"><strong>2. Cglib 动态代理</strong><a class="headerlink" href="#2-cglib" title="Permanent link">&para;</a></h4>
-<p>测试代码不变</p>
-<p><strong>出现了空指针异常</strong></p>
-<p>原因是，cglib子类代理无法继承 final 方法，代理对象会直接调用父类的 final 方法，但是<strong>Spring 只会对代理对象进行依赖注入，而不会注入原始目标对象</strong>，导致调用 final 方法会空指针</p>
-<p><img alt="image.png" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250308172702.png" /></p>
-<p><strong>这个场景操作数据库的 mapper 失效了，日志信息显示获取不到事务，同样不能判定为事务失效的场景</strong></p>
-<h2 id="2-propagation">2. propagation 属性设置错误<a class="headerlink" href="#2-propagation" title="Permanent link">&para;</a></h2>
-<p>当我们将<code>propagation</code>属性的值设置为一下几种取值就会导致事务失效：</p>
-<ol>
-<li>
-<p><code>Propagation.NOT_SUPPORTED</code>：以非事务的方式运行，如果当前存在事务，暂停当前的事务</p>
-</li>
-<li>
-<p><code>Propagation.NEVER</code>：以非事务的方式运行，如果当前存在事务，则抛出异常</p>
-</li>
-</ol>
-<h2 id="3-rollbackfor">3. rollbackFor属性设置错误<a class="headerlink" href="#3-rollbackfor" title="Permanent link">&para;</a></h2>
-<p>Spring默认抛出了未检查unchecked异常（继承自 RuntimeException 的异常）或者 Error才回滚事务；其他异常不会触发回滚事务。</p>
-<p>如果在事务中抛出其他类型的异常，但却期望 Spring 能够回滚事务，就需要指定 rollbackFor属性；若在目标方法中抛出的异常是 rollbackFor 指定的异常的子类，事务同样会回滚。</p>
-<p>这里对<strong>未检查异常和已检查异常的区别</strong>做简要阐述</p>
-<table>
-<thead>
-<tr>
-<th><strong>对比项</strong></th>
-<th><strong>已检查异常（Checked Exception）</strong></th>
-<th><strong>未检查异常（Unchecked Exception）</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>继承关系</strong></td>
-<td>继承自 Exception（但不包括 RuntimeException）</td>
-<td>继承自 RuntimeException</td>
-</tr>
-<tr>
-<td><strong>是否强制处理</strong></td>
-<td><strong>必须</strong> try-catch 或 throws，否则无法编译</td>
-<td><strong>无需强制处理</strong>，可选 try-catch</td>
-</tr>
-<tr>
-<td><strong>常见异常</strong></td>
-<td>IOException、SQLException、ClassNotFoundException、InterruptedException</td>
-<td>NullPointerException、ArrayIndexOutOfBoundsException、ArithmeticException、IllegalArgumentException</td>
-</tr>
-<tr>
-<td><strong>事务回滚 (@Transactional)</strong></td>
-<td><strong>默认不会回滚</strong>，需配置 rollbackFor = Exception.class</td>
-<td><strong>默认会回滚</strong></td>
-</tr>
-<tr>
-<td><strong>触发原因</strong></td>
-<td>依赖外部资源（如文件、数据库、网络等）</td>
-<td>代码逻辑错误</td>
-</tr>
-<tr>
-<td><strong>是否可预防</strong></td>
-<td><strong>大多可预防</strong>，通过异常处理机制避免</td>
-<td><strong>通常是程序 BUG</strong>，应修正代码逻辑</td>
-</tr>
-<tr>
-<td><strong>示例代码</strong></td>
-<td>FileReader file = new FileReader("test.txt"); // IOException</td>
-<td>int x = 1 / 0; // ArithmeticException</td>
-</tr>
-</tbody>
-</table>
-<h2 id="4-transactional">4. 方法调用导致@Transactional失效<a class="headerlink" href="#4-transactional" title="Permanent link">&para;</a></h2>
+<h2 id="10-initializingbean">10. InitializingBean<a class="headerlink" href="#10-initializingbean" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>同一个类中，A方法是非事务性方法，但是B方法是事务性方法，此时A调用B就会导致B的事务失效。</p>
+<p>com.iflove.simplespring.beans.factory.InitializingBean</p>
 </blockquote>
-<p><strong>原因</strong>：这个和场景一的原因是类似的，<strong>事务的实现是基于AOP的</strong>，而AOP的实现又是基于动态代理的，而动态代理的本质就算对方法的增强，如果想要使用增强的方法（也就是想要使用事务方法），就必须是通过代理对象去触发目标对象的方法。</p>
-<p><strong>解决方案：通过 <code>AopContext.currentProxy()</code> 这个API获取当前类的代理对象</strong></p>
-<p>在启动类上设置 <code>@EnableAspectJAutoProxy (exposeProxy = true)</code></p>
-<p><code>exposeProxy = true</code>用于控制代理对象是否应被公开给被代理对象的内部方法访问：</p>
-<ul>
-<li>
-<p><code>exposeProxy = true</code>: 当设置为<strong>true</strong>时，<code>Spring</code>会确保在<strong>AOP代理对象上下文</strong>中，通过 <code>AopContext.currentProxy()</code> 方法能够获取到<strong>当前正在执行的代理对象</strong>。<br />
-这对于在被代理对象内部需要调用自身其他方法，并希望这些内部方法调用也能触发切面逻辑的情况非常有用。<br />
-例如，一个服务类中的某个方法可能需要调用另一个<strong>私有</strong>或<strong>受保护</strong>的方法，而这两个方法都被同一个切面所增强。在这种情况下，若不暴露代理，内部方法调用将不会经过切面处理；而暴露代理后，可以通过 <code>AopContext.currentProxy().methodToCall()</code> 的方式确保内部方法调用也得到切面的拦截。</p>
-</li>
-<li>
-<p><code>exposeProxy = false 或未指定（默认情况）</code>： 默认情况下，<code>Spring</code>不会特别暴露代理对象，因此在被代理对象内部直接通过 <code>this</code> 调用其他方法时，这些方法调用将<strong>不会触发切面逻辑</strong>，而是直接调用目标类的原始方法。</p>
-</li>
-</ul>
-<p>关于 <strong>exposeProxy</strong>，来看一个业务中的实际使用场景</p>
-<p>以下是一段处理好友申请的业务逻辑</p>
+<p>这个类，顾名思义，也是用来初始化bean的。 <code>InitializingBean</code> 接口为bean提供了初始化方法的方式，它只包括 <code>afterPropertiesSet</code> 方法，凡是继承该接口的类，在初始化bean的时候都会执行该方法。这个扩展点的触发时机在 <code>postProcessAfterInitialization</code> 之前。</p>
+<p>或者使用 <code>@PostConstruct</code></p>
+<p>使用场景：用户实现此接口，来进行系统启动的时候一些业务指标的初始化工作。</p>
+<p>扩展方式为：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">NormalBeanA</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">InitializingBean</span><span class="p">{</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">afterPropertiesSet</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[InitializingBean] NormalBeanA&quot;</span><span class="p">);</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<h2 id="11-beanpostprocessor-postprocessafterinitialization">11. BeanPostProcessor #postProcessAfterInitialization<a class="headerlink" href="#11-beanpostprocessor-postprocessafterinitialization" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>com.iflove.simplespring.beans.factory.support.AbstractAutowireCapableBeanFactory#applyBeanPostProcessorsAfterInitialization</p>
+</blockquote>
+<p>BeanPostProcessor 后置处理</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
 <span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
@@ -3340,151 +3206,129 @@ Service
 <span class="normal"><a href="#__codelineno-11-15">15</a></span>
 <span class="normal"><a href="#__codelineno-11-16">16</a></span>
 <span class="normal"><a href="#__codelineno-11-17">17</a></span>
-<span class="normal"><a href="#__codelineno-11-18">18</a></span>
-<span class="normal"><a href="#__codelineno-11-19">19</a></span>
-<span class="normal"><a href="#__codelineno-11-20">20</a></span>
-<span class="normal"><a href="#__codelineno-11-21">21</a></span>
-<span class="normal"><a href="#__codelineno-11-22">22</a></span>
-<span class="normal"><a href="#__codelineno-11-23">23</a></span>
-<span class="normal"><a href="#__codelineno-11-24">24</a></span>
-<span class="normal"><a href="#__codelineno-11-25">25</a></span>
-<span class="normal"><a href="#__codelineno-11-26">26</a></span>
-<span class="normal"><a href="#__codelineno-11-27">27</a></span>
-<span class="normal"><a href="#__codelineno-11-28">28</a></span>
-<span class="normal"><a href="#__codelineno-11-29">29</a></span>
-<span class="normal"><a href="#__codelineno-11-30">30</a></span>
-<span class="normal"><a href="#__codelineno-11-31">31</a></span>
-<span class="normal"><a href="#__codelineno-11-32">32</a></span>
-<span class="normal"><a href="#__codelineno-11-33">33</a></span>
-<span class="normal"><a href="#__codelineno-11-34">34</a></span>
-<span class="normal"><a href="#__codelineno-11-35">35</a></span>
-<span class="normal"><a href="#__codelineno-11-36">36</a></span>
-<span class="normal"><a href="#__codelineno-11-37">37</a></span>
-<span class="normal"><a href="#__codelineno-11-38">38</a></span>
-<span class="normal"><a href="#__codelineno-11-39">39</a></span>
-<span class="normal"><a href="#__codelineno-11-40">40</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="cm">/**</span>
-<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="cm"> * 申请好友</span>
-<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="cm"> * @param uid     uid</span>
-<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="cm"> * @param request 请求</span>
-<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="cm"> * @return {@link RestBean}</span>
-<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="cm"> */</span>
-<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="nd">@Transactional</span>
-<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="nd">@Override</span>
-<a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="nd">@RedissonLock</span><span class="p">(</span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&quot;#uid&quot;</span><span class="p">)</span>
-<a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="kd">public</span><span class="w"> </span><span class="n">RestBean</span><span class="o">&lt;</span><span class="n">Void</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">apply</span><span class="p">(</span><span class="n">Long</span><span class="w"> </span><span class="n">uid</span><span class="p">,</span><span class="w"> </span><span class="n">FriendApplyReq</span><span class="w"> </span><span class="n">request</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="w">    </span><span class="c1">// 不能添加自己为好友</span>
-<a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Objects</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getTargetUid</span><span class="p">()))</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">RestBean</span><span class="p">.</span><span class="na">failure</span><span class="p">(</span><span class="n">FriendErrorEnum</span><span class="p">.</span><span class="na">SELF_APPLY_FORBIDDEN</span><span class="p">);</span>
-<a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="w">    </span><span class="c1">// 判断是否存在好友关系</span>
-<a id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="w">    </span><span class="n">UserFriend</span><span class="w"> </span><span class="n">isFriend</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userFriendDao</span><span class="p">.</span><span class="na">getByFriend</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getTargetUid</span><span class="p">());</span>
-<a id="__codelineno-11-17" name="__codelineno-11-17"></a><span class="w">    </span><span class="c1">// 已经存在好友关系</span>
-<a id="__codelineno-11-18" name="__codelineno-11-18"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Objects</span><span class="p">.</span><span class="na">nonNull</span><span class="p">(</span><span class="n">isFriend</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-11-19" name="__codelineno-11-19"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">RestBean</span><span class="p">.</span><span class="na">failure</span><span class="p">(</span><span class="n">FriendErrorEnum</span><span class="p">.</span><span class="na">ALREADY_FRIENDS</span><span class="p">);</span>
-<a id="__codelineno-11-20" name="__codelineno-11-20"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-11-21" name="__codelineno-11-21"></a><span class="w">    </span><span class="c1">// 判断是否存在申请记录 （我 -&gt; 对方） 且 申请状态为 待审批</span>
-<a id="__codelineno-11-22" name="__codelineno-11-22"></a><span class="w">    </span><span class="n">UserApply</span><span class="w"> </span><span class="n">myFriendApply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userApplyDao</span><span class="p">.</span><span class="na">getFriendApply</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getTargetUid</span><span class="p">());</span>
-<a id="__codelineno-11-23" name="__codelineno-11-23"></a><span class="w">    </span><span class="c1">// 存在申请</span>
-<a id="__codelineno-11-24" name="__codelineno-11-24"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Objects</span><span class="p">.</span><span class="na">nonNull</span><span class="p">(</span><span class="n">myFriendApply</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-11-25" name="__codelineno-11-25"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">RestBean</span><span class="p">.</span><span class="na">failure</span><span class="p">(</span><span class="n">FriendErrorEnum</span><span class="p">.</span><span class="na">EXISTS_FRIEND_APPLY</span><span class="p">);</span>
-<a id="__codelineno-11-26" name="__codelineno-11-26"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-11-27" name="__codelineno-11-27"></a><span class="w">    </span><span class="c1">// 判断是否存在申请记录 (对方 -&gt; 我)</span>
-<a id="__codelineno-11-28" name="__codelineno-11-28"></a><span class="w">    </span><span class="n">UserApply</span><span class="w"> </span><span class="n">friendApply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userApplyDao</span><span class="p">.</span><span class="na">getFriendApply</span><span class="p">(</span><span class="n">request</span><span class="p">.</span><span class="na">getTargetUid</span><span class="p">(),</span><span class="w"> </span><span class="n">uid</span><span class="p">);</span>
-<a id="__codelineno-11-29" name="__codelineno-11-29"></a><span class="w">    </span><span class="c1">// 如果存在，直接同意</span>
-<a id="__codelineno-11-30" name="__codelineno-11-30"></a><span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Objects</span><span class="p">.</span><span class="na">nonNull</span><span class="p">(</span><span class="n">friendApply</span><span class="p">))</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-11-31" name="__codelineno-11-31"></a><span class="w">        </span><span class="c1">// 获取当前执行的对象的代理实例(确保事务正确执行)，同意申请</span>
-<a id="__codelineno-11-32" name="__codelineno-11-32"></a><span class="w">        </span><span class="p">((</span><span class="n">FriendService</span><span class="p">)</span><span class="w"> </span><span class="n">AopContext</span><span class="p">.</span><span class="na">currentProxy</span><span class="p">()).</span><span class="na">applyApprove</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">FriendApplyApproveReq</span><span class="p">(</span><span class="n">friendApply</span><span class="p">.</span><span class="na">getId</span><span class="p">()));</span>
-<a id="__codelineno-11-33" name="__codelineno-11-33"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">RestBean</span><span class="p">.</span><span class="na">success</span><span class="p">();</span>
-<a id="__codelineno-11-34" name="__codelineno-11-34"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-11-35" name="__codelineno-11-35"></a><span class="w">    </span><span class="n">UserApply</span><span class="w"> </span><span class="n">userApply</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">FriendAdapter</span><span class="p">.</span><span class="na">buildFriendApply</span><span class="p">(</span><span class="n">uid</span><span class="p">,</span><span class="w"> </span><span class="n">request</span><span class="p">);</span>
-<a id="__codelineno-11-36" name="__codelineno-11-36"></a><span class="w">    </span><span class="n">userApplyDao</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">userApply</span><span class="p">);</span>
-<a id="__codelineno-11-37" name="__codelineno-11-37"></a><span class="w">    </span><span class="c1">// 用户申请事件，向对方异步发送请求消息</span>
-<a id="__codelineno-11-38" name="__codelineno-11-38"></a><span class="w">    </span><span class="n">applicationEventPublisher</span><span class="p">.</span><span class="na">publishEvent</span><span class="p">(</span><span class="k">new</span><span class="w"> </span><span class="n">UserApplyEvent</span><span class="p">(</span><span class="k">this</span><span class="p">,</span><span class="w"> </span><span class="n">userApply</span><span class="p">));</span>
-<a id="__codelineno-11-39" name="__codelineno-11-39"></a><span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="n">RestBean</span><span class="p">.</span><span class="na">success</span><span class="p">();</span>
-<a id="__codelineno-11-40" name="__codelineno-11-40"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-11-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="w">    </span><span class="cm">/**</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a><span class="cm">     * 执行 BeanPostProcessors 接口实现类的 postProcessorsAfterInitialization 方法</span>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="cm">     *</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="cm">     * @param existingBean</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="cm">     * @param beanName</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="cm">     * @return</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="cm">     * @throws BeansException</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="cm">     */</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Object</span><span class="w"> </span><span class="nf">applyBeanPostProcessorsAfterInitialization</span><span class="p">(</span><span class="n">Object</span><span class="w"> </span><span class="n">existingBean</span><span class="p">,</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">beanName</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">BeansException</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-11" name="__codelineno-11-11"></a><span class="w">        </span><span class="n">Object</span><span class="w"> </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">existingBean</span><span class="p">;</span>
+<a id="__codelineno-11-12" name="__codelineno-11-12"></a><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">BeanPostProcessor</span><span class="w"> </span><span class="n">processor</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">getBeanPostProcessors</span><span class="p">())</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-11-13" name="__codelineno-11-13"></a><span class="w">            </span><span class="n">Object</span><span class="w"> </span><span class="n">current</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">processor</span><span class="p">.</span><span class="na">postProcessAfterInitialization</span><span class="p">(</span><span class="n">result</span><span class="p">,</span><span class="w"> </span><span class="n">beanName</span><span class="p">);</span>
+<a id="__codelineno-11-14" name="__codelineno-11-14"></a><span class="w">            </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">Objects</span><span class="p">.</span><span class="na">isNull</span><span class="p">(</span><span class="n">current</span><span class="p">))</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<a id="__codelineno-11-15" name="__codelineno-11-15"></a><span class="w">            </span><span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">current</span><span class="p">;</span>
+<a id="__codelineno-11-16" name="__codelineno-11-16"></a><span class="w">        </span><span class="p">}</span>
+<a id="__codelineno-11-17" name="__codelineno-11-17"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">result</span><span class="p">;</span>
+<a id="__codelineno-11-18" name="__codelineno-11-18"></a><span class="w">    </span><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>主要关注业务中处理 <strong>如果申请记录(对方-&gt;我)存在，则直接同意申请</strong> 的处理逻辑 </p>
-<p>这一行代码的核心是确保事务和其他切面逻辑（如 <code>@Transactional</code> 和 <code>@RedissonLock</code> ）在调用 <code>applyApprove</code> 方法时能够生效。</p>
-<h2 id="5-transactional">5. 异常捕获导致@Transactional失效<a class="headerlink" href="#5-transactional" title="Permanent link">&para;</a></h2>
+<h2 id="12-smartinitializingsingleton">12. SmartInitializingSingleton<a class="headerlink" href="#12-smartinitializingsingleton" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>当一个事务方法中抛出了异常，此时该异常通过 <code>try...catch</code> 进行了捕获，此时就会导致该方法的事务注解 <code>@Transactional</code> 失效</p>
+<p>org.springframework.beans.factory.SmartInitializingSingleton</p>
 </blockquote>
-<p>示例：</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-12-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-12-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-12-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-12-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-12-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-12-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-12-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-12-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-12-10">10</a></span>
-<span class="normal"><a href="#__codelineno-12-11">11</a></span>
-<span class="normal"><a href="#__codelineno-12-12">12</a></span>
-<span class="normal"><a href="#__codelineno-12-13">13</a></span>
-<span class="normal"><a href="#__codelineno-12-14">14</a></span>
-<span class="normal"><a href="#__codelineno-12-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="nd">@Resource</span>
-<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="kd">private</span><span class="w"> </span><span class="n">IBService</span><span class="w"> </span><span class="n">bService</span><span class="p">;</span>
-<a id="__codelineno-12-3" name="__codelineno-12-3"></a>
-<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="nd">@Service</span>
-<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="n">Class</span><span class="w"> </span><span class="n">AServiceImpl</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">IAService</span><span class="p">{</span>
-<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="w">    </span><span class="nd">@Transactional</span>
-<a id="__codelineno-12-7" name="__codelineno-12-7"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">Result</span><span class="w"> </span><span class="nf">A</span><span class="p">(</span><span class="n">Student</span><span class="w"> </span><span class="n">s</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-12-8" name="__codelineno-12-8"></a><span class="w">        </span><span class="k">try</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-12-9" name="__codelineno-12-9"></a><span class="w">            </span><span class="n">bService</span><span class="p">.</span><span class="na">save</span><span class="p">(</span><span class="n">s</span><span class="p">);</span>
-<a id="__codelineno-12-10" name="__codelineno-12-10"></a><span class="w">        </span><span class="p">}</span><span class="w"> </span><span class="k">catch</span><span class="w"> </span><span class="p">(</span><span class="n">Exception</span><span class="w"> </span><span class="n">e</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-12-11" name="__codelineno-12-11"></a><span class="w">            </span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">();</span>
-<a id="__codelineno-12-12" name="__codelineno-12-12"></a><span class="w">        </span><span class="p">}</span>
-<a id="__codelineno-12-13" name="__codelineno-12-13"></a><span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">Result</span><span class="p">.</span><span class="na">ok</span><span class="p">();</span>
-<a id="__codelineno-12-14" name="__codelineno-12-14"></a><span class="w">    </span><span class="p">}</span>
-<a id="__codelineno-12-15" name="__codelineno-12-15"></a><span class="p">}</span>
+<p>这个接口中只有一个方法<code>afterSingletonsInstantiated</code>，其作用是是 在spring容器管理的所有单例对象（非懒加载对象）初始化完成之后调用的回调接口。其触发时机为<code>postProcessAfterInitialization</code>之后。</p>
+<p>使用场景：用户可以扩展此接口在对所有单例对象初始化完毕后，做一些后置的业务处理。</p>
+<p>扩展方式为：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span>
+<span class="normal"><a href="#__codelineno-12-3">3</a></span>
+<span class="normal"><a href="#__codelineno-12-4">4</a></span>
+<span class="normal"><a href="#__codelineno-12-5">5</a></span>
+<span class="normal"><a href="#__codelineno-12-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestSmartInitializingSingleton</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">SmartInitializingSingleton</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-12-3" name="__codelineno-12-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">afterSingletonsInstantiated</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[TestSmartInitializingSingleton]&quot;</span><span class="p">);</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>此时会报错<code>org.springframework.transaction.UnexpectedRollbackException: Transaction rolled back because it has been marked as rollback-only</code></p>
-<p><strong>原因</strong>：因为<code>bService</code>执行<code>save</code>方法过程中出现了异常，所以<code>bService</code>告诉事务管理器，当前事务需要被<code>rollback</code>，但是<code>aService</code>中使用<code>try...catch</code>捕获了异常，它认为<strong>当前事务并没有发生异常</strong>，程序是处于正常状态，于是<code>aService</code>就告诉事务管理器，当前事务需要被<code>commit</code>，结果事务管理器发现收到两个矛盾的信号，它也搞不清是该<code>rollback</code>还是该<code>commit</code>，于是就抛了个<code>UnexpectedRollbackException</code>异常。</p>
-<p><strong><em>也就是说Spring中，事务是在方法调用时开始的，业务方法执行完毕后才执行<code>rollback</code>或<code>commit</code>操作，事务是否被回滚取决于是否抛出异常，且该异常是否满足场景三（也就是说抛出的异常是否有被<code>rollbackFor</code>指定，或<code>rollbackFor</code>指定异常的子类）。如果一定要使用<code>try..catch</code>时，一定要抛出异常（且抛出的异常必须满足场景三，一般直接抛一个运行时异常就可以了 <code>throw new RuntimeException()</code>，运行时异常是<code>rollbackFor</code>默认指定的异常），而不只是打印异常信息。</em></strong></p>
-<p><strong>综上所诉</strong>：在 <code>Service</code> 层中，方法中最好不要随便写 <code>try...catch</code> ，如果写了则一定要手动抛异常</p>
-<h2 id="6">6. 数据库引擎不支持事务<a class="headerlink" href="#6" title="Permanent link">&para;</a></h2>
+<h2 id="13-commandlinerunner">13. CommandLineRunner<a class="headerlink" href="#13-commandlinerunner" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>从 <code>MySQL 5.5.5</code> 开始的默认存储引擎是： <code>InnoDB</code> ，之前默认的都是： <code>MyISAM</code> 。也就是说是从 <code>MySQL5.5.5</code> 开始， <code>MySQL</code> 才支持事务</p>
+<p>org.springframework.boot.CommandLineRunner</p>
 </blockquote>
-<h2 id="7">7. 未启用事务<a class="headerlink" href="#7" title="Permanent link">&para;</a></h2>
-<p>xml 配置</p>
-<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">XML</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
+<p>这个接口也只有一个方法：<code>run(String... args)</code>，触发时机为整个项目启动完毕后，自动执行。如果有多个<code>CommandLineRunner</code>，可以利用<code>@Order</code>来进行排序。</p>
+<p>使用场景：用户扩展此接口，进行启动项目之后一些业务的预处理。</p>
+<p>扩展方式为：</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1">1</a></span>
 <span class="normal"><a href="#__codelineno-13-2">2</a></span>
 <span class="normal"><a href="#__codelineno-13-3">3</a></span>
 <span class="normal"><a href="#__codelineno-13-4">4</a></span>
 <span class="normal"><a href="#__codelineno-13-5">5</a></span>
 <span class="normal"><a href="#__codelineno-13-6">6</a></span>
-<span class="normal"><a href="#__codelineno-13-7">7</a></span>
-<span class="normal"><a href="#__codelineno-13-8">8</a></span>
-<span class="normal"><a href="#__codelineno-13-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="cm">&lt;!--配置事务管理器--&gt;</span>
-<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="nt">&lt;bean</span><span class="w"> </span><span class="na">id=</span><span class="s">&quot;transactionManager&quot;</span><span class="w"> </span><span class="na">class=</span><span class="s">&quot;org.springframework.jdbc.datasource.DataSourceTransactionManager&quot;</span><span class="nt">&gt;</span>
-<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">    </span><span class="nt">&lt;property</span><span class="w"> </span><span class="na">name=</span><span class="s">&quot;dataSource&quot;</span><span class="w"> </span><span class="na">ref=</span><span class="s">&quot;dataSourceRef&quot;</span><span class="nt">&gt;&lt;/property&gt;</span>
-<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="nt">&lt;/bean&gt;</span>
-<a id="__codelineno-13-5" name="__codelineno-13-5"></a>
-<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="cm">&lt;!--开启事务的注解驱动，将事务管理器中的环绕通知作用到连接点，连接点使用@Transactional进行标识</span>
-<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="cm">transaction-manager属性用于指定事务管理器，默认是transactionManager这个id名</span>
-<a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="cm">--&gt;</span>
-<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="nt">&lt;tx:annotation-driven</span><span class="w"> </span><span class="na">transaction-manager=</span><span class="s">&quot;transactionManager&quot;</span><span class="nt">/&gt;</span>
+<span class="normal"><a href="#__codelineno-13-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">TestCommandLineRunner</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">CommandLineRunner</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">run</span><span class="p">(</span><span class="n">String</span><span class="p">...</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[TestCommandLineRunner]&quot;</span><span class="p">);</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<p>启动类配置</p>
+<h2 id="14-disposablebean">14. DisposableBean<a class="headerlink" href="#14-disposablebean" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>com.iflove.simplespring.beans.factory.DisposableBean</p>
+</blockquote>
+<p>这个扩展点也只有一个方法：<code>destroy()</code>，其触发时机为当此对象销毁时，会自动执行这个方法。比如说运行<code>applicationContext.registerShutdownHook</code>时，就会触发这个方法。</p>
+<p>扩展方式为：</p>
 <div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
 <span class="normal"><a href="#__codelineno-14-2">2</a></span>
 <span class="normal"><a href="#__codelineno-14-3">3</a></span>
 <span class="normal"><a href="#__codelineno-14-4">4</a></span>
-<span class="normal"><a href="#__codelineno-14-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="nd">@SpringBootApplication</span>
-<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="nd">@EnableTransactionManagement</span>
-<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">SpringBootApplication</span><span class="w"> </span><span class="p">{</span>
-<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">    </span><span class="p">...</span>
-<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="p">}</span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span>
+<span class="normal"><a href="#__codelineno-14-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">NormalBeanA</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">DisposableBean</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a><span class="w">    </span><span class="nd">@Override</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">destroy</span><span class="p">()</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">Exception</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">&quot;[DisposableBean] NormalBeanA&quot;</span><span class="p">);</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="p">}</span>
 </code></pre></div></td></tr></table></div>
-<h2 id="8-beanspring">8. Bean没有纳入Spring容器管理<a class="headerlink" href="#8-beanspring" title="Permanent link">&para;</a></h2>
+<h2 id="15-applicationlistener">15. ApplicationListener<a class="headerlink" href="#15-applicationlistener" title="Permanent link">&para;</a></h2>
 <blockquote>
-<p>Sprinｇ的事务管理核心是动态代理，不是动态代理的Bean是无法进行被Spring进行事务管理的</p>
+<p>com.iflove.simplespring.context.ApplicationListener</p>
 </blockquote>
-<h2 id="9">9. 事务方法启动新线程进行异步操作<a class="headerlink" href="#9" title="Permanent link">&para;</a></h2>
-<p><code>spring</code> 的事务是通过 <code>LocalThread</code> 来保证线程安全的，事务和当前线程绑定，此时开启新线程执行业务，这个新线程的业务就会事务失效，因为事务是基于动态代理的，要想有事务，需要被动态代理。这里提供一种解决方法，可以将新的业务单独封装成一个方法，然后改方法上添加一个 <code>@Transactional</code> ，或者将这个无法单独抽取到一个类中，将该类交给IOC容器进行管理，这样就能让新线程的业务具有事务了 </p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Java</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span>
+<span class="normal"><a href="#__codelineno-15-5">5</a></span>
+<span class="normal"><a href="#__codelineno-15-6">6</a></span>
+<span class="normal"><a href="#__codelineno-15-7">7</a></span>
+<span class="normal"><a href="#__codelineno-15-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">ApplicationListener</span><span class="o">&lt;</span><span class="n">E</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">ApplicationEvent</span><span class="o">&gt;</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">EventListener</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a>
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a><span class="w">    </span><span class="cm">/**</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a><span class="cm">     * Handle an application event.</span>
+<a id="__codelineno-15-5" name="__codelineno-15-5"></a><span class="cm">     * @param event the event to respond to</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6"></a><span class="cm">     */</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7"></a><span class="w">    </span><span class="kt">void</span><span class="w"> </span><span class="nf">onApplicationEvent</span><span class="p">(</span><span class="n">E</span><span class="w"> </span><span class="n">event</span><span class="p">);</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>准确的说，这个应该不算spring&amp;springboot当中的一个扩展点，<code>ApplicationListener</code>可以监听某个事件的<code>event</code>，触发时机可以穿插在业务方法执行过程中，用户可以自定义某个业务事件。但是spring内部也有一些内置事件，这种事件，可以穿插在启动调用中。我们也可以利用这个特性，来自己做一些内置事件的监听器来达到和前面一些触发点大致相同的事情。</p>
+<p>接下来罗列下spring主要的内置事件：</p>
+<ul>
+<li>
+<p><strong>ContextRefreshedEvent</strong></p>
+<p>ApplicationContext 被初始化或刷新时，该事件被发布。这也可以在<code>ConfigurableApplicationContext</code>接口中使用 <code>refresh()</code>方法来发生。此处的初始化是指：所有的Bean被成功装载，后处理Bean被检测并激活，所有Singleton Bean 被预实例化，<code>ApplicationContext</code>容器已就绪可用。</p>
+</li>
+<li>
+<p><strong>ContextStartedEvent</strong></p>
+<p>当使用 <code>ConfigurableApplicationContext</code> （ApplicationContext子接口）接口中的 start() 方法启动 <code>ApplicationContext</code>时，该事件被发布。你可以调查你的数据库，或者你可以在接受到这个事件后重启任何停止的应用程序。</p>
+</li>
+<li>
+<p><strong>ContextStoppedEvent</strong></p>
+<p>当使用 <code>ConfigurableApplicationContext</code>接口中的 <code>stop()</code>停止<code>ApplicationContext</code> 时，发布这个事件。你可以在接受到这个事件后做必要的清理的工作</p>
+</li>
+<li>
+<p><strong>ContextClosedEvent</strong></p>
+<p>当使用 <code>ConfigurableApplicationContext</code>接口中的 <code>close()</code>方法关闭 <code>ApplicationContext</code> 时，该事件被发布。一个已关闭的上下文到达生命周期末端；它不能被刷新或重启</p>
+</li>
+<li>
+<p><strong>RequestHandledEvent</strong></p>
+<p>这是一个 web-specific 事件，告诉所有 bean HTTP 请求已经被服务。只能应用于使用DispatcherServlet的Web应用。在使用Spring作为前端的MVC控制器时，当Spring处理用户请求结束后，系统会自动触发该事件</p>
+</li>
+</ul>
+<h2 id="_1">参考资料<a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<p><a href="https://juejin.cn/post/6844904200778809358">Springboot启动扩展点超详细总结，再也不怕面试官问了Spring的核心思想就是容器，当容器refresh的时候， - 掘金</a></p>
 <!--
   Copyright (c) 2016-2023 Martin Donath <martin.donath@squidfunk.com>
 
@@ -3552,7 +3396,7 @@ Service
     <span class="md-icon" title="最后更新">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年3月8日 10:12:02">2025-03-08</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-iso_date" title="2025年5月19日 03:52:21">2025-05-19</span>
   </span>
 
     
@@ -3756,9 +3600,9 @@ Service
         
           
           <a
-            href="../Spring-tx/"
+            href="../%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/"
             class="md-footer__link md-footer__link--prev"
-            aria-label="上一页: Spring 事务"
+            aria-label="上一页: 循环依赖"
           >
             <div class="md-footer__button md-icon">
               
@@ -3769,7 +3613,7 @@ Service
                 上一页
               </span>
               <div class="md-ellipsis">
-                Spring 事务
+                循环依赖
               </div>
             </div>
             
@@ -3780,16 +3624,16 @@ Service
         
           
           <a
-            href="../%E5%BE%AA%E7%8E%AF%E4%BE%9D%E8%B5%96/"
+            href="../simple-spring/simple-spring/"
             class="md-footer__link md-footer__link--next"
-            aria-label="下一页: 循环依赖"
+            aria-label="下一页: Simple-Spring"
           >
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 下一页
               </span>
               <div class="md-ellipsis">
-                循环依赖
+                Simple-Spring
               </div>
             </div>
             <div class="md-footer__button md-icon">
