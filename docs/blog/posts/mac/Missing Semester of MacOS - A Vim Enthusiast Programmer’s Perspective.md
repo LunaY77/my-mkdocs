@@ -46,10 +46,6 @@ finder 默认打开在 user 文件夹 (打开 finder 窗口，左上角 settings
 
 ![image.png](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250703090715.png)
 
-finder sidebar 配置，按自己喜欢的来
-
-![image.png](https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/picgo/20250703130505.png)
-
 Mac 长按连续输入 (重启生效)
 
 ```shell

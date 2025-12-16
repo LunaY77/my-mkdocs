@@ -2,10 +2,10 @@
 title: 友链
 comments: true
 hide:
-  #   - navigation # 显示右
-  #   - toc #显示左
-  - footer
-  - feedback
+    #   - navigation # 显示右
+    #   - toc #显示左
+    - footer
+    - feedback
 ---
 
 # 欢迎加入友链
@@ -51,10 +51,10 @@ hide:
       </div>
 
       <div class="card">
-        <img class="ava" src="https://cangjingyue.oss-cn-hangzhou.aliyuncs.com/2024/11/23/dcd4dffa5241b459d0d2d40bc59480ab720.png" />
+        <img class="ava" src="https://image-bed-1326946071.cos.ap-shanghai.myqcloud.com/20251212213121568.jpg" />
         <div class="card-header">
           <div>
-          <a href="http://www.adrianpierre.cn" target="_blank">Adrian‘s World</a>
+          <a href="https://blog.anpier.xyz/" target="_blank">Anpier-Blog</a>
           </div>
           <div class="info">
             分裂的彗星在黄昏过后引渡生命和爱
