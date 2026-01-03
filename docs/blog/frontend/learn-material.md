@@ -25,3 +25,7 @@ categories:
 [enaqx/awesome-react: A collection of awesome things regarding React ecosystem](https://github.com/enaqx/awesome-react)
 
 [alan2207/bulletproof-react: 🛡️ ⚛️ A simple, scalable, and powerful architecture for building production ready React applications.](https://github.com/alan2207/bulletproof-react)
+
+[Combining Zustand with React Query](https://www.youtube.com/watch?v=QTZTUrAbjeo)
+
+[code/videos/long/combining-zustand-with-react-query at master · cosdensolutions/code](https://github.com/cosdensolutions/code/tree/master/videos/long/combining-zustand-with-react-query)
